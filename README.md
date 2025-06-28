@@ -60,7 +60,7 @@ A full custom Wayland desktop setup built around **Hyprland**, optimized for spe
 <img align="center" width="49%" src="assets/theme12.png" alt="theme12"/>
 <img align="center" width="49%" src="assets/theme13.png" alt="theme13"/><br>
 
-<img align="center" width="49%" src="assets/theme15.png" alt="theme15"/>
+<img align="center" width="49%" src="../hyprland-dotfiles/assets/16.png" alt="theme15"/>
 <img align="center" width="49%" src="assets/theme21.png" alt="theme21"/><br>
 
 <img align="center" width="49%" src="assets/theme31.png" alt="theme31"/>
