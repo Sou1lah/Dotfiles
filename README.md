@@ -51,52 +51,28 @@ A full custom Wayland desktop setup built around **Hyprland**, optimized for spe
 
 ---
 
-## 📸 Screenshots
+## <a id="gallery"></a>🎨 Theme Gallery
 
-| Theme         | Preview                          |
-|---------------|----------------------------------|
-| `theme12`     | ![](assets/theme12.png)          |
-| `theme13`     | ![](assets/theme13.png)          |
-| `theme15`     | ![](assets/theme15.png)          |
-| `theme21`     | ![](assets/theme21.png)          |
-| `theme31`     | ![](assets/theme31.png)          |
-| `16`          | ![](assets/16.png)               |
-| `17`          | ![](assets/17.png)               |
-| `22`          | ![](assets/22.png)               |
-| `23`          | ![](assets/23.png)               |
-| `24`          | ![](assets/24.png)               |
+<details>
+<summary>Click to expand theme previews</summary>
+<p align="center">
 
----
+<img align="center" width="49%" src="assets/theme12.png" alt="theme12"/>
+<img align="center" width="49%" src="assets/theme13.png" alt="theme13"/><br>
 
-## 🚀 Features
+<img align="center" width="49%" src="assets/theme15.png" alt="theme15"/>
+<img align="center" width="49%" src="assets/theme21.png" alt="theme21"/><br>
 
-- 💨 Fast, minimal Hyprland setup
-- 🎯 App & game launchers via Rofi
-- 🧱 Full modular theming (GTK, QT, Wallpaper)
-- 🧼 Clean animations & blur
-- 💻 Dev-ready: Neovim, Tmux, Kitty
-- 📦 Optional Nix support
+<img align="center" width="49%" src="assets/theme31.png" alt="theme31"/>
+<img align="center" width="49%" src="assets/16.png" alt="16"/><br>
 
----
+<img align="center" width="49%" src="assets/17.png" alt="17"/>
+<img align="center" width="49%" src="assets/22.png" alt="22"/><br>
 
-## ⚙️ Structure
+<img align="center" width="49%" src="assets/23.png" alt="23"/>
+<img align="center" width="49%" src="assets/24.png" alt="24"/>
 
-```bash
-~/.config/
-├── hypr         # Hyprland config
-├── waybar       # Bar config
-├── rofi         # App launcher
-├── Ax-Shell     # Shell UI
-├── swaync       # Notifications
-├── eww          # Widgets
-├── wlogout      # Logout menu
-├── kitty        # Terminal
-├── nvim         # Neovim setup
-├── starship     # Prompt theme
-├── ranger       # Terminal file manager
-├── matugen      # Wallpaper color extractor
-├── wallust      # Theming engine
-├── qt5ct / qt6ct / Kvantum # QT theming
-├── gtk-2.0 / 3.0 / 4.0      # GTK themes
-├── fastfetch / neofetch / btop / swappy
-├── nix          # Optional Nix config
+</p>
+</details>
+
+
