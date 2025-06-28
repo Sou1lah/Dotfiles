@@ -1,0 +1,66 @@
+hide_entries_without_box_art = false
+box_art_dir = "/home/wael/.config/rofi-games/box-art"
+theme_path = "/home/wael/.config/rofi-games/games-default.rasi"
+
+[[entries]]
+title = "Skullgirls"
+launch_command = "/home/wael/Games/Skullgirls/Skullgirls.x86_64-pc-linux-gnu"
+path_box_art = "terry-wei-pop-f22.jpg"
+path_game_dir = "/home/wael/Games/Skullgirls"
+
+[[entries]]
+title = "Slay the Spire"
+launch_command = "/home/wael/Games/SlaytheSpire/run.sh"
+path_box_art = "STS.png"
+path_game_dir = "/home/wael/Games/Slay the Spire"
+
+[[entries]]
+title = "Balatro"
+launch_command = "/home/wael/Games/Balatro/run.sh"
+path_box_art = "Balatro1.jpg"
+path_game_dir = "/home/wael/Games/Balatro"
+
+
+[[entries]]
+title = "eyes-2"
+launch_command = "/home/wael/Games/eyes-2.2-linux"
+path_box_art = "eyes-2.png"
+path_game_dir = "/home/wael/Games/eyes-2_Data"
+
+[[entries]]
+title = "Terraria"
+launch_command = "/home/wael/Games/Terraria/start.sh"
+path_box_art = "Terraria.png"
+path_game_dir = "/home/wael/Games/Terraria"
+
+[[entries]]
+title = "The Binding of Isaac Rebirth"
+launch_command = "/home/wael/Games/The Binding of Isaac Rebirth/run.sh"
+path_box_art = "Isaac.png"
+path_game_dir = "/home/wael/Games/The Binding of Isaac Rebirth"
+
+
+[[entries]]
+title = "Vintage Story"
+launch_command = "/home/wael/Games/vintagestory/launch-vs.sh"
+path_box_art = "vintagestory.jpg"
+path_game_dir = "/home/wael/Games/vintagestory"
+
+[[entries]]
+title = "Minecraft 1.20.4"
+launch_command = "/home/wael/Games/Minecraft_1.20.4/start.sh"
+path_box_art = "minecraft.png"
+path_game_dir = "/home/wael/Games/Minecraft_1.20.4"
+
+
+[[entries]]
+title = "BlazeRush"
+launch_command = "/home/wael/Games/BlazeRush/run.sh"
+path_box_art = "blazerush.jpg"
+path_game_dir = "/home/wael/Games/BlazeRush"
+
+[[entries]]
+title = "Brutal Doom 64"
+launch_command = "/home/wael/Games/BrutalDoom64/zandro.sh"
+path_box_art = "BrutalDoom64.png"
+path_game_dir = "/home/wael/Games/BrutalDoom64"

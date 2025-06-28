@@ -1,0 +1,208 @@
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+/* Wallust Colored*/
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+	min-height: 0;	
+     /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+    font-size: 100%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar.hidden {
+    opacity: 0.7;
+}
+
+
+window#waybar,
+window#waybar.empty #window {
+    padding: 0px;
+    border: 0px;
+    background-color: @color2;
+    border-radius: 16px;         /* Add rounded corners */
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18); /* Optional: soft shadow */
+}
+
+tooltip {
+    background: @background;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @color15;
+}
+
+/*-----module groups----*/
+.modules-left,
+.modules-center,
+.modules-right {
+    background: none;
+    border: none;
+    border-radius: 12px;   /* Add rounded corners to module groups */
+    padding: 0;
+    margin: 0 6px;         /* Optional: add horizontal spacing */
+}
+
+#taskbar button,
+#workspaces button {
+    color: @color6;
+    background-color: transparent;
+    border-radius: 9px;
+    padding: 4px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    /* Optional: add border for clarity */
+    border: 1px solid transparent;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: @color7;
+    background-color: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 12px;   /* More pronounced when active */
+    border: 1px solid @color7;
+}
+
+#workspaces button.focused {
+    color: @color4;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    border-radius: 12px;
+    border: 2px solid #ff5555;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @color3;
+    background: @background-alt;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
+    border: 1px solid @color3;
+}
+
+#clock#2 {
+    color: @color6;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+    color: @foreground;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+#temperature.critical {
+    background-color: #ff0000;
+    border-radius: 10px; /* Rounded corners for warning */
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    border-radius: 10px; /* Rounded corners for warning */
+    animation-name: blink;
+    animation-duration: 3.0s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+	min-width: 0px;
+	min-height: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+	min-width: 80px;
+	min-height: 5px;
+	border-radius: 5px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+	min-height: 10px;
+	border-radius: 5px;
+}
+
+#custom-cava_mviz {
+	padding-right: 10px;
+}

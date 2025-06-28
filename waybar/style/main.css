@@ -1,0 +1,354 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Translucent */
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+@define-color critical #ff0000; /* critical color */
+@define-color warning #f3f809;  /* warning color */
+@define-color fgcolor #ffffff;  /* foreground color */
+@define-color bgcolor #303030;  /* background color */
+@define-color bgcolor #222436;  /* background color */
+@define-color alert   #df3320;
+
+@define-color accent1 #7da6ff;   /* blue primary accent */
+@define-color accent2 #0db9d7;   /* cyan/blue secondary */
+@define-color accent3 #4f8cff;   /* blue highlight */
+@define-color accent4 #bb9af7;   /* light blue-violet */
+@define-color accent5 #1e66f5;   /* strong blue */
+@define-color accent6 #89dceb;   /* light cyan-blue */
+
+* {
+font-family: "JetBrainsMono Nerd Font";
+font-weight: bold;
+min-height: 0;
+/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+font-size: 102%;
+font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+    background-color: rgba(30, 38, 54, 0.7); /* blueish translucent */
+    color: #e0e6f0;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+tooltip {
+    background: #1e1e2e;
+    opacity: 0.6;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#taskbar button,
+#workspaces button {
+    color: @accent5;
+    background-color: transparent;
+    box-shadow: none;
+	text-shadow: none;
+    padding: 4px;
+    border-radius: 9px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: @accent2;
+    background-color: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @accent3;
+    background: rgba(30, 38, 54, 0.2);
+    padding-left: 2px;
+    padding-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.focused {
+    background-color: #1e66f5;
+    color: #ffffff;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+#workspaces button.urgent {
+    background-color: #0db9d7;
+    color: #ffffff;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default, 
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+}
+
+#clock {
+    color: @accent6;
+}
+
+#custom-updater {
+    color: @accent4;
+}
+
+#battery {
+    color: @accent5;
+}
+
+/* #battery.charging {
+    color: #ffffff;
+    background-color: #26A65B;
+} */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #333333;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: @critical;
+	animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#custom-menu{
+    color: #FFFFFF;
+    /*padding: 3px;*/
+}
+
+#custom-keyboard,
+#cpu {
+    color: @accent1;
+}
+
+#memory {
+    color: @accent3;
+}
+
+#backlight {
+    color: @accent6;
+}
+
+#bluetooth {
+    color: @accent5;
+}
+
+#network {
+    color: @accent3;
+}
+
+#network.disconnected {
+    color: #7287fd;
+}
+
+#pulseaudio {
+    color: @accent4;
+}
+
+#wireplumber {
+    color: @accent4;
+}
+
+#custom-power {
+    color: #1e66f5;
+}
+
+#disk {
+    color: @accent5;
+}
+#custom-power_profile {
+    color: @accent3;
+}
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-weather {
+    color: @accent6;
+}
+
+#custom-lock {
+    color: #4f8cff;
+}
+
+#keyboard-state,
+#temperature {
+    color: @accent2;
+}
+
+#temperature.critical {
+    background-color: #1e66f5;
+    color: #fff;
+}
+
+#tray {
+    /* background-color: #505050; */
+}
+
+#custom-hypridle,
+#idle_inhibitor {
+	color: #f9e2af;
+    /*background-color: #2d3436;*/
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
+}
+
+#mpd {
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#custom-language {
+    color: @accent5;
+    min-width: 16px;
+}
+
+#custom-separator {
+    color: #606060;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+	min-width: 0px;
+	min-height: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+	min-width: 80px;
+	min-height: 5px;
+	border-radius: 5px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+	min-height: 10px;
+	border-radius: 5px;
+}
+
+#custom-cava_mviz {
+    animation: rainbow-cava 1.2s linear infinite;
+    border: none;
+    background: none;
+}
+
+@keyframes rainbow-cava {
+    0%   { color: #1e66f5; }
+    16%  { color: #0db9d7; }
+    33%  { color: #89dceb; }
+    50%  { color: #4f8cff; }
+    66%  { color: #bb9af7; }
+    83%  { color: #7da6ff; }
+    100% { color: #1e66f5; }
+}

@@ -1,0 +1,59 @@
+window {
+    width: 80%;
+    height: 60%;
+    location: center;
+    border: 0;
+    background-color: #181825E0;
+}
+
+mainbox {
+    padding: 30px 30px;
+    background-color: transparent;
+}
+
+listview {
+    columns: 4;
+    lines: 2;
+    spacing: 30;
+    cycle: true;
+    fixed-height: true;
+    fixed-columns: true;
+    background-color: transparent;
+    border: 0;
+}
+
+element {
+    padding: 10px 10px;
+    border-radius: 12px;
+    background-color: #232634B0;
+    border: 2px solid transparent;
+}
+
+element selected {
+    background-color: #a6e3a1B0;
+    border: 2px solid #a6e3a1;
+    text-color: #181825;
+}
+
+element-icon, element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element-icon {
+    size: 80px;
+    border-radius: 8px;
+    margin: 0 0 10px 0;
+}
+
+element-text {
+    font: "JetBrains Mono 12";
+    text-color: #cdd6f4;
+    margin: 0 0 0 0;
+}
+
+message, textbox-prompt-colon, entry, inputbar, button {
+    background-color: transparent;
+    border: 0;
+    text-color: #cdd6f4;
+}

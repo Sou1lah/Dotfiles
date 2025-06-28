@@ -1,0 +1,54 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### Minimal - Long ### //
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 6,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [ 
+	"hyprland/workspaces#pacman",
+	"custom/separator#blank_1",
+	"mpris",
+	],
+"modules-center": [
+	"group/app_drawer",
+	"custom/separator#blank_1",
+	"clock",
+	"idle_inhibitor",
+	"group/notify",
+
+	],
+"modules-right": [
+	"group/mobo_drawer",
+	"custom/separator#line",
+	"group/audio",
+	"custom/separator#line",
+	"tray",
+	"custom/separator#line",
+	"group/laptop",
+	"custom/separator#line",
+	"custom/power",
+	"custom/separator#line"
+	],
+
+"custom/separator": {
+    "format": "|",
+    "tooltip": false
+}
+}

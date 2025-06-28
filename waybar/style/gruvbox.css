@@ -1,0 +1,115 @@
+/* ---- Gruvbox Theme ---- */
+/* Gruvbox palette: https://github.com/morhetz/gruvbox */
+
+/* Import Wallust colors */
+
+/* Core colors */
+@define-color fgcolor   @foreground;
+@define-color bgcolor   @background;
+@define-color critical  @color1;
+@define-color warning   @color11;
+@define-color alert     @color14;
+
+/* Accents */
+@define-color accent1   @color2;
+@define-color accent2   @color3;
+@define-color accent3   @color4;
+@define-color accent4   @color5;
+@define-color accent5   @color6;
+@define-color accent6   @color12;
+
+/* Main window */
+window#waybar {
+    background-color: rgba(31, 31, 34, 0.92); /* Wallust bg */
+    color: @fgcolor;
+    border-radius: 8px;
+}
+
+/* Tooltip */
+tooltip {
+    background: @background-alt;
+    border-color: @color0;
+    color: @fgcolor;
+}
+
+/* Workspaces & Taskbar */
+#taskbar button,
+#workspaces button {
+    color: @accent3;
+    background-color: transparent;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: @accent2;
+    background-color: transparent;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @accent1;
+    background: rgba(60, 56, 54, 0.3);
+}
+
+#workspaces button.focused {
+    background-color: @accent2;
+    color: @bgcolor;
+}
+
+#workspaces button.urgent {
+    background-color: @critical;
+    color: @bgcolor;
+}
+
+/* Modules */
+#clock { color: @accent2; }
+#custom-updater { color: @accent4; }
+#battery { color: @accent1; }
+#battery.critical:not(.charging) { color: @critical; }
+#custom-keyboard, #cpu { color: @accent1; }
+#memory { color: @accent3; }
+#backlight { color: @accent6; }
+#bluetooth { color: @accent5; }
+#network { color: @accent3; }
+#network.disconnected { color: @critical; }
+#pulseaudio, #wireplumber { color: @accent4; }
+#custom-power { color: @accent2; }
+#disk { color: @accent5; }
+#custom-power_profile { color: @accent3; }
+#custom-weather { color: @accent6; }
+#custom-lock { color: @accent3; }
+#keyboard-state, #temperature { color: @accent2; }
+#temperature.critical { background-color: @critical; color: @bgcolor; }
+#custom-hypridle, #idle_inhibitor { color: @accent2; }
+#custom-hypridle.notactive, #idle_inhibitor.activated { color: @accent1; }
+#custom-language { color: @accent5; }
+#custom-separator { color: #928374; }
+
+/* Sliders */
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    background-color: #504945;
+}
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    background-color: @accent2;
+}
+#tray {
+    background-color: #505050;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    color: #fff; /* Make tray icons/text white */
+}
+
+/* Rainbow animation (optional, can keep as is) */
+@keyframes rainbow-cava {
+    0%   { color: #b8bb26; }
+    16%  { color: #fabd2f; }
+    33%  { color: #fe8019; }
+    50%  { color: #83a598; }
+    66%  { color: #d3869b; }
+    83%  { color: #8ec07c; }
+    100% { color: #b8bb26; }
+}
