@@ -22,4 +22,29 @@ A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, an
 
 ### 🙏 Special Thanks
 
-Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
+Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
+
+
+---
+
+### 🧰 Tools & Themes Used
+
+| Category       | Tools / Apps                        |
+|----------------|-------------------------------------|
+| Shell          | Zsh, Starship                       |
+| Terminal       | Kitty, btop, fastfetch              |
+| Editor         | Neovim                              |
+| Compositor     | Hyprland                            |
+| Bar            | Waybar                              |
+| Launcher       | Rofi, Rofi-Games                    |
+| Wallpaper      | Swww, Wallust, Matugen              |
+| Notifications  | Swaync                              |
+| Lock/Logout    | Wlogout, Swappy                     |
+| File Manager   | Ranger                              |
+| Theming        | GTK 2/3/4, Kvantum, qt5ct, qt6ct     |
+| System Info    | Neofetch, Eww                       |
+| Tiling Helper  | Ax-Shell                            |
+| Multiplexer    | Tmux                                |
+| Other          | Fabric                              |
+
+---
