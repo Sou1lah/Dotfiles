@@ -51,27 +51,34 @@ A full custom Wayland desktop setup built around **Hyprland**, optimized for spe
 
 ---
 
-## <a id="gallery"></a>🎨 Theme Gallery
-
 <details>
 <summary>Click to expand theme previews</summary>
 <p align="center">
 
-### 🖼️ Theme 1
-<img align="center" width="49%" src="assets/theme12.png" alt="theme12"/>
-<img align="center" width="49%" src="assets/theme13.png" alt="theme13"/><br>
+### 🧊 Theme 1 – Blue
+<img width="49%" src="assets/b2.png" alt="b2"/>
+<img width="49%" src="assets/b3.png" alt="b3"/>
+<img width="49%" src="assets/b4.png" alt="b4"/>
 
-### 🎨 Theme 2
-<img align="center" width="49%" src="assets/theme21.png" alt="theme21"/>
-<img align="center" width="49%" src="assets/22.png" alt="22"/><br>
-<img align="center" width="49%" src="assets/23.png" alt="23"/>
-<img align="center" width="49%" src="assets/24.png" alt="24"/><br>
+---
 
-### 🌑 Theme 3
-<img align="center" width="49%" src="assets/theme31.png" alt="theme31"/>
-<img align="center" width="49%" src="assets/16.png" alt="16"/><br>
-<img align="center" width="49%" src="assets/17.png" alt="17"/>
-<img align="center" width="49%" src="../hyprland-dotfiles/assets/16.png" alt="theme15"/>
+### 🟣 Theme 2 – Purple
+<img width="49%" src="assets/p1.png" alt="p1"/>
+<img width="49%" src="assets/p2.png" alt="p2"/>
+<img width="49%" src="assets/p3.png" alt="p3"/>
+<img width="49%" src="assets/p5.png" alt="p5"/>
+<img width="49%" src="assets/p6.png" alt="p6"/>
+<img width="49%" src="assets/p7.png" alt="p7"/>
+
+---
+
+### 🔴 Theme 3 – Red
+<img width="49%" src="assets/r1.png" alt="r1"/>
+<img width="49%" src="assets/r2.png" alt="r2"/>
+<img width="49%" src="assets/r3.png" alt="r3"/>
+<img width="49%" src="assets/r4.png" alt="r4"/>
+<img width="49%" src="assets/r5.png" alt="r5"/>
+<img width="49%" src="assets/r6.png" alt="r6"/>
 
 </p>
 </details>
