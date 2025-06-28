@@ -48,3 +48,36 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fed
 | Other          | Fabric                              |
 
 ---
+
+
+
+---
+
+### ⌨️ Neovim Custom Keybinds
+
+```text
+╔═══════════════════════════════════════════════════╗
+║               🧠 Keybind Cheatsheet               ║
+╠═════════════════╬═════════════════════════════════╣
+║ Ctrl + o        ║ Save                            ║
+║ x (after o)     ║ Save & Exit                     ║
+║ Ctrl + q        ║ Quit                            ║
+║ Ctrl + c        ║ Force Quit (no save)            ║
+║ Ctrl + x        ║ Cut Line (to clipboard)         ║
+║ Ctrl + k        ║ Close side Pane                 ║
+║ Ctrl + y        ║ Redo                            ║
+║ Ctrl + z/_      ║ Undo                            ║
+║ Ctrl + a        ║ Select All                      ║
+║ Ctrl + c (V)    ║ Copy to Clipboard (visual)      ║
+║ Ctrl + v        ║ Paste from Clipboard            ║
+║ <C-n>           ║ Toggle Nvim Tree                ║
+║ <Tab>           ║ Cycle to Next Buffer            ║
+║ <S-Tab>         ║ Cycle to Previous Buffer        ║
+║ <C-p>           ║ Open Telescope Find Files       ║
+║ <C-l>           ║ Vertical Split                  ║
+║ <C-h>           ║ Horizontal Split                ║
+║ <C-k>           ║ Close Current Split Pane        ║
+║ <C-a>           ║ Select All                      ║
+║ <C-Left>        ║ Move to Previous Pane           ║
+║ <C-r>           ║ Open Recent Files (Telescope)   ║
+╚═════════════════╝═════════════════════════════════╝
