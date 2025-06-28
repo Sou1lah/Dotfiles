@@ -13,11 +13,12 @@
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p8.png?raw=true" width="49%">
 </p>
 
+---
+
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
-A fast, clean, and custom Wayland rice setup with personal tweaks and scripting.
+A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, and a sharp look.
 
-> ⚙️ Auto-launch workspaces, custom shell scripts, themed apps, and more.
+> ⚙️ Features: Auto workspace launch on HDMI, Ax Shell integration, themed Waybar, game mode, swww, and more.
 
-***ENJOY!!***
-
+**ENJOY!** 👨‍💻  
 — **Wael**
