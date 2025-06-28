@@ -6,11 +6,11 @@
 </p>
 <p align="center">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p2.png?raw=true" width="49%">
-  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p5.png?raw=true" width="49%">
+  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p6.png?raw=true" width="49%">
 </p>
 <p align="center">
-  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p7.png?raw=true" width="49%">
-  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/p8.png?raw=true" width="49%">
+  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/r2.png?raw=true" width="49%">
+  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/r3.png?raw=true" width="49%">
 </p>
 
 ---
