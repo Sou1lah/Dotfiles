@@ -56,7 +56,7 @@ A full custom Wayland desktop setup built around **Hyprland**, optimized for spe
 <p align="center">
 
 ### 🧊 Theme 1 – Blue
-<img width="49%" src="assets/b2.png" alt="b2"/>
+<img width="49%" src="" alt="b2"/>
 <img width="49%" src="assets/b3.png" alt="b3"/>
 <img width="49%" src="assets/b4.png" alt="b4"/>
 
