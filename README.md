@@ -1,40 +1,16 @@
-# 🌿 Hyprland Rice Showcase
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2000&pause=3000&color=F7F7F7&center=true&vCenter=true&width=500&lines=Wael's+Hyprland+Dotfiles)](https://git.io/typing-svg)
 
-Welcome to my personal **Hyprland rice setup**.  
-This includes custom themes, widgets, and scripts built around:
+<img src="assets/b2.png" width="50%">
+<img src="assets/b4.png" width="50%">
+<img src="assets/p2.png" width="50%">
+<img src="assets/p5.png" width="50%">
+<img src="assets/p7.png" width="50%">
 
-- Hyprland (Wayland window manager)
-- Eww (widgets)
-- Swww (animated wallpapers)
-- Custom launchers and auto-sync scripts
+This repo contains my **Fedora** + **Hyprland** dotfiles:  
+A fast, clean, and custom Wayland rice setup with personal tweaks and scripting.
 
----
+> ⚙️ Auto-launch workspaces, custom shell scripts, themed apps, and more.
 
-## 🖼️ Theme 1 – Blue
+***ENJOY!!***
 
-![[assets/b2.png]]
-![[assets/b3.png]]
-![[assets/b4.png]]
-
----
-
-## 🖼️ Theme 2 – Purple
-
-![[assets/p1.png]]
-![[assets/p2.png]]
-![[assets/p3.png]]
-![[assets/p5.png]]
-![[assets/p6.png]]
-![[assets/p7.png]]
-
----
-
-## 🖼️ Theme 3 – Red
-
-![[assets/r1.png]]
-![[assets/r2.png]]
-![[assets/r3.png]]
-![[assets/r4.png]]
-![[assets/r5.png]]
-![[assets/r6.png]]
-
+— **Wael**
