@@ -18,7 +18,8 @@
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
 A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, and a sharp look.
 
-> ⚙️ Features: Auto workspace launch on HDMI, Ax Shell integration, themed Waybar, game mode, swww, and more.
 
-**ENJOY!** 👨‍💻  
-— **Wael**
+
+### 🙏 Special Thanks
+
+Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
