@@ -57,22 +57,21 @@ A full custom Wayland desktop setup built around **Hyprland**, optimized for spe
 <summary>Click to expand theme previews</summary>
 <p align="center">
 
+### 🖼️ Theme 1
 <img align="center" width="49%" src="assets/theme12.png" alt="theme12"/>
 <img align="center" width="49%" src="assets/theme13.png" alt="theme13"/><br>
 
-<img align="center" width="49%" src="../hyprland-dotfiles/assets/16.png" alt="theme15"/>
-<img align="center" width="49%" src="assets/theme21.png" alt="theme21"/><br>
+### 🎨 Theme 2
+<img align="center" width="49%" src="assets/theme21.png" alt="theme21"/>
+<img align="center" width="49%" src="assets/22.png" alt="22"/><br>
+<img align="center" width="49%" src="assets/23.png" alt="23"/>
+<img align="center" width="49%" src="assets/24.png" alt="24"/><br>
 
+### 🌑 Theme 3
 <img align="center" width="49%" src="assets/theme31.png" alt="theme31"/>
 <img align="center" width="49%" src="assets/16.png" alt="16"/><br>
-
 <img align="center" width="49%" src="assets/17.png" alt="17"/>
-<img align="center" width="49%" src="assets/22.png" alt="22"/><br>
-
-<img align="center" width="49%" src="assets/23.png" alt="23"/>
-<img align="center" width="49%" src="assets/24.png" alt="24"/>
+<img align="center" width="49%" src="../hyprland-dotfiles/assets/16.png" alt="theme15"/>
 
 </p>
 </details>
-
-
