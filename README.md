@@ -78,7 +78,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fed
 ║ <C-Left>        ║ Move to Previous Pane           ║
 ║ <C-r>           ║ Open Recent Files (Telescope)   ║
 ╚═════════════════╝═════════════════════════════════╝
-
+```
 
 
 
