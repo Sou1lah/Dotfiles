@@ -22,7 +22,7 @@ A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, an
 
 ### 🙏 Special Thanks
 
-Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
+Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
 
 
 ---
