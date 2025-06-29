@@ -97,4 +97,4 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fed
 
 ### ⭐ Support
 
-If you find this setup helpful or inspiring, consider giving the repo a ⭐ — it helps a lot and keeps me motivated!
+If you find this setup helpful or inspiring, consider giving the repo a ⭐ 
