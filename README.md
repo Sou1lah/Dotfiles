@@ -32,20 +32,17 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fed
 | Category       | Tools / Apps                        |
 |----------------|-------------------------------------|
 | Shell          | Zsh, Starship                       |
-| Terminal       | Kitty, btop, fastfetch              |
+| Terminal       | Kitty                               |
 | Editor         | Neovim                              |
 | Compositor     | Hyprland                            |
-| Bar            | Waybar                              |
+| Bar            | axe-shell + fabric                  |
 | Launcher       | Rofi, Rofi-Games                    |
 | Wallpaper      | Swww, Wallust, Matugen              |
 | Notifications  | Swaync                              |
-| Lock/Logout    | Wlogout, Swappy                     |
-| File Manager   | Ranger                              |
-| Theming        | GTK 2/3/4, Kvantum, qt5ct, qt6ct     |
-| System Info    | Neofetch, Eww                       |
-| Tiling Helper  | Ax-Shell                            |
+| Lock/Logout    | Wlogout, hyprlock                   |
+| File Manager   | thunar + yazi                       |
+| System Info    | fastfetch                           |
 | Multiplexer    | Tmux                                |
-| Other          | Fabric                              |
 
 ---
 
@@ -81,3 +78,23 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland for his Fed
 ║ <C-Left>        ║ Move to Previous Pane           ║
 ║ <C-r>           ║ Open Recent Files (Telescope)   ║
 ╚═════════════════╝═════════════════════════════════╝
+
+
+
+
+
+
+
+
+---
+
+### 🧿 Hyprland Keybinds
+
+> 💡 Press **SUPER + h** to view all Hyprland keybindings in your system.
+
+
+---
+
+### ⭐ Support
+
+If you find this setup helpful or inspiring, consider giving the repo a ⭐ — it helps a lot and keeps me motivated!
