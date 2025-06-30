@@ -131,6 +131,13 @@
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"smooth-scrolling-threshold": 1,
 },
+"custom/media": {
+    "exec": "/home/wael/.config/waybar/waybar-mediaplayer/src/mediaplayer monitor",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 5
+},
+
     
 "custom/power": {
 	"format": " ⏻ ",
@@ -153,6 +160,7 @@
     "tooltip": true,
 	"tooltip-format": "Left Click: Exit Hyprland",
 },
+
 
 "custom/swaync": {
 	"tooltip": true,
@@ -265,5 +273,18 @@
 "custom/arrow10": {
 	"format": "",
 	"tooltip": false
+},
+"custom/arrow_separator": {
+  "format": "❯",  // or ▶ or ➤ or some wide triangle
+  "tooltip": false
+},
+
+
+
+"cpu": {
+    "format": "{} ",
+    "tooltip": true,
+    "on-click": "kitty -e btop",
+    "interval": 1
 }
 }

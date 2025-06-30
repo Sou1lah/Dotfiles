@@ -1,0 +1,9 @@
+pane	Main	0	0	:-	0	PC-T3-Wael	:/home/wael	0	nvim	:nvim
+pane	Main	0	0	:-	1	PC-T3-Wael	:/home/wael/Documents/backup/home/wael	0	nvim	:nvim .zshrc
+pane	Main	0	0	:-	2	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael/Downloads	1	zsh	:-zsh
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	Main	0	:NVIM	0	:-	655b,190x45,0,0[190x38,0,0{145x38,0,0,1,44x38,146,0,15},190x6,0,39,14]	off
+window	Main	1	:Main	1	:*	68ee,190x45,0,0{95x45,0,0,13,94x45,96,0[94x38,96,0,16,94x6,96,39,17]}	off
+state	Main	

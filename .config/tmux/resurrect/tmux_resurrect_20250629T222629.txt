@@ -1,0 +1,5 @@
+pane	0	0	0	:-	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	0	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	0	0	:nvim	0	:-	d17d,167x39,0,0,0	:
+window	0	1	:zsh	1	:*	cfff,103x49,0,0,2	:
+state	0	

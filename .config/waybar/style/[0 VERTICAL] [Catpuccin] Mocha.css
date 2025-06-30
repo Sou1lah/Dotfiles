@@ -44,7 +44,7 @@
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     min-height: 0;
-    font-size: 102%;
+    font-size: 100%;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
@@ -199,4 +199,12 @@ tooltip {
     66%  { color: @mauve; }
     83%  { color: @lavender; }
     100% { color: @blue; }
+}
+
+
+#disk,
+#power-profiles-daemon,
+#cpu,
+#memory {
+    margin: 0 5px;
 }

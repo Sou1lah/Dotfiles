@@ -1,0 +1,4 @@
+pane	Main	0	1	:*	0	PC-T3-Wael	:/home/wael	0	nvim	:nvim
+pane	Main	0	1	:*	1	PC-T3-Wael	:/home/wael	1	zsh	:
+window	Main	0	:zsh	1	:*	cee1,190x45,0,0{95x45,0,0,3,94x45,96,0,4}	off
+state	Main	
