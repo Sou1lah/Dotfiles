@@ -42,9 +42,9 @@
 	"modules": [
 		"temperature",		
 		"cpu",
-		"power-profiles-daemon",	
 		"memory",
 		"disk",
+		"power-profiles-daemon",	
 	]
 },
 "group/laptop": {

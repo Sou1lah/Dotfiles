@@ -1,0 +1,3 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+window	0	0	:nvim	1	:*	cedd,210x49,0,0,0	:
+state	0	

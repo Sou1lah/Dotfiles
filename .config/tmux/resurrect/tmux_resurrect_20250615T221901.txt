@@ -1,0 +1,4 @@
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	1	zsh	:
+window	Main	1	:zsh	1	:*	cee6,190x45,0,0{95x45,0,0,4,94x45,96,0,6}	:
+state	Main	

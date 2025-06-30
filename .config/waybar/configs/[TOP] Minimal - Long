@@ -13,7 +13,7 @@
 "mode": "dock",
 "exclusive": true,
 "passthrough": false,
-"position": "top",
+"position": "bottom",
 "spacing": 6,
 "fixed-center": true,
 "ipc": true,
@@ -22,17 +22,13 @@
 "margin-right": 8,
 
 "modules-left": [ 
-	"hyprland/workspaces#pacman",
-	"custom/separator#blank_1",
+	"hyprland/workspaces#workspaces",
+	"custom/separator#line",
 	"mpris",
+	"custom/media",
 	],
 "modules-center": [
-	"group/app_drawer",
-	"custom/separator#blank_1",
-	"clock",
-	"idle_inhibitor",
-	"group/notify",
-
+	"hyprland/window"
 	],
 "modules-right": [
 	"group/mobo_drawer",
@@ -43,12 +39,15 @@
 	"custom/separator#line",
 	"group/laptop",
 	"custom/separator#line",
+	"clock",
+	"group/notify",
+	"custom/separator#line",
 	"custom/power",
-	"custom/separator#line"
+	"custom/separator#blank2"
 	],
 
 "custom/separator": {
-    "format": "|",
+    "format": "-",
     "tooltip": false
 }
 }
