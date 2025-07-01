@@ -1,0 +1,23 @@
+pane	Main	0	1	:*	0	PC-T3-Wael	:/home/wael/.local/share/applications	1	nano	:nano Skullgirls.desktop
+pane	Main	0	1	:*	1	:/home/wael/Games/Skullgirls	0	zsh	29482	:swww-daemon --format xrgb
+/usr/libexec/hyprpolkitagent
+nm-applet --indicator
+/usr/bin/python3 -sPE /usr/bin/blueman-applet
+wl-paste --type text --watch cliphist store
+wl-paste --type image --watch cliphist store
+hypridle
+/usr/bin/python3 -sPE /usr/bin/blueman-tray
+/usr/bin/sh /usr/bin/xdg-open https://
+/usr/bin/bwrap --args 46 -- /usr/bin/xdg-dbus-proxy --args=45
+kitty
+/usr/bin/kitten __atexit__
+tmux new-session -s Main
+/bin/bash /home/wael/.config/hypr/scripts/Refresh.sh
+waybar
+swaync
+pane	Main	1	0	:-	0	PC-T3-Wael	:/home/wael/.config/rofi	1	nvim	:nvim .
+pane	Main	1	0	:-	1	PC-T3-Wael	:/home/wael/.config/rofi	0	zsh	:
+pane	Main	1	0	:-	2	PC-T3-Wael	:/home/wael/.config/rofi	0	nvim	:nvim .
+window	Main	0	:nano	1	:*	4ed7,190x45,0,0{95x45,0,0,0,94x45,96,0,7}	:
+window	Main	1	:nvim	0	:-	796d,190x45,0,0{135x45,0,0[135x37,0,0,4,135x7,0,38,6],54x45,136,0,5}	:
+state	Main	

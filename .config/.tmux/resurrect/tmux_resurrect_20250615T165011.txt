@@ -1,0 +1,5 @@
+pane	Main	0	0	:-	0	:/home/wael	1	nvim	4642	:nvim
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+window	Main	0	:nvim	0	:-	c0bf,190x45,0,0,2	:
+window	Main	1	:nvim	1	:*	c0c5,190x45,0,0,8	:
+state	Main	

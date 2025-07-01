@@ -1,0 +1,20 @@
+pane	Main	0	0	:-	0	:/home/wael/coding/trees	1	nvim	4642	:swww-daemon --format xrgb
+/usr/libexec/hyprpolkitagent
+nm-applet --indicator
+swaync
+/usr/bin/gjs -m /usr/local/bin/ags
+/usr/bin/python3 -sPE /usr/bin/blueman-applet
+waybar
+wl-paste --type text --watch cliphist store
+wl-paste --type image --watch cliphist store
+hypridle
+/usr/bin/python3 -sPE /usr/bin/blueman-tray
+/usr/bin/sh /usr/bin/xdg-open https://
+/usr/bin/bwrap --args 46 -- /usr/bin/xdg-dbus-proxy --args=45
+kitty
+pane	Main	0	0	:-	1	PC-T3-Wael	:/home/wael/coding/trees	0	zsh	:
+pane	Main	0	0	:-	2	cava	:/home/wael	0	cava	:cava
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+window	Main	0	:nvim	0	:-	7d3a,94x47,0,0[94x40,0,0,2,94x6,0,41{53x6,0,41,4,40x6,54,41,5}]	:
+window	Main	1	:nvim	1	:*	bca5,94x45,0,0,8	:
+state	Main	

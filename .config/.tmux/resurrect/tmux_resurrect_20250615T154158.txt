@@ -1,0 +1,6 @@
+pane	Main	0	1	:*	0	:/home/wael	1	nvim	4642	:cava
+nvim
+pane	Main	0	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	Main	0	:nvim	1	:*	2ecd,190x45,0,0[190x35,0,0,2,190x9,0,36{111x9,0,36,4,78x9,112,36,5}]	:
+state	Main	

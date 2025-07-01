@@ -1,0 +1,13 @@
+pane	0	0	0	:-	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	0	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	1	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	3	1	1	:*	0	PC-T3-Wael	:/home/wael/.local/share/Trash/files/nvim3	1	zsh	:
+pane	5	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	6	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	0	0	:zsh	0	:-	cffd,103x49,0,0,0	:
+window	0	1	:zsh	1	:*	cffe,103x49,0,0,1	:
+window	1	1	:zsh	1	:*	cfff,103x49,0,0,2	:
+window	3	1	:zsh	1	:*	d000,103x49,0,0,3	:
+window	5	1	:zsh	1	:*	d001,103x49,0,0,4	:
+window	6	1	:zsh	1	:*	d002,103x49,0,0,5	:
+state	6	5
