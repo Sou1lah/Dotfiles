@@ -51,7 +51,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ## 🧠 Neovim Setup
 
 <details>
-<summary>▶ ⌨️ Neovim Custom Keybinds</summary>
+<summary>⌨️ Neovim Custom Keybinds</summary>
 
 ```text
 ╔═══════════════════════════════════════════════════╗
@@ -82,7 +82,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ```
 
 <details>
-<summary>▶ 🎥 Examples</summary>
+<summary>🎥 Examples</summary>
 
 ![Demo](assets/demo.gif)
 
