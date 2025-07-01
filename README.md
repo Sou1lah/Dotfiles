@@ -48,8 +48,8 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 
 
 
----
-### ⌨️ Neovim Custom Keybinds
+<details>
+<summary>▶ ⌨️ Neovim Custom Keybinds</summary>
 
 ```text
 ╔═══════════════════════════════════════════════════╗
@@ -78,7 +78,6 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ║ <C-r>           ║ Open Recent Files (Telescope)   ║
 ╚═════════════════╝═════════════════════════════════╝
 ```
-
 
 
 
