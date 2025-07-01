@@ -48,6 +48,8 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 
 
 
+## 🧠 Neovim Setup
+
 <details>
 <summary>▶ ⌨️ Neovim Custom Keybinds</summary>
 
@@ -79,26 +81,24 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ╚═════════════════╝═════════════════════════════════╝
 ```
 
+<details>
+<summary>▶ 🎥 Examples</summary>
 
+📽️ **Keybind Usage Demo**  
+[![Watch the demo](assets/preview.png)](assets/2025-07-01%2011-37-35.mkv)
 
+</details>
 
-
+</details>
 
 ---
 
-### 🧿 Hyprland Keybinds
+## 🧿 Hyprland Keybinds
 
 > 💡 Press **SUPER + h** to view all Hyprland keybindings in your system.
 
-
 ---
 
-### ⭐ Support
+## ⭐ Support
 
 If you find this setup helpful or inspiring, consider giving the repo a ⭐.
-
-
-
-
-You're looking for a collapsible section in `README.md` — like a clickable arrow that expands/hides content. Use HTML `<details>` and `<summary>` tags (they're supported on GitHub):
-
