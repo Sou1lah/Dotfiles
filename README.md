@@ -84,8 +84,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 <details>
 <summary>▶ 🎥 Examples</summary>
 
-📽️ **Keybind Usage Demo**  
-[![Watch the demo](assets/preview.png)](assets/2025-07-01%2011-37-35.mkv)
+![Demo](assets/demo.gif)
 
 </details>
 
