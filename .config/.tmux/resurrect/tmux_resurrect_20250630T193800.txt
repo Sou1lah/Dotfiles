@@ -1,0 +1,10 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael/.tmux	1	bash	:bash ./tmux-dashboard.sh
+pane	0	0	1	:*	1	PC-T3-Wael	:/home/wael/hyprland-dotfiles	0	zsh	:
+pane	3	0	1	:*	0	PC-T3-Wael	:/home/wael/hyprland-dotfiles	1	nvim	:nvim .
+pane	5	0	0	:-	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	5	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	0	0	:bash	1	:*	a023,103x49,0,0{52x49,0,0,0,50x49,53,0,1}	:
+window	3	0	:nvim	1	:*	d002,103x49,0,0,5	:
+window	5	0	:zsh	0	:-	6831,103x49,0,0,12	:
+window	5	1	:zsh	1	:*	6832,103x49,0,0,13	:
+state	5	

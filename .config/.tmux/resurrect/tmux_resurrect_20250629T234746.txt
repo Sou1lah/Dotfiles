@@ -1,0 +1,9 @@
+pane	0	0	1	:*	0	:/home/wael/.config/waybar	1	zsh	67188	:
+pane	0	1	0	:-	0	PC-T3-Wael	:/home/wael/Desktop	1	zsh	:
+pane	1	0	1	:*	0	PC-T3-Wael	:/home/wael/.config/waybar/waybar-mediaplayer/src	1	zsh	:
+pane	2	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	0	0	:zsh	1	:*	b3fd,103x23,0,0,0	:
+window	0	1	:zsh	0	:-	cfff,103x49,0,0,2	:
+window	1	0	:zsh	1	:*	d001,103x49,0,0,4	:
+window	2	0	:zsh	1	:*	d002,103x49,0,0,5	:
+state	2	

@@ -1,0 +1,5 @@
+pane	Main	0	1	:*	0	PC-T3-Wael	:/home/wael	0	nvim	:nvim
+pane	Main	0	1	:*	1	Gm=0;d47g5wT8HeZ23GLEiBEC9Yx/+zPNnTtX+gy5ubnSn1u1aOqj1xgSwkIjRsHm7Ybt+0oWqnyYiPr04FELdyxevlv2zsJNf+hnHdt/QEweP07UL8gXLVq0EE0QpzRp0kyUNWosShs0EMUlxaII+8kKi+qL9PR0ARsEPpwO3y8BT7dcOn/ff/+9+Pjjj8X/zy/Oy/jFu7h69eolEAdJuEB8JHqAm/EOdnXNnzdPTJk6VczF+4oVK0R1dY2+3OOy0bOwh2rPnr2isCDv91pfQkJsOOLYHD9Z0LgQpflcTkmnC2PeWmwZMXbOH/oZ/wu0+700	:/home/wael	1	zsh	:
+pane	Main	0	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	Main	0	:zsh	1	:*	bcd9,190x47,0,0{95x47,0,0,3,94x47,96,0[94x38,96,0,4,94x8,96,39,5]}	off
+state	Main	

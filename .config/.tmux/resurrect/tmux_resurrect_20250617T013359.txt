@@ -1,0 +1,8 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+nvim
+pane	1	0	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	1	0	1	:*	1	PC-T3-Wael	:/home/wael	0	python3	:/usr/bin/python3 /usr/local/bin/clocktemp
+pane	1	0	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	0	0	:nvim	1	:*	a29d,94x10,0,0,0	:
+window	1	0	:nvim	1	:*	ec43,190x45,0,0{95x45,0,0,1,94x45,96,0[94x23,96,0,2,94x21,96,24,3]}	:
+state	1	

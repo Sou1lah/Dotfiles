@@ -1,0 +1,5 @@
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael/.config/rofi	0	nvim	:nvim .
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael/.config/rofi	0	zsh	:
+pane	Main	1	1	:*	2	PC-T3-Wael	:/home/wael/.local/bin	1	nvim	:nvim .
+window	Main	1	:nvim	1	:*	1a54,190x45,0,0{104x45,0,0[104x37,0,0,4,104x7,0,38,6],85x45,105,0,5}	:
+state	Main	

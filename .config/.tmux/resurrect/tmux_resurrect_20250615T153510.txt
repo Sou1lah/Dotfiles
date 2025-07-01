@@ -1,0 +1,26 @@
+pane	Main	0	1	:*	0	:/home/wael/Documents/backup/home/wael/.var/app	1	zsh	4642	:swww-daemon --format xrgb
+/usr/libexec/hyprpolkitagent
+nm-applet --indicator
+swaync
+/usr/bin/gjs -m /usr/local/bin/ags
+/usr/bin/python3 -sPE /usr/bin/blueman-applet
+waybar
+wl-paste --type text --watch cliphist store
+wl-paste --type image --watch cliphist store
+hypridle
+/usr/bin/python3 -sPE /usr/bin/blueman-tray
+/usr/bin/sh /usr/bin/xdg-open https://
+/usr/bin/bwrap --args 46 -- /usr/bin/xdg-dbus-proxy --args=45
+kitty
+/usr/bin/bwrap --args 41 -- /usr/bin/xdg-dbus-proxy --args=43
+/usr/bin/bwrap --args 41 -- spotify
+thunar
+/bin/bash /home/wael/.config/hypr/scripts/Kool_Quick_Settings.sh
+pane	Main	0	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	2	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	3	cava	:/home/wael	0	cava	:cava
+pane	Main	2	0	:-	0	cava	:/home/wael	0	nvim	:nvim
+pane	Main	2	0	:-	1	PC-T3-Wael	:/home/wael	1	zsh	:
+window	Main	0	:zsh	1	:*	f938,190x45,0,0[190x40,0,0{119x40,0,0,2,70x40,120,0,3},190x4,0,41{111x4,0,41,4,78x4,112,41,5}]	:
+window	Main	2	:zsh	0	:-	25bf,190x45,0,0{133x45,0,0,6,56x45,134,0,7}	:
+state	Main	

@@ -1,0 +1,6 @@
+pane	2	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	2	1	:*	0	cava	:/home/wael	1	nvim	:nvim
+pane	Main	2	1	:*	1	PC-T3-Wael	:/home/wael/Dotfiles	0	zsh	:
+window	2	0	:zsh	1	:*	c0c0,190x45,0,0,3	:
+window	Main	2	:nvim	1	:*	a5b2,190x45,0,0{133x45,0,0,1,56x45,134,0,2}	:
+state	Main	2
