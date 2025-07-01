@@ -82,7 +82,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ```
 
 <details>
-<summary>🎥 Examples</summary>
+<summary>🎥 themes</summary>
 
 ![Demo](assets/demo.gif)
 
