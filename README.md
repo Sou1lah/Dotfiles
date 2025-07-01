@@ -103,36 +103,3 @@ If you find this setup helpful or inspiring, consider giving the repo a ⭐.
 
 You're looking for a collapsible section in `README.md` — like a clickable arrow that expands/hides content. Use HTML `<details>` and `<summary>` tags (they're supported on GitHub):
 
-# My Neovim Config
-
-<details>
-<summary>▶ Keybinds</summary>
-
-| Keybind         | Action                          |
-|----------------|----------------------------------|
-| `<C-l>`         | Vertical split (65% width)       |
-| `<C-h>`         | Horizontal terminal split (30%)  |
-| `<C-k>`         | Close current window             |
-| `<C-x>`         | Cut line                         |
-| `<C-c>`         | Copy line (normal/visual)        |
-| `<C-v>`         | Paste (normal/insert/visual)     |
-| `<C-a>`         | Select all                       |
-| `<C-z>`         | Undo                             |
-| `<C-y>`         | Redo                             |
-| `<C-o>`         | Save                             |
-| `x`             | Save and quit                    |
-| `<C-q>`         | Quit                             |
-| `<C-M-d>`       | Add bookmark                     |
-| `<leader><CR>`  | Insert new line below (normal/visual) |
-
-</details>
-
----
-
-<details>
-<summary>▶ Examples</summary>
-
-### Add a Bookmark
-
-```lua
-[![Watch the demo](https://img.youtube.com/vi/abc123XYZ/0.jpg)](https://www.youtube.com/watch?v=abc123XYZ)
