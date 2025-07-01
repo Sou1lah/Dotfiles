@@ -1,4 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
 // ### Minimal - Long ### //
 {
@@ -26,6 +25,8 @@
 	"custom/separator#line",
 	"mpris",
 	"custom/media",
+	"custom/gh_heatmap",
+	
 	],
 "modules-center": [
 	"hyprland/window"
@@ -37,6 +38,7 @@
 	"custom/separator#line",
 	"tray",
 	"custom/separator#line",
+	"custom/hypridle",
 	"group/laptop",
 	"custom/separator#line",
 	"clock",

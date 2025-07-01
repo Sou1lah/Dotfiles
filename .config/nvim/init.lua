@@ -136,6 +136,13 @@ require("lazy").setup({
       vim.keymap.set("n", "<C-r>", "<cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
     end,
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").load_extension("file_browser")
+    end,
+  },
 
 --------------------------------------------------------------------------------
 --                                DASHBOARD                                  --
@@ -203,11 +210,12 @@ require("lazy").setup({
           },
           center = {
             { icon = "  ", desc = "New File ", action = "enew", shortcut = "Ctrl+t" },
+            { icon = "  ", desc = "Open Folder", action = "lua open_folder()", shortcut = "Ctrl+Alt+K+O" },
             { icon = "  ", desc = "Find File ", action = "Telescope find_files", shortcut = "Ctrl+p" },
             { icon = "  ", desc = "Find Word ", action = "Telescope live_grep", shortcut = "Ctrl+j" },
+            { icon = "  ", desc = "Bookmarks ", action = "lua open_bookmark()", shortcut = "Ctrl+Alt+d" },
             { icon = "  ", desc = "Recent Files", action = "Telescope oldfiles", shortcut = "Ctrl+r" },
-            { icon = "  ", desc = "Recent Projects", action = "Telescope projects", shortcut = "SPC p" },
-            { icon = "  ", desc = "Last Session", action = "SessionManager load_last_session", shortcut = "*" },
+            { icon = "  ", desc = "Recent Projects", action = "lua open_recent_project()", shortcut = "SPC p" },
             { icon = "  ", desc = "Keybind Cheatsheet ", action = "lua show_keybinds()", shortcut = "SPC h" },
             { icon = "  ", desc = "Theme Selector ", action = "lua theme_selector_popup()", shortcut = "SPC t" },
             { icon = "  ", desc = "Config ", action = "edit ~/.config/nvim/init.lua", shortcut = "SPC c" },
@@ -350,7 +358,7 @@ require("lazy").setup({
       require("dressing").setup({})
     end,
   },
-  { "folke/which-key.nvim" },
+ -- { "folke/which-key.nvim" },
   { "numToStr/Comment.nvim" },
   { "lewis6991/gitsigns.nvim" },
   {
@@ -375,43 +383,42 @@ require("lazy").setup({
   { "folke/trouble.nvim" },
 })
 
---------------------------------------------------------------------------------
---                                 KEYBINDS                                 --
---------------------------------------------------------------------------------
+-- ─────────────────────────────────────────────────────────────────────────────
+--                                  KEYBINDS
+-- ─────────────────────────────────────────────────────────────────────────────
+
+-- Block all keymaps if needed
+-- vim.keymap.set = function() end
 
 -- Window Management
-vim.keymap.set('n', '<C-l>', function()
-  vim.cmd('vsplit')
-  local width = math.floor(vim.o.columns * 0.65)
-  vim.cmd(string.format('vertical resize %d', width))
+vim.keymap.set("n", "<C-l>", function()
+  vim.cmd("vsplit")
+  vim.cmd(string.format("vertical resize %d", math.floor(vim.o.columns * 0.65)))
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<C-h>', function()
-  vim.cmd('botright split | terminal')
-  local height = math.floor(vim.o.lines * 0.3)
-  vim.cmd(string.format('resize %d', height))
+vim.keymap.set("n", "<C-h>", function()
+  vim.cmd("botright split | terminal")
+  vim.cmd(string.format("resize %d", math.floor(vim.o.lines * 0.3)))
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<C-k>', ':close<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", ":close<CR>", { noremap = true, silent = true })
 
--- Set the colorscheme
+-- Set colorscheme from last saved theme
 local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
 local f = io.open(theme_file, "r")
 if f then
   local theme = f:read("*l")
-  if theme and #theme > 0 then
-    vim.cmd("colorscheme " .. theme)
-  end
+  if theme and #theme > 0 then vim.cmd("colorscheme " .. theme) end
   f:close()
 else
-  vim.cmd("colorscheme tokyonight") -- fallback default
+  vim.cmd("colorscheme tokyonight")
 end
 
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Clipboard for Wayland
+-- Wayland clipboard
 vim.g.clipboard = {
   name = "wl-clipboard",
   copy = { ["+"] = "wl-copy", ["*"] = "wl-copy" },
@@ -419,7 +426,7 @@ vim.g.clipboard = {
   cache_enabled = true,
 }
 
--- Key Mappings for cut, copy, paste, undo, redo, file operations, select all, move lines
+-- Keymaps: Cut/Copy/Paste/Undo/Redo/Write/Quit/Select All/Move Lines
 vim.keymap.set("n", "<C-x>", '"+dd', { noremap = true, silent = true })
 vim.keymap.set("v", "<C-x>", '"+d', { noremap = true, silent = true })
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
@@ -433,23 +440,208 @@ vim.keymap.set("n", "<C-o>", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "x", ":wq<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", ":q!<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-w>', ':bd!<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-w>", ":bd!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-M-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-M-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
+-- Misc
 vim.keymap.set("n", "<C-d>", ":Dashboard<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Left>', '<C-w>W', { noremap = true, silent = true })
-vim.keymap.set("n", "<C-r>", "<cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-t>", ":enew<CR>", { noremap = true, silent = true, desc = "New File" })
+vim.keymap.set("n", "<C-Left>", "<C-w>W", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-r>", function() _G.open_recent_project() end, { noremap = true, silent = true, desc = "Open Recent Project" })
+vim.keymap.set("n", "<C-R>", "<cmd>Telescope oldfiles<CR>", { noremap = true, silent = true, desc = "Recent Files" })vim.keymap.set("n", "<C-t>", ":enew<CR>", { noremap = true, silent = true, desc = "New File" })
+vim.keymap.set("n", "<leader><CR>", "o<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-j>", function()
   require("telescope.builtin").live_grep({ search_dirs = { vim.fn.expand("%:p:h") } })
 end, { noremap = true, silent = true, desc = "Find Word (Current Dir)" })
 vim.keymap.set("n", "*", "<cmd>SessionManager load_last_session<CR>", { noremap = true, silent = true, desc = "Last Session" })
 
--- Set Space as leader key
+-- Leader Key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- Disable default Space behavior
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+-- Bookmark system
+local bookmark_file = vim.fn.stdpath("config") .. "/bookmarks.txt"
+
+vim.keymap.set("n", "<C-M-k><C-M-o>", function() _G.open_folder() end, { noremap = true, silent = true, desc = "Open Folder" })
+
+function _G.add_bookmark()
+  local file = vim.fn.expand("%:p")
+  if file == "" then return vim.notify("No file to bookmark!", vim.log.levels.WARN) end
+
+  local lines = {}
+  local f = io.open(bookmark_file, "r")
+  if f then for line in f:lines() do lines[line] = true end f:close() end
+
+  if not lines[file] then
+    local f = io.open(bookmark_file, "a")
+    if f then f:write(file .. "\n") f:close() vim.notify("Bookmarked: " .. file) end
+  else
+    vim.notify("Already bookmarked: " .. file)
+  end
+end
+
+function _G.get_bookmarks()
+  local bookmarks = {}
+  local f = io.open(bookmark_file, "r")
+  if f then for line in f:lines() do if #line > 0 then table.insert(bookmarks, line) end end f:close() end
+  return bookmarks
+end
+
+function _G.open_bookmark()
+  local bookmarks = _G.get_bookmarks()
+  if #bookmarks == 0 then return vim.notify("No bookmarks yet!", vim.log.levels.INFO) end
+  vim.ui.select(bookmarks, { prompt = "Open bookmark:" }, function(choice)
+    if choice then vim.cmd("edit " .. vim.fn.fnameescape(choice)) end
+  end)
+end
+
+vim.keymap.set("n", "<C-M-d>", function() _G.add_bookmark() end, { noremap = true, silent = true, desc = "Add Bookmark" })
+
+-- ⬇️ Save a folder to recent_projects.txt (ignoring trash, putting on top)
+function _G.save_recent_project(dir)
+  local ignore = {
+    "/Pictures", "/Videos", "/Music", "/Documents",
+    "/.cache", "/.local"
+  }
+
+  for _, bad in ipairs(ignore) do
+    if dir:find(bad, 1, true) then return end
+  end
+
+  local file = vim.fn.stdpath("config") .. "/recent_projects.txt"
+  local abs_path = vim.fn.fnamemodify(dir, ":p")
+  local lines = {}
+  local seen = {}
+
+  -- Read existing paths (excluding current one)
+  local f = io.open(file, "r")
+  if f then
+    for line in f:lines() do
+      if line ~= abs_path and not seen[line] then
+        table.insert(lines, line)
+        seen[line] = true
+      end
+    end
+    f:close()
+  end
+
+  -- Always insert new one at top
+  table.insert(lines, 1, abs_path)
+
+  -- Write to file (up to 15 entries)
+  local wf = io.open(file, "w")
+  if wf then
+    for i = 1, math.min(#lines, 15) do
+      wf:write(lines[i] .. "\n")
+    end
+    wf:close()
+  else
+    vim.notify("❌ Failed to write recent project", vim.log.levels.ERROR)
+  end
+end
+
+-- ⬇️ Telescope picker for opening folders and saving them
+function _G.open_folder()
+  local ok, telescope = pcall(require, "telescope")
+  if ok and telescope.extensions and telescope.extensions.file_browser then
+    telescope.extensions.file_browser.file_browser({
+      prompt_title = "Select Folder",
+      cwd = vim.loop.os_homedir(),
+      hidden = true,
+      respect_gitignore = false,
+      select_buffer = true,
+      attach_mappings = function(_, map)
+        local actions = require("telescope.actions")
+        local action_state = require("telescope.actions.state")
+        local function select_dir(prompt_bufnr)
+          local entry = action_state.get_selected_entry()
+          local dir = entry and (entry.path or entry[1])
+          if dir and vim.fn.isdirectory(dir) == 1 then
+            actions.close(prompt_bufnr)
+            local abs_path = vim.fn.fnamemodify(dir, ":p")
+            vim.cmd("cd " .. vim.fn.fnameescape(abs_path))
+            vim.cmd("Dashboard")
+            require("nvim-tree.api").tree.change_root(vim.loop.cwd())
+            _G.save_recent_project(abs_path)
+          end
+        end
+        map("i", "<C-y>", select_dir)
+        map("n", "<C-y>", select_dir)
+        return true
+      end,
+    })
+    return
+  end
+
+  -- Fallback input
+  vim.ui.input({ prompt = "Enter folder path: " }, function(input)
+    if input and #input > 0 and vim.fn.isdirectory(input) == 1 then
+      local abs_path = vim.fn.fnamemodify(input, ":p")
+      vim.cmd("cd " .. vim.fn.fnameescape(abs_path))
+      vim.cmd("Dashboard")
+      _G.save_recent_project(abs_path)
+    end
+  end)
+end
+
+-- ⬇️ Show recent projects using vim.ui.select
+function _G.open_recent_project()
+  local file = vim.fn.stdpath("config") .. "/recent_projects.txt"
+  local projects = {}
+  local f = io.open(file, "r")
+  if f then
+    for line in f:lines() do
+      if vim.fn.isdirectory(line) == 1 then
+        table.insert(projects, line)
+      end
+    end
+    f:close()
+  end
+  if #projects == 0 then
+    vim.notify("🚫 No recent projects found", vim.log.levels.INFO)
+    return
+  end
+  vim.ui.select(projects, { prompt = "🗂 Open Recent Project:" }, function(choice)
+    if choice then
+      vim.cmd("cd " .. vim.fn.fnameescape(choice))
+      vim.cmd("Dashboard")
+      require("nvim-tree.api").tree.change_root(vim.loop.cwd())
+      vim.notify("📂 Opened project:\n" .. choice, vim.log.levels.INFO)
+      _G.save_recent_project(choice) -- will only move to top if not already there, no extra notification
+    end
+  end)
+end
+
+-- ⬇️ Keybinding to open recent projects
+vim.keymap.set("n", "<C-M-p>", function()
+  _G.open_recent_project()
+end, { noremap = true, silent = true, desc = "Open Recent Project" })
+
+-- ⬇️ Auto-open dashboard on startup (no files opened)
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argc() == 0 then
+      for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(bufnr) and vim.bo[bufnr].buflisted then
+          vim.api.nvim_buf_delete(bufnr, { force = true })
+        end
+      end
+      vim.cmd("Dashboard")
+    end
+  end,
+})
+
+-- ⬇️ Auto-save folder opened from CLI as project
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argc() == 1 then
+      local arg = vim.fn.argv(0)
+      local stat = vim.loop.fs_stat(arg)
+      if stat and stat.type == "directory" then
+        _G.save_recent_project(arg)
+      end
+    end
+  end,
+})

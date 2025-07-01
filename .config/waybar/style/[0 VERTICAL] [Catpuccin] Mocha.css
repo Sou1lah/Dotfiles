@@ -208,3 +208,10 @@ tooltip {
 #memory {
     margin: 0 5px;
 }
+#custom-gh_heatmap {
+  color: #39d353;
+  background: #3b394c;
+  border-radius: 50px;
+  padding: 0 5px;
+  font-family: monospace;
+}

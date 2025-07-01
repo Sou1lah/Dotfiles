@@ -1,0 +1,15 @@
+/home/wael/.config/waybar/
+/home/wael/.minecraft/
+/home/wael/.spicetify/
+/home/wael/Ax-Shell/
+/home/wael/.tmux/
+/home/wael/.npm/
+/home/wael/.config/Kvantum/
+/home/wael/.mozilla/
+/home/wael/weekly-github-waybar-module/
+/home/wael/.config/ags/
+/home/wael/.config/gtk-4.0/
+/home/wael/.config/BetterDiscord/
+/home/wael/.icons/
+/home/wael/.config/htop/
+/home/wael/.config/eww/

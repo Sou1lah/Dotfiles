@@ -71,14 +71,15 @@
 
 // Hypridle inhibitor
 "custom/hypridle": {
-	"format": "󱫗 ",
+	"format": "󰒳",
 	"return-type": "json",
 	"escape": true,
 	"exec-on-event": true,
 	"interval": 60,
 	"exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
 	"on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
-	"on-click-right": "hyprlock"
+	"on-click-right": "hyprlock",
+	"icon-size": 10
 },
 
 "custom/keyboard": {
@@ -286,5 +287,13 @@
     "tooltip": true,
     "on-click": "kitty -e btop",
     "interval": 1
+},
+"custom/gh_heatmap": {
+  "exec": "~/.config/weekly-github-waybar-module/weekly_commits DARK",
+  "return-type": "json",
+  "interval": 2400,
+  "tooltip": true,
+  "on-click": "xdg-open https://github.com/ad1822",
+  "on-click-right": "~/.config/waybar/scripts/weekly_commits DARK/LIGHT"
 }
 }

@@ -1,6 +1,3 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* .......Mauve....................... */
-/* --- 👍 designed by https://github.com/CelestiaKai  👍 --- */
 
 * {
 	font-family: "JetBrainsMono Nerd Font";
@@ -14,6 +11,7 @@
 window#waybar {
 	background: #11111b;
 	color: #cba6f7;
+	border-radius: 10px;
 }
 
 window#waybar.hidden {
@@ -22,7 +20,7 @@ window#waybar.hidden {
 
 tooltip {
 	background: #1e1e2e;
-	border-radius: 10px;
+	border-radius: 16px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #11111b;
@@ -180,6 +178,7 @@ tooltip {
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
 	color: #39FF14;
+	font-size: 16px;
 }
 
 #battery.critical:not(.charging) {
@@ -214,4 +213,25 @@ tooltip {
 	min-height: 10px;
 	border-radius: 5px;
 	background-color: purple;
+}
+
+/* Apply to your GitHub heatmap module */
+#custom-gh_heatmap {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+}
+
+/* Optional: style by class from the script */
+.github-contributions {
+  color: #39d353;
+}
+
+
+#backlight,
+#battery {
+  margin: 0;
+  padding: 0 4px; /* adjust padding if needed */
 }
