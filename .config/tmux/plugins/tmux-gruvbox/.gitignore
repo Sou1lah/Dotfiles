@@ -1,0 +1,13 @@
+# IntelliJ
+.idea/
+
+# vim/nvim
+*.swp
+*.swo
+*~
+
+# local workdir
+uncommited/
+
+# macOS
+**/.DS_Store

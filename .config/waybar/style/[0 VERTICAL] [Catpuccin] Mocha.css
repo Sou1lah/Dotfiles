@@ -1,0 +1,217 @@
+/* ---- Catppuccin Mocha Theme ---- */
+/* Palette: https://github.com/catppuccin/catppuccin#-palette */
+@define-color rosewater #f5e0dc;
+@define-color flamingo  #f2cdcd;
+@define-color pink      #f5c2e7;
+@define-color mauve     #cba6f7;
+@define-color red       #f38ba8;
+@define-color maroon    #eba0ac;
+@define-color peach     #fab387;
+@define-color yellow    #f9e2af;
+@define-color green     #a6e3a1;
+@define-color teal      #94e2d5;
+@define-color sky       #89dceb;
+@define-color sapphire  #74c7ec;
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color text      #cdd6f4;
+@define-color subtext1  #bac2de;
+@define-color subtext0  #a6adc8;
+@define-color overlay2  #9399b2;
+@define-color overlay1  #7f849c;
+@define-color overlay0  #6c7086;
+@define-color surface2  #585b70;
+@define-color surface1  #45475a;
+@define-color surface0  #313244;
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+
+@define-color critical @red;
+@define-color warning @yellow;
+@define-color fgcolor @text;
+@define-color bgcolor @base;
+@define-color alert   @maroon;
+
+@define-color accent1 @blue;
+@define-color accent2 @teal;
+@define-color accent3 @sky;
+@define-color accent4 @mauve;
+@define-color accent5 @lavender;
+@define-color accent6 @green;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 100%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.85); /* @base, more opaque */
+    color: @text;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+tooltip {
+    background: @mantle;
+    opacity: 0.95;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @crust;
+}
+
+#taskbar button,
+#workspaces button {
+    color: @accent5;
+    background-color: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 4px;
+    border-radius: 9px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: @accent2;
+    background-color: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: @accent3;
+    background: rgba(49, 50, 68, 0.2); /* @surface0 */
+    padding-left: 2px;
+    padding-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.focused {
+    background-color: @accent5;
+    color: @crust;
+}
+
+#workspaces button.urgent {
+    background-color: @accent2;
+    color: @crust;
+}
+
+#mode {
+    background-color: @surface2;
+    border-bottom: 3px solid @text;
+}
+
+#clock { color: @accent6; }
+#custom-updater { color: @accent4; }
+#battery { color: @accent5; }
+#battery.critical:not(.charging) {
+    color: @critical;
+    animation-name: blink;
+    animation-duration: 3.0s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes blink {
+    to {
+        background-color: @text;
+        color: @base;
+    }
+}
+
+#custom-keyboard, #cpu { color: @accent1; }
+#memory { color: @accent3; }
+#backlight { color: @accent6; }
+#bluetooth { color: @accent5; }
+#network { color: @accent3; }
+#network.disconnected { color: @blue; }
+#pulseaudio, #wireplumber { color: @accent4; }
+#custom-power { color: @accent5; }
+#disk { color: @accent5; }
+#custom-power_profile { color: @accent3; }
+#custom-media {
+    background-color: @green;
+    color: @base;
+    min-width: 100px;
+}
+#custom-weather { color: @accent6; }
+#custom-lock { color: @accent1; }
+#keyboard-state, #temperature { color: @accent2; }
+#temperature.critical {
+    background-color: @accent5;
+    color: @crust;
+}
+#custom-hypridle, #idle_inhibitor { color: @yellow; }
+#custom-hypridle.notactive, #idle_inhibitor.activated { color: @green; }
+#mpd { color: @base; }
+#mpd.disconnected { background-color: @red; }
+#mpd.stopped { background-color: @surface2; }
+#mpd.paused { background-color: @green; }
+#custom-language { color: @accent5; min-width: 16px; }
+#custom-separator { color: @overlay1; }
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 5px;
+    border-radius: 5px;
+}
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 5px;
+}
+
+#custom-cava_mviz {
+    animation: rainbow-cava 1.2s linear infinite;
+    border: none;
+    background: none;
+}
+@keyframes rainbow-cava {
+    0%   { color: @blue; }
+    16%  { color: @teal; }
+    33%  { color: @green; }
+    50%  { color: @sky; }
+    66%  { color: @mauve; }
+    83%  { color: @lavender; }
+    100% { color: @blue; }
+}
+
+
+#disk,
+#power-profiles-daemon,
+#cpu,
+#memory {
+    margin: 0 5px;
+}
+#custom-gh_heatmap {
+  color: #39d353;
+  background: #3b394c;
+  border-radius: 50px;
+  padding: 0 5px;
+  font-family: monospace;
+}

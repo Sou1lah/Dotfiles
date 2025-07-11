@@ -1,0 +1,3 @@
+pane	Main	2	1	:*	0	cava	:/home/wael	1	zsh	:
+window	Main	2	:zsh	1	:*	c0be,190x45,0,0,1	:
+state	Main	

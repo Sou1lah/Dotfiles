@@ -1,0 +1,3 @@
+pane	Main	2	1	:*	0	cava	:/home/wael	1	cava	:cava
+window	Main	2	:cava	1	:*	c0c2,190x45,0,0,5	:
+state	Main	

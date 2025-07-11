@@ -1,0 +1,55 @@
+
+// ### Minimal - Long ### //
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "bottom",
+"spacing": 6,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [ 
+	"hyprland/workspaces#workspaces",
+	"custom/separator#line",
+	"mpris",
+	"custom/media",
+	"custom/gh_heatmap",
+	
+	],
+"modules-center": [
+	"hyprland/window"
+	],
+"modules-right": [
+	"group/mobo_drawer",
+	"custom/separator#line",
+	"group/audio",
+	"custom/separator#line",
+	"tray",
+	"custom/separator#line",
+	"custom/hypridle",
+	"group/laptop",
+	"custom/separator#line",
+	"clock",
+	"group/notify",
+	"custom/separator#line",
+	"custom/power",
+	"custom/separator#blank2"
+	],
+
+"custom/separator": {
+    "format": "-",
+    "tooltip": false
+}
+}

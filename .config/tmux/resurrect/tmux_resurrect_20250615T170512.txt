@@ -1,0 +1,24 @@
+pane	Main	0	0	:-	0	:/home/wael/coding/trees	1	nvim	4642	:swww-daemon --format xrgb
+/usr/libexec/hyprpolkitagent
+nm-applet --indicator
+/usr/bin/python3 -sPE /usr/bin/blueman-applet
+wl-paste --type text --watch cliphist store
+wl-paste --type image --watch cliphist store
+hypridle
+/usr/bin/python3 -sPE /usr/bin/blueman-tray
+/usr/bin/sh /usr/bin/xdg-open https://
+/usr/bin/bwrap --args 46 -- /usr/bin/xdg-dbus-proxy --args=45
+kitty
+/bin/bash /home/wael/.config/hypr/scripts/Refresh.sh
+/usr/bin/gjs -m /usr/local/bin/ags
+waybar
+swaync-client -swb
+swaync
+/usr/bin/python3 /usr/local/bin/clocktemp
+cava
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael/ClockTemp/script	1	zsh	:
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	0	python3	:/usr/bin/python3 /usr/local/bin/clocktemp
+pane	Main	1	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	Main	0	:nvim	0	:-	c0bf,190x45,0,0,2	:
+window	Main	1	:zsh	1	:*	1e95,190x45,0,0{113x45,0,0,8,76x45,114,0[76x23,114,0,9,76x21,114,24,10]}	:
+state	Main	

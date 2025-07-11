@@ -1,0 +1,4 @@
+/home/wael/.tmux.conf
+/home/wael/Ranger keybind
+/home/wael/.config/nvim/init.lua
+/home/wael/.config/weekly-github-waybar-module/weekly_commits

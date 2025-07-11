@@ -1,0 +1,7 @@
+pane	2	0	1	:*	0	PC-T3-Wael	:/home/wael/Games/vintagestory	1	nano	:nano /home/wael/.local/share/applications/vintagestory-launch.desktop
+pane	3	0	1	:*	0	PC-T3-Wael	:/home/wael/Games/The\ Binding of Isaac Afterbirth	1	zsh	:
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	2	0	:nano	1	:*	a8a3,94x21,0,0,6	:
+window	3	0	:zsh	1	:*	c0c5,190x45,0,0,8	:
+window	Main	1	:zsh	1	:*	c0bf,190x45,0,0,2	:
+state	3	

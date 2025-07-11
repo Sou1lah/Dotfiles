@@ -1,0 +1,5 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael	1	btop	:btop
+pane	1	0	1	:*	0	PC-T3-Wael	:/home/wael/HyprPanel	1	zsh	:
+window	0	0	:btop	1	:*	cede,210x49,0,0,1	:
+window	1	0	:zsh	1	:*	d07f,104x49,0,0,2	:
+state	1	

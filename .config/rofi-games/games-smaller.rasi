@@ -1,0 +1,26 @@
+@import "games-default"
+
+window {
+    fullscreen:                     false;
+    border-radius:                  10px;
+    height:                         50%;
+    width:                          50%;
+}
+
+listview {
+    columns:                        5;
+    padding:                        30px;
+}
+
+prompt {
+    enabled:                        false;
+}
+
+inputbar {
+    margin:                         20px 0px 10px 0px;
+}
+
+element-icon {
+    padding:                        0px 10px;
+    size:                           12%;
+}

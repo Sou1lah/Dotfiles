@@ -1,0 +1,4 @@
+pane	Main	1	1	:*	0	:/home/wael/Downloads	0	zsh	419410	:
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	1	bash	:
+window	Main	1	:bash	1	:*	cc85,103x49,0,0[103x24,0,0,2,103x24,0,25,16]	:
+state	Main	

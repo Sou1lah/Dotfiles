@@ -1,0 +1,27 @@
+* { background-image: none; }
+window { background-color: rgba(46, 52, 64, 0.92); }
+
+button {
+    border-radius: 5px;
+    margin: 5px;
+    color: #d8dee9;
+    background-color: #4c566a;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    outline-style: none;
+    border: 1px solid #5e81ac;
+}
+
+button:focus { background-color: #434c5e; }
+button:active { background-color: #434c5e; }
+button:hover { background-color: #5e81ac; }
+
+/* Icons */
+
+#lock      { background-image: image(url("icons/lock.png")); }
+#logout    { background-image: image(url("icons/logout.png")); }
+#suspend   { background-image: image(url("icons/suspend.png")); }
+#hibernate { background-image: image(url("icons/hibernate.png")); }
+#shutdown  { background-image: image(url("icons/shutdown.png")); }
+#reboot    { background-image: image(url("icons/reboot.png")); }

@@ -1,0 +1,7 @@
+pane	2	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	0	1	:*	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	Main	0	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	2	0	:zsh	1	:*	c0c6,190x45,0,0,9	:
+window	Main	0	:NVIM	1	:*	bbd4,190x45,0,0[190x37,0,0,1,190x7,0,38{95x7,0,38,3,94x7,96,38,8}]	off
+state	Main	2

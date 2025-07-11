@@ -1,0 +1,5 @@
+pane	3	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	7	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+window	3	0	:zsh	1	:*	b721,209x23,0,0,4	:
+window	7	0	:[tmux]	1	:*	b71e,209x23,0,0,1	:
+state	3	

@@ -1,0 +1,5 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael	1	bash	:bash /usr/local/bin/pipes.sh
+pane	0	0	1	:*	1	PC-T3-Wael	:/home/wael	0	python3	:/usr/bin/python3 /usr/local/bin/clocktemp
+pane	0	0	1	:*	2	cava	:/home/wael	0	cava	:cava
+window	0	0	:bash	1	:*	9516,94x45,0,0[94x12,0,0,0,94x21,0,13,1,94x10,0,35,3]	:
+state	0	

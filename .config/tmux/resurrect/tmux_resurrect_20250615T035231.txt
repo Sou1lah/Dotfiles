@@ -1,0 +1,9 @@
+pane	Main	0	0	:-	0	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	Main	0	0	:-	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	0	:-	2	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	0	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	1	1	:*	2	PC-T3-Wael	:/home/wael	0	zsh	:
+window	Main	0	:NVIM	0	:-	5c95,190x45,0,0[190x42,0,0{145x42,0,0,1,44x42,146,0,15},190x2,0,43,14]	off
+window	Main	1	:Main	1	:*	b859,190x45,0,0{95x45,0,0,13,94x45,96,0[94x22,96,0,16,94x22,96,23,17]}	off
+state	Main	

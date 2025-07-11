@@ -1,0 +1,11 @@
+pane	0	1	1	:*	1	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	1	1	1	:*	1	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	3	1	1	:*	1	PC-T3-Wael	:/home/wael/.local/share/Trash/files/nvim3	1	zsh	:
+pane	5	1	1	:*	1	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+pane	6	1	1	:*	1	PC-T3-Wael	:/home/wael	1	nvim	:nvim
+window	0	1	:nvim	1	:*	d31e,209x49,0,0,1	:
+window	1	1	:nvim	1	:*	d31f,209x49,0,0,2	:
+window	3	1	:zsh	1	:*	682f,103x49,0,0,10	:
+window	5	1	:nvim	1	:*	6833,103x49,0,0,14	:
+window	6	1	:nvim	1	:*	6834,103x49,0,0,15	:
+state	6	

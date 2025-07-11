@@ -1,0 +1,5 @@
+pane	Main	0	1	:*	0	PC-T3-Wael	:/home/wael/.tmux	1	bash	:bash ./tmux-dashboard.sh
+pane	Main	1	0	:-	0	:/home/wael/hyprland-dotfiles	1	zsh	419410	:
+window	Main	0	:bash	1	:*	6833,103x49,0,0,33	:
+window	Main	1	:nvim	0	:-	cfff,103x49,0,0,2	off
+state	Main	

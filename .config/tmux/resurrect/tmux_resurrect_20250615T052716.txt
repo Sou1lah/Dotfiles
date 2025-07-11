@@ -1,0 +1,11 @@
+pane	2	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	0	0	:-	0	PC-T3-Wael	:/home/wael/Pictures/Screenshots	1	zsh	:
+pane	Main	0	0	:-	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	0	Gm=0;d47g5wT8HeZ23GLEiBEC9Yx/+zPNnTtX+gy5ubnSn1u1aOqj1xgSwkIjRsHm7Ybt+0oWqnyYiPr04FELdyxevlv2zsJNf+hnHdt/QEweP07UL8gXLVq0EE0QpzRp0kyUNWosShs0EMUlxaII+8kKi+qL9PR0ARsEPpwO3y8BT7dcOn/ff/+9+Pjjj8X/zy/Oy/jFu7h69eolEAdJuEB8JHqAm/EOdnXNnzdPTJk6VczF+4oVK0R1dY2+3OOy0bOwh2rPnr2isCDv91pfQkJsOOLYHD9Z0LgQpflcTkmnC2PeWmwZMXbOH/oZ/wu0+700	:/home/wael	1	cava	:cava
+pane	Main	1	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	2	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	1	1	:*	3	cava	:/home/wael	0	zsh	:
+window	2	0	:zsh	1	:*	c0be,190x45,0,0,1	:
+window	Main	0	:NVIM	1	:*	4fc1,190x45,0,0[190x38,0,0,2,190x6,0,39,9]	off
+window	Main	1	:cava	0	:-	b7cf,190x45,0,0{98x45,0,0,8,91x45,99,0[91x10,99,0,10,91x23,99,11,11,91x10,99,35,12]}	:
+state	Main	2

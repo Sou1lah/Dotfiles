@@ -1,0 +1,16 @@
+pane	0	0	1	:*	0	PC-T3-Wael	:/home/wael/.tmux	1	zsh	:
+pane	0	0	1	:*	1	PC-T3-Wael	:/home/wael/hyprland-dotfiles	0	zsh	:
+pane	3	0	1	:*	0	PC-T3-Wael	:/home/wael/hyprland-dotfiles	1	nvim	:nvim .
+pane	4	0	1	:*	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	5	0	1	:*	0	PC-T3-Wael	:/home/wael/hyprland-dotfiles	1	zsh	:
+pane	Main	0	0	:	0	PC-T3-Wael	:/home/wael/hyprland-dotfiles	1	zsh	:
+pane	Main	1	0	:-	0	PC-T3-Wael	:/home/wael	1	zsh	:
+pane	Main	2	1	:*	0	cava	:/home/wael	1	zsh	:
+window	0	0	:zsh	1	:*	911e,209x23,0,0{105x23,0,0,1,103x23,106,0,2}	:
+window	3	0	:nvim	1	:*	b720,209x23,0,0,3	:
+window	4	0	:zsh	1	:*	d005,103x49,0,0,8	:
+window	5	0	:zsh	1	:*	b721,209x23,0,0,4	:
+window	Main	0	:zsh	0	:	b722,209x23,0,0,5	:
+window	Main	1	:Btop	0	:-	b723,209x23,0,0,6	off
+window	Main	2	:btop	1	:*	b724,209x23,0,0,7	off
+state	4	

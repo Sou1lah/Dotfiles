@@ -1,0 +1,11 @@
+pane	Main	0	1	:*	0	:/home/wael/Documents/backup/home/wael/.var/app	1	zsh	4642	:Hyprland
+Xwayland :0 -rootless -core -listenfd 52 -listenfd 53 -displayfd 87 -wm 84
+swaync-client -swb
+pane	Main	0	1	:*	1	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	2	PC-T3-Wael	:/home/wael	0	zsh	:
+pane	Main	0	1	:*	3	cava	:/home/wael	0	cava	:cava
+pane	Main	2	0	:-	0	cava	:/home/wael	0	nvim	:nvim
+pane	Main	2	0	:-	1	PC-T3-Wael	:/home/wael	1	zsh	:
+window	Main	0	:zsh	1	:*	9f92,94x45,0,0[94x40,0,0{71x40,0,0,2,22x40,72,0,3},94x4,0,41{63x4,0,41,4,30x4,64,41,5}]	:
+window	Main	2	:zsh	0	:-	25bf,190x45,0,0{133x45,0,0,6,56x45,134,0,7}	:
+state	Main	

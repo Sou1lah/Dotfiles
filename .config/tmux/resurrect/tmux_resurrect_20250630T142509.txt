@@ -1,0 +1,3 @@
+pane	Main	1	1	:*	0	:/home/wael/hyprland-dotfiles	1	zsh	419410	:
+window	Main	1	:nvim	1	:*	cfff,103x49,0,0,2	off
+state	Main	
