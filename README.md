@@ -45,9 +45,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 | Multiplexer    | Tmux                                |
 
 ---
-
-
-
+wael was here
 ## 🧠 Neovim Setup
 
 <details>
