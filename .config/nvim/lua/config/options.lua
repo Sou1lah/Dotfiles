@@ -1,48 +1,24 @@
-local options = {
-	laststatus = 3,
-	ruler = false, --disable extra numbering
-	showmode = false, --not needed due to lualine
-	showcmd = false,
-	wrap = true, --toggle bound to leader W
-	mouse = "a", --enable mouse
-	clipboard = "unnamedplus", --system clipboard integration
-	history = 100, --command line history
-	swapfile = false, --swap just gets in the way, usually
-	backup = false,
-	undofile = true, --undos are saved to file
-	cursorline = true, --highlight line
-	ttyfast = true, --faster scrolling
-	smoothscroll = true,
-	title = true, --automatic window titlebar
-	
-	number = true, --numbering lines
-	relativenumber = true, --toggle bound to leader nn
-	numberwidth = 4,
+-- ============================================================================
+-- NEOVIM OPTIONS CONFIGURATION
+-- ============================================================================
 
-	smarttab = true, --indentation stuff
-	cindent = true,
-	autoindent = false,
-	tabstop = 4, --visual width of tab
+-- Basic Settings
+vim.opt.termguicolors = true     -- Enable true color support
+vim.opt.swapfile = false         -- Disable swapfile
+vim.opt.number = true            -- Line numbers
+vim.opt.relativenumber = true    -- Relative line numbers
+vim.opt.updatetime = 200         -- Faster CursorHold trigger
 
-	foldmethod = "expr",
-	foldlevel = 99, --disable folding, lower #s enable
-	foldexpr = "nvim_treesitter#foldexpr()",
-	
-	termguicolors = true,
-
-	ignorecase = true, --ignore case while searching
-	smartcase = true, --but do not ignore if caps are used
-
-	conceallevel = 2, --markdown conceal
-	concealcursor = "nc",
-
-	splitkeep = 'screen', --stablizie window open/close
+-- Wayland clipboard integration
+vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = { ["+"] = "wl-copy", ["*"] = "wl-copy" },
+    paste = { ["+"] = "wl-paste --no-newline", ["*"] = "wl-paste --no-newline" },
+    cache_enabled = true,
 }
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
+-- Disable space as key (we use it as leader)
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
-vim.diagnostic.config({
-	signs = false,
-})
+-- Add lazy.nvim to runtime path
+vim.opt.rtp:prepend(vim.fn.expand("~/.config/nvim/lazy/lazy.nvim"))

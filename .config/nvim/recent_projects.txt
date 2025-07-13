@@ -1,15 +1,15 @@
+/home/wael/.config/nvim/
 /home/wael/hyprland-dotfiles/
-/home/wael/coding/trees/
+/home/
+/home/wael/yt-downloader/
+/home/wael/weekly-github-waybar-module/
 /home/wael/coding/
+/home/wael/.config/waybar/
+/home/wael/Main Vault/
+/home/wael/.fonts/
+/home/wael/.config/HyDE/
+/home/wael/coding/trees/
 /home/wael/.config/eww/
 /home/wael/.tmux/
 /home/wael/Ax-Shell/
-/home/wael/.config/waybar/
 /home/wael/.minecraft/
-/home/wael/.spicetify/
-/home/wael/.npm/
-/home/wael/.config/Kvantum/
-/home/wael/.mozilla/
-/home/wael/weekly-github-waybar-module/
-/home/wael/.config/ags/
-/home/wael/.config/gtk-4.0/
