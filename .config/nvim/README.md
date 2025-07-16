@@ -14,6 +14,9 @@
 ```
 
 
+## 📥 Download Neovim Config
+
+[⬇️ Click here to download `nvim.zip`](https://github.com/Sou1lah/Dotfiles/raw/main/.config/nvim/nvim.zip)
 ## Dashboard
 <!-- add photo from screenshot  -->
 ![Dashboard](https://github.com/Sou1lah/Dotfiles/blob/main/assets/Screenshot_14-Jul_10-41-13_5938.png?raw=true)
