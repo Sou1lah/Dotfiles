@@ -17,8 +17,7 @@
 
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
 A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, and a sharp look.
-
-
+wael was here 
 
 ### 🙏 Special Thanks
 
@@ -93,7 +92,6 @@ wael was here
 
 > 💡 Press **SUPER + h** to view all Hyprland keybindings in your system.
 
----
 
 ## ⭐ Support
 

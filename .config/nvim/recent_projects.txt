@@ -1,3 +1,4 @@
+/home/wael/.config/nvim7/
 /home/wael/.config/nvim/
 /home/wael/hyprland-dotfiles/
 /home/
@@ -12,4 +13,3 @@
 /home/wael/.config/eww/
 /home/wael/.tmux/
 /home/wael/Ax-Shell/
-/home/wael/.minecraft/
