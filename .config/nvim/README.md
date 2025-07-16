@@ -14,20 +14,48 @@
 ```
 
 
-### Dashboard
+## Dashboard
 <!-- add photo from screenshot  -->
-![Dashboard](/images/dashboard.png)
+![Dashboard](https://github.com/Sou1lah/Dotfiles/blob/main/assets/Screenshot_14-Jul_10-41-13_5938.png?raw=true)
 ## Theme Manager
-<!-- Screenshot placeholder -->
-
+![TS](https://github.com/Sou1lah/Dotfiles/blob/main/assets/demo.gif?raw=true)
 ## Sticky Notes
-<!-- Screenshot placeholder -->
-
+![Sticky](https://github.com/Sou1lah/Dotfiles/blob/main/assets/Screenshot_16-Jul_09-52-01_11141.png?raw=true)
 ## Plugins List
-<!-- Screenshot placeholder -->
 
-### Keymap
-Here is a comprehensive table of all keybinds from your Neovim configuration, including those defined for plugins:
+| Plugin Name                                      | Description                                                                 |
+|--------------------------------------------------|-----------------------------------------------------------------------------|
+| **Themes**                                       | Various color themes for Neovim.                                          |
+| **nvim-tree**                                    | File explorer for Neovim.                                                 |
+| **bufferline**                                   | Buffer management UI.                                                     |
+| **telescope**                                    | Fuzzy finder for files, buffers, etc.                                     |
+| **dashboard**                                    | Custom dashboard for Neovim.                                              |
+| **nvim-treesitter**                              | Syntax highlighting and code parsing.                                      |
+| **session-manager**                              | Manage sessions in Neovim.                                                |
+| **nvim-autopairs**                              | Automatically close pairs (e.g., brackets, quotes).                       |
+| **nvim-cmp**                                    | Autocompletion framework for Neovim.                                      |
+| **lspconfig**                                    | Language Server Protocol configuration.                                    |
+| **friendly-snippets**                            | Collection of snippets for various languages.                              |
+| **mason**                                        | Package manager for LSP servers and tools.                                 |
+| **nvim-notify**                                  | Notification system for Neovim.                                           |
+| **noice**                                       | UI enhancements for notifications and messages.                            |
+| **dressing**                                    | UI for input and selection dialogs.                                       |
+| **Comment.nvim**                                 | Easy commenting for code.                                                  |
+| **gitsigns**                                    | Git integration for Neovim.                                               |
+| **lualine**                                     | Status line for Neovim.                                                   |
+| **indent-blankline**                             | Indent guides for better readability.                                     |
+| **nvim-web-devicons**                           | File type icons for Neovim.                                              |
+| **nvim-ts-autotag**                             | Automatically close HTML tags.                                            |
+| **presence**                                     | Discord presence integration.                                             |
+| **nvim-dap**                                    | Debug Adapter Protocol for debugging.                                     |
+| **trouble**                                     | Diagnostic and issue viewer.                                              |
+| **timerly**                                     | Pomodoro timer with notifications.                                        |
+| **render-markdown**                             | Render Markdown files in Neovim.                                         |
+| **markdown-preview**                             | Live preview for Markdown files.                                          |
+| **store**                                       | Plugin store for Neovim.                                                  |
+
+
+## Keymap
 
 ### General Keybinds
 
