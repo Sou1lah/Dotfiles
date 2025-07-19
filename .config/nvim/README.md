@@ -228,6 +228,3 @@
 | `<leader>mp`     | Toggle Markdown Preview                  |
 | `<leader>s`      | Open Plugin Store                        |
 
-
-
-

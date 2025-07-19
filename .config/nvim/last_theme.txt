@@ -1,1 +1,1 @@
-gruvbox
+catppuccin-mocha

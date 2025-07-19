@@ -1,6 +1,11 @@
-/home/wael/.config/nvim7/
+/home/wael/Desktop/nvim7/
 /home/wael/.config/nvim/
+/home/wael/Desktop/
+/home/wael/.config/kitty/
+/home/wael/.config/nvim9/
+/home/wael/.config/nvim.9/
 /home/wael/hyprland-dotfiles/
+/home/wael/.config/nvim7/
 /home/
 /home/wael/yt-downloader/
 /home/wael/weekly-github-waybar-module/
@@ -8,8 +13,3 @@
 /home/wael/.config/waybar/
 /home/wael/Main Vault/
 /home/wael/.fonts/
-/home/wael/.config/HyDE/
-/home/wael/coding/trees/
-/home/wael/.config/eww/
-/home/wael/.tmux/
-/home/wael/Ax-Shell/

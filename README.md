@@ -1,5 +1,5 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2000&pause=3000&color=F7F7F7&center=true&vCenter=true&width=500&lines=Wael's+Hyprland+Dotfiles)](https://git.io/typing-svg)
-
+wawa
 <p align="center">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/b2.png?raw=true" width="49%">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/b4.png?raw=true" width="49%">
@@ -14,10 +14,8 @@
 </p>
 ---
 
-
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
 A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, and a sharp look.
-wael was here 
 
 ### 🙏 Special Thanks
 
@@ -44,7 +42,6 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 | Multiplexer    | Tmux                                |
 
 ---
-wael was here
 ## 🧠 Neovim Setup
 
 <details>

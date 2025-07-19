@@ -16,7 +16,7 @@ require("lazy").setup({
       require("catppuccin").setup({ flavour = "mocha" })
     end,
   },
-  { "sainnhe/everforest",           priority = 1000 },
+  { "sainnhe/everforest",     priority = 1000 },
   {
     "navarasu/onedark.nvim",
     priority = 1000,
@@ -24,9 +24,8 @@ require("lazy").setup({
       require("onedark").setup({ style = "deep" })
     end,
   },
-  { "ishan9299/nvim-solarized-lua", priority = 1000 },
-  { "tanvirtin/monokai.nvim",       priority = 1000 },
-  { "Shatur/neovim-ayu",            priority = 1000 },
+  { "tanvirtin/monokai.nvim", priority = 1000 },
+  { "Shatur/neovim-ayu",      priority = 1000 },
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -49,15 +48,6 @@ require("lazy").setup({
     end,
   },
 
-  -- Bufferline
-  {
-    "akinsho/bufferline.nvim",
-    version = "*",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("bufferline").setup({})
-    end,
-  },
 
   -- Telescope
   {
@@ -106,17 +96,17 @@ require("lazy").setup({
             "                                                                                  ",
           },
           center = {
-            { icon = "  ", desc = "New File ",       action = "enew",                         shortcut = "Ctrl+t" },
-            { icon = "  ", desc = "Open Folder",     action = "lua open_folder()",            shortcut = "Ctrl+Alt+K+O" },
-            { icon = "  ", desc = "Find File ",      action = "Telescope find_files",         shortcut = "Ctrl+p" },
-            { icon = "  ", desc = "Find Word ",      action = "Telescope live_grep",          shortcut = "Ctrl+j" },
-            { icon = "  ", desc = "Bookmarks ",      action = "lua open_bookmark()",          shortcut = "Ctrl+Alt+d" },
-            { icon = "  ", desc = "Recent Files",    action = "Telescope oldfiles",           shortcut = "Ctrl+r" },
-            { icon = "  ", desc = "Recent Projects", action = "lua open_recent_project()",    shortcut = "SPC p" },
-            { icon = "  ", desc = "Theme Selector ", action = "lua theme_selector_popup()",   shortcut = "SPC t" },
-            { icon = "  ", desc = "Config ",         action = "edit ~/.config/nvim/init.lua", shortcut = "SPC c" },
-            { icon = "  ", desc = "Store",           action = "Store",                        shortcut = "SPC s" },
-            { icon = "  ", desc = "Quit Neovim ",    action = "qa",                           shortcut = "SPC q" },
+            { icon = "  ", desc = "New File ", action = "enew", shortcut = "Ctrl+t" },
+            { icon = "  ", desc = "Open Folder", action = "lua open_folder()", shortcut = "Ctrl+Alt+K+O" },
+            { icon = "󰱼  ", desc = "Find File ", action = "Telescope find_files", shortcut = "Ctrl+p" },
+            { icon = "󰱽  ", desc = "Find Word ", action = "Telescope live_grep", shortcut = "Ctrl+j" },
+            { icon = "  ", desc = "Bookmarks ", action = "lua open_bookmark()", shortcut = "Ctrl+Alt+d" },
+            { icon = "  ", desc = "Recent Files", action = "Telescope oldfiles", shortcut = "Ctrl+r" },
+            { icon = "  ", desc = "Recent Projects", action = "lua open_recent_project()", shortcut = "SPC p" },
+            { icon = "  ", desc = "Theme Selector ", action = "lua theme_selector_popup()", shortcut = "SPC t" },
+            { icon = "  ", desc = "Config ", action = "edit ~/.config/nvim/init.lua", shortcut = "SPC c" },
+            { icon = "󰓇  ", desc = "Store", action = "Store", shortcut = "SPC s" },
+            { icon = "󰗼  ", desc = "Quit Neovim ", action = "qa", shortcut = "SPC q" },
           },
           footer = {
             "🚀 Welcome back, Wael! Happy coding in Neovim ❤️",
@@ -304,38 +294,6 @@ require("lazy").setup({
     },
   },
 
-  -- Lualine
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("lualine").setup({
-        options = {
-          theme = "auto",
-          section_separators = { left = "", right = "" },
-          component_separators = { left = "", right = "" },
-        },
-        sections = {
-          lualine_x = {
-            function()
-              local ok, client = pcall(require, "copilot.client")
-              if not ok then return " OFF" end
-
-              local status = client.status.data.status
-              if status == "Normal" then
-                return " ON"
-              elseif status == "InProgress" then
-                return " ..."
-              else
-                return " OFF"
-              end
-            end,
-          },
-        },
-      })
-    end,
-  },
-
   -- Utilities
   { "numToStr/Comment.nvim" },
   { "lukas-reineke/indent-blankline.nvim" },
@@ -345,19 +303,18 @@ require("lazy").setup({
   { "mfussenegger/nvim-dap" },
 
   -- Terminal
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = function()
-      require("toggleterm").setup({
-        direction = "float",
-        float_opts = {
-          border = "curved",
-        },
-        open_mapping = [[<leader>t]],
-      })
-    end,
-  },
+  -- {
+  --   "akinsho/toggleterm.nvim",
+  --   version = "*",
+  --   config = function()
+  --     require("toggleterm").setup({
+  --       direction = "float",
+  --       float_opts = {
+  --         border = "curved",
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- AI
   {
@@ -488,210 +445,6 @@ require("lazy").setup({
     cmd = "Twilight",
   },
 
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      local lualine = require("lualine")
-
-      -- local colors = {
-      --   bg       = "#202328",
-      --   fg       = "#bbc2cf",
-      --   yellow   = "#ECBE7B",
-      --   cyan     = "#008080",
-      --   darkblue = "#081633",
-      --   green    = "#98be65",
-      --   orange   = "#FF8800",
-      --   violet   = "#a9a1e1",
-      --   magenta  = "#c678dd",
-      --   blue     = "#51afef",
-      --   red      = "#ec5f67",
-      -- }
-      -- gruvbox colors
-      local colors = {
-        bg = "#282828",
-        fg = "#ebdbb2",
-        red = "#fb4934",
-        green = "#b8bb26",
-        yellow = "#fabd2f",
-        blue = "#83a598",
-        magenta = "#d3869b",
-        cyan = "#8ec07c",
-        orange = "#fe8019",
-        violet = "#d3869b",
-      }
-      local conditions = {
-        buffer_not_empty = function()
-          return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-        end,
-        hide_in_width = function()
-          return vim.fn.winwidth(0) > 80
-        end,
-        check_git_workspace = function()
-          local filepath = vim.fn.expand("%:p:h")
-          local gitdir = vim.fn.finddir(".git", filepath .. ";")
-          return gitdir and #gitdir > 0 and #gitdir < #filepath
-        end,
-      }
-
-      local config = {
-        options = {
-          theme = {
-            normal = { c = { fg = colors.fg, bg = colors.bg } },
-            inactive = { c = { fg = colors.fg, bg = colors.bg } },
-          },
-          component_separators = "",
-          section_separators = "",
-        },
-        sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_y = {},
-          lualine_z = {},
-          lualine_c = {},
-          lualine_x = {},
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_y = {},
-          lualine_z = {},
-          lualine_c = {},
-          lualine_x = {},
-        },
-      }
-
-      local function ins_left(component)
-        table.insert(config.sections.lualine_c, component)
-      end
-
-      local function ins_right(component)
-        table.insert(config.sections.lualine_x, component)
-      end
-
-      -- Left components
-      ins_left {
-        function() return "▊" end,
-        color = { fg = colors.blue },
-        padding = { left = 0, right = 1 },
-      }
-
-      ins_left {
-        function() return "" end,
-        color = function()
-          local mode_color = {
-            n = colors.red,
-            i = colors.green,
-            v = colors.blue,
-            [""] = colors.blue,
-            V = colors.blue,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [""] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ["r?"] = colors.cyan,
-            ["!"] = colors.red,
-            t = colors.red,
-          }
-          return { fg = mode_color[vim.fn.mode()] }
-        end,
-        padding = { right = 1 },
-      }
-
-      ins_left { "filesize", cond = conditions.buffer_not_empty }
-      ins_left {
-        "filename",
-        cond = conditions.buffer_not_empty,
-        color = { fg = colors.magenta, gui = "bold" },
-      }
-
-      ins_left { "location" }
-      ins_left { "progress", color = { fg = colors.fg, gui = "bold" } }
-
-      ins_left {
-        "diagnostics",
-        sources = { "nvim_diagnostic" },
-        symbols = { error = " ", warn = " ", info = " " },
-        diagnostics_color = {
-          error = { fg = colors.red },
-          warn = { fg = colors.yellow },
-          info = { fg = colors.cyan },
-        },
-      }
-
-      ins_left {
-        function() return "%=" end
-      }
-
-      ins_left {
-        function()
-          local msg = "No Active Lsp"
-          local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-          local clients = vim.lsp.get_clients()
-          if next(clients) == nil then return msg end
-          for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              return client.name
-            end
-          end
-          return msg
-        end,
-        icon = " LSP:",
-        color = { fg = "#ffffff", gui = "bold" },
-      }
-
-      -- Right components
-      ins_right {
-        "o:encoding",
-        fmt = string.upper,
-        cond = conditions.hide_in_width,
-        color = { fg = colors.green, gui = "bold" },
-      }
-
-      ins_right {
-        "fileformat",
-        fmt = string.upper,
-        icons_enabled = false,
-        color = { fg = colors.green, gui = "bold" },
-      }
-
-      ins_right {
-        "branch",
-        icon = "",
-        color = { fg = colors.violet, gui = "bold" },
-      }
-
-      ins_right {
-        "diff",
-        symbols = { added = " ", modified = "󰝤 ", removed = " " },
-        diff_color = {
-          added = { fg = colors.green },
-          modified = { fg = colors.orange },
-          removed = { fg = colors.red },
-        },
-        cond = conditions.hide_in_width,
-      }
-
-      ins_right {
-        function() return "▊" end,
-        color = { fg = colors.blue },
-        padding = { left = 1 },
-      }
-
-      -- Init lualine
-      lualine.setup(config)
-    end,
-  },
-
   -- Pomodoro Timer
   {
     "nvzone/timerly",
@@ -819,5 +572,87 @@ require("lazy").setup({
       vim.keymap.set('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
       vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
     end
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          separator_style = "slant", -- Matches Lualine style
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+          always_show_bufferline = true,
+          color_icons = true,
+          indicator = {
+            style = "icon", -- also try "underline" if you prefer minimal
+          },
+          diagnostics = "nvim_lsp",
+          diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+          end,
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              text_align = "center",
+              separator = true,
+            },
+          },
+          modified_icon = "●",
+          left_trunc_marker = "",
+          right_trunc_marker = "",
+          enforce_regular_tabs = true,
+          max_name_length = 18,
+          max_prefix_length = 15,
+          tab_size = 18,
+        },
+        -- highlights = require("catppuccin.groups.integrations.bufferline").get(), -- if you use catppuccin theme
+      })
+    end,
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    lazy = false, -- load on startup
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "auto", -- or your preferred theme
+          icons_enabled = true,
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+          globalstatus = true,
+        },
+        sections = {
+          lualine_a = { { "mode", separator = { left = "", right = "" } } },
+          lualine_b = {
+            "branch",
+            {
+              "diff",
+              symbols = { added = " ", modified = " ", removed = " " }, -- Git icons
+              colored = true,
+            },
+          },
+          lualine_c = {},
+          lualine_x = {
+            "diagnostics",
+            -- "encoding",
+            -- "fileformat",
+            "filetype"
+          },
+          lualine_y = { "progress" },
+          lualine_z = { { "location", separator = { right = "" } } },
+        },
+        tabline = nil, -- leave tabline to bufferline
+      })
+    end,
   }
+
 })

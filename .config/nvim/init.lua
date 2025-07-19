@@ -17,14 +17,15 @@ require("config.keybinds")
 require("config.plugins")
 require("config.lsp")
 require("config.autocommands")
+require("config.abbr")
 
 -- Load theme
 local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
 local f = io.open(theme_file, "r")
 if f then
-    local theme = f:read("*l")
-    if theme and #theme > 0 then vim.cmd("colorscheme " .. theme) end
-    f:close()
+  local theme = f:read("*l")
+  if theme and #theme > 0 then vim.cmd("colorscheme " .. theme) end
+  f:close()
 else
-    vim.cmd("colorscheme tokyonight")
+  vim.cmd("colorscheme tokyonight")
 end
