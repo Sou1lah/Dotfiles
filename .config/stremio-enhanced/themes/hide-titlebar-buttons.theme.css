@@ -1,0 +1,19 @@
+/**
+ * @name Hide Titlebar Buttons
+ * @description Hide titlebar buttons (maximize, minimize, close)
+ * @author mouad
+ * @version 1.0.0
+ * @updateUrl none
+ */
+
+.title-bar {
+    display: none !important;
+    height: 0 !important;
+    z-index: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+html body #app {
+    padding: 0 !important;
+}

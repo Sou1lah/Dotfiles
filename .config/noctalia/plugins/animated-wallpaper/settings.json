@@ -1,0 +1,13 @@
+{
+  "videoPath": "/home/mikuri/animated wallpapers/hoshino-blue-archive-moewalls-com.mp4",
+  "enabled": true,
+  "volume": 0,
+  "fillMode": "PreserveAspectCrop",
+  "loop": true,
+  "folderPath": "/home/mikuri/animated wallpapers",
+  "changeMode": "manual",
+  "changeInterval": 10,
+  "customIntervals": [
+    1200
+  ]
+}

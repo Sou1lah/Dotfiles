@@ -31,8 +31,8 @@ ags -q && ags &
 # Wallust refresh
 ${SCRIPTSDIR}/WallustSwww.sh &
 
-# reload swaync
-swaync-client --reload-config
+# swaync reload disabled (using quickshell notifications instead)
+# swaync-client --reload-config
 
 # Relaunching rainbow borders if the script exists
 sleep 1

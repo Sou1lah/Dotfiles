@@ -1,0 +1,115 @@
+{
+  "menu": {
+    "openPanel": "Ouvrir les Temps de Prières",
+    "settings": "Paramètres du Widget"
+  },
+  "widget": {
+    "iftar": "Iftar",
+    "imsak": "Imsak",
+    "soon": "bientôt",
+    "now": "maintenant",
+    "stopAzan": "Arrêter l'Azan",
+    "tooltip": {
+      "noData": "Données des prières non chargées",
+      "countdown": "Temps restant"
+    }
+  },
+  "panel": {
+    "title": "Temps des Prières",
+    "refresh": "Rafraîchir",
+    "close": "Fermer",
+    "configure": "Configurez votre ville dans les paramètres",
+    "now": "Maintenant",
+    "jumuah": "Jumu'ah",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "imsak": "Imsak",
+    "fajr": "Fajr",
+    "sunrise": "Lever du soleil",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha",
+    "tab": {
+      "prayers": "Temps des Prières",
+      "calendar": "Calendrier"
+    }
+  },
+  "settings": {
+    "location": {
+      "header": "Localisation",
+      "desc": "Utilisé pour récupérer les temps de prières journaliers depuis l'API Aladhan."
+    },
+    "city": {
+      "label": "Ville",
+      "desc": "Entrez le nom de votre ville en anglais."
+    },
+    "country": {
+      "label": "Pays",
+      "desc": "Entrez le nom de votre pays ou le code à 2 lettres (ex. FR, DZ, MA)."
+    },
+    "method": {
+      "label": "Méthode de calcul",
+      "desc": "Détermine comment les temps de prières sont calculés."
+    },
+    "display": {
+      "header": "Affichage"
+    },
+    "showCountdown": {
+      "label": "Afficher le compte à rebours",
+      "desc": "Afficher un compte à rebours en direct dans la barre."
+    },
+    "notifications": {
+      "header": "Notifications",
+      "desc": "Afficher une notification à chaque début de temps de prière."
+    },
+    "showNotifications": {
+      "label": "Notifications de prière"
+    },
+    "azan": {
+      "header": "Azan",
+      "desc": "Jouer l'azan audio à l'heure de chaque prière.",
+      "preview": "Prévisualiser l'azan",
+      "stop": "Arrêter la prévisualisation"
+    },
+    "playAzan": {
+      "label": "Jouer l'Azan",
+      "desc": "Jouer l'azan à l'heure de chaque prière."
+    },
+    "azanFile": {
+      "label": "Azan",
+      "desc": "Sélectionnez quel azan jouer."
+    },
+    "azan1": "Azan 1",
+    "azan2": "Azan 2",
+    "azan3": "Azan 3",
+    "calibration": {
+      "header": "Calibration",
+      "desc": "Ajustez la date Hijri affichée si elle ne correspond pas à l'observation locale de la lune."
+    },
+    "hijriDayOffset": {
+      "label": "Ajustement du jour Hijri",
+      "desc": "Décaler le jour Hijri affiché si la date de l'API ne correspond pas."
+    },
+    "school": {
+      "label": "École de calcul de l'Asr",
+      "desc": "Shafi/Maliki/Hanbali utilise le facteur d'ombre 1. Hanafi utilise le facteur 2."
+    },
+    "calendar": {
+      "header": "Calendrier"
+    },
+    "weekStartDay": {
+      "label": "Premier jour de la semaine",
+      "desc": "Choisissez le jour de début de la semaine."
+    }
+  },
+  "error": {
+    "network": "La requête réseau a échoué.",
+    "generic": "Échec du chargement des temps de prière."
+  },
+  "calendar": {
+    "today": "Retour à aujourd'hui",
+    "refresh": "Rafraîchir le mois",
+    "approximate": "Estimation mathématique — non vérifiée par observation"
+  }
+}

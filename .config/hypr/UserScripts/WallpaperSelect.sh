@@ -17,8 +17,9 @@ FPS=60
 TYPE="any"
 DURATION=2
 BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type left --transition-duration $DURATION --transition-bezier $BEZIER"
+SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
 
+# Check if package bc exists
 if ! command -v bc &>/dev/null; then
   notify-send -i "$iDIR/error.png" "bc missing" "Install package bc first"
   exit 1
@@ -137,9 +138,8 @@ modify_startup_config() {
 
   # Check if it's a live wallpaper (video)
   if [[ "$selected_file" =~ \.(mp4|mkv|mov|webm)$ ]]; then
-    # For video wallpapers:
+    # For video wallpapers: keep mpvpaper startup, just update variable
     sed -i '/^\s*exec-once\s*=\s*swww-daemon\s*--format\s*xrgb\s*$/s/^/\#/' "$startup_config"
-    sed -i '/^\s*#\s*exec-once\s*=\s*mpvpaper\s*.*$/s/^#\s*//;' "$startup_config"
 
     # Update the livewallpaper variable with the selected video path (using $HOME)
     selected_file="${selected_file/#$HOME/\$HOME}" # Replace /home/user with $HOME
@@ -147,10 +147,8 @@ modify_startup_config() {
 
     echo "Configured for live wallpaper (video)."
   else
-    # For image wallpapers:
+    # For image wallpapers: only touch swww, do not disable mpvpaper startup
     sed -i '/^\s*#\s*exec-once\s*=\s*swww-daemon\s*--format\s*xrgb\s*$/s/^\s*#\s*//;' "$startup_config"
-
-    sed -i '/^\s*exec-once\s*=\s*mpvpaper\s*.*$/s/^/\#/' "$startup_config"
 
     echo "Configured for static wallpaper (image)."
   fi
@@ -167,12 +165,16 @@ apply_image_wallpaper() {
     swww-daemon --format xrgb &
   fi
 
-  swww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
+  # Apply wallpaper to all monitors, not just the focused one
+  while IFS= read -r mon; do
+    [ -n "$mon" ] || continue
+    swww img -o "$mon" "$image_path" $SWWW_PARAMS
+  done < <(hyprctl monitors -j | jq -r '.[].name')
 
-  # Run additional scripts
-  "$SCRIPTSDIR/WallustSwww.sh"
+  # Run additional scripts - pass the wallpaper path as argument
+  "$SCRIPTSDIR/WallustSwww.sh" "$image_path"
   sleep 2
-  "$SCRIPTSDIR/Refresh.sh"
+  "$SCRIPTSDIR/RefreshNoWaybar.sh"
   sleep 1
 
   set_sddm_wallpaper
@@ -194,39 +196,50 @@ apply_video_wallpaper() {
 
 # Main function
 main() {
-  choice=$(menu | $rofi_command)
-  choice=$(echo "$choice" | xargs)
-  RANDOM_PIC_NAME=$(echo "$RANDOM_PIC_NAME" | xargs)
+    choice=$(menu | $rofi_command)
+    choice=$(echo "$choice" | xargs)
+    RANDOM_PIC_NAME=$(echo "$RANDOM_PIC_NAME" | xargs)
 
-  if [[ -z "$choice" ]]; then
-    echo "No choice selected. Exiting."
-    exit 0
-  fi
+    echo "DEBUG: Selected choice: '$choice'" > /tmp/wallpaper_debug.log
+    echo "DEBUG: RANDOM_PIC_NAME: '$RANDOM_PIC_NAME'" >> /tmp/wallpaper_debug.log
 
-  # Handle random selection correctly
-  if [[ "$choice" == "$RANDOM_PIC_NAME" ]]; then
-    choice=$(basename "$RANDOM_PIC")
-  fi
+    if [[ -z "$choice" ]]; then
+        echo "No choice selected. Exiting."
+        exit 0
+    fi
 
-  choice_basename=$(basename "$choice" | sed 's/\(.*\)\.[^.]*$/\1/')
+    if [[ "$choice" == "$RANDOM_PIC_NAME" ]]; then
+        choice=$(basename "$RANDOM_PIC")
+        echo "DEBUG: Random selected, using: '$choice'" >> /tmp/wallpaper_debug.log
+    fi
 
-  # Search for the selected file in the wallpapers directory, including subdirectories
-  selected_file=$(find "$wallDIR" -iname "$choice_basename.*" -print -quit)
+    choice_basename=$(basename "$choice" | sed 's/\(.*\)\.[^.]*$/\1/')
+    echo "DEBUG: Searching for: '$choice_basename'" >> /tmp/wallpaper_debug.log
 
-  if [[ -z "$selected_file" ]]; then
-    echo "File not found. Selected choice: $choice"
-    exit 1
-  fi
+    selected_file=$(find "$wallDIR" -iname "$choice_basename.*" -print -quit)
+    echo "DEBUG: Found file: '$selected_file'" >> /tmp/wallpaper_debug.log
 
-  # Modify the Startup_Apps.conf file based on wallpaper type
-  modify_startup_config "$selected_file"
+    if [[ -z "$selected_file" ]]; then
+        echo "DEBUG: File not found!" >> /tmp/wallpaper_debug.log
+        notify-send "Error" "Wallpaper file not found: $choice"
+        exit 1
+    fi
 
-  # **CHECK FIRST** if it's a video or an image **before calling any function**
-  if [[ "$selected_file" =~ \.(mp4|mkv|mov|webm|MP4|MKV|MOV|WEBM)$ ]]; then
-    apply_video_wallpaper "$selected_file"
-  else
-    apply_image_wallpaper "$selected_file"
-  fi
+    # Update current wallpaper file immediately
+    echo "$selected_file" > "$wallpaper_current"
+    echo "DEBUG: Updated $wallpaper_current with: $selected_file" >> /tmp/wallpaper_debug.log
+
+    modify_startup_config "$selected_file"
+
+    if [[ "$selected_file" =~ \.(mp4|mkv|mov|webm|MP4|MKV|MOV|WEBM)$ ]]; then
+        echo "DEBUG: Applying video wallpaper" >> /tmp/wallpaper_debug.log
+        apply_video_wallpaper "$selected_file"
+    else
+        echo "DEBUG: Applying image wallpaper" >> /tmp/wallpaper_debug.log
+        apply_image_wallpaper "$selected_file"
+    fi
+    
+    echo "DEBUG: Script completed" >> /tmp/wallpaper_debug.log
 }
 
 # Check if rofi is already running

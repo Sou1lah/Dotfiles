@@ -1,0 +1,11 @@
+[config]
+
+[templates.tmux]
+input_path = "~/.config/noctalia/templates/tmux-colors.conf"
+output_path = "~/.config/noctalia/tmux-colors-generated.conf"
+post_hook = "tmux source-file ~/.config/noctalia/tmux-colors-generated.conf"
+
+[templates.nvim-base16]
+input_path = "~/.config/nvim/lua/matugen-template.lua"
+output_path = "~/.config/nvim/lua/matugen.lua"
+post_hook = "pkill -SIGUSR1 nvim"

@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Ustawienia widżetu",
+    "now": "Teraz",
+    "next": "Następne",
+    "no_more_events_today": "Dziś brak dalszych wydarzeń"
+  },
+  "panel": {
+    "header": "Kalendarz tygodniowy",
+    "today": "Dziś",
+    "event": "wydarzenie",
+    "events": "wydarzenia",
+    "allday": "cały dzień",
+    "no_service": "Brak usługi kalendarza",
+    "loading": "Ładowanie...",
+    "no_events": "Brak wydarzeń"
+  },
+  "settings": {
+    "weekStart": "Pierwszy dzień tygodnia",
+    "weekStart_description": "Wybierz, który dzień zaczyna tydzień w kalendarzu.",
+    "monday": "Poniedziałek",
+    "sunday": "Niedziela",
+    "saturday": "Sobota",
+    "timeFormat": "Użyj formatu 12-godzinnego",
+    "timeFormat_description": "Wyświetlaj czas w formacie 12-godzinnym (AM/PM) zamiast 24-godzinnego.",
+    "gridColor": "Kolor siatki",
+    "gridColor_description": "Wybierz kolor używany dla linii siatki w kalendarzu.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Przezroczystość linii godzin",
+    "hourLineOpacity_description": "Dopasuj przezroczystość linii godzin.",
+    "dayLineOpacity": "Przezroczystość linii dni", 
+    "dayLineOpacity_description": "Dopasuj przezroczystość linii oddzielających dni.",
+    "panelMode": "Tryb panelu",
+    "panelMode_description": "Wybierz układ (może wymagać ponownego otwarcia).",
+    "panelAttach": "Panel przypięty do paska",
+    "panelCenter": "Panel wyśrodkowany"
+  }
+}

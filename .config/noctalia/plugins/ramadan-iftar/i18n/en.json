@@ -1,0 +1,63 @@
+{
+  "menu": {
+    "openPanel": "Open Prayer Times",
+    "settings": "Widget Settings"
+  },
+  "widget": {
+    "iftar": "Iftar",
+    "suhoor": "Suhoor",
+    "soon": "soon",
+    "tooltip": {
+      "noData": "Prayer data not loaded",
+      "countdown": "Time remaining"
+    }
+  },
+  "panel": {
+    "title": "Prayer Times",
+    "ramadan": "Ramadan",
+    "refresh": "Refresh",
+    "iftarIn": "Iftar in",
+    "iftarPassed": "Iftar has passed",
+    "configure": "Configure your city in Settings",
+    "suhoor": "Suhoor (Imsak)",
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "iftar": "Iftar (Maghrib)",
+    "isha": "Isha"
+  },
+  "settings": {
+    "location": {
+      "header": "Location",
+      "desc": "Used to fetch daily prayer times from the Aladhan API."
+    },
+    "city": {
+      "label": "City",
+      "desc": "Enter your city name in English."
+    },
+    "country": {
+      "label": "Country",
+      "desc": "Enter your country name or 2-letter code (e.g. UK, US, EG)."
+    },
+    "method": {
+      "label": "Calculation Method",
+      "desc": "Determines how prayer times are calculated. Choose the authority followed in your region."
+    },
+    "display": {
+      "header": "Display"
+    },
+    "showCountdown": {
+      "label": "Show countdown",
+      "desc": "Show a live countdown to Iftar in the bar instead of the static time."
+    },
+    "showAlways": {
+      "label": "Show outside Ramadan",
+      "desc": "Keep the bar widget visible year-round, not just during Ramadan."
+    }
+  },
+  "error": {
+    "network": "Network request failed. Check your internet connection.",
+    "generic": "Failed to load prayer times."
+  }
+}

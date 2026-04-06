@@ -8,6 +8,8 @@ config_file="$HOME/.config/hypr/UserConfigs/01-UserDefaults.conf"
 tmp_config_file=$(mktemp)
 sed 's/^\$//g; s/ = /=/g' "$config_file" > "$tmp_config_file"
 source "$tmp_config_file"
+export EDITOR=$EDITOR
+edit=${EDITOR:-nvim}
 # ##################################### #
 
 # variables

@@ -2,6 +2,10 @@
 -- CLEAN NEOVIM CONFIGURATION
 -- ============================================================================
 
+-- Always block cursor in all modes
+vim.opt.guicursor = ""
+
+
 -- Add LuaRocks paths
 local home = os.getenv("HOME")
 package.path = home .. "/.luarocks/share/lua/5.1/?.lua;" .. package.path
@@ -18,8 +22,11 @@ require("config.plugins")
 require("config.lsp")
 require("config.autocommands")
 require("config.abbr")
+require("config.sound_commands")
 
 -- Load theme
+-- Theme loading
+-- To enable Noctalia auto-theme: set vim.g.noctalia_theme = true in a local config
 local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
 local f = io.open(theme_file, "r")
 if f then

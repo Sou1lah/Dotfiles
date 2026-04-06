@@ -57,12 +57,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
--- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
-  end,
-})
+-- Highlight on yank (moved to sound effects section)
 
 -- Auto-close certain filetypes
 vim.api.nvim_create_autocmd("FileType", {
@@ -160,3 +155,49 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     end
   end,
 })
+
+-- vim.notify = function(msg, ...)
+--   if
+--       msg:match("Format request failed, no matching language servers")
+--       or msg:match("No matching language servers")
+--   then
+--     return
+--   end
+--   return require("notify")(msg, ...)
+-- end
+
+-- ============================================================================
+-- SOUND EFFECTS SYSTEM
+-- ============================================================================
+
+-- Load sound effects module
+-- local sounds = require("config.sounds")
+--
+-- -- Copy/Yank sound effect
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   callback = function()
+--     vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+--     sounds.play_sound("copy")
+--   end,
+-- })
+--
+-- Future sound effects can be added here:
+-- File save sound:
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   callback = function()
+--     sounds.play_sound("save")
+--   end,
+-- })
+
+-- Error sound:
+-- vim.api.nvim_create_autocmd("DiagnosticChanged", {
+--   callback = function(args)
+--     local diagnostics = args.data.diagnostics
+--     for _, diagnostic in ipairs(diagnostics) do
+--       if diagnostic.severity == vim.diagnostic.severity.ERROR then
+--         sounds.play_sound("error")
+--         break
+--       end
+--     end
+--   end,
+-- })

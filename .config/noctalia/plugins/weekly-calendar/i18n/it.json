@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Impostazioni Widget",
+    "now": "Ora",
+    "next": "Prossimo",
+    "no_more_events_today": "Nessun evento rimanente per oggi"
+  },
+  "panel": {
+    "header": "Calendario settimanale",
+    "today": "Oggi",
+    "event": "evento",
+    "events": "eventi",
+    "allday": "giornata intera",
+    "no_service": "Nessun servizio per il calendario",
+    "loading": "Caricamento in corso...",
+    "no_events": "Nessun evento"
+  },
+  "settings": {
+    "weekStart": "Primo giorno della settimana",
+    "weekStart_description": "Scegli il giorno che fa iniziare la settimana.",
+    "monday": "Lunedì",
+    "sunday": "Domenica",
+    "saturday": "Sabato",
+    "timeFormat": "Usa sistema orario a 12 ore",
+    "timeFormat_description": "Mostra il tempo con il sistema orario a 12 ore (AM/PM) invece del sistema a 24 ore.",
+    "gridColor": "Colore griglia",
+    "gridColor_description": "Scegli il colore usato per le linee della griglia del calendario.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Opacità delle linee orarie",
+    "hourLineOpacity_description": "Regola l'opacità della linee orarie.",
+    "dayLineOpacity": "Opacità delle linee giornaliere", 
+    "dayLineOpacity_description": "Regola l'opacità delle linee separatrici dei giorni.",
+    "panelMode": "Modalità del pannello",
+    "panelMode_description": "Scegli il layout (potrebbe essere necessario riaprirlo).",
+    "panelAttach": "Pannello attacato alla barra",
+    "panelCenter": "Pannello centrato"
+  }
+}

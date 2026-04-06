@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Widget beállítások",
+    "now": "Most",
+    "next": "Következő",
+    "no_more_events_today": "Ma nincs több esemény"
+  },
+  "panel": {
+    "header": "Heti naptár",
+    "today": "Ma",
+    "event": "esemény",
+    "events": "események",
+    "allday": "egész nap",
+    "no_service": "Nincs naptárszolgáltatás",
+    "loading": "Betöltés...",
+    "no_events": "Nincs esemény"
+  },
+  "settings": {
+    "weekStart": "A hét első napja",
+    "weekStart_description": "Válassza ki, melyik nap kezdje a hetet a naptárban.",
+    "monday": "Hétfő",
+    "sunday": "Vasárnap",
+    "saturday": "Szombat",
+    "timeFormat": "12 órás időformátum használata",
+    "timeFormat_description": "Az idő megjelenítése 12 órás formátumban (DE/DU) a 24 órás helyett.",
+    "gridColor": "Rácsszín",
+    "gridColor_description": "Válassza ki a naptár rácsvonalaihoz használt színt.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Óravonal átlátszósága", 
+    "hourLineOpacity_description": "Állítsa be az óravonalak átlátszóságát.",
+    "dayLineOpacity": "Napi vonal átlátszósága",
+    "dayLineOpacity_description": "Állítsa be a napelválasztó vonalak átlátszóságát.",
+    "panelMode": "Panel mód",
+    "panelMode_description": "Válasszon elrendezést (újraindításra lehet szükség).",
+    "panelAttach": "Panel a sávhoz rögzítve",
+    "panelCenter": "Középre igazított panel"
+  }
+}

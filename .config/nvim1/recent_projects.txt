@@ -1,0 +1,15 @@
+/home/wael/hyprland-dotfiles/
+/home/wael/Downloads/Dotfiles/
+/home/wael/.config/quickshell/
+/home/wael/Downloads/dots-hyprland-main/.config/quickshell/
+/home/wael/Downloads/quickshell/
+/home/wael/.config/
+/home/wael/.config/quickshell-custom/
+/home/wael/.config/waybar/
+/home/wael/weekly-github-waybar-module/
+/home/wael/.config/swaync/
+/home/wael/.minecraft/
+/home/wael/.spicetify/
+/home/wael/Ax-Shell/
+/home/wael/.tmux/
+/home/wael/.npm/

@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "ウィジェット設定",
+    "now": "現在",
+    "next": "次へ",
+    "no_more_events_today": "今日の予定はありません"
+  },
+  "panel": {
+    "header": "週間カレンダー",
+    "today": "今日",
+    "event": "イベント",
+    "events": "イベント",
+    "allday": "終日",
+    "no_service": "カレンダーサービスがありません",
+    "loading": "読み込み中...",
+    "no_events": "予定はありません"
+  },
+  "settings": {
+    "weekStart": "週の始まり",
+    "weekStart_description": "カレンダーパネルにイベント（予定）を表示します。",
+    "monday": "月曜日",
+    "sunday": "日曜日",
+    "saturday": "土曜日",
+    "timeFormat": "12時間表記を使用",
+    "timeFormat_description": "時刻を表示する24時間形式ではなく、12時間形式（AM/PM）で入力してください。",
+    "gridColor": "グリッドの色",
+    "gridColor_description": "カレンダーのグリッド線に使用する色を選択します。",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "時間線の不透明度",
+    "hourLineOpacity_description": "時間線の不透明度を調整します。",
+    "dayLineOpacity": "日線の不透明度", 
+    "dayLineOpacity_description": "日付境界線の不透明度を調整します。",
+    "panelMode": "パネル表示モード",
+    "panelMode_description": "画面の表示形式を選択します (再起動が必要な場合があります)。",
+    "panelAttach": "バーに吸着",
+    "panelCenter": "中央に配置"
+  }
+}

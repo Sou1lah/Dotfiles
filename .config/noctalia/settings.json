@@ -1,0 +1,1586 @@
+{
+    "appLauncher": {
+        "autoPasteClipboard": false,
+        "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
+        "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
+        "clipboardWrapText": true,
+        "customLaunchPrefix": "launcher",
+        "customLaunchPrefixEnabled": true,
+        "density": "default",
+        "enableClipPreview": true,
+        "enableClipboardChips": true,
+        "enableClipboardHistory": false,
+        "enableClipboardSmartIcons": true,
+        "enableSessionSearch": true,
+        "enableSettingsSearch": true,
+        "enableWindowsSearch": true,
+        "iconMode": "native",
+        "ignoreMouseInput": false,
+        "overviewLayer": true,
+        "pinnedApps": [
+            "code_code",
+            "kitty",
+            "anki",
+            "com.rafaelmardojai.Blanket",
+            "dev.bragefuglseth.Keypunch",
+            "org.vinegarhq.Sober",
+            "steam_steam",
+            "org.blender.Blender",
+            "info.febvre.Komikku",
+            "org.qbittorrent.qBittorrent",
+            "com.protonvpn.www",
+            "obsidian_obsidian",
+            "app.zen_browser.zen",
+            "io.github._0xzer0x.qurancompanion",
+            "io.dbeaver.DBeaverCommunity",
+            "org.fritzing.Fritzing",
+            "cc.arduino.IDE2",
+            "spotify",
+            "com.stremio.Stremio",
+            "wine-Programs-GOG.com-Duck Detective - The Ghost of Glamping-Duck Detective - The Ghost of Glamping",
+            "dev.warp.Warp",
+            "org.kde.kdeconnect.app",
+            "Balatro",
+            "gog_com-Hollow_Knight_1",
+            "gog_com-Hollow_Knight_Silksong_1",
+            "Cuphead - The Delicious Last Course",
+            "gog_com-Barony_1",
+            "gog_com-Enter_the_Gungeon_1",
+            "gog_com-Dont_Starve_1",
+            "gog_com-Firewatch_1",
+            "gog_com-Hotline_Miami_1",
+            "gog_com-Hotline_Miami_2_Wrong_Number_1",
+            "Keep Talking and Nobody Explodes",
+            "factorio",
+            "duckstation-gpl_duckstation-gpl",
+            "com.github.Anuken.Mindustry",
+            "One-armed cook",
+            "gog_com-Oxenfree_1",
+            "Old School RuneScape",
+            "gog_com-Project_Zomboid_1",
+            "Salt and Sanctuary",
+            "Return of the Obra Dinn",
+            "gog_com-Roadwarden_1"
+        ],
+        "position": "bottom_center",
+        "screenshotAnnotationTool": "",
+        "showCategories": true,
+        "showIconBackground": false,
+        "sortByMostUsed": true,
+        "terminalCommand": "kitty -e",
+        "viewMode": "grid"
+    },
+    "audio": {
+        "mprisBlacklist": [
+        ],
+        "preferredPlayer": "",
+        "spectrumFrameRate": 30,
+        "spectrumMirrored": true,
+        "visualizerType": "linear",
+        "volumeFeedback": false,
+        "volumeFeedbackSoundFile": "",
+        "volumeOverdrive": false,
+        "volumeStep": 5
+    },
+    "bar": {
+        "autoHideDelay": 500,
+        "autoShowDelay": 150,
+        "backgroundOpacity": 0.37,
+        "barType": "floating",
+        "capsuleColorKey": "none",
+        "capsuleOpacity": 1,
+        "contentPadding": 2,
+        "density": "default",
+        "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
+        "fontScale": 1,
+        "frameRadius": 12,
+        "frameThickness": 8,
+        "hideOnOverview": false,
+        "marginHorizontal": 4,
+        "marginVertical": 4,
+        "middleClickAction": "none",
+        "middleClickCommand": "",
+        "middleClickFollowMouse": false,
+        "monitors": [
+        ],
+        "mouseWheelAction": "none",
+        "mouseWheelWrap": true,
+        "outerCorners": false,
+        "position": "right",
+        "reverseScroll": false,
+        "rightClickAction": "controlCenter",
+        "rightClickCommand": "",
+        "rightClickFollowMouse": true,
+        "screenOverrides": [
+        ],
+        "showCapsule": true,
+        "showOnWorkspaceSwitch": true,
+        "showOutline": false,
+        "useSeparateOpacity": false,
+        "widgetSpacing": 6,
+        "widgets": {
+            "center": [
+                {
+                    "characterCount": 2,
+                    "colorizeIcons": false,
+                    "emptyColor": "tertiary",
+                    "enableScrollWheel": true,
+                    "focusedColor": "primary",
+                    "followFocusedScreen": false,
+                    "fontWeight": "bold",
+                    "groupedBorderOpacity": 1,
+                    "hideUnoccupied": false,
+                    "iconScale": 0.8,
+                    "id": "Workspace",
+                    "labelMode": "index",
+                    "occupiedColor": "secondary",
+                    "pillSize": 0.6,
+                    "showApplications": false,
+                    "showApplicationsHover": false,
+                    "showBadge": true,
+                    "showLabelsOnlyWhenOccupied": true,
+                    "unfocusedIconsOpacity": 1
+                },
+                {
+                    "colorName": "tertiary",
+                    "hideWhenIdle": true,
+                    "id": "AudioVisualizer",
+                    "width": 100
+                },
+                {
+                    "iconColor": "none",
+                    "id": "WallpaperSelector"
+                },
+                {
+                    "defaultSettings": {
+                        "autoStartBreaks": false,
+                        "autoStartWork": false,
+                        "longBreakDuration": 15,
+                        "sessionsBeforeLongBreak": 4,
+                        "shortBreakDuration": 5,
+                        "workDuration": 25
+                    },
+                    "id": "plugin:pomodoro"
+                }
+            ],
+            "left": [
+                {
+                    "colorizeSystemIcon": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "rocket",
+                    "iconColor": "primary",
+                    "id": "Launcher",
+                    "useDistroLogo": false
+                },
+                {
+                    "clockColor": "none",
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": false
+                },
+                {
+                    "compactMode": true,
+                    "diskPath": "/",
+                    "iconColor": "none",
+                    "id": "SystemMonitor",
+                    "showCpuCores": false,
+                    "showCpuFreq": false,
+                    "showCpuTemp": true,
+                    "showCpuUsage": true,
+                    "showDiskAvailable": false,
+                    "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
+                    "showGpuTemp": false,
+                    "showLoadAverage": false,
+                    "showMemoryAsPercent": false,
+                    "showMemoryUsage": true,
+                    "showNetworkStats": false,
+                    "showSwapUsage": false,
+                    "textColor": "none",
+                    "useMonospaceFont": true,
+                    "usePadding": false
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 145,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "showText": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
+                },
+                {
+                    "compactMode": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 145,
+                    "panelShowAlbumArt": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
+                    "showVisualizer": false,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "wave"
+                }
+            ],
+            "right": [
+                {
+                    "defaultSettings": {
+                        "completedCount": 0,
+                        "count": 0,
+                        "current_page_id": 0,
+                        "exportEmptySections": false,
+                        "exportFormat": "markdown",
+                        "exportPath": "~/Documents",
+                        "isExpanded": false,
+                        "pages": [
+                            {
+                                "id": 0,
+                                "name": "General"
+                            }
+                        ],
+                        "priorityColors": {
+                            "high": "#f44336",
+                            "low": "#9e9e9e",
+                            "medium": "#2196f3"
+                        },
+                        "showBackground": true,
+                        "showCompleted": true,
+                        "todos": [
+                        ],
+                        "useCustomColors": false
+                    },
+                    "id": "plugin:todo"
+                },
+                {
+                    "blacklist": [
+                    ],
+                    "chevronColor": "none",
+                    "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "hidePassive": false,
+                    "id": "Tray",
+                    "pinned": [
+                        "nm-applet",
+                        "KDE Connect"
+                    ]
+                },
+                {
+                    "iconColor": "none",
+                    "id": "DarkMode"
+                },
+                {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
+                },
+                {
+                    "deviceNativePath": "__default__",
+                    "displayMode": "graphic-clean",
+                    "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
+                },
+                {
+                    "iconColor": "none",
+                    "id": "NightLight"
+                },
+                {
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "primary",
+                    "customIconPath": "",
+                    "enableColorization": true,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": true
+                }
+            ]
+        }
+    },
+    "brightness": {
+        "backlightDeviceMappings": [
+        ],
+        "brightnessStep": 5,
+        "enableDdcSupport": true,
+        "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            {
+                "enabled": true,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
+        ]
+    },
+    "colorSchemes": {
+        "darkMode": true,
+        "generationMethod": "faithful",
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "monitorForColors": "eDP-1",
+        "predefinedScheme": "Nord",
+        "schedulingMode": "off",
+        "syncGsettings": true,
+        "useWallpaperColors": true
+    },
+    "controlCenter": {
+        "cards": [
+            {
+                "enabled": true,
+                "id": "profile-card"
+            },
+            {
+                "enabled": true,
+                "id": "shortcuts-card"
+            },
+            {
+                "enabled": true,
+                "id": "audio-card"
+            },
+            {
+                "enabled": true,
+                "id": "brightness-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            },
+            {
+                "enabled": true,
+                "id": "media-sysmon-card"
+            }
+        ],
+        "diskPath": "/",
+        "position": "close_to_bar_button",
+        "shortcuts": {
+            "left": [
+                {
+                    "id": "Network"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "WallpaperSelector"
+                },
+                {
+                    "id": "NoctaliaPerformance"
+                }
+            ],
+            "right": [
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "NightLight"
+                },
+                {
+                    "id": "DarkMode"
+                }
+            ]
+        }
+    },
+    "desktopWidgets": {
+        "enabled": true,
+        "gridSnap": false,
+        "gridSnapScale": false,
+        "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "minimal",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 2.4649263768363174,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 1380,
+                        "y": 755
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.319984232726006,
+                        "showBackground": true,
+                        "x": 1520,
+                        "y": 40
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.257044363504766,
+                        "showBackground": true,
+                        "x": 1180,
+                        "y": -40
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 0.887304856748394,
+                        "showBackground": true,
+                        "x": 1286,
+                        "y": 209
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 0.7615356037404742,
+                        "showBackground": true,
+                        "x": 1646,
+                        "y": 449
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "showBackground": true,
+                        "x": 1631,
+                        "y": 688
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 0.951202266402491,
+                        "showBackground": true,
+                        "x": 1389,
+                        "y": 447
+                    }
+                ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.3202788605515006,
+                        "showBackground": true,
+                        "x": 1197,
+                        "y": 275
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.1373886378758549,
+                        "showBackground": true,
+                        "x": 1600,
+                        "y": 13
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.0506391575068492,
+                        "showBackground": true,
+                        "x": 1312,
+                        "y": -53
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 0.8017154734422722,
+                        "showBackground": true,
+                        "x": 1381,
+                        "y": 148
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 1607,
+                        "y": 366
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.0828824901593919,
+                        "showBackground": true,
+                        "x": 1642,
+                        "y": 676
+                    },
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "minimal",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 2.281465312748777,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 1107,
+                        "y": 205
+                    }
+                ]
+            }
+        ],
+        "overviewEnabled": true
+    },
+    "dock": {
+        "animationSpeed": 1,
+        "backgroundOpacity": 0.56,
+        "colorizeIcons": true,
+        "deadOpacity": 0.43,
+        "displayMode": "always_visible",
+        "dockType": "attached",
+        "enabled": false,
+        "floatingRatio": 1.19,
+        "groupApps": false,
+        "groupClickAction": "cycle",
+        "groupContextMenuMode": "extended",
+        "groupIndicatorStyle": "dots",
+        "inactiveIndicators": true,
+        "indicatorColor": "primary",
+        "indicatorOpacity": 0.6,
+        "indicatorThickness": 3,
+        "launcherIcon": "",
+        "launcherIconColor": "none",
+        "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
+        "monitors": [
+            "eDP-1",
+            "HDMI-A-1"
+        ],
+        "onlySameOutput": true,
+        "pinnedApps": [
+            "kitty",
+            "app.zen_browser.zen"
+        ],
+        "pinnedStatic": true,
+        "position": "bottom",
+        "showDockIndicator": false,
+        "showLauncherIcon": false,
+        "sitOnFrame": false,
+        "size": 0.9400000000000001
+    },
+    "general": {
+        "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": true,
+        "animationDisabled": false,
+        "animationSpeed": 0.86,
+        "autoStartAuth": false,
+        "avatarImage": "/home/wael/.face",
+        "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "digital",
+        "compactLockScreen": true,
+        "dimmerOpacity": 0,
+        "enableBlurBehind": true,
+        "enableLockScreenCountdown": true,
+        "enableLockScreenMediaControls": false,
+        "enableShadows": true,
+        "forceBlackScreenCorners": true,
+        "iRadiusRatio": 0.46,
+        "keybinds": {
+            "keyDown": [
+                "Down"
+            ],
+            "keyEnter": [
+                "Return",
+                "Enter"
+            ],
+            "keyEscape": [
+                "Esc"
+            ],
+            "keyLeft": [
+                "Left"
+            ],
+            "keyRemove": [
+                "Del"
+            ],
+            "keyRight": [
+                "Right"
+            ],
+            "keyUp": [
+                "Up"
+            ]
+        },
+        "language": "",
+        "lockOnSuspend": true,
+        "lockScreenAnimations": true,
+        "lockScreenBlur": 0.2,
+        "lockScreenCountdownDuration": 3000,
+        "lockScreenMonitors": [
+        ],
+        "lockScreenTint": 0,
+        "passwordChars": false,
+        "radiusRatio": 0.38,
+        "reverseScroll": false,
+        "scaleRatio": 0.8500000000000001,
+        "screenRadiusRatio": 0,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
+        "showChangelogOnStartup": true,
+        "showHibernateOnLockScreen": false,
+        "showScreenCorners": true,
+        "showSessionButtonsOnLockScreen": true,
+        "smoothScrollEnabled": true,
+        "telemetryEnabled": true
+    },
+    "hooks": {
+        "colorGeneration": "",
+        "darkModeChange": "",
+        "enabled": false,
+        "performanceModeDisabled": "",
+        "performanceModeEnabled": "",
+        "screenLock": "",
+        "screenUnlock": "",
+        "session": "",
+        "startup": "",
+        "wallpaperChange": ""
+    },
+    "idle": {
+        "customCommands": "[]",
+        "enabled": false,
+        "fadeDuration": 5,
+        "lockCommand": "",
+        "lockTimeout": 660,
+        "resumeLockCommand": "",
+        "resumeScreenOffCommand": "",
+        "resumeSuspendCommand": "",
+        "screenOffCommand": "",
+        "screenOffTimeout": 600,
+        "suspendCommand": "",
+        "suspendTimeout": 1800
+    },
+    "location": {
+        "analogClockInCalendar": false,
+        "autoLocate": false,
+        "firstDayOfWeek": -1,
+        "hideWeatherCityName": false,
+        "hideWeatherTimezone": false,
+        "name": "Annaba",
+        "showCalendarEvents": true,
+        "showCalendarWeather": true,
+        "showWeekNumberInCalendar": false,
+        "use12hourFormat": false,
+        "useFahrenheit": false,
+        "weatherEnabled": true,
+        "weatherShowEffects": true,
+        "weatherTaliaMascotAlways": false
+    },
+    "network": {
+        "bluetoothAutoConnect": true,
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
+        "bluetoothRssiPollIntervalMs": 60000,
+        "bluetoothRssiPollingEnabled": false,
+        "disableDiscoverability": false,
+        "networkPanelView": "wifi",
+        "wifiDetailsViewMode": "list"
+    },
+    "nightLight": {
+        "autoSchedule": true,
+        "dayTemp": "6500",
+        "enabled": false,
+        "forced": false,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "nightTemp": "4000"
+    },
+    "noctaliaPerformance": {
+        "disableDesktopWidgets": true,
+        "disableWallpaper": true
+    },
+    "notifications": {
+        "backgroundOpacity": 1,
+        "clearDismissed": true,
+        "criticalUrgencyDuration": 15,
+        "density": "default",
+        "enableBatteryToast": true,
+        "enableKeyboardLayoutToast": true,
+        "enableMarkdown": false,
+        "enableMediaToast": false,
+        "enabled": true,
+        "location": "top_right",
+        "lowUrgencyDuration": 3,
+        "monitors": [
+        ],
+        "normalUrgencyDuration": 8,
+        "overlayLayer": true,
+        "respectExpireTimeout": false,
+        "saveToHistory": {
+            "critical": true,
+            "low": true,
+            "normal": true
+        },
+        "sounds": {
+            "criticalSoundFile": "",
+            "enabled": false,
+            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "lowSoundFile": "",
+            "normalSoundFile": "",
+            "separateSounds": false,
+            "volume": 0.5
+        }
+    },
+    "osd": {
+        "autoHideMs": 1500,
+        "backgroundOpacity": 1,
+        "enabled": true,
+        "enabledTypes": [
+            0,
+            1,
+            2
+        ],
+        "location": "top_right",
+        "monitors": [
+        ],
+        "overlayLayer": true
+    },
+    "plugins": {
+        "autoUpdate": true,
+        "notifyUpdates": true
+    },
+    "sessionMenu": {
+        "countdownDuration": 3000,
+        "enableCountdown": true,
+        "largeButtonsLayout": "grid",
+        "largeButtonsStyle": true,
+        "position": "center",
+        "powerOptions": [
+            {
+                "action": "lock",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "1"
+            },
+            {
+                "action": "suspend",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "2"
+            },
+            {
+                "action": "hibernate",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "3"
+            },
+            {
+                "action": "reboot",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "4"
+            },
+            {
+                "action": "logout",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "5"
+            },
+            {
+                "action": "shutdown",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
+            },
+            {
+                "action": "userspaceReboot",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
+            }
+        ],
+        "showHeader": true,
+        "showKeybinds": true
+    },
+    "settingsVersion": 59,
+    "systemMonitor": {
+        "batteryCriticalThreshold": 5,
+        "batteryWarningThreshold": 20,
+        "cpuCriticalThreshold": 90,
+        "cpuWarningThreshold": 80,
+        "criticalColor": "",
+        "diskAvailCriticalThreshold": 10,
+        "diskAvailWarningThreshold": 20,
+        "diskCriticalThreshold": 90,
+        "diskWarningThreshold": 80,
+        "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
+        "gpuCriticalThreshold": 90,
+        "gpuWarningThreshold": 80,
+        "memCriticalThreshold": 90,
+        "memWarningThreshold": 80,
+        "swapCriticalThreshold": 90,
+        "swapWarningThreshold": 80,
+        "tempCriticalThreshold": 90,
+        "tempWarningThreshold": 80,
+        "useCustomColors": false,
+        "warningColor": ""
+    },
+    "templates": {
+        "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "btop"
+            },
+            {
+                "enabled": true,
+                "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "sway"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "code"
+            },
+            {
+                "enabled": true,
+                "id": "alacritty"
+            },
+            {
+                "enabled": true,
+                "id": "emacs"
+            },
+            {
+                "enabled": true,
+                "id": "foot"
+            },
+            {
+                "enabled": true,
+                "id": "fuzzel"
+            },
+            {
+                "enabled": true,
+                "id": "ghostty"
+            },
+            {
+                "enabled": true,
+                "id": "hyprtoolkit"
+            },
+            {
+                "enabled": true,
+                "id": "helix"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "pywalfox"
+            },
+            {
+                "enabled": true,
+                "id": "mango"
+            },
+            {
+                "enabled": true,
+                "id": "scroll"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "vicinae"
+            },
+            {
+                "enabled": true,
+                "id": "niri"
+            },
+            {
+                "enabled": true,
+                "id": "spicetify"
+            },
+            {
+                "enabled": true,
+                "id": "wezterm"
+            },
+            {
+                "enabled": true,
+                "id": "zed"
+            },
+            {
+                "enabled": true,
+                "id": "walker"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "zathura"
+            },
+            {
+                "enabled": true,
+                "id": "steam"
+            },
+            {
+                "enabled": true,
+                "id": "labwc"
+            }
+        ],
+        "enableUserTheming": true
+    },
+    "ui": {
+        "boxBorderEnabled": false,
+        "fontDefault": "Fira Code Medium",
+        "fontDefaultScale": 1,
+        "fontFixed": "monospace",
+        "fontFixedScale": 1,
+        "panelBackgroundOpacity": 1,
+        "panelsAttachedToBar": true,
+        "scrollbarAlwaysVisible": true,
+        "settingsPanelMode": "attached",
+        "settingsPanelSideBarCardStyle": false,
+        "tooltipsEnabled": true,
+        "translucentWidgets": false
+    },
+    "wallpaper": {
+        "automationEnabled": false,
+        "directory": "/home/wael/Pictures/wallpapers",
+        "enableMultiMonitorDirectories": true,
+        "enabled": true,
+        "favorites": [
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#a0c9ff",
+                    "#bbc7db",
+                    "#d7bde4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/black&white/21.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#4d9aff",
+                    "#4033ff",
+                    "#a633ff",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/23.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb59d",
+                    "#e7bdb0",
+                    "#d6c68d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/57.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#74daa3",
+                    "#b5ccbb",
+                    "#a4cddc",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/wallhaven-3qqqkv.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#4fdbd0",
+                    "#b0ccc8",
+                    "#afc9e7",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/a_sculpture_of_a_man_with_a_face_on_his_head.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#aec6ff",
+                    "#bfc6dc",
+                    "#dfbbde",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-6lkzex.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#d5e6fb",
+                    "#d7d5fb",
+                    "#ead5fb",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/2.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": false,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#305da8",
+                    "#565e71",
+                    "#715574",
+                    "#ba1a1a"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/tokyonight$/25.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#53d7f1",
+                    "#b2cbd2",
+                    "#bdc5eb",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/black&white/38.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb3b5",
+                    "#e6bdbd",
+                    "#e6c08d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-yq5g1k.png",
+                "useWallpaperColors": true
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#4ddbff",
+                    "#3370ff",
+                    "#5c33ff",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/56.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#66cce4",
+                    "#5c81d6",
+                    "#7965cc",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/wallhaven-7jjyd9.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#545ff7",
+                    "#8a3cf6",
+                    "#e93cf6",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/wallhaven-k88mr7.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#67cee4",
+                    "#5c83d6",
+                    "#7866cc",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/blue/wallhaven-yqqywk.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Noctalia (default)",
+                "darkMode": true,
+                "generationMethod": "monochrome",
+                "paletteColors": [
+                    "#ffffff",
+                    "#c6c6c6",
+                    "#e2e2e2",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_01w9e9.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#fbe7e7",
+                    "#f9e9e9",
+                    "#eaeac1",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/black&white/wallhaven_zykv6o.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#67bde4",
+                    "#5c76d6",
+                    "#8666cc",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/black&white/wallhaven_nz16pw.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#8fd88a",
+                    "#b9ccb3",
+                    "#a0cfd4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/black&white/wallhaven_4l36rl.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#63d3ff",
+                    "#b4cad5",
+                    "#c5c2ea",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/green-07.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#63d3ff",
+                    "#b4cad5",
+                    "#c5c2ea",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/wallhaven-3qqqkv.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#63d3ff",
+                    "#b4cad5",
+                    "#c5c2ea",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/quite_path_by_wacalac_ddcxpaf.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#63d3ff",
+                    "#b4cad5",
+                    "#c5c2ea",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/wallhaven-7pxxj9.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#b3d26a",
+                    "#c2caaa",
+                    "#a1d0c7",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/wallhaven-rqr3w7.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#b3d26a",
+                    "#c2caaa",
+                    "#a1d0c7",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/green/wallhaven-rrk3em.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#6cd2ff",
+                    "#b4cad6",
+                    "#c7c2ea",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/19.jpeg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#e96371",
+                    "#e6894c",
+                    "#e6d64c",
+                    "#fd4663"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven_j88wjy.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#e2c290",
+                    "#d6c4ac",
+                    "#c1cc9c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven_vgow3l.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#f8bd48",
+                    "#dac3a0",
+                    "#b3cea6",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven_zpzj5y.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#e2c54b",
+                    "#d2c6a1",
+                    "#aad0b2",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven-zyr8mw.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb68e",
+                    "#e6beaa",
+                    "#cdc991",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven-7jj5y9.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb4ab",
+                    "#e7bdb7",
+                    "#e0c38c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_28xwem.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb4aa",
+                    "#e7bdb7",
+                    "#dfc38c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_5yz968.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "faithful",
+                "paletteColors": [
+                    "#ffb4a6",
+                    "#e7bdb5",
+                    "#ddc48c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_72xwg9.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb4ac",
+                    "#e7bdb8",
+                    "#e0c38c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_kwqr7q.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb4a7",
+                    "#e7bdb6",
+                    "#ddc48c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-838p91.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb3af",
+                    "#e7bdba",
+                    "#e2c28c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven_pkxkrm.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb3b5",
+                    "#e6bdbd",
+                    "#e6c08d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-lyz33q.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb3b5",
+                    "#e6bdbd",
+                    "#e6c08d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-zpzxrg.jpg",
+                "useWallpaperColors": true
+            }
+        ],
+        "fillColor": "#000000",
+        "fillMode": "center",
+        "hideWallpaperFilenames": false,
+        "linkLightAndDarkWallpapers": true,
+        "monitorDirectories": [
+        ],
+        "overviewBlur": 0.4,
+        "overviewEnabled": false,
+        "overviewTint": 0.6,
+        "panelPosition": "top_center",
+        "randomIntervalSec": 300,
+        "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
+        "skipStartupTransition": true,
+        "solidColor": "#1a1a2e",
+        "sortOrder": "name",
+        "transitionDuration": 1000,
+        "transitionEdgeSmoothness": 0.05,
+        "transitionType": [
+            "fade",
+            "disc",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
+        ],
+        "useOriginalImages": false,
+        "useSolidColor": false,
+        "useWallhaven": false,
+        "viewMode": "browse",
+        "wallhavenApiKey": "",
+        "wallhavenCategories": "111",
+        "wallhavenOrder": "desc",
+        "wallhavenPurity": "110",
+        "wallhavenQuery": "",
+        "wallhavenRatios": "",
+        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionMode": "atleast",
+        "wallhavenResolutionWidth": "",
+        "wallhavenSorting": "relevance",
+        "wallpaperChangeMode": "random"
+    }
+}

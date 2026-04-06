@@ -25,19 +25,29 @@ require("lazy").setup({
     end,
   },
   { "tanvirtin/monokai.nvim", priority = 1000 },
-  { "Shatur/neovim-ayu",      priority = 1000 },
+  { "rebelot/kanagawa.nvim",  priority = 1000 },
+  { "cocopon/iceberg.vim",    priority = 1000 },
+  { "RRethy/nvim-base16",     priority = 1000 },
+  -- 🔥 New themes added below 🔥 --
+
+  -- VS Code theme
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "Mofiqul/vscode.nvim",
     priority = 1000,
     config = function()
-      require("rose-pine").setup({ variant = "main" })
+      require("vscode").setup({
+        style = "dark" -- or "light"
+      })
     end,
   },
-  { "marko-cerovac/material.nvim", priority = 1000 },
-  { "rebelot/kanagawa.nvim",       priority = 1000 },
-  { "cocopon/iceberg.vim",         priority = 1000 },
-  { "RRethy/nvim-base16",          priority = 1000 },
+  -- Neon colors
+  { "rafamadriz/neon",            priority = 1000 },
+
+  -- Soft edge variant by everforest dev
+  { "sainnhe/edge",               priority = 1000 },
+
+  -- Light theme (good balance)
+  { "NLKNguyen/papercolor-theme", priority = 1000 },
 
   -- File Explorer
   {
@@ -47,7 +57,6 @@ require("lazy").setup({
       require("nvim-tree").setup()
     end,
   },
-
 
   -- Telescope
   {
@@ -67,12 +76,11 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require("telescope").load_extension("file_browser")
     end,
   },
-
   -- Dashboard
   {
     "nvimdev/dashboard-nvim",
@@ -103,9 +111,12 @@ require("lazy").setup({
             { icon = "  ", desc = "Bookmarks ", action = "lua open_bookmark()", shortcut = "Ctrl+Alt+d" },
             { icon = "  ", desc = "Recent Files", action = "Telescope oldfiles", shortcut = "Ctrl+r" },
             { icon = "  ", desc = "Recent Projects", action = "lua open_recent_project()", shortcut = "SPC p" },
+            { icon = "🛈 ", desc = "Profile", action = "Triforce stats " },
             { icon = "  ", desc = "Theme Selector ", action = "lua theme_selector_popup()", shortcut = "SPC t" },
-            { icon = "  ", desc = "Config ", action = "edit ~/.config/nvim/init.lua", shortcut = "SPC c" },
+            { icon = "  ", desc = "Config ", action = "lua open_config_dir()", shortcut = "SPC c" },
             { icon = "󰓇  ", desc = "Store", action = "Store", shortcut = "SPC s" },
+            { icon = "  ", desc = "PDF Viewer", action = "PDFview", shortcut = "SPC v" }, -- <--- PDF viewer
+            { icon = "  ", desc = "Telescope", action = "Telescope", shortcut = "SPC f" }, -- <--- Telescope main menu
             { icon = "󰗼  ", desc = "Quit Neovim ", action = "qa", shortcut = "SPC q" },
           },
           footer = {
@@ -134,54 +145,82 @@ require("lazy").setup({
     "Shatur/neovim-session-manager",
     config = function()
       local config = require("session_manager.config")
-      require("session_manager").setup({
-        autoload_mode = config.AutoloadMode.LastSession,
-        autosave_last_session = true,
-        autosave_only_in_session = true,
-      })
-    end,
-  },
-
-  -- Auto Pairs
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-autopairs").setup({
-        check_ts = true,
-      })
-    end,
-  },
-
-  -- Completion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "Exafunction/codeium.nvim",
-    },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "codeium" },
-          { name = "copilot" },
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        experimental = {
-          ghost_text = true,
+      require("snacks").setup({
+        dashboard = {
+          sections = {
+            { section = "header" },
+            {
+              pane = 2,
+              section = "terminal",
+              cmd = "colorscript -e square",
+              height = 5,
+              padding = 1,
+            },
+            { section = "keys", gap = 1, padding = 1 },
+            {
+              pane = 2,
+              icon = " ",
+              desc = "Browse Repo",
+              padding = 1,
+              key = "b",
+              action = function()
+                Snacks.gitbrowse()
+              end,
+            },
+            function()
+              local in_git = Snacks.git.get_root() ~= nil
+              local cmds = {
+                {
+                  title = "Notifications",
+                  cmd = "gh notify -s -a -n5",
+                  action = function()
+                    vim.ui.open("https://github.com/notifications")
+                  end,
+                  key = "n",
+                  icon = " ",
+                  height = 5,
+                  enabled = true,
+                },
+                {
+                  title = "Open Issues",
+                  cmd = "gh issue list -L 3",
+                  key = "i",
+                  action = function()
+                    vim.fn.jobstart("gh issue list --web", { detach = true })
+                  end,
+                  icon = " ",
+                  height = 7,
+                },
+                {
+                  icon = " ",
+                  title = "Open PRs",
+                  cmd = "gh pr list -L 3",
+                  key = "P",
+                  action = function()
+                    vim.fn.jobstart("gh pr list --web", { detach = true })
+                  end,
+                  height = 7,
+                },
+                {
+                  icon = " ",
+                  title = "Git Status",
+                  cmd = "git --no-pager diff --stat -B -M -C",
+                  height = 10,
+                },
+              }
+              return vim.tbl_map(function(cmd)
+                return vim.tbl_extend("force", {
+                  pane = 2,
+                  section = "terminal",
+                  enabled = in_git,
+                  padding = 1,
+                  ttl = 5 * 60,
+                  indent = 3,
+                }, cmd)
+              end, cmds)
+            end,
+            { section = "startup" },
+          },
         },
       })
     end,
@@ -189,8 +228,11 @@ require("lazy").setup({
 
   -- Snippets
   {
-    "rafamadriz/friendly-snippets",
-    dependencies = "L3MON4D3/LuaSnip",
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end,
   },
 
   -- Mason LSP
@@ -216,21 +258,39 @@ require("lazy").setup({
   },
 
   -- Notifications
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("notify").setup({
-        background_colour = "#1e1e2e",
-      })
-    end,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   config = function()
+  --     require("notify").setup({
+  --       background_colour = "#1e1e2e",
+  --     })
+  --   end,
+  -- },
 
   -- UI Enhancements
   {
     "folke/noice.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     config = function()
-      require("noice").setup({})
+      require("noice").setup({
+        notify = { enabled = false },
+        lsp = {
+          progress = { enabled = true },
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+        },
+        routes = {
+          {
+            filter = { event = "notify" },
+            opts = { skip = false },
+          },
+        },
+      })
+      -- Set vim.notify to use Noice
+      vim.notify = require("noice").notify
     end,
   },
   { "MunifTanjim/nui.nvim" },
@@ -302,19 +362,6 @@ require("lazy").setup({
   { "andweeb/presence.nvim" },
   { "mfussenegger/nvim-dap" },
 
-  -- Terminal
-  -- {
-  --   "akinsho/toggleterm.nvim",
-  --   version = "*",
-  --   config = function()
-  --     require("toggleterm").setup({
-  --       direction = "float",
-  --       float_opts = {
-  --         border = "curved",
-  --       },
-  --     })
-  --   end,
-  -- },
 
   -- AI
   {
@@ -328,26 +375,26 @@ require("lazy").setup({
       require("codeium").setup({})
     end,
   },
-  {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-        },
-        panel = {
-          enabled = true,
-          auto_refresh = true,
-          keymap = {
-            open = "<M-CR>",
-          },
-        },
-      })
-    end,
-  },
-
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = {
+  --         enabled = false,
+  --         auto_trigger = false,
+  --       },
+  --       panel = {
+  --         enabled = true,
+  --         auto_refresh = true,
+  --         keymap = {
+  --           open = "<M-CR>",
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
+  --
   {
     "zbirenbaum/copilot-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
@@ -360,7 +407,7 @@ require("lazy").setup({
   {
     "wfxr/minimap.vim",
     build = "cargo install --locked code-minimap",
-    cmd = { "Minimap", "MinimapToggle" },
+    event = "VimEnter", -- Load on VimEnter instead of cmd
     config = function()
       vim.g.minimap_width = 10
       vim.g.minimap_auto_start = 1
@@ -368,11 +415,11 @@ require("lazy").setup({
       vim.g.minimap_highlight_range = 1
       vim.g.minimap_git_colors = 1
       vim.g.minimap_block_filetypes = { "dashboard", "alpha", "starter", "lazy" }
+
       vim.keymap.set("n", "<leader>m", ":MinimapToggle<CR>",
         { noremap = true, silent = true, desc = "Toggle Minimap" })
     end,
   },
-
   -- Trouble
   {
     "folke/trouble.nvim",
@@ -415,16 +462,31 @@ require("lazy").setup({
         backdrop = 0.95,
         width = 80,
         options = {
-          number = false,
-          relativenumber = false,
+          number = true,
+          relativenumber = true,
         },
       },
       plugins = {
         twilight = { enabled = true },
-        gitsigns = { enabled = false },
-        tmux = { enabled = false },
-        kitty = { enabled = false },
+        gitsigns = { enabled = true },
+        tmux = { enabled = true },
+        kitty = { enabled = true },
       },
+      on_open = function()
+        vim.g.lualine_hide = true
+        -- Load lualine if not loaded yet
+        local ok, lualine = pcall(require, "lualine")
+        if ok then
+          lualine.hide({ unhide = false })
+        end
+      end,
+      on_close = function()
+        vim.g.lualine_hide = false
+        local ok, lualine = pcall(require, "lualine")
+        if ok then
+          lualine.hide({ unhide = true })
+        end
+      end,
     },
     keys = {
       { "<leader>zz", "<cmd>ZenMode<CR>", desc = "Toggle Zen Mode" },
@@ -436,11 +498,11 @@ require("lazy").setup({
     "folke/twilight.nvim",
     opts = {
       dimming = {
-        alpha = 0.25,
+        alpha = 0.5,
         color = { "Normal", "#ffffff" },
       },
       context = 20,
-      treesitter = true,
+      -- treesitter = true,
     },
     cmd = "Twilight",
   },
@@ -626,12 +688,12 @@ require("lazy").setup({
         options = {
           theme = "auto", -- or your preferred theme
           icons_enabled = true,
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           globalstatus = true,
         },
         sections = {
-          lualine_a = { { "mode", separator = { left = "", right = "" } } },
+          lualine_a = { { "mode", separator = { left = "", right = "" } } },
           lualine_b = {
             "branch",
             {
@@ -653,6 +715,141 @@ require("lazy").setup({
         tabline = nil, -- leave tabline to bufferline
       })
     end,
-  }
+  },
+  { "EdenEast/nightfox.nvim"
+  },
+  {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+      -- your optional config goes here, see below.
+    end,
+  },
+  {
+    "basola21/PDFview",
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim" }
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        direction = "float",
+        float_opts = {
+          border = "curved",
+        },
+        open_mapping = [[<C-\>]],
+        shade_terminals = true,
+        start_in_insert = true,
+        persist_size = true,
+      })
+      -- Optional: keymap to toggle terminal
+      vim.keymap.set("n", "<leader>tt", function()
+        local dir = vim.fn.expand("%:p:h")
+        if dir ~= "" then
+          vim.cmd("lcd " .. dir)
+        end
+        vim.cmd("ToggleTerm direction=float")
+      end, { desc = "Toggle Floating Terminal in File Directory" })
+    end,
+  },
+
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      arg = "leetcode.nvim",
+      lang = "cpp,python3,javascript,c", -- change to your preferred language
+      storage = {
+        home = vim.fn.stdpath("data") .. "/leetcode",
+        cache = vim.fn.stdpath("cache") .. "/leetcode",
+      },
+      -- optional settings for smoother experience:
+      description = {
+        position = "right",
+        width = "40%",
+      },
+      keys = {
+        toggle = "<leader>lt", -- open/close
+        run = "<leader>lr",    -- run code
+        submit = "<leader>ls", -- submit
+      },
+    },
+  },
+
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'LspAttach',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter', -- optional but recommended
+      'nvim-tree/nvim-web-devicons',     -- optional for icons
+    },
+    config = function()
+      require('lspsaga').setup({
+        ui = {
+          border = 'rounded',
+          code_action = '💡',
+        },
+        symbol_in_winbar = {
+          enable = false, -- disable if you already use something like navic
+        },
+      })
+
+      -- Keymaps (VS Code–like)
+      local keymap = vim.keymap.set
+      keymap('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { desc = 'Peek definition' })
+      keymap('n', 'gr', '<cmd>Lspsaga finder<CR>', { desc = 'LSP references' })
+      keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = 'Hover doc' })
+      keymap('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'Code action' })
+      keymap('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', { desc = 'Rename symbol' })
+      keymap('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<CR>', { desc = 'Show diagnostics' })
+    end,
+  },
+  {
+    "gisketch/triforce.nvim",
+    dependencies = {
+      "nvzone/volt",
+    },
+    config = function()
+      require("triforce").setup({
+        -- Optional: Add your configuration here
+        keymap = {
+          show_profile = "<leader>tp", -- Open profile with <leader>tp
+        },
+      })
+    end,
+  },
+  { 'wakatime/vim-wakatime', lazy = false },
+  {
+    "Sou1lah/Sticky-Notes-for-Nvim-",
+    event = "VeryLazy",
+    config = function()
+      require("sticky-notes").setup({
+        keymaps = true,
+      })
+    end,
+    keys = {
+      { "<leader>mn", "<cmd>StickyNote<cr>",       desc = "Open Sticky Note" },
+      { "<leader>ms", "<cmd>StickyNotePicker<cr>", desc = "Browse Sticky Notes" },
+      { "<leader>md", "<cmd>StickyNoteDelete<cr>", desc = "Delete Sticky Note" },
+    },
+  },
+  {
+    "hmdfrds/focal.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "3rd/image.nvim", -- optional if using chafa backend
+    },
+    opts = {
+      -- See Configuration below
+    },
+  },
 
 })

@@ -1,0 +1,63 @@
+{
+  "menu": {
+    "openPanel": "Ouvrir les Temps de Prières",
+    "settings": "Paramètres du Widget"
+  },
+  "widget": {
+    "iftar": "Iftar",
+    "suhoor": "Suhoor",
+    "soon": "bientôt",
+    "tooltip": {
+      "noData": "Données des Prières non chargées",
+      "countdown": "Temps restant"
+    }
+  },
+  "panel": {
+    "title": "Temps des Prières",
+    "ramadan": "Ramadan",
+    "refresh": "Rafraichir",
+    "iftarIn": "Iftar dans",
+    "iftarPassed": "Iftar est passé",
+    "configure": "Configurez votre ville dans les paramètres",
+    "suhoor": "Suhoor (Imsak)",
+    "fajr": "Fajr",
+    "sunrise": "Lever du soleil",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "iftar": "Iftar (Maghrib)",
+    "isha": "Isha"
+  },
+  "settings": {
+    "location": {
+      "header": "Localisation",
+      "desc": "Utilisé pour récupérer les temps de prières journalier de l'API Aladhan."
+    },
+    "city": {
+      "label": "Ville",
+      "desc": "Entrez le nom de votre ville en Anglais."
+    },
+    "country": {
+      "label": "Pays",
+      "desc": "Entrez le nom de votre pays ou le code à 2 lettres (example: UK, US, EG)."
+    },
+    "method": {
+      "label": "Méthode de calcul",
+      "desc": "Détermine comment les temps de prières son calculés. Choisissez l’autorité suivie dans votre région."
+    },
+    "display": {
+      "header": "Écran"
+    },
+    "showCountdown": {
+      "label": "Montrer un compte à rebours",
+      "desc": "Montrer un compte à rebours en direct avant Iftar dans la barre au lieu du temps statique."
+    },
+    "showAlways": {
+      "label": "Montrer en dehors du Ramadan",
+      "desc": "Laisser le widget visible dans la barre durant toute l'année, pas seulement durant le Ramadan."
+    }
+  },
+  "error": {
+    "network": "La requête réseau a échouée. Assurer vous d'avoir une connection internet.",
+    "generic": "Échec du chargement des temps de prière."
+  }
+}

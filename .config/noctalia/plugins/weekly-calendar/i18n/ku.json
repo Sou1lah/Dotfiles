@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Mîhengên widget",
+    "now": "Niha",
+    "next": "Piştî",
+    "no_more_events_today": "Îro bêtir bûyer tune"
+  },
+  "panel": {
+    "header": "Salnameya hefteyê",
+    "today": "Îro",
+    "event": "bûyer",
+    "events": "bûyerên",
+    "allday": "tîrojê",
+    "no_service": "Xizmeta salnameyê nîne",
+    "loading": "Bar dike...",
+    "no_events": "Bûyer tune"
+  },
+  "settings": {
+    "weekStart": "Roja yekem a hefteyê",
+    "weekStart_description": "Roja kîjanê di salnameyê de dest bi hefteyê dike hilbijêre.",
+    "monday": "Duşem",
+    "sunday": "Yekşem",
+    "saturday": "Şemî",
+    "timeFormat": "Formata demê ya 12-demjimêr bi kar bîne",
+    "timeFormat_description": "Demê di formata 12-demjimêr (BN/PN) de nîşan bide, ne di formata 24-demjimêr de.",
+    "gridColor": "Rengê torê",
+    "gridColor_description": "Rengê ku ji bo xêtên torê ya salnameyê tê bikar anîn hilbijêre.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Şeffafiya xêta saetê",
+    "hourLineOpacity_description": "Şeffafiya xêtên saetan saz bikin.",
+    "dayLineOpacity": "Şeffafiya xêta rojê", 
+    "dayLineOpacity_description": "Şeffafiya xêtên jêderê rojê saz bikin.",
+    "panelMode": "Rewşa panelê",
+    "panelMode_description": "Hilbijêre şêweyê (dibe ku ji nû ve vekirinê hewce bike).",
+    "panelAttach": "Panel bi bar ve girêdayî ye",
+    "panelCenter": "Panela navendîkirî"
+  }
+}

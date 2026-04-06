@@ -1,0 +1,93 @@
+{
+  "gifs": [
+    {
+      "id": "1775204332596",
+      "name": "sharks",
+      "url": "https://i.pinimg.com/736x/d0/18/f9/d018f922eb797a5ad89dab3af63d0b26.jpg",
+      "filename": "1775204332596.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775204429186",
+      "name": "submarine",
+      "url": "https://i.pinimg.com/736x/ee/9f/b6/ee9fb6e30e9f40d86a3afc0534aea3f3.jpg",
+      "filename": "1775204429186.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775207491957",
+      "name": "tea",
+      "url": "https://i.pinimg.com/736x/b1/1f/cb/b11fcb1cdeedf5f476944f741fb90e14.jpg",
+      "filename": "1775207491957.gif",
+      "active": false,
+      "downloaded": true
+    },
+    {
+      "id": "1775207502027",
+      "name": "veil",
+      "url": "https://i.pinimg.com/736x/53/3b/d8/533bd89560b1c66554c544f3c7caad7a.jpg",
+      "filename": "1775207502027.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775207511096",
+      "name": "music",
+      "url": "https://i.pinimg.com/474x/52/e9/4e/52e94eddd4defeea2407a41af5b26197.jpg",
+      "filename": "1775207511096.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775207518813",
+      "name": "oct",
+      "url": "https://i.pinimg.com/736x/1a/70/b3/1a70b319190ec4b3f520f0d6910196c4.jpg",
+      "filename": "1775207518813.gif",
+      "active": false,
+      "downloaded": true
+    },
+    {
+      "id": "1775207527030",
+      "name": "daredevill",
+      "url": "https://i.pinimg.com/736x/61/d9/db/61d9dbde72380a42511ec46c004aec8c.jpg",
+      "filename": "1775207527030.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775207534190",
+      "name": "spidy",
+      "url": "https://i.pinimg.com/1200x/f4/d2/ba/f4d2ba04f9c8af5a60bbce025b454139.jpg",
+      "filename": "1775207534190.gif",
+      "active": false,
+      "downloaded": true
+    },
+    {
+      "id": "1775208395079",
+      "name": "cool",
+      "url": "https://i.pinimg.com/originals/c3/a9/a8/c3a9a87ed744873864ffbf67922ec014.gif",
+      "filename": "1775208395079.gif",
+      "active": false,
+      "downloaded": true
+    },
+    {
+      "id": "1775208409439",
+      "name": "fire punch",
+      "url": "https://i.pinimg.com/736x/57/55/72/57557216e2c43b8bff2d7406067c2159.jpg",
+      "filename": "1775208409439.gif",
+      "active": true,
+      "downloaded": true
+    },
+    {
+      "id": "1775208418946",
+      "name": "box",
+      "url": "https://i.pinimg.com/736x/0b/60/5e/0b605ec3c3c02b27e1c3281d8344d207.jpg",
+      "filename": "1775208418946.gif",
+      "active": true,
+      "downloaded": true
+    }
+  ],
+  "tick": 3
+}

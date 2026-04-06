@@ -1,0 +1,20 @@
+2026/04/02-21:31:12.964 141a3 Reusing MANIFEST /home/wael/.config/stremio-enhanced/Local Storage/leveldb/MANIFEST-000001
+2026/04/02-21:31:13.003 141a3 Recovering log #719
+2026/04/02-21:31:13.003 141a3 Reusing old log /home/wael/.config/stremio-enhanced/Local Storage/leveldb/000719.log 
+2026/04/02-21:32:13.011 141a4 Level-0 table #722: started
+2026/04/02-21:32:13.016 141a4 Level-0 table #722: 66072 bytes OK
+2026/04/02-21:32:13.024 141a4 Delete type=0 #719
+2026/04/02-21:35:33.158 17306 Level-0 table #724: started
+2026/04/02-21:35:33.167 17306 Level-0 table #724: 53758 bytes OK
+2026/04/02-21:35:33.186 17306 Delete type=0 #721
+2026/04/02-21:35:33.186 17306 Compacting 4@0 + 1@1 files
+2026/04/02-21:35:33.202 17306 Generated table #725@0: 17 keys, 96645 bytes
+2026/04/02-21:35:33.202 17306 Compacted 4@0 + 1@1 files => 96645 bytes
+2026/04/02-21:35:33.211 17306 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/02-21:35:33.212 17306 Delete type=2 #714
+2026/04/02-21:35:33.212 17306 Delete type=2 #716
+2026/04/02-21:35:33.213 17306 Delete type=2 #718
+2026/04/02-21:35:33.213 17306 Delete type=2 #722
+2026/04/02-21:35:33.213 17306 Delete type=2 #724
+2026/04/02-21:36:02.049 174ef Level-0 table #727: started
+2026/04/02-21:36:02.056 174ef Level-0 table #727: 38479 bytes OK

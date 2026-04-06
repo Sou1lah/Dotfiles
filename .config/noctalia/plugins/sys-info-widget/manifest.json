@@ -1,0 +1,17 @@
+{
+  "id": "sys-info-widget",
+  "name": "System Info",
+  "version": "1.0.2",
+  "minNoctaliaVersion": "4.6.6",
+  "author": "Simon",
+  "license": "MIT",
+  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+  "description": "Shows Distribution, Kernel, Uptime and IP addresses.",
+  "tags": ["Desktop", "System"],
+  "entryPoints": {
+    "desktopWidget": "DesktopWidget.qml"
+  },
+  "metadata": {
+    "defaultSettings": {}
+  }
+}

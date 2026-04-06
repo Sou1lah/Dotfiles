@@ -210,21 +210,38 @@ require("lazy").setup({
     config = function()
       -- Dashboard theme and config
       local themes = {
-        { name = "Gruvbox",     value = "gruvbox" },
-        { name = "Tokyo Night", value = "tokyonight" },
-        { name = "Nord",        value = "nord" },
-        { name = "Dracula",     value = "dracula" },
-        { name = "Catppuccin",  value = "catppuccin-mocha" },
-        { name = "Everforest",  value = "everforest" },
-        { name = "OneDark",     value = "onedark" },
-        { name = "Solarized",   value = "solarized" },
-        { name = "Monokai",     value = "monokai" },
-        { name = "Ayu",         value = "ayu-dark" },
-        { name = "Rose Pine",   value = "rose-pine" },
-        { name = "Material",    value = "material" },
-        { name = "Kanagawa",    value = "kanagawa" },
-        { name = "Iceberg",     value = "iceberg" },
-        { name = "Base16",      value = "base16-default-dark" },
+        -- Your existing ones
+        { name = "Gruvbox",      value = "gruvbox" },
+        { name = "Tokyo Night",  value = "tokyonight" },
+        { name = "Nord",         value = "nord" },
+        { name = "Dracula",      value = "dracula" },
+        { name = "Catppuccin",   value = "catppuccin-frappe" }, -- or mocha, macchiato, etc.
+        { name = "Everforest",   value = "everforest" },
+        { name = "OneDark",      value = "onedark" },
+        { name = "Solarized",    value = "solarized" },
+        { name = "Monokai",      value = "monokai" },
+        { name = "Ayu",          value = "ayu-dark" },
+        { name = "Rose Pine",    value = "rose-pine-dawn" }, -- softer/pink tone
+        { name = "Material",     value = "material" },
+        { name = "Kanagawa",     value = "kanagawa" },
+        { name = "Iceberg",      value = "iceberg" },
+        { name = "Base16",       value = "base16-default-dark" },
+
+        -- 🔥 New themes added below 🔥
+        { name = "Oxocarbon",    value = "oxocarbon" },
+        { name = "Doom One",     value = "doom-one" },
+        { name = "Aquarium",     value = "aquarium" },
+        { name = "VS Code",      value = "vscode" },
+        { name = "Nightfox",     value = "nightfox" },
+        { name = "Dawnfox",      value = "dawnfox" }, -- soft variant
+        { name = "Pinkfox",      value = "pinkfox" }, -- pink variant (not official but supported)
+        { name = "Clown Fiesta", value = "no-clown-fiesta" },
+        { name = "Nightfly",     value = "nightfly" },
+        { name = "Moonfly",      value = "moonfly" },
+        { name = "Neon",         value = "neon" },
+        { name = "Edge",         value = "edge" },
+        { name = "Papercolor",   value = "PaperColor" },
+        { name = "One",          value = "one" },
       }
       local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
       local function set_theme(theme)

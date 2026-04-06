@@ -1,0 +1,21 @@
+{
+  "id": "media-panel",
+  "name": "Media Panel",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "1.0.0",
+  "author": "MIKURI",
+  "license": "MIT",
+  "description": "Simple media player with GIFs",
+  "tags": ["Music"],
+  "entryPoints": {
+    "panel": "Panel.qml",
+    "barWidget": "BarWidget.qml",
+    "settings": "Settings.qml"
+  },
+  "metadata": {
+    "defaultSettings": {
+      "gifUrl": "https://media.tenor.com/JtofR661NDIAAAAi/honkai-star-rail-hsr.gif",
+      "gifReloadTrigger": 0
+    }
+  }
+}

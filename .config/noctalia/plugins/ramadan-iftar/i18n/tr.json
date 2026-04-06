@@ -1,0 +1,63 @@
+{
+  "menu": {
+    "openPanel": "Namaz Vakitlerini Aç",
+    "settings": "Widget Ayarları"
+  },
+  "widget": {
+    "iftar": "İftar",
+    "suhoor": "Sahur",
+    "soon": "yakında",
+    "tooltip": {
+      "noData": "Namaz verileri yüklenmedi",
+      "countdown": "Kalan süre"
+    }
+  },
+  "panel": {
+    "title": "Namaz Vakitleri",
+    "ramadan": "Ramazan",
+    "refresh": "Yenile",
+    "iftarIn": "İftara kalan süre",
+    "iftarPassed": "İftar vakti geçti",
+    "configure": "Ayarlar bölümünden şehrinizi seçin",
+    "suhoor": "Sahur (İmsak)",
+    "fajr": "İmsak",
+    "sunrise": "Güneş",
+    "dhuhr": "Öğle",
+    "asr": "İkindi",
+    "iftar": "İftar (Akşam)",
+    "isha": "Yatsı"
+  },
+  "settings": {
+    "location": {
+      "header": "Konum",
+      "desc": "Günlük namaz vakitlerini Aladhan API üzerinden almak için kullanılır."
+    },
+    "city": {
+      "label": "Şehir",
+      "desc": "Şehir adını İngilizce girin."
+    },
+    "country": {
+      "label": "Ülke",
+      "desc": "Ülke adını veya 2 harfli kodunu girin (örn. TR, UK, US)."
+    },
+    "method": {
+      "label": "Hesaplama Yöntemi",
+      "desc": "Namaz vakitlerinin nasıl hesaplandığını belirler. Bölgenizde takip edilen yöntemi seçin."
+    },
+    "display": {
+      "header": "Görünüm"
+    },
+    "showCountdown": {
+      "label": "Geri sayımı göster",
+      "desc": "Çubukta sabit saat yerine İftar için canlı geri sayım göster."
+    },
+    "showAlways": {
+      "label": "Ramazan dışında göster",
+      "desc": "Widget’ı sadece Ramazan’da değil, yıl boyunca görünür tut."
+    }
+  },
+  "error": {
+    "network": "Ağ isteği başarısız oldu. İnternet bağlantınızı kontrol edin.",
+    "generic": "Namaz vakitleri yüklenemedi."
+  }
+}

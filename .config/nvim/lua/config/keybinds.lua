@@ -2,6 +2,9 @@
 -- NEOVIM KEYBINDS CONFIGURATION
 -- ============================================================================
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Basic editing keybinds
 vim.keymap.set("n", "<C-x>", '"+dd', { noremap = true, silent = true })                  -- Cut line
 vim.keymap.set("v", "<C-x>", '"+d', { noremap = true, silent = true })                   -- Cut selection
@@ -81,3 +84,29 @@ vim.keymap.set("n", "<leader>d", function() _G.show_keybinds_telescope() end, { 
 
 -- Load helper functions
 require("config.helpers")
+
+vim.keymap.set('n', '<leader>lg', function()
+  local Terminal = require('toggleterm.terminal').Terminal
+  local lazygit = Terminal:new({
+    cmd = 'lazygit',
+    direction = 'float',
+    close_on_exit = true,
+    on_exit = function(t, job, exit_code, signal)
+      if exit_code == 0 then vim.cmd('ToggleTerm') end
+    end,
+  })
+  lazygit:toggle()
+end, { noremap = true, silent = true, desc = 'Lazygit' })
+
+vim.keymap.set('n', '<leader>ghg', function()
+  local Terminal = require('toggleterm.terminal').Terminal
+  local ghgrab = Terminal:new({
+    cmd = 'ghgrab',
+    direction = 'float',
+    close_on_exit = true,
+    on_exit = function(t, job, exit_code, signal)
+      if exit_code == 0 then vim.cmd('ToggleTerm') end
+    end,
+  })
+  ghgrab:toggle()
+end, { noremap = true, silent = true, desc = 'ghgrab' })

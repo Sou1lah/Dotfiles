@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Araç takımı ayarları",
+    "now": "Şimdi",
+    "next": "Sonraki",
+    "no_more_events_today": "Bugün başka etkinlik yok"
+  },
+  "panel": {
+    "header": "Haftalık Takvim",
+    "today": "Bugün",
+    "event": "etkinlik",
+    "events": "etkinlikler",
+    "allday": "tüm gün",
+    "no_service": "Takvim servisi yok",
+    "loading": "Yükleniyor...",
+    "no_events": "Etkinlik yok"
+  },
+  "settings": {
+    "weekStart": "Haftanın ilk günü",
+    "weekStart_description": "Takvimde haftanın hangi günü başladığını seçin.",
+    "monday": "Pazartesi",
+    "sunday": "Pazar",
+    "saturday": "Cumartesi",
+    "timeFormat": "12 saatlik zaman formatını kullan",
+    "timeFormat_description": "Zamanı 24 saatlik yerine 12 saatlik formatta (ÖÖ/ÖS) göster.",
+    "gridColor": "Izgara Rengi",
+    "gridColor_description": "Takvim ızgara çizgileri için kullanılacak rengi seçin.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Saat Çizgisi Opaklığı",
+    "hourLineOpacity_description": "Saat çizgilerinin opaklığını ayarlayın.",
+    "dayLineOpacity": "Gün Çizgisi Opaklığı", 
+    "dayLineOpacity_description": "Gün ayırıcı çizgilerin opaklığını ayarlayın.",
+    "panelMode": "Panel modu",
+    "panelMode_description": "Düzeni seçin (yeniden açılması gerekebilir).",
+    "panelAttach": "Panel çubuğa takılı",
+    "panelCenter": "Ortalanmış panel"
+  }
+}

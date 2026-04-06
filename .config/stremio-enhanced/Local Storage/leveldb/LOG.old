@@ -1,0 +1,5 @@
+2026/04/02-20:47:24.480 10e38f Reusing MANIFEST /home/wael/.config/stremio-enhanced/Local Storage/leveldb/MANIFEST-000001
+2026/04/02-20:47:24.527 10e38f Recovering log #715
+2026/04/02-20:47:24.531 10e38f Level-0 table #718: started
+2026/04/02-20:47:24.537 10e38f Level-0 table #718: 38478 bytes OK
+2026/04/02-20:47:24.547 10e38f Delete type=0 #715

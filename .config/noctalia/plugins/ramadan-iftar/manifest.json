@@ -1,0 +1,31 @@
+{
+  "id": "ramadan-iftar",
+  "name": "Ramadan Iftar",
+  "version": "1.0.3",
+  "minNoctaliaVersion": "4.1.0",
+  "author": "User",
+  "license": "MIT",
+  "description": "Shows prayer times and a countdown to Iftar during Ramadan.",
+  "tags": [
+    "Bar",
+    "Panel"
+  ],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "city": "London",
+      "country": "UK",
+      "method": 3,
+      "showAlways": true,
+      "showCountdown": true
+    }
+  }
+}

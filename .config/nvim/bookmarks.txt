@@ -2,3 +2,5 @@
 /home/wael/Ranger keybind
 /home/wael/.config/nvim/init.lua
 /home/wael/.config/weekly-github-waybar-module/weekly_commits
+/home/wael/.config/nvim/lua/config/helpers.lua
+/home/wael/coding/leetcode/04.py

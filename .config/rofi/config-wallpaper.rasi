@@ -1,7 +1,8 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (wallpaper) */
 
-@import "~/.config/rofi/config.rasi"  
+@theme "~/.config/rofi/themes/KooL_style-3-Fullscreen-v2.rasi"
+// @import "~/.config/rofi/config.rasi"  
 
 /* ---- Configuration ---- */ 
 configuration {
@@ -21,7 +22,7 @@ mainbox {
 
 entry {
   expand: true;
-  placeholder: " 🎞️ Search / Choose Wallpaper";
+  placeholder: " 🔎 Search ";
   horizontal-align: 0.5;
   horizontal-align: 0.5;
 

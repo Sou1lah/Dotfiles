@@ -1,0 +1,17 @@
+/**
+ * @name Amoled Theme
+ * @description A theme that uses amoled pitch black color.
+ * @updateUrl https://raw.githubusercontent.com/REVENGE977/StremioAmoledTheme/main/amoled.theme.css
+ * @version 1.0.3
+ * @author REVENGE977
+ */
+
+:root {
+    --primary-background-color: black;
+    --secondary-background-color: black;
+    --modal-background-color: black;
+}
+
+.poster-image-NiV7O:hover{
+    cursor:pointer;
+}

@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Widgetinstellingen",
+    "now": "Nu",
+    "next": "Volgende",
+    "no_more_events_today": "Geen evenementen meer vandaag"
+  },
+  "panel": {
+    "header": "Wekelijkse kalender",
+    "today": "Vandaag",
+    "event": "evenement",
+    "events": "evenementen",
+    "allday": "de hele dag",
+    "no_service": "Geen kalenderdienst",
+    "loading": "Laden...",
+    "no_events": "Geen evenementen"
+  },
+  "settings": {
+    "weekStart": "Eerste dag van de week",
+    "weekStart_description": "Kies welke dag de week in de kalender begint.",
+    "monday": "Maandag",
+    "sunday": "Zondag",
+    "saturday": "Zaterdag",
+    "timeFormat": "12-uurs tijdnotatie gebruiken",
+    "timeFormat_description": "Tijd weergeven in 12-uurs formaat (AM/PM) in plaats van 24-uurs formaat.",
+    "gridColor": "Rasterkleur",
+    "gridColor_description": "Kies de kleur die wordt gebruikt voor de rasterlijnen van de kalender.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Ondoorzichtigheid van uurlijnen",
+    "hourLineOpacity_description": "Pas de ondoorzichtigheid van uurlijnen aan.",
+    "dayLineOpacity": "Ondoorzichtigheid van daglijnen", 
+    "dayLineOpacity_description": "Pas de ondoorzichtigheid van dag-scheidingslijnen aan.",
+    "panelMode": "Paneelmodus",
+    "panelMode_description": "Kies lay-out (mogelijk opnieuw openen vereist).",
+    "panelAttach": "Paneel bevestigd aan de balk",
+    "panelCenter": "Gecentreerd paneel"
+  }
+}

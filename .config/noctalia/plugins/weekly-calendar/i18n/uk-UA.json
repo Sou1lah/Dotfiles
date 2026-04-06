@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Параметри віджета",
+    "now": "Зараз",
+    "next": "Далі",
+    "no_more_events_today": "Сьогодні більше немає подій"
+  },
+  "panel": {
+    "header": "Щотижневий календар",
+    "today": "Сьогодні",
+    "event": "подія",
+    "events": "події",
+    "allday": "цілий день",
+    "no_service": "Сервіс календаря недоступний",
+    "loading": "Завантаження...",
+    "no_events": "Немає подій"
+  },
+  "settings": {
+    "weekStart": "Перший день тижня",
+    "weekStart_description": "Виберіть, який день починає тиждень у календарі.",
+    "monday": "Понеділок",
+    "sunday": "Неділя",
+    "saturday": "Субота",
+    "timeFormat": "Використовувати 12-годинний формат часу",
+    "timeFormat_description": "Відображати час у 12-годинному форматі (ДП/ПП) замість 24-годинного.",
+    "gridColor": "Колір сітки",
+    "gridColor_description": "Виберіть колір, що використовується для ліній сітки календаря.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Непрозорість годинних ліній",
+    "hourLineOpacity_description": "Налаштуйте непрозорість годинних ліній.",
+    "dayLineOpacity": "Непрозорість ліній дня", 
+    "dayLineOpacity_description": "Налаштуйте непрозорість ліній-роздільників днів.",
+    "panelMode": "Режим панелі",
+    "panelMode_description": "Виберіть макет (може знадобитися перезапуск).",
+    "panelAttach": "Панель прикріплена до панелі",
+    "panelCenter": "Центрована панель"
+  }
+}

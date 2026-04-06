@@ -1,0 +1,23 @@
+{
+  "id": "animated gifs",
+  "name": "GIF Widget",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "3.6.0",
+  "author": "MIKURI",
+  "license": "MIT",
+  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+  "description": "Display animated GIFs on your desktop.",
+  "tags": ["Desktop", "Fun"],
+  "entryPoints": {
+    "desktopWidget": "DesktopWidget.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "gifs": []
+    }
+  }
+}

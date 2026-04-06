@@ -9,7 +9,7 @@ return {
     config = function()
       require("competitest").setup()
     end,
-    ft = {"c", "cpp"}
+    ft = { "c", "cpp" }
   },
 
   {
@@ -19,7 +19,7 @@ return {
     cmd = { "Typr", "TyprStats" },
   },
 
-  { "nvzone/timerly", cmd = "TimerlyToggle" },
+  { "nvzone/timerly",                   cmd = "TimerlyToggle" },
 
   {
     "RaafatTurki/hex.nvim",
@@ -125,10 +125,7 @@ return {
         end,
       },
     },
-    config = function()
-      require "nvchad.configs.lspconfig"
-      require "configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
+    -- LSP config is handled by config/lsp.lua loaded from init.lua
   },
 
   {
@@ -181,10 +178,10 @@ return {
     },
 
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
+      "nvim-lua/plenary.nvim",         -- required
       "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim", -- optional
-      "ibhagwan/fzf-lua", -- optional
+      "sindrets/diffview.nvim",        -- optional
+      "ibhagwan/fzf-lua",              -- optional
     },
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "git")
@@ -451,6 +448,31 @@ return {
         end,
         mode = "n",
         desc = "Resize Mode",
+      },
+      {
+        "Sou1lah/Sticky-Notes-for-Nvim-",
+        event = "VeryLazy",
+        config = function()
+          require("sticky-notes").setup({
+            keymaps = true,
+          })
+        end,
+        keys = {
+          {
+            "<leader>mn",
+            function()
+              require("sticky-notes").open_split_sticky_note()
+            end,
+            desc = "Open Sticky Note",
+          },
+          {
+            "<leader>ms",
+            function()
+              require("sticky-notes").toggle_sticky_note_picker()
+            end,
+            desc = "Browse Sticky Notes",
+          },
+        },
       },
     },
 

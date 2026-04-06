@@ -1,0 +1,70 @@
+{
+  "todos": [
+    {
+      "id": 1775391845181,
+      "text": "seif porject",
+      "completed": false,
+      "createdAt": "2026-04-05T12:24:05.181Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    }
+  ],
+  "pages": [
+    {
+      "id": 0,
+      "name": "General"
+    }
+  ],
+  "current_page_id": 0,
+  "count": 1,
+  "completedCount": 0,
+  "showCompleted": true,
+  "showBackground": true,
+  "isExpanded": true,
+  "useCustomColors": false,
+  "priorityColors": {
+    "high": {
+      "r": 0.9921568632125854,
+      "g": 0.27450981736183167,
+      "b": 0.38823530077934265,
+      "a": 1,
+      "hsvHue": 0.9735833406448364,
+      "hsvSaturation": 0.723323404788971,
+      "hsvValue": 0.9921568632125854,
+      "hslHue": 0.9735833406448364,
+      "hslSaturation": 0.9786068797111511,
+      "hslLightness": 0.6333409547805786,
+      "valid": true
+    },
+    "medium": {
+      "r": 0.3019607961177826,
+      "g": 0.8588235378265381,
+      "b": 1,
+      "a": 1,
+      "hsvHue": 0.5336944460868835,
+      "hsvSaturation": 0.6980392336845398,
+      "hsvValue": 1,
+      "hslHue": 0.5336944460868835,
+      "hslSaturation": 1,
+      "hslLightness": 0.6509804129600525,
+      "valid": true
+    },
+    "low": {
+      "r": 0.686274528503418,
+      "g": 0.7098039388656616,
+      "b": 0.7137255072593689,
+      "a": 1,
+      "hsvHue": 0.523805558681488,
+      "hsvSaturation": 0.03846799582242966,
+      "hsvValue": 0.7137255072593689,
+      "hslHue": 0.523805558681488,
+      "hslSaturation": 0.04574654623866081,
+      "hslLightness": 0.7000076174736023,
+      "valid": true
+    }
+  },
+  "exportPath": "~/Documents",
+  "exportFormat": "markdown",
+  "exportEmptySections": false
+}

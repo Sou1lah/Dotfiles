@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Widget-Einstellungen",
+    "now": "Jetzt",
+    "next": "Nächste",
+    "no_more_events_today": "Heute keine weiteren Ereignisse"
+  },
+  "panel": {
+    "header": "Wochenkalender",
+    "today": "Heute",
+    "event": "Ereignis",
+    "events": "Ereignisse",
+    "allday": "ganztätig",
+    "no_service": "Kein Kalenderdienst",
+    "loading": "Lädt...",
+    "no_events": "Keine Ereignisse"
+  },
+  "settings": {
+    "weekStart": "Erster Tag der Woche",
+    "weekStart_description": "Wählen Sie, welcher Tag die Woche im Kalender beginnen soll.",
+    "monday": "Montag",
+    "sunday": "Sonntag",
+    "saturday": "Samstag",
+    "timeFormat": "12-Stunden-Zeitformat benutzen",
+    "timeFormat_description": "Zeit im 12‑Stunden‑Format (AM/PM) statt im 24‑Stunden‑Format anzeigen.",
+    "gridColor": "Rasterfarbe",
+    "gridColor_description": "Wähle die Farbe für die Kalender-Rasterlinien.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Opazität der Stundenlinien",
+    "hourLineOpacity_description": "Passe die Deckkraft der Stundenlinien an.",
+    "dayLineOpacity": "Opazität der Tageslinien",
+    "dayLineOpacity_description": "Passe die Deckkraft der Trennlinien zwischen Tagen an.",
+    "panelMode": "Panel-Modus",
+    "panelMode_description": "Wählen Sie das Layout (möglicherweise ist ein Neustart erforderlich)",
+    "panelAttach": "Panel an der Leiste angeheftet",
+    "panelCenter": "Zentriertes Panel"
+  }
+}

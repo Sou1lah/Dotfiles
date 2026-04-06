@@ -1,0 +1,20 @@
+{
+  "id": "weekly-calendar",
+  "name": "Weekly Calendar",
+  "version": "1.0.4",
+  "minNoctaliaVersion": "4.2.3",
+  "author": "dodaars",
+  "license": "MIT",
+  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+  "description": "A weekly calendar plugin complementing Noctalia's inbuilt calendar service.",
+  "tags": ["Bar", "Panel", "Productivity"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  }
+}

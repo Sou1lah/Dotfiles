@@ -1,7 +1,8 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Rofi Config for Google Search) */
 
-@import "~/.config/rofi/config.rasi"  
+@import "~/.config/rofi/themes/KooL_style-7.rasi"  
+
 
 /* ---- Window ---- */
 window {

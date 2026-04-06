@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Настройки виджета",
+    "now": "Сейчас",
+    "next": "Далее",
+    "no_more_events_today": "Сегодня больше нет событий"
+  },
+  "panel": {
+    "header": "Еженедельный календарь",
+    "today": "Сегодня",
+    "event": "событие",
+    "events": "события",
+    "allday": "весь день",
+    "no_service": "Сервис календаря недоступен",
+    "loading": "Загрузка...",
+    "no_events": "Нет событий"
+  },
+  "settings": {
+    "weekStart": "Первый день недели",
+    "weekStart_description": "Выберите, с какого дня начинается неделя в календаре.",
+    "monday": "Понедельник",
+    "sunday": "Воскресенье",
+    "saturday": "Суббота",
+    "timeFormat": "Использовать 12-часовой формат времени",
+    "timeFormat_description": "Отображать время в 12-часовом формате (AM/PM) вместо 24-часового.",
+    "gridColor": "Цвет сетки",
+    "gridColor_description": "Выберите цвет, используемый для линий сетки календаря.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Непрозрачность часовых линий",
+    "hourLineOpacity_description": "Отрегулируйте непрозрачность часовых линий.",
+    "dayLineOpacity": "Непрозрачность дневных линий", 
+    "dayLineOpacity_description": "Отрегулируйте непрозрачность линий-разделителей дней.",
+    "panelMode": "Режим панели",
+    "panelMode_description": "Выберите раскладку (может потребоваться перезапуск).",
+    "panelAttach": "Панель прикреплена к панели",
+    "panelCenter": "Центрированная панель"
+  }
+}

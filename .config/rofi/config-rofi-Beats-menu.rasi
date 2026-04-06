@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main config Rofi Beats Config menu */
 
-@import "~/.config/rofi/config.rasi"  
+@import "~/.config/rofi/themes/KooL_style-7.rasi"  
 
 /* ---- Mainbox ---- */
 mainbox {

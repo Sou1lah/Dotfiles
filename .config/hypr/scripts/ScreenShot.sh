@@ -139,6 +139,15 @@ shotswappy() {
   fi
 }
 
+# take screenshot of current monitor only
+shotcurrent() {
+	# Get the focused monitor name
+	current_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused==true) | .name')
+	cd ${dir} && grim -o "$current_monitor" - | tee "$file" | wl-copy
+	sleep 2
+	notify_view
+}
+
 if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
 fi
@@ -155,10 +164,12 @@ elif [[ "$1" == "--area" ]]; then
 	shotarea
 elif [[ "$1" == "--active" ]]; then
 	shotactive
+elif [[ "$1" == "--current" ]]; then
+	shotcurrent
 elif [[ "$1" == "--swappy" ]]; then
 	shotswappy
 else
-	echo -e "Available Options : --now --in5 --in10 --win --area --active --swappy"
+	echo -e "Available Options : --now --in5 --in10 --win --area --active --current --swappy"
 fi
 
 exit 0

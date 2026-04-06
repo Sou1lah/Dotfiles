@@ -1,0 +1,39 @@
+{
+  "bar_widget": {
+    "settings": "Widget Settings",
+    "now": "Now",
+    "next": "Next",
+    "no_more_events_today": "No events remaining today"
+  },
+  "panel": {
+    "header": "Weekly Calendar",
+    "today": "Today",
+    "event": "event",
+    "events": "events",
+    "allday": "all-day",
+    "no_service": "No calendar service",
+    "loading": "Loading...",
+    "no_events": "No events"
+  },
+  "settings": {
+    "weekStart": "First day of week",
+    "weekStart_description": "Choose which day starts the week in the calendar.",
+    "monday": "Monday",
+    "sunday": "Sunday",
+    "saturday": "Saturday",
+    "timeFormat": "Use 12-hour time format",
+    "timeFormat_description": "Display time in 12-hour format (AM/PM) instead of 24-hour format.",
+    "gridColor": "Grid Color",
+    "gridColor_description": "Choose the color used for calendar grid lines.",
+    "colorOutline": "Outline",
+    "colorOnSurfaceVariant": "OnSurfaceVariant",
+    "hourLineOpacity": "Hour Line Opacity",
+    "hourLineOpacity_description": "Adjust the opacity of hour lines.",
+    "dayLineOpacity": "Day Line Opacity", 
+    "dayLineOpacity_description": "Adjust the opacity of day separator lines.",
+    "panelMode": "Panel Mode",
+    "panelMode_description": "Choose layout (may require reopening).",
+    "panelAttach": "Panel attached to bar",
+    "panelCenter": "Centered panel"
+  }
+}

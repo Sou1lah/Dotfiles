@@ -1,7 +1,6 @@
 **Tasks :**
-- [ ] Example task: Review config
-- [ ] Example task: Update plugins
-
 ----------------------------------------
+- [ ] 3d vector representation
+---
 **Notes :**
 > Start typing your notes here...

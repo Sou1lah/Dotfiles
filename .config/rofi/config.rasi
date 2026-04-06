@@ -25,13 +25,13 @@
 
 
 
-//@theme "~/.config/rofi/themes/KooL_style-7.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-2-Light.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-dark.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-9.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-10-Fancy-v2.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-dark.rasi"
-//@theme "~/.config/rofi/themes/KooL_style-3-FullScreen-v1.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-15-solarized.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-light.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-3-Fullscreen-v2.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-dark.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-7.rasi"
-@theme "~/.config/rofi/themes/KooL_style-6.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-8.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-9.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-10-Fancy.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-10-Fancy-v2.rasi"
+@theme "~/.config/rofi/themes/KooL_style-8.rasi"

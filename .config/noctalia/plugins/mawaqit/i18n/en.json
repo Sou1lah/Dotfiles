@@ -1,0 +1,160 @@
+{
+  "menu": {
+    "openPanel": "Open Prayer Times",
+    "settings": "Widget Settings"
+  },
+  "widget": {
+    "iftar": "Iftar",
+    "imsak": "Imsak",
+    "soon": "soon",
+    "now": "Now",
+    "stopAzan": "Stop Azan",
+    "tooltip": {
+      "noData": "Prayer data not loaded",
+      "countdown": "Time remaining"
+    }
+  },
+  "panel": {
+    "title": "Prayer Times",
+    "refresh": "Refresh",
+    "close": "Close",
+    "configure": "Configure your city in Settings",
+    "now": "Now",
+    "jumuah": "Jumu'ah",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "imsak": "Imsak",
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha",
+    "tab": {
+      "prayers": "Prayer Times",
+      "calendar": "Calendar"
+    }
+  },
+  "settings": {
+    "location": {
+      "header": "Location",
+      "desc": "Used to fetch daily prayer times from the Aladhan API."
+    },
+    "city": {
+      "label": "City",
+      "desc": "Enter your city name in English."
+    },
+    "country": {
+      "label": "Country",
+      "desc": "Enter your country name or 2-letter code (e.g. UK, US, DZ)."
+    },
+    "method": {
+      "label": "Calculation Method",
+      "desc": "Determines how prayer times are calculated. Choose the authority followed in your region."
+    },
+    "display": {
+      "header": "Display"
+    },
+    "showCountdown": {
+      "label": "Show countdown",
+      "desc": "Show a live countdown to the next prayer in the bar instead of the static time."
+    },
+    "notifications": {
+      "header": "Notifications",
+      "desc": "Show a notification when each prayer time begins."
+    },
+    "showNotifications": {
+      "label": "Prayer notifications"
+    },
+    "azan": {
+      "header": "Azan",
+      "desc": "Play azan audio when a prayer time begins.",
+      "preview": "Preview azan",
+      "stop": "Stop preview"
+    },
+    "playAzan": {
+      "label": "Play Azan",
+      "desc": "Play the azan when each prayer time begins."
+    },
+    "azanFile": {
+      "label": "Azan",
+      "desc": "Select which azan to play."
+    },
+    "azan1": "Azan 1",
+    "azan2": "Azan 2",
+    "azan3": "Azan 3",
+    "calibration": {
+      "header": "Calibration",
+      "desc": "Adjust the displayed Hijri date if it does not match your local moon sighting."
+    },
+    "hijriDayOffset": {
+      "label": "Hijri Day Adjustment",
+      "desc": "Shift the displayed Hijri day if the API date does not match your local moon sighting."
+    },
+    "school": {
+      "label": "Asr Calculation School",
+      "desc": "Shafi/Maliki/Hanbali uses shadow factor 1. Hanafi uses shadow factor 2, giving a later Asr time."
+    },
+    "calendar": {
+      "header": "Calendar"
+    },
+    "weekStartDay": {
+      "label": "First day of week",
+      "desc": "Choose which day starts the calendar week."
+    },
+    "methodCustom": {
+      "label": "Custom Method ID",
+      "desc": "Enter the numeric method ID from the Aladhan API (e.g. 19 for Algeria / MESRS)."
+    },
+    "tune": {
+      "header": "Prayer Time Offsets",
+      "desc": "Minute adjustments applied per prayer (negative = earlier, positive = later).",
+      "enable": "Enable",
+      "fajr": "Fajr offset (min)",
+      "dhuhr": "Dhuhr offset (min)",
+      "asr": "Asr offset (min)",
+      "maghrib": "Maghrib offset (min)",
+      "isha": "Isha offset (min)"
+    },
+    "showElapsed": {
+      "label": "Show elapsed time after prayer",
+      "desc": "After a prayer begins, count up (+) for up to 1 hour. Capped at the time remaining to the next prayer. Replaces the countdown during that window."
+    },
+    "hidePrayerName": {
+      "label": "Hide prayer name in bar",
+      "desc": "Show only the time or countdown in the bar widget, without the prayer name label."
+    },
+    "styling": {
+      "header": "Styling"
+    },
+    "widgetIcon": {
+      "label": "Default bar icon",
+      "desc": "Default icon to be used by the widget"
+    },
+    "dynamicIcon": {
+      "label": "Dynamic prayer icon",
+      "desc": "Use next/previous prayer in the bar widget"
+    },
+    "textColor": {
+      "label": "Bar text color",
+      "desc": "Color used for text in the bar widget"
+    },
+    "iconColor": {
+      "label": "Bar icon color",
+      "desc": "Color used for the icon in the bar widget"
+    },
+    "activeColor": {
+      "label": "Active Color",
+      "desc": "Color used when prayer is Now or Elapsed"
+    }
+  },
+  "error": {
+    "network": "Network request failed. Check your internet connection.",
+    "generic": "Failed to load prayer times."
+  },
+  "calendar": {
+    "today": "Back to today",
+    "refresh": "Refresh month",
+    "approximate": "Mathematical estimation — not moon-sighted"
+  }
+}

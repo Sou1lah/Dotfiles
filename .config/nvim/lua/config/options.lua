@@ -68,3 +68,20 @@ api.nvim_create_autocmd({ "FocusLost", "InsertLeave" }, {
     end
   end,
 })
+
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "VeryLazy", -- Lazy.nvim event after all plugins loaded
+--   callback = function()
+--     local notify = require("notify")
+--     vim.notify = function(msg, ...)
+--       if
+--         msg:match("Format request failed, no matching language servers")
+--         or msg:match("No matching language servers")
+--         or msg:match("vim%.tbl_islist is deprecated")
+--       then
+--         return
+--       end
+--       return notify(msg, ...)
+--     end
+--   end,
+-- })

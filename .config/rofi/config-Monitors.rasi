@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Monitor Profiles Menu */
 
-@import "~/.config/rofi/config.rasi" 
+@import "~/.config/rofi/themes/KooL_style-7.rasi"  
 
 /* ---- Mainbox ---- */
 mainbox {

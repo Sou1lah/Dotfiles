@@ -2,7 +2,7 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Scripts for volume controls for audio and mic 
 
-iDIR="$HOME/.config/swaync/icons"
+# iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
 
 # Get Volume
@@ -30,14 +30,14 @@ get_icon() {
 }
 
 # Notify
-notify_user() {
-    if [[ "$(get_volume)" == "Muted" ]]; then
-        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " Volume:" " Muted"
-    else
-        notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " Volume Level:" " $(get_volume)" &&
-        "$sDIR/Sounds.sh" --volume
-    fi
-}
+# notify_user() {
+#     if [[ "$(get_volume)" == "Muted" ]]; then
+#         notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " Volume:" " Muted"
+#     else
+#         notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" " Volume Level:" " $(get_volume)" &&
+#         "$sDIR/Sounds.sh" --volume
+#     fi
+# }
 
 # Increase Volume
 inc_volume() {

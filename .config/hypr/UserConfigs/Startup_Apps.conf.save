@@ -25,7 +25,7 @@ exec-once = $scriptsDir/Polkit.sh
 
 # starup apps
 exec-once = nm-applet --indicator
-exec-once = swaync
+# exec-once = swaync
 exec-once = ags
 exec-once = blueman-applet
 exec-once = rog-control-center
