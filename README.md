@@ -1,5 +1,9 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2000&pause=3000&color=F7F7F7&center=true&vCenter=true&width=500&lines=Wael's+Hyprland+Dotfiles)](https://git.io/typing-svg)
-wawa
+
+<p align="center">
+  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/n1.png?raw=true" width="49%">
+  <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/n2.png?raw=true" width="49%">
+</p>
 <p align="center">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/b2.png?raw=true" width="49%">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/b4.png?raw=true" width="49%">
@@ -24,7 +28,7 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 
 ---
 
-### 🧰 Tools & Themes Used
+###  Tools & Themes Used
 
 | Category       | Tools / Apps                        |
 |----------------|-------------------------------------|
@@ -85,12 +89,6 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 
 ---
 
-## 🧿 Hyprland Keybinds
-
-> 💡 Press **SUPER + h** to view all Hyprland keybindings in your system.
-
-
 ## ⭐ Support
 
 If you find this setup helpful or inspiring, consider giving the repo a ⭐.
-# Sticky-Notes-for-Nvim-
