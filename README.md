@@ -93,3 +93,4 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 ## ⭐ Support
 
 If you find this setup helpful or inspiring, consider giving the repo a ⭐.
+# Sticky-Notes-for-Nvim-
