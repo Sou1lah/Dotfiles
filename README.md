@@ -16,6 +16,7 @@
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/r2.png?raw=true" width="49%">
   <img src="https://github.com/Sou1lah/Dotfiles/blob/main/assets/r3.png?raw=true" width="49%">
 </p>
+
 ---
 
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
