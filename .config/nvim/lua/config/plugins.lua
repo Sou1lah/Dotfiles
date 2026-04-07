@@ -61,7 +61,6 @@ require("lazy").setup({
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").setup({
@@ -156,7 +155,7 @@ require("lazy").setup({
               height = 5,
               padding = 1,
             },
-            { section = "keys", gap = 1, padding = 1 },
+            { section = "keys",  gap = 1, padding = 1 },
             {
               pane = 2,
               icon = " ",
