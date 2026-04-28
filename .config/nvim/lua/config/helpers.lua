@@ -1,49 +1,49 @@
 -- ============================================================================
 -- NEOVIM HELPER FUNCTIONS
 -- ============================================================================
-
-local bookmark_file = vim.fn.stdpath("config") .. "/bookmarks.txt"
-
--- Bookmark system functions
-function _G.add_bookmark()
-  local file = vim.fn.expand("%:p")
-  if file == "" then return vim.notify("No file to bookmark!", vim.log.levels.WARN) end
-  local lines = {}
-  local f = io.open(bookmark_file, "r")
-  if f then
-    for line in f:lines() do lines[line] = true end
-    f:close()
-  end
-  if not lines[file] then
-    local f = io.open(bookmark_file, "a")
-    if f then
-      f:write(file .. "\n")
-      f:close()
-      vim.notify("Bookmarked: " .. file)
-    end
-  else
-    vim.notify("Already bookmarked: " .. file)
-  end
-end
-
-function _G.get_bookmarks()
-  local bookmarks = {}
-  local f = io.open(bookmark_file, "r")
-  if f then
-    for line in f:lines() do if #line > 0 then table.insert(bookmarks, line) end end
-    f:close()
-  end
-  return bookmarks
-end
-
-function _G.open_bookmark()
-  local bookmarks = _G.get_bookmarks()
-  if #bookmarks == 0 then return vim.notify("No bookmarks yet!", vim.log.levels.INFO) end
-  vim.ui.select(bookmarks, { prompt = "Open bookmark:" }, function(choice)
-    if choice then vim.cmd("edit " .. vim.fn.fnameescape(choice)) end
-  end)
-end
-
+--
+-- local bookmark_file = vim.fn.stdpath("config") .. "/bookmarks.txt"
+--
+-- -- Bookmark system functions
+-- function _G.add_bookmark()
+--   local file = vim.fn.expand("%:p")
+--   if file == "" then return vim.notify("No file to bookmark!", vim.log.levels.WARN) end
+--   local lines = {}
+--   local f = io.open(bookmark_file, "r")
+--   if f then
+--     for line in f:lines() do lines[line] = true end
+--     f:close()
+--   end
+--   if not lines[file] then
+--     local f = io.open(bookmark_file, "a")
+--     if f then
+--       f:write(file .. "\n")
+--       f:close()
+--       vim.notify("Bookmarked: " .. file)
+--     end
+--   else
+--     vim.notify("Already bookmarked: " .. file)
+--   end
+-- end
+--
+-- function _G.get_bookmarks()
+--   local bookmarks = {}
+--   local f = io.open(bookmark_file, "r")
+--   if f then
+--     for line in f:lines() do if #line > 0 then table.insert(bookmarks, line) end end
+--     f:close()
+--   end
+--   return bookmarks
+-- end
+--
+-- function _G.open_bookmark()
+--   local bookmarks = _G.get_bookmarks()
+--   if #bookmarks == 0 then return vim.notify("No bookmarks yet!", vim.log.levels.INFO) end
+--   vim.ui.select(bookmarks, { prompt = "Open bookmark:" }, function(choice)
+--     if choice then vim.cmd("edit " .. vim.fn.fnameescape(choice)) end
+--   end)
+-- end
+--
 -- Recent projects functions
 function _G.save_recent_project(dir)
   local ignore = {
@@ -153,42 +153,42 @@ function _G.open_recent_project()
 end
 
 -- Theme selector function
-function _G.theme_selector_popup()
-  local themes = {
-    { name = "Gruvbox",     value = "gruvbox" },
-    { name = "Tokyo Night", value = "tokyonight" },
-    { name = "Nord",        value = "nord" },
-    { name = "Dracula",     value = "dracula" },
-    { name = "Catppuccin",  value = "catppuccin-frappe" },
-    { name = "Everforest",  value = "everforest" },
-    { name = "OneDark",     value = "onedark" },
-    { name = "Monokai",     value = "monokai" },
-    { name = "Kanagawa",    value = "kanagawa" },
-    { name = "Iceberg",     value = "iceberg" },
-    { name = "Base16",      value = "base16-default-dark" },
-    { name = "Nightfox",    value = "nightfox" },
-    { name = "MyTheme",     value = "mytheme" }, -- <-- Add this line
-  }
-
-  local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
-  local function set_theme(theme)
-    vim.cmd("colorscheme " .. theme)
-    local f = io.open(theme_file, "w")
-    if f then
-      f:write(theme)
-      f:close()
-    end
-  end
-
-  vim.ui.select(themes, {
-    prompt = "Select Colorscheme:",
-    format_item = function(item) return item.name end,
-  }, function(choice)
-    if choice then
-      set_theme(choice.value)
-    end
-  end)
-end
+-- function _G.theme_selector_popup()
+--   local themes = {
+--     { name = "Gruvbox",     value = "gruvbox" },
+--     { name = "Tokyo Night", value = "tokyonight" },
+--     { name = "Nord",        value = "nord" },
+--     { name = "Dracula",     value = "dracula" },
+--     { name = "Catppuccin",  value = "catppuccin-frappe" },
+--     { name = "Everforest",  value = "everforest" },
+--     { name = "OneDark",     value = "onedark" },
+--     { name = "Monokai",     value = "monokai" },
+--     { name = "Kanagawa",    value = "kanagawa" },
+--     { name = "Iceberg",     value = "iceberg" },
+--     { name = "Base16",      value = "base16-default-dark" },
+--     { name = "Nightfox",    value = "nightfox" },
+--     { name = "MyTheme",     value = "mytheme" }, -- <-- Add this line
+--   }
+--
+--   local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
+--   local function set_theme(theme)
+--     vim.cmd("colorscheme " .. theme)
+--     local f = io.open(theme_file, "w")
+--     if f then
+--       f:write(theme)
+--       f:close()
+--     end
+--   end
+--
+--   vim.ui.select(themes, {
+--     prompt = "Select Colorscheme:",
+--     format_item = function(item) return item.name end,
+--   }, function(choice)
+--     if choice then
+--       set_theme(choice.value)
+--     end
+--   end)
+-- end
 
 -- Sticky notes system
 -- function _G.open_split_sticky_note()
