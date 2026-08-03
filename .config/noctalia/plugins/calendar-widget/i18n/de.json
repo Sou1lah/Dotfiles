@@ -1,15 +1,12 @@
 {
-  "menu": {
-    "settings": "Widget Einstellungen",
-    "title": "Kalender-Einstellungen"
-  },
-  "notifications": {
-    "save-error": "Speichern fehlgeschlagen",
-    "saved": "Einstellung erfolgreich gespeichert"
-  },
   "settings": {
-    "text": "Die Woche beginnt am ",
-    "day1": "Sonntag",
-    "day2": "Montag"
+    "showBackground": {
+      "label": "Hintergrund anzeigen",
+      "desc": "Zeigt den Hintergrundcontainer für das Kalender-Widget an."
+    },
+    "roundedCorners": {
+      "label": "Abgerundete Ecken",
+      "desc": "Verwendet abgerundete Ecken für den Widget-Hintergrund."
+    }
   }
 }

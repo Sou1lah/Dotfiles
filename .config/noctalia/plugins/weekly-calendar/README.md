@@ -1,5 +1,7 @@
 # Weekly Calendar Plugin
 
+![](https://github.com/noctalia-dev/noctalia-plugins/blob/main/weekly-calendar/preview.png?raw=true)
+
 A weekly calendar plugin that makes use of Noctalia's [CalendarService.qml](https://github.com/noctalia-dev/noctalia-shell/blob/main/Services/Location/CalendarService.qml) to display events.
 ## Features
 

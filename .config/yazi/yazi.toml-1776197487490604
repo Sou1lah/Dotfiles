@@ -1,0 +1,8 @@
+[manager]
+ratio          = [ 1, 3, 4 ] # Adjusts the width of the parent, current, and preview panes
+show_hidden    = false
+show_symlink   = true
+
+[status]
+separator_open  = ""
+separator_close = ""

@@ -28,7 +28,7 @@ DraggableDesktopWidget {
     width:  implicitWidth
     height: implicitHeight
 
-    Image {
+    AnimatedImage {
         id: sticker
 
         asynchronous: true

@@ -8,7 +8,7 @@ import qs.Services.UI
 Item {
     id: root
     
-    property QtObject pluginApi: null
+    property var pluginApi: null
     readonly property QtObject pluginCore: pluginApi?.mainInstance
     
     property ShellScreen screen
@@ -116,7 +116,7 @@ Item {
         oppositeDirection: BarService.getPillDirection(root)
         forceClose: true
         
-        icon: "calendar"
+        icon: "calendar-week"
         tooltipText: tooltipContent
         
         onClicked: root.pluginApi?.openPanel(root.screen)

@@ -1,593 +1,1518 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import QtQuick.Window
 import Quickshell
 import Quickshell.Io
 import qs.Commons
 import qs.Widgets
 import qs.Services.UI
+import "." as Local
 
-Item {
-  id: rootItem
-  implicitWidth: 600
-  implicitHeight: root.implicitHeight
-  width: Math.max(implicitWidth, parent ? parent.width : 0)
+ColumnLayout {
+  id: root
+  spacing: 0
 
   property var pluginApi: null
+  property var cfg: pluginApi?.pluginSettings || ({})
+  property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
+
+  // Live preview + revert-on-cancel pattern (approved deviation from edit-copy).
+  // Color settings apply visually in real time via _applyPreview, but the snapshot
+  // is restored on close if saveSettings() (Apply) was never called.
+  property var _snapshot: null
+  property bool _applied: false
+
+  function _applyPreview(key, value) {
+    if (!pluginApi) return;
+    var patch = {};
+    patch[key] = value;
+    pluginApi.pluginSettings = Object.assign({}, pluginApi.pluginSettings, patch);
+  }
+
+  // Edit-copy properties for non-preview settings (window, layout, parsing, paths)
+  property int editWindowWidth: cfg.windowWidth ?? defaults.windowWidth ?? 1400
+  property int editWindowHeight: cfg.windowHeight ?? defaults.windowHeight ?? 850
+  property bool editAutoHeight: cfg.autoHeight ?? defaults.autoHeight ?? true
+  property int editColumnCount: cfg.columnCount ?? defaults.columnCount ?? 3
+  property string editModKeyVariable: cfg.modKeyVariable || defaults.modKeyVariable || "$mod"
+  property string editHyprlandConfigPath: cfg.hyprlandConfigPath || defaults.hyprlandConfigPath || "~/.config/hypr/hyprland.conf"
+  property string editHyprlandLuaConfigPath: cfg.hyprlandLuaConfigPath || defaults.hyprlandLuaConfigPath || "~/.config/hypr/hyprland.lua"
+  property string editHyprlandParserMode: cfg.hyprlandParserMode || defaults.hyprlandParserMode || "auto"
+  property string editNiriConfigPath: cfg.niriConfigPath || defaults.niriConfigPath || "~/.config/niri/config.kdl"
+  property string editMangoConfigPath: cfg.mangoConfigPath || defaults.mangoConfigPath || "~/.config/mango/config.conf"
+  property bool editMergeSequentialBinds: cfg.mergeSequentialBinds ?? defaults.mergeSequentialBinds ?? true
+  property bool editShowUndescribedBinds: cfg.showUndescribedBinds ?? defaults.showUndescribedBinds ?? false
+  property bool editSplitLargeWorkspaceCategory: cfg.splitLargeWorkspaceCategory ?? defaults.splitLargeWorkspaceCategory ?? true
+  property int editWorkspaceSplitThreshold: cfg.workspaceSplitThreshold ?? defaults.workspaceSplitThreshold ?? 12
+
+  // Live-preview properties for colors (mirror current pluginSettings; written via _applyPreview).
+  // All background color fields are stored as string (hex) for empty-string support.
+  property string valueKeyColorSuper:   cfg.keyColorSuper   ?? defaults.keyColorSuper   ?? ""
+  property string valueKeyColorCtrl:    cfg.keyColorCtrl    ?? defaults.keyColorCtrl    ?? ""
+  property string valueKeyColorShift:   cfg.keyColorShift   ?? defaults.keyColorShift   ?? ""
+  property string valueKeyColorAlt:     cfg.keyColorAlt     ?? defaults.keyColorAlt     ?? "#FF6B6B"
+  property string valueKeyColorXF86:    cfg.keyColorXF86    ?? defaults.keyColorXF86    ?? "#4ECDC4"
+  property string valueKeyColorPrint:   cfg.keyColorPrint   ?? defaults.keyColorPrint   ?? "#95E1D3"
+  property string valueKeyColorNumeric: cfg.keyColorNumeric ?? defaults.keyColorNumeric ?? "#A8DADC"
+  property string valueKeyColorMouse:   cfg.keyColorMouse   ?? defaults.keyColorMouse   ?? "#F38181"
+  property string valueKeyColorDefault: cfg.keyColorDefault ?? defaults.keyColorDefault ?? "#6C757D"
+  // Per-category text color overrides — empty string = fall back to keyLabelColor global
+  property string valueKeyTextSuper:   cfg.keyTextSuper   ?? defaults.keyTextSuper   ?? ""
+  property string valueKeyTextCtrl:    cfg.keyTextCtrl    ?? defaults.keyTextCtrl    ?? ""
+  property string valueKeyTextShift:   cfg.keyTextShift   ?? defaults.keyTextShift   ?? ""
+  property string valueKeyTextAlt:     cfg.keyTextAlt     ?? defaults.keyTextAlt     ?? ""
+  property string valueKeyTextXF86:    cfg.keyTextXF86    ?? defaults.keyTextXF86    ?? ""
+  property string valueKeyTextPrint:   cfg.keyTextPrint   ?? defaults.keyTextPrint   ?? ""
+  property string valueKeyTextNumeric: cfg.keyTextNumeric ?? defaults.keyTextNumeric ?? ""
+  property string valueKeyTextMouse:   cfg.keyTextMouse   ?? defaults.keyTextMouse   ?? ""
+  property string valueKeyTextDefault: cfg.keyTextDefault ?? defaults.keyTextDefault ?? ""
+  property string valueKeyLabelColor:  cfg.keyLabelColor  ?? defaults.keyLabelColor  ?? "#FFFFFF"
+  // Generic X11 mods (Mod2/Mod3/Mod5): background colour, text colour, and a
+  // display-label override (rename e.g. Mod3 -> "Hyper" for caps:hyper).
+  property string valueKeyColorMod2: cfg.keyColorMod2 ?? defaults.keyColorMod2 ?? ""
+  property string valueKeyColorMod3: cfg.keyColorMod3 ?? defaults.keyColorMod3 ?? ""
+  property string valueKeyColorMod5: cfg.keyColorMod5 ?? defaults.keyColorMod5 ?? ""
+  property string valueKeyTextMod2:  cfg.keyTextMod2  ?? defaults.keyTextMod2  ?? ""
+  property string valueKeyTextMod3:  cfg.keyTextMod3  ?? defaults.keyTextMod3  ?? ""
+  property string valueKeyTextMod5:  cfg.keyTextMod5  ?? defaults.keyTextMod5  ?? ""
+  property string valueKeyLabelMod2: cfg.keyLabelMod2 ?? defaults.keyLabelMod2 ?? ""
+  property string valueKeyLabelMod3: cfg.keyLabelMod3 ?? defaults.keyLabelMod3 ?? ""
+  property string valueKeyLabelMod5: cfg.keyLabelMod5 ?? defaults.keyLabelMod5 ?? ""
+  property string valueDescriptionTextColor: cfg.descriptionTextColor ?? defaults.descriptionTextColor ?? ""
+
+  // Clipboard polling for quick-paste feature.
+  // Reads wl-paste periodically while Settings is visible; exposes a validated hex if found.
+  property string clipboardHex: ""
 
   Timer {
-    id: resizeTimer
-    interval: 10
-    repeat: false
-    running: false
-    onTriggered: {
-      // Find the Popup parent by walking up the tree
-      var obj = rootItem;
-      var depth = 0;
-      while (obj && depth < 10) {
-        if (obj.toString().indexOf("Popup_QMLTYPE") !== -1 ||
-            obj.toString().indexOf("NPluginSettingsPopup") !== -1) {
-          obj.width = 640; // 600px content + 2*20px padding
-          break;
+    id: clipboardTimer
+    interval: 1500
+    running: root.visible
+    repeat: true
+    triggeredOnStart: true
+    onTriggered: if (!clipboardProcess.running) clipboardProcess.running = true
+  }
+
+  Process {
+    id: clipboardProcess
+    command: ["wl-paste", "-n"]
+    stdout: StdioCollector {
+      onStreamFinished: {
+        var raw = (text || "").trim();
+        // Accept #RRGGBB or #RRGGBBAA (with or without leading #)
+        var m = raw.match(/^#?([0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?)$/);
+        if (m) {
+          root.clipboardHex = "#" + m[1].toUpperCase();
+        } else {
+          root.clipboardHex = "";
         }
-        obj = obj.parent;
-        depth++;
       }
     }
   }
 
   Component.onCompleted: {
-    resizeTimer.start();
+    if (pluginApi) {
+      _snapshot = JSON.parse(JSON.stringify(pluginApi.pluginSettings));
+    }
   }
 
   Component.onDestruction: {
-    resizeTimer.stop();
+    clipboardTimer.stop();
+    if (clipboardProcess.running) clipboardProcess.running = false;
+    if (!_applied && pluginApi && _snapshot) {
+      pluginApi.pluginSettings = Object.assign({}, _snapshot);
+    }
   }
 
-  ColumnLayout {
-    id: root
-    implicitWidth: 600
-    width: parent.width
-    spacing: Style.marginM
+  // ============ TAB BAR ============
+  NTabBar {
+    id: tabBar
+    Layout.fillWidth: true
+    Layout.bottomMargin: Style.marginM
+    distributeEvenly: true
+    currentIndex: tabView.currentIndex
 
-  // Force minimum width with invisible spacer
+    NTabButton {
+      text: pluginApi?.tr("settings.tab-general")
+      icon: "settings"
+      tabIndex: 0
+      checked: tabBar.currentIndex === 0
+    }
+    NTabButton {
+      text: pluginApi?.tr("settings.tab-appearance")
+      icon: "color-picker"
+      tabIndex: 1
+      checked: tabBar.currentIndex === 1
+    }
+  }
+
   Item {
-    Layout.preferredWidth: 600
-    Layout.preferredHeight: 0
-    visible: false
+    Layout.fillWidth: true
+    Layout.preferredHeight: Style.marginS
   }
 
-  // Configuration
-  property var cfg: rootItem.pluginApi?.pluginSettings || ({})
-  property var defaults: rootItem.pluginApi?.manifest?.metadata?.defaultSettings || ({})
+  // ============ TAB VIEW ============
+  NTabView {
+    id: tabView
+    currentIndex: tabBar.currentIndex
 
-  // Settings values
-  property int windowWidth: cfg.windowWidth ?? defaults.windowWidth ?? 1400
-  property int windowHeight: cfg.windowHeight ?? defaults.windowHeight ?? 0
-  property bool autoHeight: cfg.autoHeight ?? defaults.autoHeight ?? true
-  property int columnCount: cfg.columnCount ?? defaults.columnCount ?? 3
-  // NOWA ZMIENNA TUTAJ:
-  property string modKeyVariable: cfg.modKeyVariable || defaults.modKeyVariable || "$mod"
-  property string hyprlandConfigPath: cfg.hyprlandConfigPath || defaults.hyprlandConfigPath || "~/.config/hypr/hyprland.conf"
-  property string niriConfigPath: cfg.niriConfigPath || defaults.niriConfigPath || "~/.config/niri/config.kdl"
-
-
-
-  // Header
-  NText {
-    Layout.fillWidth: true
-    text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.title") || "Keybind Cheatsheet Settings"
-    pointSize: Style.fontSizeXXL
-    font.weight: Style.fontWeightBold
-    color: Color.mOnSurface
-  }
-
-  NText {
-    Layout.fillWidth: true
-    text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.description") ||
-      "Configure the appearance and keybind sources for the cheatsheet panel."
-    color: Color.mOnSurfaceVariant
-    pointSize: Style.fontSizeM
-    wrapMode: Text.WordWrap
-  }
-
-  // Window Size Settings
-  NBox {
-    Layout.fillWidth: true
-    Layout.preferredHeight: sizeContent.implicitHeight + Style.marginM * 2
-    color: Color.mSurfaceVariant
-
+    // ============ TAB 1: GENERAL ============
     ColumnLayout {
-      id: sizeContent
-      anchors.fill: parent
-      anchors.margins: Style.marginM
-      spacing: Style.marginS
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.window-size") || "Window Size"
-        pointSize: Style.fontSizeL
-        font.weight: Style.fontWeightBold
-        color: Color.mOnSurface
-      }
-
-      // Width setting
-      RowLayout {
-        spacing: Style.marginM
-
-        NText {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.width") || "Width:"
-          color: Color.mOnSurface
-          pointSize: Style.fontSizeM
-          Layout.preferredWidth: 120
-        }
-
-        NTextInput {
-          id: widthInput
-          Layout.preferredWidth: 100 * Style.uiScaleRatio
-          Layout.preferredHeight: Style.baseWidgetSize
-          text: root.windowWidth.toString()
-
-          onTextChanged: {
-            var val = parseInt(text);
-            if (!isNaN(val) && val >= 400 && val <= 3000) {
-              if (rootItem.pluginApi && rootItem.pluginApi.pluginSettings) {
-                rootItem.pluginApi.pluginSettings.windowWidth = val;
-              }
-            }
-          }
-        }
-
-        NText {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.width-range") || "px (400-3000)"
-          color: Color.mOnSurfaceVariant
-          pointSize: Style.fontSizeS
-        }
-      }
-
-      // Height setting
-      RowLayout {
-        spacing: Style.marginM
-
-        NText {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.height") || "Height:"
-          color: Color.mOnSurface
-          pointSize: Style.fontSizeM
-          Layout.preferredWidth: 120
-        }
-
-        NToggle {
-          id: autoHeightToggle
-          label: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.auto-height") || "Auto"
-          checked: root.autoHeight
-          onToggled: function(checked) {
-            root.autoHeight = checked;
-            if (rootItem.pluginApi && rootItem.pluginApi.pluginSettings) {
-              rootItem.pluginApi.pluginSettings.autoHeight = checked;
-            }
-          }
-        }
-
-        NTextInput {
-          id: heightInput
-          Layout.preferredWidth: 100 * Style.uiScaleRatio
-          Layout.preferredHeight: Style.baseWidgetSize
-          text: root.windowHeight > 0 ? root.windowHeight.toString() : "850"
-          enabled: !autoHeightToggle.checked
-          opacity: enabled ? 1.0 : 0.5
-
-          onTextChanged: {
-            var val = parseInt(text);
-            if (!isNaN(val) && val >= 300 && val <= 2000) {
-              if (rootItem.pluginApi && rootItem.pluginApi.pluginSettings) {
-                rootItem.pluginApi.pluginSettings.windowHeight = val;
-              }
-            }
-          }
-        }
-
-        NText {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.height-range") || "px (300-2000)"
-          color: Color.mOnSurfaceVariant
-          pointSize: Style.fontSizeS
-          opacity: autoHeightToggle.checked ? 0.5 : 1.0
-        }
-      }
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.auto-height-hint") ||
-          "When 'Auto' is enabled, height adjusts automatically based on content."
-        color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeS
-        wrapMode: Text.WordWrap
-      }
-    }
-  }
-
-  // Column Count Settings
-  NBox {
-    Layout.fillWidth: true
-    Layout.preferredHeight: columnContent.implicitHeight + Style.marginM * 2
-    color: Color.mSurfaceVariant
-
-    ColumnLayout {
-      id: columnContent
-      anchors.fill: parent
-      anchors.margins: Style.marginM
-      spacing: Style.marginS
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.layout") || "Layout"
-        pointSize: Style.fontSizeL
-        font.weight: Style.fontWeightBold
-        color: Color.mOnSurface
-      }
-
-      RowLayout {
-        spacing: Style.marginM
-
-        NText {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.columns") || "Number of columns:"
-          color: Color.mOnSurface
-          pointSize: Style.fontSizeM
-        }
-
-        NComboBox {
-          id: columnCombo
-          Layout.preferredWidth: 150 * Style.uiScaleRatio
-          Layout.preferredHeight: Style.baseWidgetSize
-          model: ListModel {
-            ListElement { name: "1"; key: "1" }
-            ListElement { name: "2"; key: "2" }
-            ListElement { name: "3"; key: "3" }
-            ListElement { name: "4"; key: "4" }
-          }
-          currentKey: root.columnCount.toString()
-          onSelected: key => {
-            if (rootItem.pluginApi && rootItem.pluginApi.pluginSettings) {
-              rootItem.pluginApi.pluginSettings.columnCount = parseInt(key);
-            }
-          }
-        }
-      }
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.columns-hint") ||
-          "More columns work better with wider windows."
-        color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeS
-        wrapMode: Text.WordWrap
-      }
-    }
-  }
-
-  // Config File Paths & Parsing
-  NBox {
-    Layout.fillWidth: true
-    Layout.preferredHeight: pathsContent.implicitHeight + Style.marginM * 2
-    color: Color.mSurfaceVariant
-
-    ColumnLayout {
-      id: pathsContent
-      anchors.fill: parent
-      anchors.margins: Style.marginM
+      id: generalTab
       spacing: Style.marginM
 
+      // Header
       NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.config-paths") || "Configuration Files"
-        pointSize: Style.fontSizeL
+        Layout.fillWidth: true
+        text: pluginApi?.tr("settings.title")
+        pointSize: Style.fontSizeXXL
         font.weight: Style.fontWeightBold
         color: Color.mOnSurface
       }
 
       NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.config-paths-description") ||
-          "Specify custom paths and variables for your keybinds."
+        Layout.fillWidth: true
+        text: pluginApi?.tr("settings.description")
         color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeS
+        pointSize: Style.fontSizeM
         wrapMode: Text.WordWrap
       }
 
-      // NOWA SEKCJA: Mod Variable Setting
-      ColumnLayout {
-        spacing: Style.marginXS
+      // ===== Window Size =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: sizeContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
 
-        RowLayout {
-            spacing: Style.marginS
-            NIcon {
+        ColumnLayout {
+          id: sizeContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginS
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.window-size")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          RowLayout {
+            spacing: Style.marginM
+
+            NText {
+              text: pluginApi?.tr("settings.width")
+              color: Color.mOnSurface
+              pointSize: Style.fontSizeM
+              Layout.preferredWidth: 120
+            }
+
+            NTextInput {
+              id: widthInput
+              Layout.preferredWidth: 100 * Style.uiScaleRatio
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editWindowWidth.toString()
+              onTextChanged: {
+                var val = parseInt(text);
+                if (!isNaN(val) && val >= 400 && val <= 3000) {
+                  root.editWindowWidth = val;
+                }
+              }
+            }
+
+            NText {
+              text: pluginApi?.tr("settings.width-range")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeS
+            }
+          }
+
+          RowLayout {
+            spacing: Style.marginM
+
+            NText {
+              text: pluginApi?.tr("settings.height")
+              color: Color.mOnSurface
+              pointSize: Style.fontSizeM
+              Layout.preferredWidth: 120
+            }
+
+            NToggle {
+              id: autoHeightToggle
+              label: pluginApi?.tr("settings.auto-height")
+              checked: root.editAutoHeight
+              onToggled: function(checked) {
+                root.editAutoHeight = checked;
+              }
+            }
+
+            NTextInput {
+              id: heightInput
+              Layout.preferredWidth: 100 * Style.uiScaleRatio
+              Layout.preferredHeight: Style.baseWidgetSize
+              Component.onCompleted: text = root.editWindowHeight > 0 ? root.editWindowHeight.toString() : "850"
+              enabled: !autoHeightToggle.checked
+              opacity: enabled ? 1.0 : 0.5
+              onTextChanged: {
+                var val = parseInt(text);
+                if (!isNaN(val) && val >= 300 && val <= 2000) {
+                  root.editWindowHeight = val;
+                }
+              }
+            }
+
+            NText {
+              text: pluginApi?.tr("settings.height-range")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeS
+              opacity: autoHeightToggle.checked ? 0.5 : 1.0
+            }
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.auto-height-hint")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+        }
+      }
+
+      // ===== Layout (Columns) =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: columnContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: columnContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginS
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.layout")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          RowLayout {
+            spacing: Style.marginM
+
+            NText {
+              text: pluginApi?.tr("settings.columns")
+              color: Color.mOnSurface
+              pointSize: Style.fontSizeM
+            }
+
+            NComboBox {
+              id: columnCombo
+              Layout.preferredWidth: 150 * Style.uiScaleRatio
+              Layout.preferredHeight: Style.baseWidgetSize
+              model: ListModel {
+                ListElement { name: "1"; key: "1" }
+                ListElement { name: "2"; key: "2" }
+                ListElement { name: "3"; key: "3" }
+                ListElement { name: "4"; key: "4" }
+              }
+              currentKey: root.editColumnCount.toString()
+              onSelected: key => {
+                root.editColumnCount = parseInt(key);
+              }
+            }
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.columns-hint")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+        }
+      }
+
+      // ===== Parsing Options =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: parsingContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: parsingContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginS
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.parsing-options")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          NToggle {
+            Layout.fillWidth: true
+            label: pluginApi?.tr("settings.merge-sequential")
+            description: pluginApi?.tr("settings.merge-sequential-hint")
+            checked: root.editMergeSequentialBinds
+            onToggled: function(checked) {
+              root.editMergeSequentialBinds = checked;
+            }
+          }
+
+          NToggle {
+            Layout.fillWidth: true
+            label: pluginApi?.tr("settings.show-undescribed")
+            description: pluginApi?.tr("settings.show-undescribed-hint")
+            checked: root.editShowUndescribedBinds
+            onToggled: function(checked) {
+              root.editShowUndescribedBinds = checked;
+            }
+          }
+
+          // Bind override management (custom descriptions / hidden binds)
+          ColumnLayout {
+            Layout.fillWidth: true
+            spacing: Style.marginXS
+
+            function overrideCount(kind) {
+              var o = root.pluginApi?.pluginSettings?.bindOverrides || ({});
+              var n = 0;
+              for (var k in o) {
+                if (kind === "hidden" && o[k] && o[k].hidden === true) n++;
+                else if (kind === "desc" && o[k] && o[k].desc) n++;
+              }
+              return n;
+            }
+
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.overrides-summary", {
+                "hidden": parent.overrideCount("hidden"),
+                "custom": parent.overrideCount("desc")
+              })
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+
+            RowLayout {
+              spacing: Style.marginM
+
+              NButton {
+                text: pluginApi?.tr("settings.restore-hidden")
+                icon: "eye"
+                onClicked: {
+                  var o = root.pluginApi?.pluginSettings?.bindOverrides || ({});
+                  var next = ({});
+                  for (var k in o) {
+                    var e = ({});
+                    if (o[k] && o[k].desc) e.desc = o[k].desc;
+                    if (Object.keys(e).length > 0) next[k] = e;
+                  }
+                  if (root.pluginApi && root.pluginApi.pluginSettings) {
+                    root.pluginApi.pluginSettings.bindOverrides = next;
+                    root.pluginApi.saveSettings();
+                    root.pluginApi.mainInstance?.refresh();
+                  }
+                  ToastService.showNotice(root.pluginApi?.tr("settings.restore-hidden-message"));
+                }
+              }
+
+              NButton {
+                text: pluginApi?.tr("settings.clear-overrides")
+                icon: "rotate"
+                onClicked: {
+                  if (root.pluginApi && root.pluginApi.pluginSettings) {
+                    root.pluginApi.pluginSettings.bindOverrides = ({});
+                    root.pluginApi.saveSettings();
+                    root.pluginApi.mainInstance?.refresh();
+                  }
+                  ToastService.showNotice(root.pluginApi?.tr("settings.clear-overrides-message"));
+                }
+              }
+            }
+          }
+
+          NToggle {
+            Layout.fillWidth: true
+            label: pluginApi?.tr("settings.split-workspaces")
+            description: pluginApi?.tr("settings.split-workspaces-hint")
+            checked: root.editSplitLargeWorkspaceCategory
+            onToggled: function(checked) {
+              root.editSplitLargeWorkspaceCategory = checked;
+            }
+          }
+
+          RowLayout {
+            spacing: Style.marginM
+            visible: root.editSplitLargeWorkspaceCategory
+
+            NText {
+              text: pluginApi?.tr("settings.split-threshold")
+              color: Color.mOnSurface
+              pointSize: Style.fontSizeM
+              Layout.fillWidth: true
+            }
+
+            NSpinBox {
+              Layout.preferredWidth: 140 * Style.uiScaleRatio
+              value: root.editWorkspaceSplitThreshold
+              from: 4
+              to: 50
+              stepSize: 1
+              onValueChanged: {
+                root.editWorkspaceSplitThreshold = value;
+              }
+            }
+          }
+        }
+      }
+
+      // ===== Configuration Files =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: pathsContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: pathsContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginM
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.config-paths")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.config-paths-description")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+
+          ColumnLayout {
+            spacing: Style.marginXS
+
+            RowLayout {
+              spacing: Style.marginS
+              NIcon {
                 icon: "keyboard"
                 pointSize: Style.fontSizeM
                 color: Color.mOnSurface
-            }
-            NText {
-                text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.mod-var") || "Mod Key Variable"
+              }
+              NText {
+                text: pluginApi?.tr("settings.mod-var")
                 color: Color.mOnSurface
                 pointSize: Style.fontSizeM
                 font.weight: Style.fontWeightBold
+              }
             }
-        }
 
-        NTextInput {
-            id: modVarInput
+            NTextInput {
+              id: modVarInput
+              Layout.fillWidth: true
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editModKeyVariable
+              placeholderText: "$mod"
+              onTextChanged: {
+                if (text.length > 0) root.editModKeyVariable = text;
+              }
+            }
+
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.mod-var-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+          }
+
+          Rectangle {
             Layout.fillWidth: true
-            Layout.preferredHeight: Style.baseWidgetSize
-            text: root.modKeyVariable
-            placeholderText: "$mod"
+            Layout.preferredHeight: 1
+            color: Color.mOutline
+            opacity: 0.3
+          }
 
-            onTextChanged: {
-                if (text.length > 0 && pluginApi && pluginApi.pluginSettings) {
-                    rootItem.pluginApi.pluginSettings.modKeyVariable = text;
+          ColumnLayout {
+            spacing: Style.marginXS
+
+            RowLayout {
+              spacing: Style.marginS
+              NIcon {
+                icon: "terminal"
+                pointSize: Style.fontSizeM
+                color: Color.mPrimary
+              }
+              NText {
+                text: pluginApi?.tr("settings.hyprland-path")
+                color: Color.mOnSurface
+                pointSize: Style.fontSizeM
+                font.weight: Style.fontWeightBold
+              }
+            }
+
+            NTextInput {
+              id: hyprlandPathInput
+              Layout.fillWidth: true
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editHyprlandConfigPath
+              placeholderText: "~/.config/hypr/hyprland.conf"
+              onTextChanged: {
+                if (text.length > 0) root.editHyprlandConfigPath = text;
+              }
+            }
+
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.hyprland-format-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 1
+            color: Color.mOutline
+            opacity: 0.3
+          }
+
+          // Hyprland Lua path + parser mode (Hyprland 0.55+)
+          ColumnLayout {
+            spacing: Style.marginXS
+
+            RowLayout {
+              spacing: Style.marginS
+              NIcon {
+                icon: "terminal"
+                pointSize: Style.fontSizeM
+                color: Color.mPrimary
+              }
+              NText {
+                text: pluginApi?.tr("settings.hyprland-lua-path")
+                color: Color.mOnSurface
+                pointSize: Style.fontSizeM
+                font.weight: Style.fontWeightBold
+              }
+            }
+
+            NTextInput {
+              id: hyprlandLuaPathInput
+              Layout.fillWidth: true
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editHyprlandLuaConfigPath
+              placeholderText: "~/.config/hypr/hyprland.lua"
+              onTextChanged: {
+                if (text.length > 0) root.editHyprlandLuaConfigPath = text;
+              }
+            }
+
+            RowLayout {
+              spacing: Style.marginM
+              NText {
+                text: pluginApi?.tr("settings.hyprland-parser-mode")
+                color: Color.mOnSurface
+                pointSize: Style.fontSizeM
+              }
+              NComboBox {
+                id: parserModeCombo
+                Layout.preferredWidth: 180 * Style.uiScaleRatio
+                Layout.preferredHeight: Style.baseWidgetSize
+                model: ListModel {
+                  ListElement { name: "Auto"; key: "auto" }
+                  ListElement { name: "Lua (hyprctl)"; key: "lua" }
+                  ListElement { name: "Legacy .conf"; key: "conf" }
                 }
+                currentKey: root.editHyprlandParserMode
+                onSelected: key => { root.editHyprlandParserMode = key; }
+              }
             }
-        }
 
-        NText {
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.hyprland-lua-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+          }
+
+          Rectangle {
             Layout.fillWidth: true
-            text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.mod-var-hint") ||
-                "The variable name used for your Super key (e.g., $mod or $mainMod)."
+            Layout.preferredHeight: 1
+            color: Color.mOutline
+            opacity: 0.3
+          }
+
+          ColumnLayout {
+            spacing: Style.marginXS
+
+            RowLayout {
+              spacing: Style.marginS
+              NIcon {
+                icon: "layout"
+                pointSize: Style.fontSizeM
+                color: Color.mSecondary
+              }
+              NText {
+                text: pluginApi?.tr("settings.niri-path")
+                color: Color.mOnSurface
+                pointSize: Style.fontSizeM
+                font.weight: Style.fontWeightBold
+              }
+            }
+
+            NTextInput {
+              id: niriPathInput
+              Layout.fillWidth: true
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editNiriConfigPath
+              placeholderText: "~/.config/niri/config.kdl"
+              onTextChanged: {
+                if (text.length > 0) root.editNiriConfigPath = text;
+              }
+            }
+
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.niri-format-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 1
+            color: Color.mOutline
+            opacity: 0.3
+          }
+
+          ColumnLayout {
+            spacing: Style.marginXS
+
+            RowLayout {
+              spacing: Style.marginS
+              NIcon {
+                icon: "terminal"
+                pointSize: Style.fontSizeM
+                color: Color.mTertiary
+              }
+              NText {
+                text: pluginApi?.tr("settings.mango-path")
+                color: Color.mOnSurface
+                pointSize: Style.fontSizeM
+                font.weight: Style.fontWeightBold
+              }
+            }
+
+            NTextInput {
+              id: mangoPathInput
+              Layout.fillWidth: true
+              Layout.preferredHeight: Style.baseWidgetSize
+              text: root.editMangoConfigPath
+              placeholderText: "~/.config/mango/config.conf"
+              onTextChanged: {
+                if (text.length > 0) root.editMangoConfigPath = text;
+              }
+            }
+
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.mango-format-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeXS
+              wrapMode: Text.WordWrap
+            }
+          }
+        }
+      }
+
+      // ===== Actions =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: actionsContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: actionsContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginM
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.actions")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          RowLayout {
+            spacing: Style.marginM
+
+            NButton {
+              text: pluginApi?.tr("settings.refresh-keybinds")
+              icon: "refresh"
+              onClicked: {
+                pluginApi?.mainInstance?.refresh();
+                ToastService.showNotice(pluginApi?.tr("settings.refresh-message"));
+              }
+            }
+
+            NButton {
+              text: pluginApi?.tr("settings.reset-defaults")
+              icon: "rotate"
+              onClicked: {
+                root.editWindowWidth = defaults.windowWidth || 1400;
+                root.editWindowHeight = defaults.windowHeight || 850;
+                root.editAutoHeight = defaults.autoHeight ?? true;
+                root.editColumnCount = defaults.columnCount || 3;
+                root.editModKeyVariable = defaults.modKeyVariable || "$mod";
+                root.editHyprlandConfigPath = defaults.hyprlandConfigPath || "~/.config/hypr/hyprland.conf";
+                root.editHyprlandLuaConfigPath = defaults.hyprlandLuaConfigPath || "~/.config/hypr/hyprland.lua";
+                root.editHyprlandParserMode = defaults.hyprlandParserMode || "auto";
+                root.editNiriConfigPath = defaults.niriConfigPath || "~/.config/niri/config.kdl";
+                root.editMangoConfigPath = defaults.mangoConfigPath || "~/.config/mango/config.conf";
+                root.editMergeSequentialBinds = defaults.mergeSequentialBinds ?? true;
+                root.editShowUndescribedBinds = defaults.showUndescribedBinds ?? false;
+                root.editSplitLargeWorkspaceCategory = defaults.splitLargeWorkspaceCategory ?? true;
+                root.editWorkspaceSplitThreshold = defaults.workspaceSplitThreshold ?? 12;
+
+                widthInput.text = root.editWindowWidth.toString();
+                heightInput.text = root.editWindowHeight.toString();
+                modVarInput.text = root.editModKeyVariable;
+                hyprlandPathInput.text = root.editHyprlandConfigPath;
+                hyprlandLuaPathInput.text = root.editHyprlandLuaConfigPath;
+                niriPathInput.text = root.editNiriConfigPath;
+                mangoPathInput.text = root.editMangoConfigPath;
+
+                if (pluginApi && pluginApi.pluginSettings) {
+                  pluginApi.pluginSettings.cheatsheetData = [];
+                  pluginApi.saveSettings();
+                }
+
+                ToastService.showNotice(pluginApi?.tr("settings.reset-message"));
+              }
+            }
+          }
+        }
+      }
+
+      // ===== Keybind Setup =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: keybindContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: keybindContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginS
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.keybind-setup")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.keybind-setup-description")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: commandText.implicitHeight + Style.marginS * 2
+            color: Color.mSurface
+            radius: Style.radiusS
+
+            NText {
+              id: commandText
+              anchors.fill: parent
+              anchors.margins: Style.marginS
+              text: pluginApi?.tr("settings.keybind-ipc-command")
+              font.family: "monospace"
+              pointSize: Style.fontSizeS
+              color: Color.mPrimary
+              wrapMode: Text.WrapAnywhere
+            }
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.keybind-example-hyprland")
             color: Color.mOnSurfaceVariant
             pointSize: Style.fontSizeXS
             wrapMode: Text.WordWrap
-        }
-      }
-
-      Rectangle {
-        Layout.preferredHeight: 1
-        color: Color.mOutline
-        opacity: 0.3
-      }
-
-      // Hyprland path
-      ColumnLayout {
-        spacing: Style.marginXS
-
-        RowLayout {
-          spacing: Style.marginS
-          NIcon {
-            icon: "terminal"
-            pointSize: Style.fontSizeM
-            color: Color.mPrimary
           }
+
           NText {
-            text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.hyprland-path") || "Hyprland Path"
-            color: Color.mOnSurface
-            pointSize: Style.fontSizeM
-            font.weight: Style.fontWeightBold
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.keybind-example-niri")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeXS
+            wrapMode: Text.WordWrap
           }
-        }
 
-        NTextInput {
-          id: hyprlandPathInput
-          Layout.fillWidth: true
-          Layout.preferredHeight: Style.baseWidgetSize
-          text: root.hyprlandConfigPath
-          placeholderText: "~/.config/hypr/hyprland.conf"
-
-          onTextChanged: {
-            if (text.length > 0 && pluginApi && pluginApi.pluginSettings) {
-              rootItem.pluginApi.pluginSettings.hyprlandConfigPath = text;
-            }
-          }
-        }
-
-        NText {
-          Layout.fillWidth: true
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.hyprland-format-hint") ||
-            "Expected format: bind = $mod, KEY, action #\"description\"\nCategories: # 1. CATEGORY NAME"
-          color: Color.mOnSurfaceVariant
-          pointSize: Style.fontSizeXS
-          wrapMode: Text.WordWrap
-        }
-      }
-
-      Rectangle {
-        Layout.preferredHeight: 1
-        color: Color.mOutline
-        opacity: 0.3
-      }
-
-      // Niri path
-      ColumnLayout {
-        spacing: Style.marginXS
-
-        RowLayout {
-          spacing: Style.marginS
-          NIcon {
-            icon: "layout"
-            pointSize: Style.fontSizeM
-            color: Color.mSecondary
-          }
           NText {
-            text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.niri-path") || "Niri Path"
-            color: Color.mOnSurface
-            pointSize: Style.fontSizeM
-            font.weight: Style.fontWeightBold
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.keybind-example-mango")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeXS
+            wrapMode: Text.WordWrap
           }
         }
+      }
 
-        NTextInput {
-          id: niriPathInput
-          Layout.fillWidth: true
-          Layout.preferredHeight: Style.baseWidgetSize
-          text: root.niriConfigPath
-          placeholderText: "~/.config/niri/config.kdl"
-
-          onTextChanged: {
-            if (text.length > 0 && pluginApi && pluginApi.pluginSettings) {
-              rootItem.pluginApi.pluginSettings.niriConfigPath = text;
-            }
-          }
-        }
-
-        NText {
-          Layout.fillWidth: true
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.niri-format-hint") ||
-            "The plugin will find and parse the 'binds { }' block automatically."
-          color: Color.mOnSurfaceVariant
-          pointSize: Style.fontSizeXS
-          wrapMode: Text.WordWrap
-        }
+      Item {
+        Layout.preferredHeight: Style.marginL
       }
     }
-  }
+    // ============ END TAB 1 ============
 
-  // Reset and Refresh buttons
-  NBox {
-    Layout.fillWidth: true
-    Layout.preferredHeight: actionsContent.implicitHeight + Style.marginM * 2
-    color: Color.mSurfaceVariant
-
+    // ============ TAB 2: APPEARANCE ============
     ColumnLayout {
-      id: actionsContent
-      anchors.fill: parent
-      anchors.margins: Style.marginM
+      id: appearanceTab
       spacing: Style.marginM
 
+      // Header
       NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.actions") || "Actions"
-        pointSize: Style.fontSizeL
+        Layout.fillWidth: true
+        text: pluginApi?.tr("settings.appearance-section")
+        pointSize: Style.fontSizeXXL
         font.weight: Style.fontWeightBold
         color: Color.mOnSurface
       }
 
-      RowLayout {
-        spacing: Style.marginM
+      NText {
+        Layout.fillWidth: true
+        text: pluginApi?.tr("settings.appearance-description")
+        color: Color.mOnSurfaceVariant
+        pointSize: Style.fontSizeM
+        wrapMode: Text.WordWrap
+      }
 
-        NButton {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.refresh-keybinds") || "Refresh Keybinds"
-          icon: "refresh"
-          onClicked: {
-            rootItem.pluginApi?.mainInstance?.refresh();
-            ToastService.showNotice(
-              rootItem.pluginApi?.tr("keybind-cheatsheet.settings.refresh-message") ||
-              "Refreshing keybinds..."
-            );
+      // ===== Live Preview =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: previewContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
+
+        ColumnLayout {
+          id: previewContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginM
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.preview-section")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          Flow {
+            Layout.fillWidth: true
+            spacing: Style.marginS
+
+            Component {
+              id: previewBadge
+              Rectangle {
+                property string label: ""
+                property color bg: "#888888"
+                property color fg: "#FFFFFF"
+                width: badgeText.implicitWidth + Style.marginM * 2
+                height: badgeText.implicitHeight + Style.marginS * 2
+                radius: Style.radiusS
+                color: bg
+                border.color: Qt.darker(bg, 1.4)
+                border.width: Math.max(1, Style.borderS)
+
+                NText {
+                  id: badgeText
+                  anchors.centerIn: parent
+                  text: parent.label
+                  color: parent.fg
+                  pointSize: Style.fontSizeM
+                  font.weight: Style.fontWeightBold
+                }
+              }
+            }
+
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Super";
+              item.bg = Qt.binding(function() { return root.valueKeyColorSuper || Color.mPrimary });
+              item.fg = Qt.binding(function() { return root.valueKeyTextSuper || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Ctrl";
+              item.bg = Qt.binding(function() { return root.valueKeyColorCtrl || Color.mSecondary });
+              item.fg = Qt.binding(function() { return root.valueKeyTextCtrl || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Shift";
+              item.bg = Qt.binding(function() { return root.valueKeyColorShift || Color.mTertiary });
+              item.fg = Qt.binding(function() { return root.valueKeyTextShift || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Alt";
+              item.bg = Qt.binding(function() { return root.valueKeyColorAlt });
+              item.fg = Qt.binding(function() { return root.valueKeyTextAlt || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "XF86Audio";
+              item.bg = Qt.binding(function() { return root.valueKeyColorXF86 });
+              item.fg = Qt.binding(function() { return root.valueKeyTextXF86 || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Print";
+              item.bg = Qt.binding(function() { return root.valueKeyColorPrint });
+              item.fg = Qt.binding(function() { return root.valueKeyTextPrint || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "1-9";
+              item.bg = Qt.binding(function() { return root.valueKeyColorNumeric });
+              item.fg = Qt.binding(function() { return root.valueKeyTextNumeric || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "mouse:272";
+              item.bg = Qt.binding(function() { return root.valueKeyColorMouse });
+              item.fg = Qt.binding(function() { return root.valueKeyTextMouse || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = "Q";
+              item.bg = Qt.binding(function() { return root.valueKeyColorDefault });
+              item.fg = Qt.binding(function() { return root.valueKeyTextDefault || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = Qt.binding(function() { return root.valueKeyLabelMod3 || "Mod3" });
+              item.bg = Qt.binding(function() { return root.valueKeyColorMod3 || root.valueKeyColorDefault });
+              item.fg = Qt.binding(function() { return root.valueKeyTextMod3 || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = Qt.binding(function() { return root.valueKeyLabelMod2 || "Mod2" });
+              item.bg = Qt.binding(function() { return root.valueKeyColorMod2 || root.valueKeyColorDefault });
+              item.fg = Qt.binding(function() { return root.valueKeyTextMod2 || root.valueKeyLabelColor });
+            } }
+            Loader { sourceComponent: previewBadge; onLoaded: {
+              item.label = Qt.binding(function() { return root.valueKeyLabelMod5 || "Mod5" });
+              item.bg = Qt.binding(function() { return root.valueKeyColorMod5 || root.valueKeyColorDefault });
+              item.fg = Qt.binding(function() { return root.valueKeyTextMod5 || root.valueKeyLabelColor });
+            } }
+          }
+
+          // Description preview sample
+          NText {
+            Layout.fillWidth: true
+            Layout.topMargin: Style.marginS
+            text: pluginApi?.tr("settings.color-description") + " — sample"
+            color: root.valueDescriptionTextColor
+            pointSize: Style.fontSizeM
           }
         }
+      }
 
-        NButton {
-          text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.reset-defaults") || "Reset to Defaults"
-          icon: "rotate"
-          onClicked: {
-            if (rootItem.pluginApi && rootItem.pluginApi.pluginSettings) {
-              rootItem.pluginApi.pluginSettings.windowWidth = defaults.windowWidth || 1400;
-              rootItem.pluginApi.pluginSettings.windowHeight = defaults.windowHeight || 0;
-              rootItem.pluginApi.pluginSettings.autoHeight = defaults.autoHeight ?? true;
-              rootItem.pluginApi.pluginSettings.columnCount = defaults.columnCount || 3;
-              // RESET DLA NOWEJ ZMIENNEJ:
-              rootItem.pluginApi.pluginSettings.modKeyVariable = defaults.modKeyVariable || "$mod";
-              rootItem.pluginApi.pluginSettings.hyprlandConfigPath = defaults.hyprlandConfigPath || "~/.config/hypr/hyprland.conf";
-              rootItem.pluginApi.pluginSettings.niriConfigPath = defaults.niriConfigPath || "~/.config/niri/config.kdl";
-              rootItem.pluginApi.pluginSettings.cheatsheetData = [];
-              rootItem.pluginApi.saveSettings();
+      // ===== Color Pickers =====
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: colorContent.implicitHeight + Style.marginM * 2
+        color: Color.mSurfaceVariant
 
-              // Update UI
-              widthInput.text = (defaults.windowWidth || 1400).toString();
-              heightInput.text = "850";
-              autoHeightToggle.checked = true;
-              columnCombo.currentKey = "3";
-              // AKTUALIZACJA UI DLA NOWEJ ZMIENNEJ:
-              modVarInput.text = defaults.modKeyVariable || "$mod";
-              hyprlandPathInput.text = defaults.hyprlandConfigPath || "~/.config/hypr/hyprland.conf";
-              niriPathInput.text = defaults.niriConfigPath || "~/.config/niri/config.kdl";
+        ColumnLayout {
+          id: colorContent
+          anchors.fill: parent
+          anchors.margins: Style.marginM
+          spacing: Style.marginM
 
-              ToastService.showNotice(
-                rootItem.pluginApi?.tr("keybind-cheatsheet.settings.reset-message") ||
-                "Settings have been reset to defaults."
-              );
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.color-pickers")
+            pointSize: Style.fontSizeL
+            font.weight: Style.fontWeightBold
+            color: Color.mOnSurface
+          }
+
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.color-theme-hint")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+
+          RowLayout {
+            Layout.fillWidth: true
+            spacing: Style.marginS
+            NIcon {
+              icon: "clipboard"
+              pointSize: Style.fontSizeM
+              color: root.clipboardHex.length > 0 ? Color.mPrimary : Color.mOnSurfaceVariant
+            }
+            NText {
+              Layout.fillWidth: true
+              text: pluginApi?.tr("settings.color-paste-hint")
+              color: Color.mOnSurfaceVariant
+              pointSize: Style.fontSizeS
+              wrapMode: Text.WordWrap
+            }
+          }
+
+          // Super (modifier: empty bg = theme accent)
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-super")
+            letter: "S"
+            bgValue: root.valueKeyColorSuper
+            textValue: root.valueKeyTextSuper
+            bgFallback: Color.mPrimary
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorSuper = c.toString(); root._applyPreview("keyColorSuper", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextSuper = c.toString(); root._applyPreview("keyTextSuper", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorSuper = hex; root._applyPreview("keyColorSuper", hex); }
+            onTextPasted: hex => { root.valueKeyTextSuper = hex; root._applyPreview("keyTextSuper", hex); }
+            onResetRequested: {
+              root.valueKeyColorSuper = ""; root._applyPreview("keyColorSuper", "");
+              root.valueKeyTextSuper  = ""; root._applyPreview("keyTextSuper", "");
+            }
+          }
+
+          // Ctrl
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-ctrl")
+            letter: "C"
+            bgValue: root.valueKeyColorCtrl
+            textValue: root.valueKeyTextCtrl
+            bgFallback: Color.mSecondary
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorCtrl = c.toString(); root._applyPreview("keyColorCtrl", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextCtrl = c.toString(); root._applyPreview("keyTextCtrl", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorCtrl = hex; root._applyPreview("keyColorCtrl", hex); }
+            onTextPasted: hex => { root.valueKeyTextCtrl = hex; root._applyPreview("keyTextCtrl", hex); }
+            onResetRequested: {
+              root.valueKeyColorCtrl = ""; root._applyPreview("keyColorCtrl", "");
+              root.valueKeyTextCtrl  = ""; root._applyPreview("keyTextCtrl", "");
+            }
+          }
+
+          // Shift
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-shift")
+            letter: "⇧"
+            bgValue: root.valueKeyColorShift
+            textValue: root.valueKeyTextShift
+            bgFallback: Color.mTertiary
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorShift = c.toString(); root._applyPreview("keyColorShift", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextShift = c.toString(); root._applyPreview("keyTextShift", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorShift = hex; root._applyPreview("keyColorShift", hex); }
+            onTextPasted: hex => { root.valueKeyTextShift = hex; root._applyPreview("keyTextShift", hex); }
+            onResetRequested: {
+              root.valueKeyColorShift = ""; root._applyPreview("keyColorShift", "");
+              root.valueKeyTextShift  = ""; root._applyPreview("keyTextShift", "");
+            }
+          }
+
+          // Alt
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-alt")
+            letter: "A"
+            bgValue: root.valueKeyColorAlt
+            textValue: root.valueKeyTextAlt
+            bgFallback: defaults.keyColorAlt || "#FF6B6B"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorAlt = c.toString(); root._applyPreview("keyColorAlt", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextAlt = c.toString(); root._applyPreview("keyTextAlt", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorAlt = hex; root._applyPreview("keyColorAlt", hex); }
+            onTextPasted: hex => { root.valueKeyTextAlt = hex; root._applyPreview("keyTextAlt", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorAlt || "#FF6B6B";
+              root.valueKeyColorAlt = d; root._applyPreview("keyColorAlt", d);
+              root.valueKeyTextAlt  = ""; root._applyPreview("keyTextAlt", "");
+            }
+          }
+
+          // Generic X11 mods (Mod2/Mod3/Mod5): same colour controls as the other
+          // modifiers, plus a rename field (e.g. caps:hyper -> label Mod3 "Hyper").
+          NText {
+            Layout.fillWidth: true
+            text: pluginApi?.tr("settings.mod-label-hint")
+            color: Color.mOnSurfaceVariant
+            pointSize: Style.fontSizeS
+            wrapMode: Text.WordWrap
+          }
+
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-mod3")
+            letter: root.valueKeyLabelMod3.length > 0 ? root.valueKeyLabelMod3.charAt(0) : "3"
+            showLabel: true
+            labelValue: root.valueKeyLabelMod3
+            labelPlaceholder: "Mod3"
+            bgValue: root.valueKeyColorMod3
+            textValue: root.valueKeyTextMod3
+            bgFallback: defaults.keyColorDefault || "#6C757D"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorMod3 = c.toString(); root._applyPreview("keyColorMod3", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextMod3 = c.toString(); root._applyPreview("keyTextMod3", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorMod3 = hex; root._applyPreview("keyColorMod3", hex); }
+            onTextPasted: hex => { root.valueKeyTextMod3 = hex; root._applyPreview("keyTextMod3", hex); }
+            onLabelEdited: t => { root.valueKeyLabelMod3 = t; root._applyPreview("keyLabelMod3", t); }
+            onResetRequested: {
+              root.valueKeyColorMod3 = ""; root._applyPreview("keyColorMod3", "");
+              root.valueKeyTextMod3  = ""; root._applyPreview("keyTextMod3", "");
+              root.valueKeyLabelMod3 = ""; root._applyPreview("keyLabelMod3", "");
+            }
+          }
+
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-mod2")
+            letter: root.valueKeyLabelMod2.length > 0 ? root.valueKeyLabelMod2.charAt(0) : "2"
+            showLabel: true
+            labelValue: root.valueKeyLabelMod2
+            labelPlaceholder: "Mod2"
+            bgValue: root.valueKeyColorMod2
+            textValue: root.valueKeyTextMod2
+            bgFallback: defaults.keyColorDefault || "#6C757D"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorMod2 = c.toString(); root._applyPreview("keyColorMod2", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextMod2 = c.toString(); root._applyPreview("keyTextMod2", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorMod2 = hex; root._applyPreview("keyColorMod2", hex); }
+            onTextPasted: hex => { root.valueKeyTextMod2 = hex; root._applyPreview("keyTextMod2", hex); }
+            onLabelEdited: t => { root.valueKeyLabelMod2 = t; root._applyPreview("keyLabelMod2", t); }
+            onResetRequested: {
+              root.valueKeyColorMod2 = ""; root._applyPreview("keyColorMod2", "");
+              root.valueKeyTextMod2  = ""; root._applyPreview("keyTextMod2", "");
+              root.valueKeyLabelMod2 = ""; root._applyPreview("keyLabelMod2", "");
+            }
+          }
+
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-mod5")
+            letter: root.valueKeyLabelMod5.length > 0 ? root.valueKeyLabelMod5.charAt(0) : "5"
+            showLabel: true
+            labelValue: root.valueKeyLabelMod5
+            labelPlaceholder: "Mod5"
+            bgValue: root.valueKeyColorMod5
+            textValue: root.valueKeyTextMod5
+            bgFallback: defaults.keyColorDefault || "#6C757D"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorMod5 = c.toString(); root._applyPreview("keyColorMod5", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextMod5 = c.toString(); root._applyPreview("keyTextMod5", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorMod5 = hex; root._applyPreview("keyColorMod5", hex); }
+            onTextPasted: hex => { root.valueKeyTextMod5 = hex; root._applyPreview("keyTextMod5", hex); }
+            onLabelEdited: t => { root.valueKeyLabelMod5 = t; root._applyPreview("keyLabelMod5", t); }
+            onResetRequested: {
+              root.valueKeyColorMod5 = ""; root._applyPreview("keyColorMod5", "");
+              root.valueKeyTextMod5  = ""; root._applyPreview("keyTextMod5", "");
+              root.valueKeyLabelMod5 = ""; root._applyPreview("keyLabelMod5", "");
+            }
+          }
+
+          // XF86
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-xf86")
+            letter: "♪"
+            bgValue: root.valueKeyColorXF86
+            textValue: root.valueKeyTextXF86
+            bgFallback: defaults.keyColorXF86 || "#4ECDC4"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorXF86 = c.toString(); root._applyPreview("keyColorXF86", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextXF86 = c.toString(); root._applyPreview("keyTextXF86", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorXF86 = hex; root._applyPreview("keyColorXF86", hex); }
+            onTextPasted: hex => { root.valueKeyTextXF86 = hex; root._applyPreview("keyTextXF86", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorXF86 || "#4ECDC4";
+              root.valueKeyColorXF86 = d; root._applyPreview("keyColorXF86", d);
+              root.valueKeyTextXF86  = ""; root._applyPreview("keyTextXF86", "");
+            }
+          }
+
+          // Print
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-print")
+            letter: "P"
+            bgValue: root.valueKeyColorPrint
+            textValue: root.valueKeyTextPrint
+            bgFallback: defaults.keyColorPrint || "#95E1D3"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorPrint = c.toString(); root._applyPreview("keyColorPrint", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextPrint = c.toString(); root._applyPreview("keyTextPrint", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorPrint = hex; root._applyPreview("keyColorPrint", hex); }
+            onTextPasted: hex => { root.valueKeyTextPrint = hex; root._applyPreview("keyTextPrint", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorPrint || "#95E1D3";
+              root.valueKeyColorPrint = d; root._applyPreview("keyColorPrint", d);
+              root.valueKeyTextPrint  = ""; root._applyPreview("keyTextPrint", "");
+            }
+          }
+
+          // Numeric
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-numeric")
+            letter: "1"
+            bgValue: root.valueKeyColorNumeric
+            textValue: root.valueKeyTextNumeric
+            bgFallback: defaults.keyColorNumeric || "#A8DADC"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorNumeric = c.toString(); root._applyPreview("keyColorNumeric", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextNumeric = c.toString(); root._applyPreview("keyTextNumeric", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorNumeric = hex; root._applyPreview("keyColorNumeric", hex); }
+            onTextPasted: hex => { root.valueKeyTextNumeric = hex; root._applyPreview("keyTextNumeric", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorNumeric || "#A8DADC";
+              root.valueKeyColorNumeric = d; root._applyPreview("keyColorNumeric", d);
+              root.valueKeyTextNumeric  = ""; root._applyPreview("keyTextNumeric", "");
+            }
+          }
+
+          // Mouse
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-mouse")
+            letter: "M"
+            bgValue: root.valueKeyColorMouse
+            textValue: root.valueKeyTextMouse
+            bgFallback: defaults.keyColorMouse || "#F38181"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorMouse = c.toString(); root._applyPreview("keyColorMouse", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextMouse = c.toString(); root._applyPreview("keyTextMouse", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorMouse = hex; root._applyPreview("keyColorMouse", hex); }
+            onTextPasted: hex => { root.valueKeyTextMouse = hex; root._applyPreview("keyTextMouse", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorMouse || "#F38181";
+              root.valueKeyColorMouse = d; root._applyPreview("keyColorMouse", d);
+              root.valueKeyTextMouse  = ""; root._applyPreview("keyTextMouse", "");
+            }
+          }
+
+          // Default letter keys
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-default")
+            letter: "Q"
+            bgValue: root.valueKeyColorDefault
+            textValue: root.valueKeyTextDefault
+            bgFallback: defaults.keyColorDefault || "#6C757D"
+            textFallback: root.valueKeyLabelColor
+            clipboardHex: root.clipboardHex
+            onBgPicked: c => { root.valueKeyColorDefault = c.toString(); root._applyPreview("keyColorDefault", c.toString()); }
+            onTextPicked: c => { root.valueKeyTextDefault = c.toString(); root._applyPreview("keyTextDefault", c.toString()); }
+            onBgPasted: hex => { root.valueKeyColorDefault = hex; root._applyPreview("keyColorDefault", hex); }
+            onTextPasted: hex => { root.valueKeyTextDefault = hex; root._applyPreview("keyTextDefault", hex); }
+            onResetRequested: {
+              var d = defaults.keyColorDefault || "#6C757D";
+              root.valueKeyColorDefault = d; root._applyPreview("keyColorDefault", d);
+              root.valueKeyTextDefault  = ""; root._applyPreview("keyTextDefault", "");
+            }
+          }
+
+          // Description text (text-only row — no background)
+          // Empty value = theme-aware (Color.mOnSurface) at render time.
+          Local.ColorPairRow {
+            pluginApi: root.pluginApi
+            labelText: pluginApi?.tr("settings.color-description")
+            letter: "T"
+            showBg: false
+            bgValue: ""
+            textValue: root.valueDescriptionTextColor
+            textFallback: Color.mOnSurface
+            clipboardHex: root.clipboardHex
+            onTextPicked: c => { root.valueDescriptionTextColor = c.toString(); root._applyPreview("descriptionTextColor", c.toString()); }
+            onTextPasted: hex => { root.valueDescriptionTextColor = hex; root._applyPreview("descriptionTextColor", hex); }
+            onResetRequested: {
+              root.valueDescriptionTextColor = ""; root._applyPreview("descriptionTextColor", "");
+            }
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 1
+            color: Color.mOutline
+            opacity: 0.3
+          }
+
+          NButton {
+            Layout.alignment: Qt.AlignRight
+            text: pluginApi?.tr("settings.reset-all-colors")
+            icon: "rotate"
+            onClicked: {
+              var dAlt     = defaults.keyColorAlt     || "#FF6B6B";
+              var dXF86    = defaults.keyColorXF86    || "#4ECDC4";
+              var dPrint   = defaults.keyColorPrint   || "#95E1D3";
+              var dNumeric = defaults.keyColorNumeric || "#A8DADC";
+              var dMouse   = defaults.keyColorMouse   || "#F38181";
+              var dDefault = defaults.keyColorDefault || "#6C757D";
+              var dLabel   = defaults.keyLabelColor   || "#FFFFFF";
+              var dDesc    = defaults.descriptionTextColor ?? "";
+
+              root.valueKeyColorSuper = "";
+              root.valueKeyColorCtrl = "";
+              root.valueKeyColorShift = "";
+              root.valueKeyColorAlt = dAlt;
+              root.valueKeyColorXF86 = dXF86;
+              root.valueKeyColorPrint = dPrint;
+              root.valueKeyColorNumeric = dNumeric;
+              root.valueKeyColorMouse = dMouse;
+              root.valueKeyColorDefault = dDefault;
+              root.valueKeyLabelColor = dLabel;
+              root.valueDescriptionTextColor = dDesc;
+
+              root.valueKeyTextSuper = "";
+              root.valueKeyTextCtrl = "";
+              root.valueKeyTextShift = "";
+              root.valueKeyTextAlt = "";
+              root.valueKeyTextXF86 = "";
+              root.valueKeyTextPrint = "";
+              root.valueKeyTextNumeric = "";
+              root.valueKeyTextMouse = "";
+              root.valueKeyTextDefault = "";
+
+              root.valueKeyColorMod2 = ""; root.valueKeyColorMod3 = ""; root.valueKeyColorMod5 = "";
+              root.valueKeyTextMod2  = ""; root.valueKeyTextMod3  = ""; root.valueKeyTextMod5  = "";
+              root.valueKeyLabelMod2 = ""; root.valueKeyLabelMod3 = ""; root.valueKeyLabelMod5 = "";
+
+              if (pluginApi) {
+                pluginApi.pluginSettings = Object.assign({}, pluginApi.pluginSettings, {
+                  keyColorSuper: "",
+                  keyColorCtrl: "",
+                  keyColorShift: "",
+                  keyColorAlt: dAlt,
+                  keyColorXF86: dXF86,
+                  keyColorPrint: dPrint,
+                  keyColorNumeric: dNumeric,
+                  keyColorMouse: dMouse,
+                  keyColorDefault: dDefault,
+                  keyLabelColor: dLabel,
+                  descriptionTextColor: dDesc,
+                  keyTextSuper: "",
+                  keyTextCtrl: "",
+                  keyTextShift: "",
+                  keyTextAlt: "",
+                  keyTextXF86: "",
+                  keyTextPrint: "",
+                  keyTextNumeric: "",
+                  keyTextMouse: "",
+                  keyTextDefault: "",
+                  keyColorMod2: "", keyColorMod3: "", keyColorMod5: "",
+                  keyTextMod2: "", keyTextMod3: "", keyTextMod5: "",
+                  keyLabelMod2: "", keyLabelMod3: "", keyLabelMod5: ""
+                });
+              }
             }
           }
         }
       }
-    }
-  }
 
-  // Keybind Command Info
-  NBox {
-    Layout.fillWidth: true
-    Layout.preferredHeight: keybindContent.implicitHeight + Style.marginM * 2
-    color: Color.mSurfaceVariant
-
-    ColumnLayout {
-      id: keybindContent
-      anchors.fill: parent
-      anchors.margins: Style.marginM
-      spacing: Style.marginS
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.keybind-setup") || "Keybind Setup"
-        pointSize: Style.fontSizeL
-        font.weight: Style.fontWeightBold
-        color: Color.mOnSurface
-      }
-
-      NText {
-    Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.keybind-setup-description") ||
-          "To open the cheatsheet with a keyboard shortcut, add this bind to your compositor config:"
-        color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeS
-        wrapMode: Text.WordWrap
-      }
-
-      Rectangle {
-        Layout.fillWidth: true
-        Layout.preferredHeight: commandText.implicitHeight + Style.marginS * 2
-        color: Color.mSurface
-        radius: Style.radiusS
-
-        NText {
-          id: commandText
-          anchors.fill: parent
-          anchors.margins: Style.marginS
-          text: "qs -c \"noctalia-shell\" ipc call plugin:keybind-cheatsheet toggle"
-          font.family: "monospace"
-          pointSize: Style.fontSizeS
-          color: Color.mPrimary
-          wrapMode: Text.WrapAnywhere
-        }
-      }
-
-      NText {
-        Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.keybind-example-hyprland") ||
-          "Hyprland example: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call plugin:keybind-cheatsheet toggle"
-        color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeXS
-        wrapMode: Text.WordWrap
-      }
-
-      NText {
-        Layout.fillWidth: true
-        text: rootItem.pluginApi?.tr("keybind-cheatsheet.settings.keybind-example-niri") ||
-          "Niri example: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"plugin:keybind-cheatsheet\" \"toggle\"; }"
-        color: Color.mOnSurfaceVariant
-        pointSize: Style.fontSizeXS
-        wrapMode: Text.WordWrap
+      Item {
+        Layout.preferredHeight: Style.marginL
       }
     }
+    // ============ END TAB 2 ============
   }
+  // ============ END TAB VIEW ============
 
-  // Bottom spacing
-  Item {
-    Layout.preferredHeight: Style.marginL
-  }
-  // Save function called by settings dialog
+  // Save function called by the shell when user clicks Apply/Save
   function saveSettings() {
-    if (!rootItem.pluginApi) return;
-    rootItem.pluginApi.saveSettings();
-    ToastService.showNotice(
-      rootItem.pluginApi?.tr("keybind-cheatsheet.settings.saved") ||
-      "Settings saved successfully."
-    );
-  }
+    if (!pluginApi) return;
+
+    pluginApi.pluginSettings.windowWidth = root.editWindowWidth;
+    pluginApi.pluginSettings.windowHeight = root.editWindowHeight;
+    pluginApi.pluginSettings.autoHeight = root.editAutoHeight;
+    pluginApi.pluginSettings.columnCount = root.editColumnCount;
+    pluginApi.pluginSettings.modKeyVariable = root.editModKeyVariable;
+    pluginApi.pluginSettings.hyprlandConfigPath = root.editHyprlandConfigPath;
+    pluginApi.pluginSettings.hyprlandLuaConfigPath = root.editHyprlandLuaConfigPath;
+    pluginApi.pluginSettings.hyprlandParserMode = root.editHyprlandParserMode;
+    pluginApi.pluginSettings.niriConfigPath = root.editNiriConfigPath;
+    pluginApi.pluginSettings.mangoConfigPath = root.editMangoConfigPath;
+    pluginApi.pluginSettings.mergeSequentialBinds = root.editMergeSequentialBinds;
+    pluginApi.pluginSettings.showUndescribedBinds = root.editShowUndescribedBinds;
+    pluginApi.pluginSettings.splitLargeWorkspaceCategory = root.editSplitLargeWorkspaceCategory;
+    pluginApi.pluginSettings.workspaceSplitThreshold = root.editWorkspaceSplitThreshold;
+
+    pluginApi.pluginSettings.keyColorAlt = root.valueKeyColorAlt.toString();
+    pluginApi.pluginSettings.keyColorXF86 = root.valueKeyColorXF86.toString();
+    pluginApi.pluginSettings.keyColorPrint = root.valueKeyColorPrint.toString();
+    pluginApi.pluginSettings.keyColorNumeric = root.valueKeyColorNumeric.toString();
+    pluginApi.pluginSettings.keyColorMouse = root.valueKeyColorMouse.toString();
+    pluginApi.pluginSettings.keyColorSuper = root.valueKeyColorSuper;
+    pluginApi.pluginSettings.keyColorCtrl  = root.valueKeyColorCtrl;
+    pluginApi.pluginSettings.keyColorShift = root.valueKeyColorShift;
+    pluginApi.pluginSettings.keyColorDefault = root.valueKeyColorDefault.toString();
+    pluginApi.pluginSettings.keyLabelColor = root.valueKeyLabelColor.toString();
+    pluginApi.pluginSettings.descriptionTextColor = root.valueDescriptionTextColor.toString();
+
+    pluginApi.pluginSettings.keyTextSuper   = root.valueKeyTextSuper;
+    pluginApi.pluginSettings.keyTextCtrl    = root.valueKeyTextCtrl;
+    pluginApi.pluginSettings.keyTextShift   = root.valueKeyTextShift;
+    pluginApi.pluginSettings.keyTextAlt     = root.valueKeyTextAlt;
+    pluginApi.pluginSettings.keyTextXF86    = root.valueKeyTextXF86;
+    pluginApi.pluginSettings.keyTextPrint   = root.valueKeyTextPrint;
+    pluginApi.pluginSettings.keyTextNumeric = root.valueKeyTextNumeric;
+    pluginApi.pluginSettings.keyTextMouse   = root.valueKeyTextMouse;
+    pluginApi.pluginSettings.keyTextDefault = root.valueKeyTextDefault;
+
+    pluginApi.pluginSettings.keyColorMod2 = root.valueKeyColorMod2;
+    pluginApi.pluginSettings.keyColorMod3 = root.valueKeyColorMod3;
+    pluginApi.pluginSettings.keyColorMod5 = root.valueKeyColorMod5;
+    pluginApi.pluginSettings.keyTextMod2  = root.valueKeyTextMod2;
+    pluginApi.pluginSettings.keyTextMod3  = root.valueKeyTextMod3;
+    pluginApi.pluginSettings.keyTextMod5  = root.valueKeyTextMod5;
+    pluginApi.pluginSettings.keyLabelMod2 = root.valueKeyLabelMod2;
+    pluginApi.pluginSettings.keyLabelMod3 = root.valueKeyLabelMod3;
+    pluginApi.pluginSettings.keyLabelMod5 = root.valueKeyLabelMod5;
+
+    _applied = true;
+    pluginApi.saveSettings();
+
+    if (pluginApi.mainInstance) {
+      pluginApi.mainInstance.refresh();
+    }
+
+    ToastService.showNotice(pluginApi?.tr("settings.saved"));
   }
 }

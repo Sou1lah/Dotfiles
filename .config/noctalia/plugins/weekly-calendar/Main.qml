@@ -18,7 +18,8 @@ Item {
     property string syncStatus: ""
     
     property real dayColumnWidth: 120 * Style.uiScaleRatio
-    property real allDaySectionHeight: 0 * Style.uiScaleRatio
+    property real allDaySectionHeight: 0
+    property real hourHeight: 50 * Style.uiScaleRatio
     property var allDayEventsWithLayout: []
 
     property date weekStart: calculateWeekStart(currentDate, firstDayOfWeek)
@@ -34,9 +35,11 @@ Item {
     property real hourLineOpacitySetting: pluginApi?.pluginSettings?.hourLineOpacity ?? 0.5
     property real dayLineOpacitySetting: pluginApi?.pluginSettings?.dayLineOpacity ?? 0.9
 
+
     readonly property int firstDayOfWeek: weekStartSetting === "0" ? 0 : 
                                         weekStartSetting === "1" ? 1 : 
                                         weekStartSetting === "6" ? 6 : I18n.locale.firstDayOfWeek
+
 
     readonly property bool use12hourFormat: timeFormatSetting === "12h" ? true : 
                                            timeFormatSetting === "24h" ? false : 
@@ -45,7 +48,6 @@ Item {
     readonly property color lineColor: lineColorTypeSetting === "mOnSurfaceVariant" ? Color.mOnSurfaceVariant : Color.mOutline
 
     onWeekStartSettingChanged: if (hasLoadedOnce) Qt.callLater(loadEvents)
-    onTimeFormatSettingChanged: eventsModelChanged()
     onCurrentDateChanged: Qt.callLater(loadEvents)
     onLineColorTypeSettingChanged: eventsModelChanged()
     onHourLineOpacitySettingChanged: eventsModelChanged()
@@ -197,7 +199,9 @@ Item {
 
     function getDayIndexForDate(date) {
         if (!date || isNaN(date.getTime())) return -1
-        var diff = Math.floor((date - weekStart) / 86400000)
+        var dateUtc = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+        var wsUtc   = Date.UTC(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate())
+        var diff    = Math.round((dateUtc - wsUtc) / 86400000)
         return diff >= 0 && diff < 7 ? diff : -1
     }
     function getDisplayDayIndexForDate(date) { return getDayIndexForDate(date) }
@@ -207,7 +211,11 @@ Item {
         var endsMidnight = end.getHours() === 0 && end.getMinutes() === 0 && end.getSeconds() === 0
         var adjEnd = endsMidnight ? new Date(end.getTime() - 1) : end
         var startIdx = Math.max(0, getDayIndexForDate(start))
-        var endIdx = Math.min(6, Math.floor((Math.min(adjEnd, weekEnd) - weekStart) / 86400000))
+        var adjEndUtc = Date.UTC(adjEnd.getFullYear(), adjEnd.getMonth(), adjEnd.getDate())
+        var wsUtc     = Date.UTC(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate())
+        var weUtc     = Date.UTC(weekEnd.getFullYear(),   weekEnd.getMonth(),   weekEnd.getDate())
+        var clampUtc  = Math.min(adjEndUtc, weUtc - 86400000)
+        var endIdx    = Math.min(6, Math.round((clampUtc - wsUtc) / 86400000))
         return Math.max(1, endIdx - startIdx + 1)
     }
 
@@ -258,7 +266,7 @@ Item {
         
         eventsWithLayout.sort((a,b) => a.lane !== b.lane ? a.lane - b.lane : a.startDay - b.startDay)
         allDayEventsWithLayout = eventsWithLayout
-        allDaySectionHeight = maxLanes === 0 ? 0 : maxLanes === 1 ? 25 : Math.max(30, maxLanes * 25)
+        allDaySectionHeight = maxLanes === 0 ? 0 : maxLanes === 1 ? 25 * Style.uiScaleRatio : Math.max(30, maxLanes * 25 * Style.uiScaleRatio)
         
         return maxLanes
     }
@@ -391,8 +399,13 @@ Item {
         var dur = event.end - event.start
         var start = new Date(event.start * 1000), end = new Date(event.end * 1000)
         var startsMidnight = start.getHours() === 0 && start.getMinutes() === 0 && start.getSeconds() === 0
-        var endsMidnight = end.getHours() === 0 && end.getMinutes() === 0 && end.getSeconds() === 0
-        return (dur === 86400 && startsMidnight) || (dur >= 86400 && endsMidnight) || dur >= 86400
+        var endsMidnight = end.getHours()   === 0 && end.getMinutes() === 0 && end.getSeconds() === 0
+        if (startsMidnight && endsMidnight) {
+            var sUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate())
+            var eUtc = Date.UTC(end.getFullYear(),   end.getMonth(),   end.getDate())
+            if (eUtc > sUtc) return true
+        }
+        return dur >= 86400
     }
 
     function isMultiDayEvent(event) {
@@ -406,9 +419,10 @@ Item {
 
     function calculateDaySpan(start, end, isMultiDay) {
         if (!isMultiDay) return 1
-        var startDay = new Date(start.getFullYear(), start.getMonth(), start.getDate())
-        var endDay = new Date(end.getFullYear(), end.getMonth(), end.getDate())
-        var diff = Math.floor((endDay - startDay) / 86400000)
+        // Extract local calendar dates then count via UTC to avoid DST-shortened/lengthened days.
+        var sUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate())
+        var eUtc = Date.UTC(end.getFullYear(),   end.getMonth(),   end.getDate())
+        var diff = Math.round((eUtc - sUtc) / 86400000)
         var endsMidnight = end.getHours() === 0 && end.getMinutes() === 0 && end.getSeconds() === 0
         return Math.max(1, endsMidnight ? diff : diff + 1)
     }

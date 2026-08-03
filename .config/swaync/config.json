@@ -1,6 +1,6 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
+  "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
@@ -55,7 +55,7 @@
           "image-radius": 0
       },
       "volume": {
-          "label": "󰕾"
+          "label": "|"
       },
       "backlight": {
           "label": "󰃟"

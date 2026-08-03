@@ -25,17 +25,14 @@ ColumnLayout {
     { "key": "15", "name": "Moonsighting Committee Worldwide" },
     { "key": "16", "name": "Dubai (Experimental)" },
     { "key": "19", "name": "Algeria" },
-    { "key": "99", "name": "Manual ID" }
+    { "key": "99", "name": "Custom Method" }
   ]
 
   property string valueCity:              cfg.city              ?? defaults.city              ?? "London"
   property string valueCountry:           cfg.country           ?? defaults.country           ?? "UK"
   property int    valueMethod:            cfg.method            ?? defaults.method            ?? 3
-  readonly property bool valueMethodCustom: {
-    const match = root.methods.find(m => m.key === String(root.valueMethod))
-    return !match || match.key === "99"
-  }
-  property string valueMethodCustomInput: valueMethodCustom     ? String(root.valueMethod)         : ""
+  property var    valueFajrAngle:         cfg.fajrAngle         ?? defaults.fajrAngle         ?? null
+  property var    valueIshaAngle:         cfg.ishaAngle         ?? defaults.ishaAngle         ?? null
   property bool   valueTune:              cfg.tune              ?? defaults.tune              ?? false
   property int    valueTuneFajr:          cfg.tuneFajr          ?? defaults.tuneFajr          ?? 0
   property int    valueTuneDhuhr:         cfg.tuneDhuhr         ?? defaults.tuneDhuhr         ?? 0
@@ -90,26 +87,39 @@ ColumnLayout {
     Layout.fillWidth: true
     label: pluginApi?.tr("settings.method.label")
     description: pluginApi?.tr("settings.method.desc")
-    currentKey: valueMethodCustom ? 99 : String(root.valueMethod)
+    currentKey: String(root.valueMethod)
     model: root.methods
     onSelected: key => {
       root.valueMethod = parseInt(key)
     }
   }
 
-  NTextInput {
-    Layout.fillWidth: true
-    visible: root.valueMethodCustom
-    label: pluginApi?.tr("settings.methodCustom.label")
-    description: pluginApi?.tr("settings.methodCustom.desc")
-    placeholderText: "e.g. 19"
-    text: root.valueMethodCustomInput
-    onTextChanged: {
-      root.valueMethodCustomInput = text
-      const n = parseInt(text)
-      if (!isNaN(n) && n > 0) root.valueMethod = n
+    NTextInput {
+      visible: root.valueMethod === 99
+      Layout.fillWidth: true
+      label: pluginApi?.tr("settings.fajrAngle.label")
+      description: pluginApi?.tr("settings.fajrAngle.desc")
+      placeholderText: "18.0"
+      text: root.valueFajrAngle !== null ? String(root.valueFajrAngle) : ""
+      onTextChanged: {
+        const parsed = parseFloat(text)
+        root.valueFajrAngle = isNaN(parsed) ? null : parsed
+      }
     }
-  }
+
+    NTextInput {
+      visible: root.valueMethod === 99
+      Layout.fillWidth: true
+      label: pluginApi?.tr("settings.ishaAngle.label") 
+      description: pluginApi?.tr("settings.ishaAngle.desc") 
+      placeholderText: "17.0"
+      text: root.valueIshaAngle !== null ? String(root.valueIshaAngle) : ""
+      onTextChanged: {
+        const parsed = parseFloat(text)
+        root.valueIshaAngle = isNaN(parsed) ? null : parsed
+      }
+    }
+
 
 
   NComboBox {
@@ -448,6 +458,8 @@ ColumnLayout {
     pluginApi.pluginSettings.textColor         = root.valueTextColor
     pluginApi.pluginSettings.iconColor         = root.valueIconColor
     pluginApi.pluginSettings.activeColor       = root.valueActiveColor
+    pluginApi.pluginSettings.fajrAngle         = root.valueFajrAngle
+    pluginApi.pluginSettings.ishaAngle         = root.valueIshaAngle
     pluginApi.saveSettings()
     Logger.d("Mawaqit", "Settings saved")
   }

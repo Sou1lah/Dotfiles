@@ -22,13 +22,35 @@ Item {
   property bool autoHeight: cfg.autoHeight ?? defaults.autoHeight ?? true
   property int columnCount: cfg.columnCount ?? defaults.columnCount ?? 3
 
-  property var rawCategories: pluginApi?.pluginSettings?.cheatsheetData || []
+  // Bug 4 fix: re-evaluate rawCategories whenever Main.qml increments cheatsheetDataVersion
+  property int _dataVersion: pluginApi?.mainInstance?.cheatsheetDataVersion ?? 0
+  property var rawCategories: {
+    var _v = _dataVersion; // force QML dependency on version counter
+    return pluginApi?.pluginSettings?.cheatsheetData || [];
+  }
   property var categories: []
-  
 
-  
+  // Bug 5 fix: timeout if parsing never completes
+  property bool loadingTimedOut: false
+
+  Timer {
+    id: loadingTimeoutTimer
+    interval: 4000
+    repeat: false
+    running: false
+    onTriggered: {
+      if (root.isLoading) {
+        root.loadingTimedOut = true;
+      }
+    }
+  }
+
   Component.onCompleted: {
     categories = processCategories(rawCategories);
+    // Start timeout timer if we have no data yet
+    if (root.isLoading) {
+      loadingTimeoutTimer.start();
+    }
   }
 
 
@@ -46,6 +68,7 @@ Item {
   Component.onDestruction: {
     // Stop timer to prevent firing after destruction
     columnUpdateDebounce.stop();
+    loadingTimeoutTimer.stop();
 
     // Clear column items
     columnItems = [];
@@ -69,6 +92,8 @@ Item {
   onPanelOpenScreenChanged: {
     // Recalculate height when screen becomes available (important for bar widget opening)
     contentPreferredHeight = calculateDynamicHeight();
+    root.searchText = "";
+    if (searchInput) searchInput.inputItem.forceActiveFocus();
   }
 
   onMaxScreenHeightChanged: {
@@ -93,6 +118,8 @@ Item {
   property var panelOpenScreen: pluginApi?.panelOpenScreen
   property real maxScreenHeight: panelOpenScreen ? panelOpenScreen.height * 0.9 : 800
 
+  property string searchText: ""
+
   property real contentPreferredWidth: settingsWidth
   property real contentPreferredHeight: calculateDynamicHeight()
   readonly property var geometryPlaceholder: panelContainer
@@ -100,6 +127,52 @@ Item {
   readonly property bool panelAnchorHorizontalCenter: true
   readonly property bool panelAnchorVerticalCenter: true
   anchors.fill: parent
+
+  // Key badge colors — read from settings with manifest defaults as fallback
+  readonly property color keyColorAlt:     cfg.keyColorAlt     || defaults.keyColorAlt     || "#FF6B6B"
+  readonly property color keyColorXF86:    cfg.keyColorXF86    || defaults.keyColorXF86    || "#4ECDC4"
+  readonly property color keyColorPrint:   cfg.keyColorPrint   || defaults.keyColorPrint   || "#95E1D3"
+  readonly property color keyColorNumeric: cfg.keyColorNumeric || defaults.keyColorNumeric || "#A8DADC"
+  readonly property color keyColorMouse:   cfg.keyColorMouse   || defaults.keyColorMouse   || "#F38181"
+  // Empty string = use theme color (mPrimary/mSecondary/mTertiary)
+  readonly property string keyColorSuperOverride: cfg.keyColorSuper ?? defaults.keyColorSuper ?? ""
+  readonly property string keyColorCtrlOverride:  cfg.keyColorCtrl  ?? defaults.keyColorCtrl  ?? ""
+  readonly property string keyColorShiftOverride: cfg.keyColorShift ?? defaults.keyColorShift ?? ""
+  readonly property color keyColorDefault: cfg.keyColorDefault || defaults.keyColorDefault || "#6C757D"
+  readonly property color keyLabelColor:   cfg.keyLabelColor   || defaults.keyLabelColor   || "#FFFFFF"
+  // Empty string = theme-aware fallback (Color.mOnSurface). Any non-empty
+  // value is treated as an explicit user override.
+  readonly property string descriptionColorOverride: cfg.descriptionTextColor || defaults.descriptionTextColor || ""
+  readonly property color descriptionTextColor: descriptionColorOverride !== "" ? descriptionColorOverride : Color.mOnSurface
+
+  // Per-category text color overrides (empty = fall back to keyLabelColor)
+  readonly property string keyTextSuperOverride:   cfg.keyTextSuper   ?? defaults.keyTextSuper   ?? ""
+  readonly property string keyTextCtrlOverride:    cfg.keyTextCtrl    ?? defaults.keyTextCtrl    ?? ""
+  readonly property string keyTextShiftOverride:   cfg.keyTextShift   ?? defaults.keyTextShift   ?? ""
+  readonly property string keyTextAltOverride:     cfg.keyTextAlt     ?? defaults.keyTextAlt     ?? ""
+  readonly property string keyTextXF86Override:    cfg.keyTextXF86    ?? defaults.keyTextXF86    ?? ""
+  readonly property string keyTextPrintOverride:   cfg.keyTextPrint   ?? defaults.keyTextPrint   ?? ""
+  readonly property string keyTextNumericOverride: cfg.keyTextNumeric ?? defaults.keyTextNumeric ?? ""
+  readonly property string keyTextMouseOverride:   cfg.keyTextMouse   ?? defaults.keyTextMouse   ?? ""
+  readonly property string keyTextDefaultOverride: cfg.keyTextDefault ?? defaults.keyTextDefault ?? ""
+
+  // The generic X11 mods (Mod2/Mod3/Mod5) are first-class, customizable keys:
+  // background colour, text colour, and a display-label override that renames
+  // them to something meaningful (e.g. Mod3 -> "Hyper" for caps:hyper). Empty
+  // colour = fall back to the default key colour; empty label = raw mod name.
+  readonly property string keyColorMod2Override: cfg.keyColorMod2 ?? defaults.keyColorMod2 ?? ""
+  readonly property string keyColorMod3Override: cfg.keyColorMod3 ?? defaults.keyColorMod3 ?? ""
+  readonly property string keyColorMod5Override: cfg.keyColorMod5 ?? defaults.keyColorMod5 ?? ""
+  readonly property string keyTextMod2Override:  cfg.keyTextMod2  ?? defaults.keyTextMod2  ?? ""
+  readonly property string keyTextMod3Override:  cfg.keyTextMod3  ?? defaults.keyTextMod3  ?? ""
+  readonly property string keyTextMod5Override:  cfg.keyTextMod5  ?? defaults.keyTextMod5  ?? ""
+  readonly property string keyLabelMod2Override: cfg.keyLabelMod2 ?? defaults.keyLabelMod2 ?? ""
+  readonly property string keyLabelMod3Override: cfg.keyLabelMod3 ?? defaults.keyLabelMod3 ?? ""
+  readonly property string keyLabelMod5Override: cfg.keyLabelMod5 ?? defaults.keyLabelMod5 ?? ""
+
+  // Workspace category split tuning
+  readonly property bool splitWorkspaces: cfg.splitLargeWorkspaceCategory ?? defaults.splitLargeWorkspaceCategory ?? true
+  readonly property int workspaceSplitThreshold: cfg.workspaceSplitThreshold ?? defaults.workspaceSplitThreshold ?? 12
 
   // Data is loaded by Main.qml, we just display it
   property bool isLoading: rawCategories.length === 0
@@ -146,7 +219,7 @@ Item {
   Rectangle {
     id: panelContainer
     anchors.fill: parent
-    color: Color.mSurface
+    color: "transparent"
     radius: Style.radiusL
     clip: true
 
@@ -174,18 +247,24 @@ Item {
           color: Color.mPrimary
         }
         NText {
-          text: {
-            if (CompositorService.isHyprland) {
-              return "Hyprland Keymap";
-            } else if (CompositorService.isNiri) {
-              return "Niri Keymap";
-            } else {
-              return "Keymap";
-            }
-          }
+          text: CompositorService.isHyprland ? pluginApi?.tr("panel.title-hyprland") :
+                CompositorService.isNiri     ? pluginApi?.tr("panel.title-niri") :
+                CompositorService.isMango    ? pluginApi?.tr("panel.title-mango") :
+                                               pluginApi?.tr("panel.title")
           font.pointSize: Style.fontSizeM
           font.weight: Font.Bold
           color: Color.mPrimary
+        }
+
+        NTextInput {
+          id: searchInput
+          placeholderText: pluginApi?.tr("panel.search-placeholder")
+          text: root.searchText
+
+          onTextChanged: {
+            root.searchText = text;
+            root.updateColumnItems();
+          }
         }
 
         Item { Layout.fillWidth: true }
@@ -204,6 +283,7 @@ Item {
           onClicked: {
             var screen = pluginApi?.panelOpenScreen;
             if (screen && pluginApi?.manifest) {
+              pluginApi.closePanel(screen);
               BarService.openPluginSettings(screen, pluginApi.manifest);
             }
           }
@@ -214,7 +294,7 @@ Item {
     NText {
       id: loadingText
       anchors.centerIn: parent
-      text: pluginApi?.tr("keybind-cheatsheet.panel.loading") || "Loading..."
+      text: root.loadingTimedOut ? pluginApi?.tr("panel.loading-timeout") : pluginApi?.tr("panel.loading")
       visible: root.isLoading
       font.pointSize: Style.fontSizeL
       color: Color.mOnSurface
@@ -283,7 +363,7 @@ Item {
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         x: parent.width - implicitWidth
         text: itemData.title
-        font.pointSize: 11
+        font.pointSize: Style.fontSizeM
         font.weight: Font.Bold
         color: Color.mPrimary
       }
@@ -304,9 +384,13 @@ Item {
   Component {
     id: bindComponent
     RowLayout {
+      id: bindRow
       spacing: Style.marginS
       height: 22
       Layout.bottomMargin: 1
+
+      property bool editing: false
+
       Flow {
         Layout.preferredWidth: 220
         Layout.alignment: Qt.AlignVCenter
@@ -321,35 +405,160 @@ Item {
             NText {
               id: keyText
               anchors.centerIn: parent
-              text: modelData
-              font.pointSize: modelData.length > 12 ? 7 : 8
+              text: getKeyLabel(modelData)
+              font.pointSize: text.length > 12 ? 7 : 8
               font.weight: Font.Bold
-              color: Color.mOnPrimary
+              color: getKeyTextColor(modelData)
             }
           }
         }
       }
+
+      // Described bind: plain text (unchanged behaviour)
       NText {
+        visible: !itemData.undescribed
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignVCenter
         text: itemData.desc
-        font.pointSize: 9
-        color: Color.mOnSurface
+        font.pointSize: Style.fontSizeXS
+        color: root.descriptionTextColor
         elide: Text.ElideRight
+      }
+
+      // Undescribed bind: placeholder + add-description / hide actions
+      NText {
+        visible: itemData.undescribed && !bindRow.editing
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignVCenter
+        text: pluginApi?.tr("panel.no-description")
+        font.pointSize: Style.fontSizeXS
+        font.italic: true
+        color: Color.mOnSurfaceVariant
+        elide: Text.ElideRight
+
+        MouseArea {
+          anchors.fill: parent
+          cursorShape: Qt.PointingHandCursor
+          onClicked: { bindRow.editing = true; descInput.text = ""; descInput.inputItem.forceActiveFocus(); }
+        }
+      }
+
+      NTextInput {
+        id: descInput
+        visible: itemData.undescribed && bindRow.editing
+        Layout.fillWidth: true
+        Layout.preferredHeight: Style.baseWidgetSize
+        placeholderText: pluginApi?.tr("panel.add-description-placeholder")
+      }
+
+      NIconButton {
+        visible: itemData.undescribed && bindRow.editing
+        Layout.preferredHeight: 18
+        icon: "check"
+        tooltipText: pluginApi?.tr("panel.save-description")
+        onClicked: {
+          root.saveBindDescription(itemData.bindId, descInput.text);
+          bindRow.editing = false;
+        }
+      }
+
+      NIconButton {
+        visible: itemData.undescribed && bindRow.editing
+        Layout.preferredHeight: 18
+        icon: "close"
+        tooltipText: pluginApi?.tr("panel.cancel")
+        onClicked: { bindRow.editing = false; }
+      }
+
+      NIconButton {
+        visible: itemData.undescribed && !bindRow.editing
+        Layout.preferredHeight: 18
+        icon: "edit"
+        tooltipText: pluginApi?.tr("panel.add-description")
+        onClicked: { bindRow.editing = true; descInput.text = ""; descInput.inputItem.forceActiveFocus(); }
+      }
+
+      NIconButton {
+        visible: itemData.undescribed && !bindRow.editing
+        Layout.preferredHeight: 18
+        icon: "eye-off"
+        tooltipText: pluginApi?.tr("panel.hide-bind")
+        onClicked: { root.hideBind(itemData.bindId); }
       }
     }
   }
 
   function getKeyColor(keyName) {
-    if (keyName === "Super") return Color.mPrimary;
-    if (keyName === "Ctrl") return Color.mSecondary;
-    if (keyName === "Shift") return Color.mTertiary;
-    if (keyName === "Alt") return "#FF6B6B";
-    if (keyName.startsWith("XF86")) return "#4ECDC4";
-    if (keyName === "PRINT" || keyName === "Print") return "#95E1D3";
-    if (keyName.match(/^[0-9]$/)) return "#A8DADC";
-    if (keyName.includes("MOUSE") || keyName.includes("Wheel")) return "#F38181";
-    return Color.mPrimaryContainer || "#6C757D";
+    if (keyName === "Super") return root.keyColorSuperOverride || Color.mPrimary;
+    if (keyName === "Ctrl")  return root.keyColorCtrlOverride  || Color.mSecondary;
+    if (keyName === "Shift") return root.keyColorShiftOverride || Color.mTertiary;
+    if (keyName === "Alt") return root.keyColorAlt;
+    if (keyName.startsWith("XF86")) return root.keyColorXF86;
+    if (keyName === "PRINT" || keyName === "Print") return root.keyColorPrint;
+    if (keyName.match(/^[0-9]$/)) return root.keyColorNumeric;
+    if (keyName.includes("MOUSE") || keyName.includes("Wheel")) return root.keyColorMouse;
+    if (keyName === "Mod2") return root.keyColorMod2Override || root.keyColorDefault;
+    if (keyName === "Mod3") return root.keyColorMod3Override || root.keyColorDefault;
+    if (keyName === "Mod5") return root.keyColorMod5Override || root.keyColorDefault;
+    return root.keyColorDefault;
+  }
+
+  function getKeyTextColor(keyName) {
+    if (keyName === "Super") return root.keyTextSuperOverride || root.keyLabelColor;
+    if (keyName === "Ctrl")  return root.keyTextCtrlOverride  || root.keyLabelColor;
+    if (keyName === "Shift") return root.keyTextShiftOverride || root.keyLabelColor;
+    if (keyName === "Alt") return root.keyTextAltOverride || root.keyLabelColor;
+    if (keyName.startsWith("XF86")) return root.keyTextXF86Override || root.keyLabelColor;
+    if (keyName === "PRINT" || keyName === "Print") return root.keyTextPrintOverride || root.keyLabelColor;
+    if (keyName.match(/^[0-9]$/)) return root.keyTextNumericOverride || root.keyLabelColor;
+    if (keyName.includes("MOUSE") || keyName.includes("Wheel")) return root.keyTextMouseOverride || root.keyLabelColor;
+    if (keyName === "Mod2") return root.keyTextMod2Override || root.keyLabelColor;
+    if (keyName === "Mod3") return root.keyTextMod3Override || root.keyLabelColor;
+    if (keyName === "Mod5") return root.keyTextMod5Override || root.keyLabelColor;
+    return root.keyTextDefaultOverride || root.keyLabelColor;
+  }
+
+  // Display label for a key token. Lets users rename the generic X11 modifier
+  // names (e.g. Mod3 -> "Hyper"); everything else renders as-is. Purely visual —
+  // colour lookup and the cached bind still use the original token.
+  function getKeyLabel(keyName) {
+    if (keyName === "Mod2" && root.keyLabelMod2Override) return root.keyLabelMod2Override;
+    if (keyName === "Mod3" && root.keyLabelMod3Override) return root.keyLabelMod3Override;
+    if (keyName === "Mod5" && root.keyLabelMod5Override) return root.keyLabelMod5Override;
+    return keyName;
+  }
+
+  // ===== Bind override helpers (shared keyed map in plugin settings) =====
+  function _cloneOverrides() {
+    if (!pluginApi || !pluginApi.pluginSettings) return ({});
+    var src = pluginApi.pluginSettings.bindOverrides || ({});
+    try { return JSON.parse(JSON.stringify(src)); } catch (e) { return ({}); }
+  }
+
+  function saveBindDescription(bindId, desc) {
+    if (!pluginApi || !bindId) return;
+    var o = _cloneOverrides();
+    if (!o[bindId]) o[bindId] = ({});
+    var trimmed = (desc || "").trim();
+    if (trimmed.length === 0) {
+      delete o[bindId].desc;
+      if (Object.keys(o[bindId]).length === 0) delete o[bindId];
+    } else {
+      o[bindId].desc = trimmed;
+    }
+    pluginApi.pluginSettings.bindOverrides = o;
+    pluginApi.saveSettings();
+    pluginApi.mainInstance?.refresh();
+  }
+
+  function hideBind(bindId) {
+    if (!pluginApi || !bindId) return;
+    var o = _cloneOverrides();
+    if (!o[bindId]) o[bindId] = ({});
+    o[bindId].hidden = true;
+    pluginApi.pluginSettings.bindOverrides = o;
+    pluginApi.saveSettings();
+    pluginApi.mainInstance?.refresh();
   }
 
   function buildColumnItems(categoryIndices) {
@@ -362,12 +571,19 @@ Item {
 
       var cat = categories[catIndex];
       result.push({ type: "header", title: cat.title });
+      var term = root.searchText.toLowerCase();
       for (var j = 0; j < cat.binds.length; j++) {
-        result.push({
-          type: "bind",
-          keys: cat.binds[j].keys,
-          desc: cat.binds[j].desc
-        });
+        var bnd = cat.binds[j];
+        var isUndesc = bnd.undescribed === true;
+        if (!term || (bnd.desc && bnd.desc.toLowerCase().indexOf(term) !== -1) || (isUndesc && bnd.keys.toLowerCase().indexOf(term) !== -1)) {
+          result.push({
+            type: "bind",
+            keys: bnd.keys,
+            desc: bnd.desc,
+            bindId: bnd.bindId || "",
+            undescribed: isUndesc
+          });
+        }
       }
       if (i < categoryIndices.length - 1) {
         result.push({ type: "spacer" });
@@ -378,40 +594,54 @@ Item {
 
   function processCategories(cats) {
     if (!cats || cats.length === 0) return [];
+    if (!root.splitWorkspaces) return cats;
 
-    // For Hyprland: split large workspace categories
-    if (CompositorService.isHyprland) {
-      var result = [];
-      for (var i = 0; i < cats.length; i++) {
-        var cat = cats[i];
+    var result = [];
+    for (var i = 0; i < cats.length; i++) {
+      var cat = cats[i];
+      if (!cat.binds || cat.binds.length <= root.workspaceSplitThreshold) {
+        result.push(cat);
+        continue;
+      }
 
-        if (cat.binds && cat.binds.length > 12 && cat.title.includes("OBSZARY ROBOCZE")) {
-          var switching = [], moving = [], mouse = [];
+      // Detect a category dominated by workspace verbs.
+      // Hyprland verbs: workspace, movetoworkspace, movetoworkspacesilent, movecurrentworkspacetomonitor
+      // Niri verbs:     focus-workspace, move-window-to-workspace, move-column-to-workspace
+      var workspaceCount = 0;
+      for (var k = 0; k < cat.binds.length; k++) {
+        var v = cat.binds[k]._verb || "";
+        if (v.indexOf("workspace") !== -1) workspaceCount++;
+      }
+      var workspaceDominated = workspaceCount >= Math.ceil(cat.binds.length * 0.6);
+      if (!workspaceDominated) {
+        result.push(cat);
+        continue;
+      }
 
-          for (var j = 0; j < cat.binds.length; j++) {
-            var bind = cat.binds[j];
-            if (bind.keys.includes("MOUSE")) {
-              mouse.push(bind);
-            } else if (bind.desc.includes("Send") || bind.desc.includes("send") ||
-                       bind.desc.includes("Move") || bind.desc.includes("move") ||
-                       bind.desc.includes("Wyślij") || bind.desc.includes("wyślij")) {
-              moving.push(bind);
-            } else {
-              switching.push(bind);
-            }
-          }
+      var switching = [], moving = [], mouse = [];
+      for (var j = 0; j < cat.binds.length; j++) {
+        var bind = cat.binds[j];
+        var verb = bind._verb || "";
+        var isMouse = (bind._mainKey || "").indexOf("MOUSE") !== -1 ||
+                      (bind.keys || "").indexOf("MOUSE") !== -1 ||
+                      (bind.keys || "").indexOf("Wheel") !== -1;
 
-          if (switching.length > 0) result.push({ title: pluginApi?.tr("keybind-cheatsheet.panel.workspace-switching") || "WORKSPACES - SWITCHING", binds: switching });
-          if (moving.length > 0) result.push({ title: pluginApi?.tr("keybind-cheatsheet.panel.workspace-moving") || "WORKSPACES - MOVING", binds: moving });
-          if (mouse.length > 0) result.push({ title: pluginApi?.tr("keybind-cheatsheet.panel.workspace-mouse") || "WORKSPACES - MOUSE", binds: mouse });
+        if (isMouse) {
+          mouse.push(bind);
+        } else if (verb.indexOf("move") !== -1 || verb.indexOf("send") !== -1) {
+          // Hyprland: movetoworkspace*, Niri: move-window-to-workspace, move-column-to-workspace
+          moving.push(bind);
         } else {
-          result.push(cat);
+          // Hyprland: workspace, Niri: focus-workspace
+          switching.push(bind);
         }
       }
-      return result;
-    }
 
-    return cats;
+      if (switching.length > 0) result.push({ title: pluginApi?.tr("panel.workspace-switching"), binds: switching });
+      if (moving.length > 0)    result.push({ title: pluginApi?.tr("panel.workspace-moving"), binds: moving });
+      if (mouse.length > 0)     result.push({ title: pluginApi?.tr("panel.workspace-mouse"), binds: mouse });
+    }
+    return result;
   }
 
   function distributeCategories() {

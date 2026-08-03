@@ -52,6 +52,14 @@
       "label": "Calculation Method",
       "desc": "Determines how prayer times are calculated. Choose the authority followed in your region."
     },
+    "fajrAngle": {
+      "label": "Fajr Angle",
+      "desc": "The angle of the sun below the horizon at which Fajr prayer time begins."
+    },
+    "ishaAngle": {
+      "label": "Isha Angle",
+      "desc": "The angle of the sun below the horizon at which Isha prayer time begins."
+    },
     "display": {
       "header": "Display"
     },

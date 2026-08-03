@@ -13,8 +13,8 @@
   },
   "main": {
     "added_new_todo": "Nouvelle tâche ajoutée : ",
-    "cleared_completed_todos": "Supprimé ",
-    "cleared_all_todos": "Toutes les tâches ont été supprimées",
+    "cleared_completed_todos": "Tâches terminées supprimées",
+    "cleared_all_todos": "Toutes les tâches supprimées",
     "completed_todos_suffix": " tâches terminées",
     "not_found_suffix": " non trouvé",
     "removed_todo": "Tâche supprimée",
@@ -41,7 +41,7 @@
     "export_active_section": "○ Actives ({count})",
     "export_completed_section": "✓ Terminées ({count})",
     "export_priority": "Priorité",
-    "export_created": "Créée le",
+    "export_created": "Créé le",
     "export_details": "Détails",
     "priority_high": "Haute",
     "priority_medium": "Moyenne",
@@ -56,7 +56,7 @@
       "message": "Aucune tâche pour le moment"
     },
     "header": {
-      "clear_completed_button": "Effacer terminées",
+      "clear_completed_button": "Supprimer les terminées",
       "export_button": "Exporter",
       "title": "Liste de tâches"
     },
@@ -66,18 +66,22 @@
       "label_status": "Statut : ",
       "status_completed": "Terminée",
       "status_pending": "En attente",
-      "label_created": "Créée le : ",
+      "label_created": "Créé le : ",
       "label_priority": "Priorité : ",
       "label_page": "Page :",
       "label_details": "Détails :",
       "button_add_details": "Ajouter",
       "button_edit_details": "Modifier",
       "button_save": "Enregistrer",
-      "button_cancel": "Annuler"
+      "button_cancel": "Annuler",
+      "copy_details_button_tooltip": "Copier",
+      "copied_details": "Détails copiés dans le presse-papiers"
     },
     "todo_item": {
       "delete_button_tooltip": "Supprimer",
-      "edit_button_tooltip": "Modifier"
+      "edit_button_tooltip": "Modifier",
+      "copy_button_tooltip": "Copier",
+      "copied": "Copié dans le presse-papiers"
     }
   },
   "settings": {
@@ -96,7 +100,7 @@
     "export_path": {
       "label": "Chemin d'exportation",
       "description": "Dossier pour les fichiers de tâches exportés",
-      "placeholder": "ex: ~/Documents",
+      "placeholder": "ex. : ~/Documents",
       "select_folder": "Sélectionner un dossier"
     },
     "export_format": {

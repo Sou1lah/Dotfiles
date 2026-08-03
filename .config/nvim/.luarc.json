@@ -1,8 +1,0 @@
-{
-    "diagnostics.disable": [
-        "undefined-global",
-        "unbalanced-assignments",
-        "undefined-field",
-        "missing-fields"
-    ]
-}

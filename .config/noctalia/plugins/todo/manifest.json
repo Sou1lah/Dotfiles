@@ -1,18 +1,13 @@
 {
   "id": "todo",
   "name": "Todo List",
-  "version": "1.9.9",
+  "version": "1.10.0",
   "minNoctaliaVersion": "3.7.1",
   "author": "lonerOrz <lonerOrz@qq.com>",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A simple todo list manager plugin for Noctalia Shell.",
-  "tags": [
-    "Bar",
-    "Desktop",
-    "Panel",
-    "Productivity"
-  ],
+  "tags": ["Bar", "Desktop", "Panel", "Productivity"],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

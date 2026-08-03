@@ -1,5 +1,35 @@
 {
-  "cheatsheetData": [],
+  "cheatsheetData": [
+    {
+      "title": "Keybinds",
+      "binds": [
+        {
+          "keys": "Super + SEMICOLON",
+          "desc": "exec '/home/wael/.jcode/hotkey/launch_jcode_0_cmd_semicolon.sh'",
+          "_verb": "exec",
+          "_param": "'/home/wael/.jcode/hotkey/launch_jcode_0_cmd_semicolon.sh'",
+          "_mods": "Super",
+          "_mainKey": "SEMICOLON"
+        },
+        {
+          "keys": "Super + APOSTROPHE",
+          "desc": "exec '/home/wael/.jcode/hotkey/launch_jcode_1_cmd_quote.sh'",
+          "_verb": "exec",
+          "_param": "'/home/wael/.jcode/hotkey/launch_jcode_1_cmd_quote.sh'",
+          "_mods": "Super",
+          "_mainKey": "APOSTROPHE"
+        },
+        {
+          "keys": "Super + Shift + APOSTROPHE",
+          "desc": "exec '/home/wael/.jcode/hotkey/launch_jcode_2_cmd_shift_quote.sh'",
+          "_verb": "exec",
+          "_param": "'/home/wael/.jcode/hotkey/launch_jcode_2_cmd_shift_quote.sh'",
+          "_mods": "Super+Shift",
+          "_mainKey": "APOSTROPHE"
+        }
+      ]
+    }
+  ],
   "detectedCompositor": "hyprland",
   "windowWidth": 1400,
   "windowHeight": 850,
@@ -7,5 +37,42 @@
   "columnCount": 3,
   "modKeyVariable": "$mod",
   "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
-  "niriConfigPath": "~/.config/niri/config.kdl"
+  "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+  "hyprlandParserMode": "auto",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "mangoConfigPath": "~/.config/mango/config.conf",
+  "mergeSequentialBinds": true,
+  "showUndescribedBinds": true,
+  "splitLargeWorkspaceCategory": true,
+  "workspaceSplitThreshold": 12,
+  "keyColorAlt": "#FF6B6B",
+  "keyColorXF86": "#4ECDC4",
+  "keyColorPrint": "#95E1D3",
+  "keyColorNumeric": "#A8DADC",
+  "keyColorMouse": "#F38181",
+  "keyColorSuper": "",
+  "keyColorCtrl": "",
+  "keyColorShift": "",
+  "keyColorDefault": "#6C757D",
+  "keyLabelColor": "#FFFFFF",
+  "keyTextSuper": "",
+  "keyTextCtrl": "",
+  "keyTextShift": "",
+  "keyTextAlt": "",
+  "keyTextXF86": "",
+  "keyTextPrint": "",
+  "keyTextNumeric": "",
+  "keyTextMouse": "",
+  "keyTextDefault": "",
+  "keyColorMod2": "",
+  "keyColorMod3": "",
+  "keyColorMod5": "",
+  "keyTextMod2": "",
+  "keyTextMod3": "",
+  "keyTextMod5": "",
+  "keyLabelMod2": "",
+  "keyLabelMod3": "",
+  "keyLabelMod5": "",
+  "descriptionTextColor": "#E0E0E0",
+  "bindOverrides": {}
 }

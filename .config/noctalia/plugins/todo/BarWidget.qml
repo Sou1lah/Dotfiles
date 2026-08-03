@@ -139,12 +139,12 @@ Item {
     ]
 
     onTriggered: action => {
-      contextMenu.close();
-      PanelService.closeContextMenu(screen);
+                   contextMenu.close();
+                   PanelService.closeContextMenu(screen);
 
-      if (action === "widget-settings") {
-        BarService.openPluginSettings(screen, pluginApi.manifest);
-      }
-    }
+                   if (action === "widget-settings") {
+                     BarService.openPluginSettings(screen, pluginApi.manifest);
+                   }
+                 }
   }
 }

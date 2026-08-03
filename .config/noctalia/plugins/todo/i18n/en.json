@@ -73,11 +73,15 @@
       "button_add_details": "Add",
       "button_edit_details": "Edit",
       "button_save": "Save",
-      "button_cancel": "Cancel"
+      "button_cancel": "Cancel",
+      "copy_details_button_tooltip": "Copy",
+      "copied_details": "Details copied to clipboard"
     },
     "todo_item": {
       "delete_button_tooltip": "Delete",
-      "edit_button_tooltip": "Edit"
+      "edit_button_tooltip": "Edit",
+      "copy_button_tooltip": "Copy",
+      "copied": "Copied to clipboard"
     }
   },
   "settings": {

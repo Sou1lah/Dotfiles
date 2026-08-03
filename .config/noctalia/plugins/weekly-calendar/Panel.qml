@@ -210,7 +210,7 @@ Item {
                     Rectangle {
                         id: allDayEventsSection
                         width: parent.width
-                        height: mainInstance ? Math.round(mainInstance.allDaySectionHeight * Style.uiScaleRatio) : 0
+                        height: mainInstance.allDaySectionHeight
                         color: Color.mSurfaceVariant
                         visible: height > 0
                         
@@ -233,9 +233,9 @@ Item {
                                 delegate: Item {
                                     property var eventData: modelData
                                     x: eventData.startDay * ((mainInstance?.dayColumnWidth) + (root.daySpacing))
-                                    y: eventData.lane * 25
+                                    y: eventData.lane * 25 * Style.uiScaleRatio
                                     width: (eventData.spanDays * ((mainInstance?.dayColumnWidth) + (root.daySpacing))) - (root.daySpacing)
-                                    height: 24
+                                    height: 24 * Style.uiScaleRatio
                                     
                                     Rectangle {
                                         anchors.fill: parent

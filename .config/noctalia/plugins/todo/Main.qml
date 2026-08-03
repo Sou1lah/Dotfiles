@@ -629,7 +629,9 @@ Item {
 
     // Calculate statistics
     var totalCount = rawTodos.length;
-    var activeCount = rawTodos.filter(function(t) { return !t.completed; }).length;
+    var activeCount = rawTodos.filter(function (t) {
+      return !t.completed;
+    }).length;
     var completedCount = totalCount - activeCount;
     var exportDate = new Date().toISOString();
 

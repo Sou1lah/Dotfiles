@@ -1,7 +1,7 @@
 {
   "id": "workspace-overview",
   "name": "Workspace Overview for Hyprland",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "minNoctaliaVersion": "3.6.0",
   "author": "doughbran",
   "license": "MIT",

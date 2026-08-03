@@ -1,0 +1,25 @@
+[manager]
+prepend_keymap = [
+	# Navigation (Vim style)
+	{ on = [ "l" ], run = "plugin smart-enter", desc = "Enter child or open file" },
+	{ on = [ "h" ], run = "leave",               desc = "Go back to parent directory" },
+	
+	# File Operations
+	{ on = [ "c", "m" ], run = "plugin chmod",   desc = "Chmod on selected files" },
+	{ on = [ "C", "d" ], run = 'shell "dragon -x \"$@\"" --block', desc = "Drag and drop" },
+	
+	# Selection & Movement
+	{ on = [ "v" ], run = "visual_mode",         desc = "Enter visual mode" },
+	{ on = [ "y" ], run = "yank",                desc = "Copy selected" },
+	{ on = [ "x" ], run = "yank --cut",          desc = "Cut selected" },
+	{ on = [ "p" ], run = "paste",               desc = "Paste files" },
+	{ on = [ "P" ], run = "paste --force",       desc = "Paste (Overwrite)" },
+	
+	# Archive Management (requires 'ouch' plugin)
+	{ on = [ "e", "x" ], run = "plugin ouch --args=unpack", desc = "Unpack archive" },
+	{ on = [ "e", "c" ], run = "plugin ouch --args=zip",    desc = "Compress to zip" },
+
+	# Searching
+	{ on = [ "z" ], run = "plugin zoxide",       desc = "Jump to directory" },
+	{ on = [ "f" ], run = "filter",              desc = "Filter files in view" },
+]

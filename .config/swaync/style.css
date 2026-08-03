@@ -1,352 +1,343 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* swaync colors - wallust from waybar.css */
+/* ----------- 🎨 Retro Theme for SwayNC 🎨 -------- */
+/* Warm vintage colors inspired by the 70s & 80s */
 
-@import '../../.config/waybar/wallust/colors-waybar.css';
 
-@define-color noti-border-color @color14;
-@define-color noti-bg rgba(2, 0, 0, 0.8);
-@define-color noti-bg-alt @background-alt;
-@define-color noti-bg-hover @background;
-@define-color text-color @foreground;
+@define-color noti-border-color #35322e; /* muted dark border */
+@define-color noti-bg #23211e;           /* very dark background */
+@define-color noti-bg-alt #2d2b28;       /* slightly lighter for alt */
+@define-color noti-bg-hover #35322e;     /* hover: subtle highlight */
+@define-color text-color #e0dedb;        /* light, slightly warm text */
+@define-color accent-color #6a8a82;      /* muted green/blue accent */
+@define-color critical-color #a05c4e;    /* muted red for critical */
+@define-color low-color #7a7c6e;         /* muted olive for low */
+@define-color normal-color #b0a99f;      /* muted beige for normal */
 
 * {
-    font-family: "JetBrains Mono Nerd Font";
-    font-weight: bold;
+    font-family: "JetBrains Mono Nerd Font", "Fira Sans", "Roboto", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: all 0.2s cubic-bezier(.4,0,.2,1);
+    color: @text-color;
 }
+
 
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: white;
-    border-radius: 100px;
+    background: @noti-bg-hover;
+    border-radius: 14px;
+    border: 1px solid @noti-border-color;
 }
 
 .notification-row {
     outline: none;
-    margin: 2px;
+    margin: 0px;
+    background: transparent;
 }
 
 .notification {
-    border-radius: 12px;
+    border-radius: 14px;
+    background: @noti-bg-alt;
+    border: 1px solid @noti-border-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
 }
 
-.notification-content{
-    /*color: @text-color;*/
+/* Center notification popup on screen */
+
+
+
     background: @noti-bg;
-    padding: 5px 10px 3px 6px;
-    border-radius: 12px;
-    border: 3px solid @noti-border-color;
-    margin: 2px;
+    color: @text-color;
+    padding: 14px 24px 14px 18px;
+    border-radius: 14px;
+    border: 2px solid @noti-border-color;
+    margin: 0px;
+    color: @text-color;
+    /* min-width and max-width removed for GTK compatibility */
+    box-shadow: 0 6px 32px 0 rgba(40, 40, 40, 0.18);
 }
 
 .notification-default-action {
-    margin: 2px;
-    padding: 2px;
-    border-radius: 12px;
+    margin: 0;
+    padding: 0;
+    border-radius: 14px;
+    background: transparent;
 }
 
 .close-button {
-    background: #f7770e;
-    color: @noti-bg;
+    background: @noti-bg-alt;
+    color: @text-color;
     text-shadow: none;
-    padding: 2;
-    border-radius: 12px;
-    margin-top: 7px;
-    margin-right: 7px;
+    padding: 0;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 1px solid @noti-border-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    /* min-width, min-height, width, height, display, align-items, justify-content removed */
 }
 
 .close-button:hover {
-    box-shadow: none;
-    background: #f7770e;
-    transition: all .17s ease-in-out;
-    border: none
+    background: @noti-bg-hover;
+    color: @text-color;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+    transition: all .15s cubic-bezier(.4,0,.2,1);
 }
-
 
 .notification-action {
-    border: 3px solid @noti-border-color;
+    border: 2px solid @noti-border-color;
     border-top: none;
-    border-radius: 12px;
+    border-radius: 14px;
+    background: @noti-bg-alt;
 }
-
 
 .notification-default-action:hover,
 .notification-action:hover {
+    background: @noti-bg-hover;
     color: @text-color;
-    background: @noti-bg
-}
-
-
-.notification-default-action {
-    border-radius: 12px;
-    margin: 7px;
-}
-
-.notification-default-action:not(:only-child) {
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px
-}
-
-.notification-action:first-child {
-    border-bottom-left-radius: 12px;
-    background: @noti-bg
-}
-
-.notification-action:last-child {
-    border-bottom-right-radius: 12px;
-    background: @noti-bg-alt
-}
-
-.inline-reply {
-    margin-top: 10px
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 .inline-reply-entry {
-    background: @noti-bg;
+    background: @noti-bg-alt;
     color: @text-color;
-    caret-color: @text-color;
-    border: 3px solid @noti-border-color;
-    border-radius: 12px
+    caret-color: @accent-color;
+    border: 2px solid @noti-border-color;
+    border-radius: 10px;
+    padding: 4px 8px;
 }
 
 .inline-reply-button {
-	font-size: 2.5rem;
-    margin-left: 6px;
-    background: @noti-bg;
-    border: 3px solid @noti-border-color;
-    border-radius: 12px;
-    color: @text-color
+    font-size: 0.95rem;
+    margin-left: 4px;
+    background: @noti-bg-alt;
+    border: 1px solid @noti-border-color;
+    border-radius: 20px;
+    color: @text-color;
+    padding: 2px 16px;
+    font-weight: 600;
 }
 
 .inline-reply-button:disabled {
-    background: initial;
-    color: @text-color;
-    border: 3px solid transparent
-}
+    background: #3B4252;
+    color: #2E3440;
+    border: 1px solid transparent;
+} 
 
 .inline-reply-button:hover {
-    background: @noti-bg-hover
+    background: @noti-bg-hover;
+    color: @text-color;
 }
 
 .body-image {
-    margin-top: 8px;
+    margin-top: 6px;
     color: @text-color;
-    border-radius: 12px
+    border-radius: 10px;
 }
 
-.summary {
-    font-size: 3rem;
-    font-weight: bold;
-    background: transparent;
-    color: @text-color;
-    text-shadow: none
-}
-
-.time {
-    font-size: 3rem;
-    font-weight: bold;
+.summary, .time, .body {
+    font-size: 1.08rem;
+    font-weight: 600;
     background: transparent;
     color: @text-color;
     text-shadow: none;
-    margin-right: 20px
-}
-
-.body {
-    font-size: 3rem;
-    font-weight: bold;
-    background: transparent;
-    color: @text-color;
-    text-shadow: none
 }
 
 .control-center {
     background: @noti-bg;
-    border: 3px solid @noti-border-color;
-	color: @text-color;
-    border-radius: 12px;
-}
-
-.control-center-list {
-    background: transparent
-}
-
-.control-center-list-placeholder {
-    opacity: 2.5
-}
-
-.floating-notifications {
-    background: transparent;
-}
-
-.blank-window {
-    background: alpha(black, 2.1)
+    border: 2px solid @noti-border-color;
+    color: @text-color;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
 }
 
 .widget-title {
-    color: @text-color;
+    color: @accent-color;
     background: @noti-bg-alt;
-    padding: 5px 6px;
-    margin: 7px;
-    font-size: 3rem;
-    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 10px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
 .widget-title>button {
-    font-size: 2.75rem;
-    color: @text-color;
-    border-radius: 12px;
-	background: transparent;
-	border: 2.5px solid @noti-border-color;
+    font-size: 0.9rem;
+    color: @accent-color;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid @noti-border-color;
+    min-width: 28px;
+    min-height: 28px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* clear button */
 .widget-title>button:hover {
-    background: @text-color;
-    color: red;
+    background: @noti-bg-hover;
+    color: @accent-color;
 }
 
 .widget-dnd {
     background: @noti-bg-alt;
-    padding: 5px 6px;
-    margin: 7px;
-    border-radius: 12px;
-    font-size: 3rem;
-    color: @noti-border-color;
+    padding: 8px 16px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: @accent-color;
 }
 
 .widget-dnd>switch {
-    border-radius: 12px;
-    border: 3px solid #7aa2f7;
-    background: @noti-border-color;
+    border-radius: 20px;
+    border: 2px solid @noti-border-color;
+    background: @noti-bg;
 }
 
 .widget-dnd>switch:checked {
-    background: #f7770e;
-    border: 3px solid #f7768e;
+    background: @critical-color;
+    border: 2px solid @critical-color;
 }
 
 .widget-dnd>switch slider {
     background: @noti-bg;
-    border-radius: 12px
-}
-
-.widget-dnd>switch:checked slider {
-    background: @noti-bg;
-    border-radius: 12px
-}
-
-.widget-label {
-    margin: 7px;
+    border-radius: 50%;
+    margin: 2px;
 }
 
 .widget-label>label {
-    font-size: 3rem;
+    font-size: 1.08rem;
     color: @text-color;
 }
 
 .widget-mpris {
     color: @text-color;
     background: @noti-bg;
-    padding: 5px 6px;
-    margin: 7px;
-    border-radius: 12px;
+    padding: 32px 32px;
+    margin: 18px 8px;
+    border-radius: 16px;
+    font-size: 1.3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+    /* width, max-width, min-height, display, flex-direction, align-items, justify-content removed for GTK compatibility */
 }
 
 .widget-mpris > box > button {
-    border-radius: 12px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 12px;
+    margin: 0 8px;
+    background: @noti-bg-alt;
+    color: @text-color;
+    border: 1px solid @noti-border-color;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
+    transition: background 0.2s;
+    min-width: 48px;
+    min-height: 48px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.widget-mpris-player {
-    padding: 5px 6px;
-    margin: 7px;
-}
-
-.widget-mpris-title {
-    font-weight: 102;
-    font-size: 3rem
-}
-
-.widget-mpris-subtitle {
-    font-size: 2.75rem
+.widget-mpris > box > button:hover {
+    background: @noti-bg-hover;
+    color: @text-color;
 }
 
 .widget-buttons-grid {
     font-size: large;
-	color: @noti-border-color;
-    padding: 4px;
-    margin: 7px;
-    border-radius: 12px;
+    color: @accent-color;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 10px;
     background: @noti-bg-alt;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-    margin: 3px;
+    margin: 2px;
     background: @noti-bg;
-    border-radius: 12px;
-    color: @text-color
+    border-radius: 50%;
+    color: @text-color;
+    border: none;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* individual buttons */
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: @text-color;
-    color: @noti-bg-hover
-}
-
-.widget-menubar>box>.menu-button-bar>button {
-    border: none;
-    background: transparent
-}
-
-.topbar-buttons>button {
-    border: none;
-    background: transparent
+    background: @noti-bg-hover;
+    color: @text-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 .widget-volume {
     background: @noti-bg-alt;
-    padding: 4px;
-    margin: 12px 10px 5px 10px;
-    border-radius: 12px;
+    padding: 6px;
+    margin: 14px 14px 10px 14px;
+    border-radius: 10px;
     font-size: x-large;
-    color: @text-color
+    color: @text-color;
 }
 
 .widget-volume>box>button {
-    background: @noti-border-color;
-    border: none
+    background: @noti-bg-alt;
+    border: 1px solid @noti-border-color;
+    border-radius: 50%;
+    color: @text-color;
+    min-width: 32px;
+    min-height: 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .per-app-volume {
     background-color: @noti-bg;
-    padding: 6px 8px 8px;
-    margin: 2 8px 8px;
-    border-radius: 12px;
-	color: @text-color
+    padding: 8px 16px 16px;
+    margin: 0 14px 14px;
+    border-radius: 10px;
+    color: @text-color;
 }
 
 .widget-backlight {
     background: @noti-bg-alt;
-    padding: 7px;
-    margin: 12px 10px 5px 10px;
-    border-radius: 12px;
+    padding: 10px;
+    margin: 14px 14px 10px 14px;
+    border-radius: 10px;
     font-size: x-large;
-    color: @text-color
+    color: @text-color;
 }
 
-.low {
-  background: @text-color;
-  padding: 2px;
-  border-radius: 12px;
-}
+/* .low { */
+/*     background: @low-color; */
+/*     color: #2E3440; */
+/*     padding: 2px 10px; */
+/*     border-radius: 10px; */
+/* } */
 
-.normal {
-  background: @text-color;
-  padding: 2px;
-  border-radius: 12px;
-}
+/* .normal { */
+/*     background: @normal-color; */
+/*     color: #2E3440; */
+/*     padding: 2px 10px; */
+/*     border-radius: 10px; */
+/* }*/
 
 .critical {
-  background: red;
-  padding: 2px;
-  border-radius: 12px;
+    background: @critical-color;
+    color: #ECEFF4;
+    padding: 2px 10px;
+    border-radius: 10px;
 }

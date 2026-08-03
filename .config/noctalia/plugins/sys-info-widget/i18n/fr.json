@@ -1,0 +1,15 @@
+{
+  "widget": {
+    "distribution": "Système",
+    "kernel": "Noyau",
+    "uptime": "Disponibilité",
+    "cpu": "Processeur",
+    "separator_at": "@",
+    "memory": "Mémoire",
+    "disk_root": "Disque /",
+    "disk_home": "Disque /home",
+    "ipaddress": "IP publique",
+    "lanaddress": "IP locale",
+    "loading": "Chargement..."
+  }
+}

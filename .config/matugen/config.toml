@@ -1,44 +1,35 @@
+# Matugen configuration for iNiR
+# Generates Material You colors from wallpaper
+
 [config]
-reload_apps = true
+version_check = false
 
-[config.wallpaper]
-command = "swww"
-arguments = [ "img", "-t", "fade", "--transition-duration", "0.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
-set = true
+# Colors for Quickshell ii
+[templates.m3colors]
+input_path = '~/.config/matugen/templates/colors.json'
+output_path = '~/.local/state/quickshell/user/generated/colors.json'
 
-[templates.hyprland]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
-output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
+# Fuzzel launcher theme
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/fuzzel/fuzzel_theme.ini'
+output_path = '~/.config/fuzzel/fuzzel_theme.ini'
 
-[templates.ax-shell]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
-output_path = "~/.config/Ax-Shell/styles/colors.css"
-post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
+# GTK3 theme
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-3.0/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
 
-[config.custom_colors.red]
-color = "#FF0000"
-blend = true
+# GTK4 theme
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-4.0/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
 
-[config.custom_colors.green]
-color = "#00FF00"
-blend = true
+# KDE colors (for Dolphin integration)
+[templates.kde_colors]
+input_path = '~/.config/matugen/templates/kde/color.txt'
+output_path = '~/.local/state/quickshell/user/generated/color.txt'
 
-[config.custom_colors.yellow]
-color = "#FFFF00"
-blend = true
-
-[config.custom_colors.blue]
-color = "#0000FF"
-blend = true
-
-[config.custom_colors.magenta]
-color = "#FF00FF"
-blend = true
-
-[config.custom_colors.cyan]
-color = "#00FFFF"
-blend = true
-
-[config.custom_colors.white]
-color = "#FFFFFF"
-blend = true
+# Wallpaper path tracking
+[templates.wallpaper]
+input_path = '~/.config/matugen/templates/wallpaper.txt'
+output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'

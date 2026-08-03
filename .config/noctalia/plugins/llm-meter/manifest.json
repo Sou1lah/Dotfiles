@@ -1,0 +1,26 @@
+{
+  "id": "llm-meter",
+  "name": "LLM Meter",
+  "version": "0.1.0",
+  "minNoctaliaVersion": "4.5.0",
+  "author": "LLM Meter",
+  "license": "MIT",
+  "description": "OpenAI quota, token trend, and estimated cost in Noctalia.",
+  "tags": ["Bar", "Panel", "System"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml"
+  },
+  "dependencies": { "plugins": [] },
+  "metadata": {
+    "defaultSettings": {
+      "barShowAccount": true,
+      "barShowQuota": true,
+      "barShowTodayTokens": false,
+      "barShowTodayCost": false,
+      "barShowCodexSessions": false,
+      "barShowTrend": true
+    }
+  }
+}

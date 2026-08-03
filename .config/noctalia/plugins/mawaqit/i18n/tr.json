@@ -52,6 +52,14 @@
       "label": "Hesaplama Yöntemi",
       "desc": "Namaz vakitlerinin nasıl hesaplandığını belirler."
     },
+    "fajrAngle": {
+      "label": "Fecir Açısı",
+      "desc": "Fecir namazı vaktinin başladığı, güneşin ufkun altındaki açısı."
+    },
+    "ishaAngle": {
+      "label": "Yatsı Açısı",
+      "desc": "Yatsı namazı vaktinin başladığı, güneşin ufkun altındaki açısı."
+    },
     "display": {
       "header": "Görünüm"
     },

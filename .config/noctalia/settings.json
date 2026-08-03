@@ -76,7 +76,7 @@
         "preferredPlayer": "",
         "spectrumFrameRate": 30,
         "spectrumMirrored": true,
-        "visualizerType": "linear",
+        "visualizerType": "wave",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
         "volumeOverdrive": false,
@@ -89,10 +89,10 @@
         "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "contentPadding": 2,
+        "contentPadding": 0,
         "density": "default",
         "displayMode": "always_visible",
-        "enableExclusionZoneInset": true,
+        "enableExclusionZoneInset": false,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -107,18 +107,18 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": false,
-        "position": "right",
+        "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 6,
+        "widgetSpacing": 3,
         "widgets": {
             "center": [
                 {
@@ -162,11 +162,39 @@
                         "workDuration": 25
                     },
                     "id": "plugin:pomodoro"
+                },
+                {
+                    "defaultSettings": {
+                        "activeColor": "primary",
+                        "azanFile": "azan1.mp3",
+                        "city": "London",
+                        "country": "UK",
+                        "dynamicIcon": false,
+                        "hidePrayerName": false,
+                        "hijriDayOffset": 0,
+                        "iconColor": "none",
+                        "method": 3,
+                        "playAzan": false,
+                        "school": 0,
+                        "showCountdown": true,
+                        "showElapsed": false,
+                        "showNotifications": true,
+                        "textColor": "none",
+                        "tune": false,
+                        "tuneAsr": 0,
+                        "tuneDhuhr": 0,
+                        "tuneFajr": 0,
+                        "tuneIsha": 0,
+                        "tuneMaghrib": 0,
+                        "widgetIcon": "building-mosque"
+                    },
+                    "id": "plugin:mawaqit"
                 }
             ],
             "left": [
                 {
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "rocket",
@@ -236,6 +264,17 @@
             "right": [
                 {
                     "defaultSettings": {
+                        "barShowAccount": true,
+                        "barShowCodexSessions": false,
+                        "barShowQuota": true,
+                        "barShowTodayCost": false,
+                        "barShowTodayTokens": false,
+                        "barShowTrend": true
+                    },
+                    "id": "plugin:llm-meter"
+                },
+                {
+                    "defaultSettings": {
                         "completedCount": 0,
                         "count": 0,
                         "current_page_id": 0,
@@ -303,11 +342,22 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "primary",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": true
+                },
+                {
+                    "defaultSettings": {
+                        "city": "London",
+                        "country": "UK",
+                        "method": 3,
+                        "showAlways": true,
+                        "showCountdown": true
+                    },
+                    "id": "plugin:ramadan-iftar"
                 }
             ]
         }
@@ -316,7 +366,7 @@
         "backlightDeviceMappings": [
         ],
         "brightnessStep": 5,
-        "enableDdcSupport": true,
+        "enableDdcSupport": false,
         "enforceMinimum": true
     },
     "calendar": {
@@ -336,7 +386,7 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "faithful",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -418,131 +468,15 @@
                 "name": "eDP-1",
                 "widgets": [
                     {
-                        "clockColor": "none",
-                        "clockStyle": "minimal",
-                        "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
-                        "id": "Clock",
-                        "roundedCorners": true,
-                        "scale": 2.4649263768363174,
-                        "showBackground": true,
-                        "useCustomFont": false,
-                        "x": 1380,
-                        "y": 755
-                    },
-                    {
                         "defaultSettings": {
                             "gifs": [
                             ]
                         },
                         "id": "plugin:animated-gifs",
-                        "scale": 1.319984232726006,
+                        "scale": 0.9552533990030388,
                         "showBackground": true,
-                        "x": 1520,
-                        "y": 40
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 1.257044363504766,
-                        "showBackground": true,
-                        "x": 1180,
-                        "y": -40
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 0.887304856748394,
-                        "showBackground": true,
-                        "x": 1286,
-                        "y": 209
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 0.7615356037404742,
-                        "showBackground": true,
-                        "x": 1646,
-                        "y": 449
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "showBackground": true,
-                        "x": 1631,
-                        "y": 688
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 0.951202266402491,
-                        "showBackground": true,
-                        "x": 1389,
-                        "y": 447
-                    }
-                ]
-            },
-            {
-                "name": "HDMI-A-1",
-                "widgets": [
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 1.3202788605515006,
-                        "showBackground": true,
-                        "x": 1197,
-                        "y": 275
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 1.1373886378758549,
-                        "showBackground": true,
-                        "x": 1600,
-                        "y": 13
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 1.0506391575068492,
-                        "showBackground": true,
-                        "x": 1312,
-                        "y": -53
-                    },
-                    {
-                        "defaultSettings": {
-                            "gifs": [
-                            ]
-                        },
-                        "id": "plugin:animated-gifs",
-                        "scale": 0.8017154734422722,
-                        "showBackground": true,
-                        "x": 1381,
-                        "y": 148
+                        "x": 1203,
+                        "y": 405
                     },
                     {
                         "defaultSettings": {
@@ -552,8 +486,8 @@
                         "id": "plugin:animated-gifs",
                         "scale": 1,
                         "showBackground": true,
-                        "x": 1607,
-                        "y": 366
+                        "x": 1178,
+                        "y": 22
                     },
                     {
                         "defaultSettings": {
@@ -561,24 +495,84 @@
                             ]
                         },
                         "id": "plugin:animated-gifs",
-                        "scale": 1.0828824901593919,
+                        "scale": 1.411521415259296,
                         "showBackground": true,
-                        "x": 1642,
-                        "y": 676
+                        "x": 1571,
+                        "y": 262
                     },
                     {
-                        "clockColor": "none",
-                        "clockStyle": "minimal",
-                        "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
-                        "id": "Clock",
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": false,
+                        "id": "AudioVisualizer",
                         "roundedCorners": true,
-                        "scale": 2.281465312748777,
+                        "scale": 1.0435496754558904,
                         "showBackground": true,
-                        "useCustomFont": false,
-                        "x": 1107,
-                        "y": 205
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 14,
+                        "y": 996
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 1541,
+                        "y": 27
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 1285,
+                        "y": 223
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.5458901179238334,
+                        "showBackground": true,
+                        "x": 1405,
+                        "y": 704
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 1199,
+                        "y": 572
+                    },
+                    {
+                        "defaultSettings": {
+                            "gifs": [
+                            ]
+                        },
+                        "id": "plugin:animated-gifs",
+                        "scale": 1.2151703838063752,
+                        "showBackground": true,
+                        "x": 1510,
+                        "y": 432
                     }
+                ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
                 ]
             }
         ],
@@ -586,14 +580,14 @@
     },
     "dock": {
         "animationSpeed": 1,
-        "backgroundOpacity": 0.56,
-        "colorizeIcons": true,
-        "deadOpacity": 0.43,
-        "displayMode": "always_visible",
-        "dockType": "attached",
+        "backgroundOpacity": 0.58,
+        "colorizeIcons": false,
+        "deadOpacity": 0.6,
+        "displayMode": "exclusive",
+        "dockType": "floating",
         "enabled": false,
-        "floatingRatio": 1.19,
-        "groupApps": false,
+        "floatingRatio": 0.39,
+        "groupApps": true,
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "dots",
@@ -604,7 +598,7 @@
         "launcherIcon": "",
         "launcherIconColor": "none",
         "launcherPosition": "end",
-        "launcherUseDistroLogo": false,
+        "launcherUseDistroLogo": true,
         "monitors": [
             "eDP-1",
             "HDMI-A-1"
@@ -612,14 +606,22 @@
         "onlySameOutput": true,
         "pinnedApps": [
             "kitty",
-            "app.zen_browser.zen"
+            "app.zen_browser.zen",
+            "thunar",
+            "code",
+            "obsidian_obsidian",
+            "com.stremio.Stremio",
+            "org.qbittorrent.qBittorrent",
+            "org.telegram.desktop",
+            "com.rtosta.zapzap",
+            "md.obsidian.Obsidian"
         ],
         "pinnedStatic": true,
         "position": "bottom",
         "showDockIndicator": false,
-        "showLauncherIcon": false,
+        "showLauncherIcon": true,
         "sitOnFrame": false,
-        "size": 0.9400000000000001
+        "size": 1.31
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -632,7 +634,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "digital",
         "compactLockScreen": true,
-        "dimmerOpacity": 0,
+        "dimmerOpacity": 0.63,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
@@ -672,7 +674,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 0.38,
+        "radiusRatio": 0.37,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 0,
@@ -745,7 +747,7 @@
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4000"
+        "nightTemp": "3027"
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
@@ -1035,7 +1037,7 @@
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": false,
+        "settingsPanelSideBarCardStyle": true,
         "tooltipsEnabled": true,
         "translucentWidgets": false
     },
@@ -1059,6 +1061,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "faithful",
@@ -1072,6 +1075,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
@@ -1098,13 +1102,14 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#4fdbd0",
-                    "#b0ccc8",
-                    "#afc9e7",
+                    "#fdba4a",
+                    "#dcc3a1",
+                    "#b6cea3",
                     "#ffb4ab"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/gruvbox/a_sculpture_of_a_man_with_a_face_on_his_head.png",
@@ -1137,19 +1142,21 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "light",
                 "colorScheme": "Nord",
                 "darkMode": false,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#305da8",
-                    "#565e71",
-                    "#715574",
-                    "#ba1a1a"
+                    "#d9b9ff",
+                    "#cfc1da",
+                    "#f2b7c1",
+                    "#ffb4ab"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/tokyonight$/25.png",
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
@@ -1177,17 +1184,17 @@
             },
             {
                 "appearance": "dark",
-                "colorScheme": "Nord",
+                "colorScheme": "Dracula",
                 "darkMode": true,
                 "generationMethod": "faithful",
                 "paletteColors": [
-                    "#4ddbff",
-                    "#3370ff",
-                    "#5c33ff",
-                    "#fd4663"
+                    "#bd93f9",
+                    "#ff79c6",
+                    "#8be9fd",
+                    "#ff5555"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/blue/56.png",
-                "useWallpaperColors": true
+                "useWallpaperColors": false
             },
             {
                 "colorScheme": "Nord",
@@ -1203,6 +1210,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "faithful",
@@ -1216,19 +1224,21 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "faithful",
                 "paletteColors": [
-                    "#67cee4",
-                    "#5c83d6",
-                    "#7866cc",
+                    "#694dff",
+                    "#ba33ff",
+                    "#ff33de",
                     "#fd4663"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/blue/wallhaven-yqqywk.png",
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Noctalia (default)",
                 "darkMode": true,
                 "generationMethod": "monochrome",
@@ -1294,14 +1304,15 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#63d3ff",
-                    "#b4cad5",
-                    "#c5c2ea",
-                    "#ffb4ab"
+                    "#7adaa3",
+                    "#b7ceb9",
+                    "#a5ced9",
+                    "#feada6"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/green/wallhaven-3qqqkv.jpg",
                 "useWallpaperColors": true
@@ -1320,13 +1331,14 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#63d3ff",
-                    "#b4cad5",
-                    "#c5c2ea",
+                    "#b4c5ff",
+                    "#c1c5dd",
+                    "#e2bbdb",
                     "#ffb4ab"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/green/wallhaven-7pxxj9.jpg",
@@ -1346,13 +1358,14 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#b3d26a",
-                    "#c2caaa",
-                    "#a1d0c7",
+                    "#72d2ff",
+                    "#b5cad6",
+                    "#c8c2ea",
                     "#ffb4ab"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/green/wallhaven-rrk3em.jpg",
@@ -1372,6 +1385,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "faithful",
@@ -1385,6 +1399,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
                 "generationMethod": "content",
@@ -1411,14 +1426,15 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Nord",
                 "darkMode": true,
-                "generationMethod": "tonal-spot",
+                "generationMethod": "muted",
                 "paletteColors": [
-                    "#e2c54b",
-                    "#d2c6a1",
-                    "#aad0b2",
-                    "#ffb4ab"
+                    "#a6a6a6",
+                    "#999999",
+                    "#999999",
+                    "#fd4663"
                 ],
                 "path": "/home/wael/Pictures/wallpapers/gruvbox/wallhaven-zyr8mw.png",
                 "useWallpaperColors": true
@@ -1539,10 +1555,24 @@
                 ],
                 "path": "/home/wael/Pictures/wallpapers/reddish/wallhaven-zpzxrg.jpg",
                 "useWallpaperColors": true
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Nord",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#9fcaff",
+                    "#afc8eb",
+                    "#ebb2ff",
+                    "#ffb4ab"
+                ],
+                "path": "/home/wael/Pictures/wallpapers/wallhaven-45vqo8.jpg",
+                "useWallpaperColors": true
             }
         ],
         "fillColor": "#000000",
-        "fillMode": "center",
+        "fillMode": "crop",
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
@@ -1569,13 +1599,13 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "browse",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "110",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "scott pilgrim",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

@@ -174,12 +174,5 @@ ColumnLayout {
         pluginApi.pluginSettings.hourLineOpacity = hourLineOpacity
         pluginApi.pluginSettings.dayLineOpacity = dayLineOpacity
         pluginApi.saveSettings()
-        
-        Logger.i("WeeklyCalendar", "Settings saved: weekStart=" + weekStart + 
-                 ", timeFormat=" + timeFormat + 
-                 ", panelMode=" + panelMode +
-                 ", lineColorType=" + lineColorType +
-                 ", hourLineOpacity=" + hourLineOpacity +
-                 ", dayLineOpacity=" + dayLineOpacity)
     }
 }

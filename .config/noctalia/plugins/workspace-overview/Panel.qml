@@ -191,12 +191,14 @@ Item {
                                         opacity: 0.8
                                     }
                                     
-                                    // Actual dimensions and positions come from the workspace monitor
+                                    // Actual dimensions and positions come from the workspace monitor.
+                                    // Use monitor scale to convert from physical to logical pixels.
                                     property var wsMonitor: modelData.monitor || null
                                     property real monitorX: wsMonitor ? wsMonitor.x : 0
                                     property real monitorY: wsMonitor ? wsMonitor.y : 0
-                                    property real monitorW: wsMonitor && wsMonitor.width > 0 ? wsMonitor.width : 1920
-                                    property real monitorH: wsMonitor && wsMonitor.height > 0 ? wsMonitor.height : 1080
+                                    property real monitorScale: wsMonitor && wsMonitor.scale > 0 ? wsMonitor.scale : 1.0
+                                    property real monitorW: (wsMonitor && wsMonitor.width > 0 ? wsMonitor.width : 1920) / monitorScale
+                                    property real monitorH: (wsMonitor && wsMonitor.height > 0 ? wsMonitor.height : 1080) / monitorScale
                                     property real scaleX: width / monitorW
                                     property real scaleY: height / monitorH
 

@@ -1,0 +1,43 @@
+[mgr]
+ratio          = [ 1, 3, 4 ]
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+
+[preview]
+tab_size        = 2
+max_width       = 600
+max_height      = 900
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 75
+sixel_fraction  = 15
+# Change this to "sixel" if you switch to Foot terminal
+preview_method  = "kitty" 
+
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, for = "unix" },
+]
+play = [
+    { run = 'mpv "$@"', orphan = true, for = "unix" },
+]
+# ADD THIS SECTION BELOW
+term_view = [
+{ run = 'viu "$@"; echo "\nPress any key to exit..."; read -n 1 -s', block = true, desc = "Terminal View" },
+]
+open = [
+    { run = 'xdg-open "$@"', desc = "Open" },
+]
+
+[open]
+rules = [
+    { mime = "text/*",  use = "edit" },
+    { mime = "video/*", use = "play" },
+    # CHANGE THIS LINE to use term_view
+    { mime = "image/*", use = "term_view" }, 
+    { mime = "application/json", use = "edit" },
+]

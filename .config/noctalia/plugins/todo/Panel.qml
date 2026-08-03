@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Quickshell
 import qs.Commons
 import qs.Services.UI
 import qs.Widgets
@@ -198,7 +199,7 @@ Item {
                   anchors.fill: parent
                   color: "transparent"
                   border.color: Color.mOutline
-                  border.width: 1
+                  border.width: Style.borderS
                   radius: Style.iRadiusS
 
                   Row {
@@ -541,7 +542,7 @@ Item {
                       Layout.preferredWidth: 4  // Width of the priority line
                       Layout.preferredHeight: parent.height - Style.marginS
                       Layout.alignment: Qt.AlignVCenter  // Align vertically centered
-                      radius: 2
+                      radius: Style.iRadiusXXXS
 
                       // Determine color based on priority using helper function
                       color: {
@@ -786,7 +787,7 @@ Item {
                               color: Color.mPrimary
                               radius: Style.iRadiusS
                               border.color: Qt.rgba(0, 0, 0, 0.2)
-                              border.width: 1
+                              border.width: Style.borderS
                             }
                           }
 
@@ -796,6 +797,93 @@ Item {
                               when: editMouseArea.containsMouse
                               PropertyChanges {
                                 target: editButtonIcon
+                                opacity: 1.0
+                                color: Color.mPrimary
+                              }
+                            }
+                          ]
+
+                          transitions: [
+                            Transition {
+                              from: "*"
+                              to: "hovered"
+                              NumberAnimation {
+                                properties: "opacity"
+                                duration: 150
+                              }
+                            },
+                            Transition {
+                              from: "hovered"
+                              to: "*"
+                              NumberAnimation {
+                                properties: "opacity"
+                                duration: 150
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+
+                    // Copy button (only show when not editing)
+                    Item {
+                      Layout.preferredWidth: Style.baseWidgetSize * 0.8
+                      Layout.preferredHeight: parent.height
+                      visible: !delegateItem.editing
+
+                      Item {
+                        id: copyButtonContainer
+                        anchors.centerIn: parent
+
+                        implicitWidth: Style.baseWidgetSize * 0.8
+                        implicitHeight: Style.baseWidgetSize * 0.8
+
+                        NIcon {
+                          id: copyButtonIcon
+                          anchors.centerIn: parent
+                          icon: "copy"
+                          pointSize: Style.fontSizeM
+                          color: Color.mOnSurfaceVariant
+                          opacity: 0.5
+
+                          MouseArea {
+                            id: copyMouseArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                              Quickshell.clipboardText = modelData.text;
+                              ToastService.showNotice(pluginApi?.tr("panel.todo_item.copied"));
+                            }
+                          }
+
+                          ToolTip {
+                            id: copyToolTip
+                            text: pluginApi?.tr("panel.todo_item.copy_button_tooltip")
+                            delay: 1000
+                            parent: copyButtonIcon
+                            visible: copyMouseArea.containsMouse
+
+                            contentItem: NText {
+                              text: copyToolTip.text
+                              color: Color.mOnPrimary
+                              font.pointSize: Style.fontSizeXS
+                            }
+
+                            background: Rectangle {
+                              color: Color.mPrimary
+                              radius: Style.iRadiusS
+                              border.color: Qt.rgba(0, 0, 0, 0.2)
+                              border.width: Style.borderS
+                            }
+                          }
+
+                          states: [
+                            State {
+                              name: "hovered"
+                              when: copyMouseArea.containsMouse
+                              PropertyChanges {
+                                target: copyButtonIcon
                                 opacity: 1.0
                                 color: Color.mPrimary
                               }
@@ -991,7 +1079,7 @@ Item {
                             color: Color.mError
                             radius: Style.iRadiusS
                             border.color: Qt.rgba(0, 0, 0, 0.2)
-                            border.width: 1
+                            border.width: Style.borderS
                           }
                         }
 
@@ -1074,8 +1162,8 @@ Item {
 
     x: (parent.width - width) / 2
     y: (parent.height - height) / 2
-    width: 500 * Style.uiScaleRatio
-    height: 300 * Style.uiScaleRatio
+    width: 680 * Style.uiScaleRatio
+    height: 480 * Style.uiScaleRatio
     modal: true
     focus: true
     padding: 0
@@ -1085,7 +1173,7 @@ Item {
       color: Color.mSurface
       radius: Style.radiusL
       border.color: Color.mOutline
-      border.width: 1
+      border.width: Style.borderS
     }
 
     // Content
@@ -1098,18 +1186,28 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
-        height: 44 * Style.uiScaleRatio
+        height: 48 * Style.uiScaleRatio
         color: Color.mPrimary
-        radius: Style.radiusS
+        radius: Style.radiusL
+        topLeftRadius: Style.radiusL
+        topRightRadius: Style.radiusL
+        bottomLeftRadius: 0
+        bottomRightRadius: 0
 
         RowLayout {
           anchors.fill: parent
           anchors.leftMargin: Style.marginL
           anchors.rightMargin: Style.marginM
 
+          NIcon {
+            icon: "clipboard-check"
+            pointSize: Style.fontSizeL
+            color: Color.mOnPrimary
+          }
+
           NText {
             text: pluginApi?.tr("panel.todo_details.title")
-            font.pointSize: Style.fontSizeM
+            font.pointSize: Style.fontSizeL
             font.weight: Font.Bold
             color: Color.mOnPrimary
             Layout.fillWidth: true
@@ -1117,9 +1215,10 @@ Item {
 
           NIconButton {
             icon: "x"
-            colorBg: Qt.rgba(1, 1, 1, 0.2)
+            colorBg: Qt.rgba(1, 1, 1, 0.15)
             colorBgHover: Qt.rgba(1, 1, 1, 0.3)
             colorFg: Color.mOnPrimary
+            baseSize: Style.baseWidgetSize
             onClicked: detailDialog.close()
           }
         }
@@ -1127,6 +1226,7 @@ Item {
 
       // Scrollable content (below header)
       Flickable {
+        id: detailFlick
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: headerBar.bottom
@@ -1139,26 +1239,40 @@ Item {
         ColumnLayout {
           id: contentColumn
           anchors.fill: parent
-          anchors.leftMargin: Style.marginL
-          anchors.rightMargin: Style.marginL
-          anchors.topMargin: Style.marginM
-          anchors.bottomMargin: Style.marginM
-          spacing: Style.marginM
+          anchors.leftMargin: Style.marginL * 1.2
+          anchors.rightMargin: Style.marginL * 1.2
+          anchors.topMargin: Style.marginL
+          anchors.bottomMargin: Style.marginL * 2
+          spacing: Style.marginL
 
-          // Todo text
-          NText {
-            text: detailDialog.todoText
-            font.pointSize: Style.fontSizeL
-            font.weight: Font.Bold
-            color: Color.mOnSurface
-            wrapMode: Text.Wrap
+          // Todo text with priority indicator
+          RowLayout {
             Layout.fillWidth: true
+            spacing: Style.marginM
+
+            // Priority color bar
+            Rectangle {
+              Layout.preferredWidth: 4
+              Layout.preferredHeight: todoTextItem.implicitHeight
+              radius: Style.iRadiusXXXS
+              color: getPriorityColor(detailDialog.todoPriority)
+            }
+
+            NText {
+              id: todoTextItem
+              text: detailDialog.todoText
+              font.pointSize: Style.fontSizeL
+              font.weight: Font.Bold
+              color: Color.mOnSurface
+              wrapMode: Text.Wrap
+              Layout.fillWidth: true
+            }
           }
 
           // Details section with add/edit button
           ColumnLayout {
             Layout.fillWidth: true
-            spacing: Style.marginS
+            spacing: Style.marginM
 
             // Divider before details
             Rectangle {
@@ -1177,22 +1291,54 @@ Item {
                 text: pluginApi?.tr("panel.todo_details.label_details")
                 font.pointSize: Style.fontSizeS
                 color: Color.mOnSurfaceVariant
-                Layout.preferredWidth: 80 * Style.uiScaleRatio
+                Layout.preferredWidth: 78 * Style.uiScaleRatio
                 Layout.alignment: Qt.AlignVCenter
               }
 
-              // Spacer to push button to the right
+              // Spacer to push buttons to the right
               Item {
                 Layout.fillWidth: true
+              }
+
+              // Copy button for details
+              NButton {
+                visible: !detailsEditMode && detailDialog.todoDetails.length > 0
+                icon: "copy"
+                text: pluginApi?.tr("panel.todo_details.copy_details_button_tooltip")
+                backgroundColor: Color.mPrimary
+                textColor: Color.mOnPrimary
+                fontSize: Style.fontSizeS
+                onClicked: {
+                  Quickshell.clipboardText = detailDialog.todoDetails;
+                  ToastService.showNotice(pluginApi?.tr("panel.todo_details.copied_details"));
+                }
+                ToolTip {
+                  id: copyDetailsToolTip
+                  text: pluginApi?.tr("panel.todo_details.copy_details_button_tooltip")
+                  delay: 1000
+                  parent: parent
+                  visible: parent.hovered
+                  contentItem: NText {
+                    text: copyDetailsToolTip.text
+                    color: Color.mOnPrimary
+                    font.pointSize: Style.fontSizeXS
+                  }
+                  background: Rectangle {
+                    color: Color.mPrimary
+                    radius: Style.iRadiusS
+                    border.color: Qt.rgba(0, 0, 0, 0.2)
+                    border.width: Style.borderS
+                  }
+                }
               }
 
               NButton {
                 text: detailDialog.todoDetails.length > 0 ? pluginApi?.tr("panel.todo_details.button_edit_details") : pluginApi?.tr("panel.todo_details.button_add_details")
                 icon: "pencil"
-                backgroundColor: Color.mSurfaceVariant
-                textColor: Color.mOnSurface
+                backgroundColor: Color.mPrimary
+                textColor: Color.mOnPrimary
                 fontSize: Style.fontSizeS
-                outlined: true
+                visible: !detailsEditMode
                 onClicked: {
                   detailsEditMode = true;
                   Qt.callLater(function () {
@@ -1203,31 +1349,50 @@ Item {
               }
             }
 
-            // View mode (show details if not empty)
-            NText {
-              text: detailDialog.todoDetails
-              font.pointSize: Style.fontSizeS
-              color: Color.mOnSurface
-              wrapMode: Text.Wrap
+            // View mode
+            Rectangle {
               Layout.fillWidth: true
+              Layout.preferredHeight: detailText.implicitHeight + Style.marginM * 2
               visible: detailDialog.todoDetails.length > 0 && !detailsEditMode
+
+              color: Color.mSurfaceVariant
+              radius: Style.iRadiusM
+              opacity: 0.8
+
+              NText {
+                id: detailText
+                text: detailDialog.todoDetails
+                anchors.fill: parent
+                anchors.margins: Style.marginM
+
+                font.pointSize: Style.fontSizeS
+                color: Color.mOnSurface
+                wrapMode: Text.Wrap
+                verticalAlignment: Text.AlignVCenter
+              }
             }
 
             // Edit mode (TextArea)
-            TextArea {
-              id: detailsTextArea
+            ScrollView {
+              id: detailsScroll
               visible: detailsEditMode
-              text: detailDialog.todoDetails
               Layout.fillWidth: true
-              Layout.preferredHeight: 100
-              wrapMode: TextArea.Wrap
-              color: Color.mOnSurface
-              background: Rectangle {
-                color: Color.mSurfaceVariant
-                radius: Style.iRadiusS
-              }
-              Keys.onEscapePressed: {
-                detailsEditMode = false;
+              Layout.preferredHeight: 200 * Style.uiScaleRatio
+              clip: true
+
+              TextArea {
+                id: detailsTextArea
+                text: detailDialog.todoDetails
+                width: parent.width
+                wrapMode: TextArea.Wrap
+                color: Color.mOnSurface
+                background: Rectangle {
+                  color: Color.mSurfaceVariant
+                  radius: Style.iRadiusS
+                }
+                Keys.onEscapePressed: {
+                  detailsEditMode = false;
+                }
               }
             }
 
@@ -1240,6 +1405,7 @@ Item {
               NButton {
                 text: pluginApi?.tr("panel.todo_details.button_save")
                 backgroundColor: Color.mPrimary
+                textColor: Color.mOnPrimary
                 onClicked: {
                   updateTodo(detailDialog.todoId, {
                                details: detailsTextArea.text
@@ -1251,7 +1417,8 @@ Item {
 
               NButton {
                 text: pluginApi?.tr("panel.todo_details.button_cancel")
-                backgroundColor: Color.mSurfaceVariant
+                backgroundColor: Color.mPrimary
+                textColor: Color.mOnPrimary
                 onClicked: {
                   detailsEditMode = false;
                 }
@@ -1274,15 +1441,21 @@ Item {
 
             // Page
             RowLayout {
-              spacing: Style.marginS
+              spacing: Style.marginM
               Layout.fillWidth: true
+
+              NIcon {
+                icon: "folder"
+                pointSize: Style.fontSizeS
+                color: Color.mOnSurfaceVariant
+              }
 
               NText {
                 text: pluginApi?.tr("panel.todo_details.label_page")
                 font.pointSize: Style.fontSizeS
                 color: Color.mOnSurfaceVariant
-                Layout.preferredWidth: 80 * Style.uiScaleRatio
-                Layout.alignment: Qt.AlignTop
+                Layout.preferredWidth: 78 * Style.uiScaleRatio
+                Layout.alignment: Qt.AlignVCenter
               }
 
               NText {
@@ -1290,21 +1463,27 @@ Item {
                 font.pointSize: Style.fontSizeS
                 font.weight: Font.Medium
                 color: Color.mOnSurface
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignVCenter
               }
             }
 
             // Status
             RowLayout {
-              spacing: Style.marginS
+              spacing: Style.marginM
               Layout.fillWidth: true
+
+              NIcon {
+                icon: detailDialog.todoCompleted ? "circle-check" : "clock"
+                pointSize: Style.fontSizeS
+                color: Color.mOnSurfaceVariant
+              }
 
               NText {
                 text: pluginApi?.tr("panel.todo_details.label_status")
                 font.pointSize: Style.fontSizeS
                 color: Color.mOnSurfaceVariant
-                Layout.preferredWidth: 80 * Style.uiScaleRatio
-                Layout.alignment: Qt.AlignTop
+                Layout.preferredWidth: 78 * Style.uiScaleRatio
+                Layout.alignment: Qt.AlignVCenter
               }
 
               NText {
@@ -1312,21 +1491,27 @@ Item {
                 font.pointSize: Style.fontSizeS
                 font.weight: Font.Medium
                 color: detailDialog.todoCompleted ? Color.mPrimary : Color.mError
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignVCenter
               }
             }
 
             // Priority
             RowLayout {
-              spacing: Style.marginS
+              spacing: Style.marginM
               Layout.fillWidth: true
+
+              NIcon {
+                icon: "flag"
+                pointSize: Style.fontSizeS
+                color: Color.mOnSurfaceVariant
+              }
 
               NText {
                 text: pluginApi?.tr("panel.todo_details.label_priority")
                 font.pointSize: Style.fontSizeS
                 color: Color.mOnSurfaceVariant
-                Layout.preferredWidth: 82 * Style.uiScaleRatio
-                Layout.alignment: Qt.AlignTop
+                Layout.preferredWidth: 78 * Style.uiScaleRatio
+                Layout.alignment: Qt.AlignVCenter
               }
 
               // Priority selector with H/M/L buttons
@@ -1337,10 +1522,10 @@ Item {
                 Rectangle {
                   width: 28
                   height: 28
-                  radius: 4
+                  radius: Style.iRadiusXXS
                   color: detailDialog.todoPriority === "high" ? getPriorityColor("high") : Qt.rgba(getPriorityColor("high").r, getPriorityColor("high").g, getPriorityColor("high").b, 0.2)
                   border.color: detailDialog.todoPriority === "high" ? getPriorityColor("high") : "transparent"
-                  border.width: 2
+                  border.width: Style.borderM
 
                   NText {
                     anchors.centerIn: parent
@@ -1366,10 +1551,10 @@ Item {
                 Rectangle {
                   width: 28
                   height: 28
-                  radius: 4
+                  radius: Style.iRadiusXXS
                   color: detailDialog.todoPriority === "medium" ? getPriorityColor("medium") : Qt.rgba(getPriorityColor("medium").r, getPriorityColor("medium").g, getPriorityColor("medium").b, 0.2)
                   border.color: detailDialog.todoPriority === "medium" ? getPriorityColor("medium") : "transparent"
-                  border.width: 2
+                  border.width: Style.borderM
 
                   NText {
                     anchors.centerIn: parent
@@ -1395,10 +1580,10 @@ Item {
                 Rectangle {
                   width: 28
                   height: 28
-                  radius: 4
+                  radius: Style.iRadiusXXS
                   color: detailDialog.todoPriority === "low" ? getPriorityColor("low") : Qt.rgba(getPriorityColor("low").r, getPriorityColor("low").g, getPriorityColor("low").b, 0.2)
                   border.color: detailDialog.todoPriority === "low" ? getPriorityColor("low") : "transparent"
-                  border.width: 2
+                  border.width: Style.borderM
 
                   NText {
                     anchors.centerIn: parent
@@ -1424,15 +1609,21 @@ Item {
 
             // Created date
             RowLayout {
-              spacing: Style.marginS
+              spacing: Style.marginM
               Layout.fillWidth: true
+
+              NIcon {
+                icon: "calendar"
+                pointSize: Style.fontSizeS
+                color: Color.mOnSurfaceVariant
+              }
 
               NText {
                 text: pluginApi?.tr("panel.todo_details.label_created")
                 font.pointSize: Style.fontSizeS
                 color: Color.mOnSurfaceVariant
-                Layout.preferredWidth: 80 * Style.uiScaleRatio
-                Layout.alignment: Qt.AlignTop
+                Layout.preferredWidth: 78 * Style.uiScaleRatio
+                Layout.alignment: Qt.AlignVCenter
               }
 
               NText {
@@ -1441,9 +1632,15 @@ Item {
                 color: Color.mOnSurface
                 wrapMode: Text.Wrap
                 Layout.fillWidth: true
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignVCenter
               }
             }
+          }
+
+          // Spacer to provide bottom padding
+          Item {
+            Layout.preferredHeight: Style.marginL * 2
+            Layout.fillWidth: true
           }
         }
       }

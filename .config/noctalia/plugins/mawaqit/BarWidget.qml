@@ -49,7 +49,7 @@ Item {
 
   readonly property int    secondsElapsed:  mainInstance?.secondsElapsed ?? -1
   readonly property string lastPrayerName:  mainInstance?.lastPrayerName ?? ""
-  readonly property bool   isElapsed:       secondsElapsed >= 0
+  readonly property bool   isElapsed:       showElapsed && secondsElapsed >= 0
 
   readonly property bool prayerNow: secondsToNext === 0 && nextPrayerName !== ""
 
@@ -66,7 +66,9 @@ Item {
   }
 
   readonly property string lastPrayerLabel: {
-    return pluginApi?.tr(mainInstance?.getPrayer(lastPrayerName)?.labelKey ?? "")
+    const key = mainInstance?.getPrayer(lastPrayerName)?.labelKey ?? ""
+    if (!key) return ""
+    return pluginApi?.tr(key)
   }
 
   readonly property string nextPrayerTimeStr: {
@@ -86,9 +88,9 @@ Item {
     if (secondsToNext <= 0) return ""
     const h = Math.floor(secondsToNext / 3600)
     const m = Math.floor((secondsToNext % 3600) / 60)
-    if (h > 0) return `-${h}h ${m}m`
-    if (m > 0) return `-${m}m`
-    return pluginApi?.tr("widget.soon")   // < 1 min — no sign
+    if (h > 0) return `${h}h ${m}m`
+    if (m > 0) return `${m}m`
+    return pluginApi?.tr("widget.soon")
   }
 
   readonly property string elapsedStr: {
@@ -107,8 +109,7 @@ Item {
 
   readonly property string displayIcon: {
     if (!dynamicIcon || (!nextPrayerName && !lastPrayerName)) return root.widgetIcon
-
-    return mainInstance?.getPrayer(isElapsed ? lastPrayerName : nextPrayerName)?.icon
+    return mainInstance?.getPrayer(isElapsed ? lastPrayerName : nextPrayerName)?.icon ?? root.widgetIcon
   }
 
   readonly property string displayText: {
@@ -142,7 +143,7 @@ Item {
 
     if (isElapsed)    return hidePrayerName ? elapsedStr    : lastPrayerLabel
     if (hidePrayerName) {
-      if (prayerNow)                         return pluginApi?.tr("widget.now")
+      if (prayerNow)                          return pluginApi?.tr("widget.now")
       if (showCountdown && secondsToNext > 0) return countdownStr
       return nextPrayerTimeStr
     }
@@ -151,9 +152,9 @@ Item {
 
   readonly property string verticalLine2: {
     if (!prayerTimings || !nextPrayerName) return ""
-    if (isElapsed)     return hidePrayerName ? "" : elapsedStr
-    if (hidePrayerName) return ""       // value already on line 1
-    if (prayerNow)     return pluginApi?.tr("widget.now")
+    if (isElapsed)      return hidePrayerName ? "" : elapsedStr
+    if (hidePrayerName) return ""
+    if (prayerNow)      return pluginApi?.tr("widget.now")
     if (showCountdown && secondsToNext > 0) return countdownStr
     return nextPrayerTimeStr
   }
@@ -191,6 +192,8 @@ Item {
     RowLayout {
       id: hLayout
       anchors.fill: parent
+      anchors.leftMargin:  Style.marginM
+      anchors.rightMargin: Style.marginM
       spacing: Style.marginS
       visible: !isVertical
 
@@ -246,9 +249,9 @@ Item {
         spacing: Style.marginXS
 
         NIcon {
-          icon: root.widgetIcon
+          icon: root.displayIcon
           pointSize: Style.toOdd(root.capsuleHeight * 0.45)
-          color: Color.resolveColorKey(root.iconColor)
+          color: Color.resolveColorKey(prayerNow || isElapsed ? root.activeColor : root.iconColor)
         }
 
         NIcon {
@@ -274,9 +277,10 @@ Item {
         Layout.alignment: Qt.AlignHCenter
         Behavior on color { ColorAnimation { duration: 300 } }
       }
+
       NText {
         text: root.verticalLine2
-        pointSize: root.barFontSize * 0.8
+        pointSize: root.barFontSize * 0.7
         applyUiScale: false
         opacity: 0.75
         color: Color.resolveColorKey(prayerNow || isElapsed ? root.activeColor : root.textColor)
