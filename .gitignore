@@ -6,3 +6,8 @@
 **/Code Cache/
 *.log
 *.pdf
+.env
+config/secrets.conf
+.zsh_history
+**/.*history
+.zshrc
