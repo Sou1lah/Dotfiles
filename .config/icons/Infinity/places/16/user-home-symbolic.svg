@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="user-home-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="30.75"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:window-width="1366"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <g
+     fill="gray"
+     id="g5"
+     style="fill:#fcfcfc;fill-opacity:1">
+    <path
+       d="M14 5V3h-2.002z"
+       overflow="visible"
+       id="path1"
+       style="fill:#fcfcfc;fill-opacity:1" />
+    <g
+       font-weight="400"
+       id="g4"
+       style="fill:#fcfcfc;fill-opacity:1">
+      <path
+         d="M2 7v8h9v-1H3V6.333zm11.002-1L13 15h1V7z"
+         font-family="Ubuntu"
+         font-size="15"
+         letter-spacing="0"
+         text-anchor="middle"
+         word-spacing="0"
+         id="path2"
+         style="fill:#fcfcfc;fill-opacity:1" />
+      <path
+         d="M8 8.986a8.47 8.47 0 0 1 .607-.122c.253-.043.543-.064.872-.064.295 0 .54.043.735.129.195.08.35.197.465.35.119.147.202.326.25.535.047.21.071.44.071.693V14.2H8z"
+         font-family="Ubuntu"
+         letter-spacing="0"
+         text-anchor="end"
+         word-spacing="0"
+         id="path3"
+         style="fill:#fcfcfc;fill-opacity:1" />
+      <path
+         d="M8 .293L.146 8.146l.708.708L8 1.707l7.146 7.147.708-.708z"
+         fill-rule="evenodd"
+         font-family="sans-serif"
+         overflow="visible"
+         style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;fill:#fcfcfc;fill-opacity:1"
+         white-space="normal"
+         id="path4" />
+    </g>
+  </g>
+</svg>

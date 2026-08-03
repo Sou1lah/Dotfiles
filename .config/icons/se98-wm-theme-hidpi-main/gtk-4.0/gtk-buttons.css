@@ -1,0 +1,20 @@
+/****************
+ * Spinbutton *
+ ****************/
+
+spinbutton {
+    padding: 1px;
+    border-top: 1px solid @dark_shadow;
+    border-left: 1px solid @dark_shadow;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    border-radius: 0px;
+    background-color: @base_color;
+    color: @text_color; }
+  
+
+spinbutton text {	
+	background-color: @theme_base_color;
+	color: @fg_color;
+    padding: 4px;
+}

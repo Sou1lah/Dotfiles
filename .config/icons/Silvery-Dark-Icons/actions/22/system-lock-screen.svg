@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="system-lock-screen.svg"
+   width="22"
+   height="22"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="8.6590909"
+     inkscape:cx="10.509186"
+     inkscape:cy="-16.283465"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs3051">
+    <style
+       type="text/css"
+       id="current-color-scheme">.ColorScheme-Text {color:#fcfcfc;}</style>
+  </defs>
+  <g
+     id="22-22-system-lock-screen-5"
+     transform="translate(47.000003)">
+    <path
+       style="fill:none"
+       d="m -47.000003,0 v 22 h 22 V 0 Z"
+       id="path19-6" />
+    <path
+       id="Lock-90"
+       class="st0"
+       d="m -34.578208,14.125 c 0,0.46875 -0.282047,0.875 -0.705123,1.09375 V 16.625 c 0,0.34375 -0.317316,0.625 -0.705124,0.625 -0.38783,0 -0.705146,-0.28125 -0.705146,-0.625 V 15.21875 C -37.11667,15 -37.398716,14.59375 -37.398716,14.125 c 0,-0.687508 0.634615,-1.25 1.410261,-1.25 0.775631,0 1.410247,0.562492 1.410247,1.25 z M -31.052562,8.5 h 1.410261 v 1.25 h 2.115377 v 6.875 c 0,1.71875 -1.58653,3.125 -3.525638,3.125 h -13.397441 v -10 h 13.397441 z"
+       style="clip-rule:evenodd;fill:#cdd8e5;fill-opacity:0.403922;fill-rule:evenodd;stroke-width:0.331926" />
+    <path
+       id="Lock-s-9"
+       class="st1"
+       d="m -40.924362,9.75 h -1.410254 V 6.625 c 0,-3.093751 2.855769,-5.625 6.346161,-5.625 3.490377,0 6.346154,2.531249 6.346154,5.625 V 8.5 h -1.410261 V 6.625 c 0,-2.406251 -2.221146,-4.375 -4.935893,-4.375 -2.714746,0 -4.935907,1.968749 -4.935907,4.375 z m 13.397438,0 h -3.525638 V 11 h 2.115392 v 6.25 c 0,1.375 -1.269231,2.5 -2.820523,2.5 H -43.039747 V 21 h 11.282054 c 2.326923,0 4.230769,-1.687508 4.230769,-3.75 z"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.331926" />
+  </g>
+</svg>

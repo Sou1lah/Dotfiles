@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="system-switch-user.svg"
+   width="32"
+   height="32"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="12.245804"
+     inkscape:cx="15.842161"
+     inkscape:cy="16.168804"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs3051">
+    <style
+       type="text/css"
+       id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#d8d8d8;
+      }
+      </style>
+  </defs>
+  <g
+     id="system-switch-user"
+     transform="translate(-142)">
+    <circle
+       style="opacity:0;fill:none;fill-opacity:1;stroke-width:1.06667"
+       id="circle955-9"
+       r="16"
+       cy="-16"
+       cx="158"
+       transform="scale(1,-1)" />
+    <path
+       id="Exchange_2_"
+       class="st0"
+       d="m 144,20.333333 7,-8.666672 v 5.416672 h 10.5 v -2.166666 h 1.74999 v 3.25 c 0,2.979166 -1.96876,5.416666 -4.37499,5.416666 H 151 V 29 Z"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.486813" />
+    <path
+       id="Exchange-s_1_"
+       class="st1"
+       d="M 165.87498,3.0000002 172,10.583339 165.87498,18.166667 164.60622,16.65 l 4.025,-4.983339 h -12.38121 c -0.9625,0 -1.75001,0.975 -1.75001,2.166672 v 1.083334 h -1.75001 v -1.083334 c 0,-2.383333 1.575,-4.3333328 3.50002,-4.3333328 h 12.38121 L 164.65001,4.5708335 Z M 161.5,17.083333 V 19.25 c 0,2.383333 -1.57499,4.333333 -3.5,4.333333 h -7 V 25.75 h 7 c 2.88751,0 5.24999,-2.925 5.24999,-6.5 v -2.166667 z"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.486813" />
+  </g>
+</svg>

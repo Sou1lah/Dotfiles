@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg1067"
+   version="1.1"
+   viewBox="0 0 64 64"
+   sodipodi:docname="phone-apple-iphone.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.671875"
+     inkscape:cx="32.149883"
+     inkscape:cy="32"
+     inkscape:window-width="1366"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1067" />
+  <defs
+     id="defs1043">
+    <linearGradient
+       id="linearGradient2554"
+       x1="31.756"
+       x2="30.031"
+       y1="44.109"
+       y2="25.774"
+       gradientTransform="matrix(4.6781073,0,0,4.5793853,-134.10905,-139.03376)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         id="stop1038"
+         stop-color="#242424"
+         offset="0" />
+      <stop
+         id="stop1040"
+         stop-color="#878787"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2554-3"
+       x1="31.756001"
+       x2="30.031"
+       y1="44.109001"
+       y2="25.774"
+       gradientTransform="matrix(4.7755205,0,0,4.6747428,-137.56797,-142.59523)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         id="stop1038-5"
+         stop-color="#242424"
+         offset="0" />
+      <stop
+         id="stop1040-6"
+         stop-color="#878787"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <path
+     id="path1045"
+     d="m 19.831792,2.6180677 h 24.336417 c 2.087407,0 3.767756,1.645004 3.767756,3.6882451 V 57.693686 c 0,2.043356 -1.680466,3.688246 -3.767756,3.688246 H 19.831792 c -2.087408,0 -3.767756,-1.645007 -3.767756,-3.688246 V 6.3063128 c 0,-2.0432411 1.680466,-3.6882451 3.767756,-3.6882451 z"
+     fill="url(#linearGradient2554)"
+     stroke="#050505"
+     style="fill:url(#linearGradient2554);stroke-width:1.14482;stroke:#4d4d4d;stroke-opacity:1" />
+  <g
+     id="g1"
+     transform="translate(-2.0884075,0.34838715)">
+    <path
+       id="path1190"
+       d="m 28.440443,57.707287 a 0.52941059,0.52941059 0 0 0 -0.528493,0.528493 0.52941059,0.52941059 0 0 0 0.528493,0.53079 h 11.295929 a 0.52941059,0.52941059 0 0 0 0.530789,-0.53079 0.52941059,0.52941059 0 0 0 -0.530789,-0.528493 z"
+       fill="#a5a5a5"
+       stroke-width="0" />
+  </g>
+  <rect
+     id="rect4"
+     x="25.609831"
+     y="5.7398219"
+     width="12.781545"
+     height="3.3371027"
+     ry="1.6686114"
+     fill-opacity="0.90577"
+     stroke-miterlimit="4.4"
+     style="stroke-width:1.20252;paint-order:markers fill stroke;fill:#1a1a1a;fill-opacity:1" />
+</svg>

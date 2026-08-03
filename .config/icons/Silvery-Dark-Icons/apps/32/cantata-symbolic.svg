@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   sodipodi:docname="cantata-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   viewBox="0 0 32 32"
+   id="svg2"
+   version="1.1"
+   width="32"
+   height="32"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:lockguides="true"
+     inkscape:current-layer="svg2"
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="35.875"
+     inkscape:cx="15.75"
+     inkscape:zoom="8"
+     showgrid="true"
+     id="namedview14"
+     inkscape:window-height="994"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#000000"
+     pagecolor="#201933"
+     inkscape:pagecheckerboard="true"
+     inkscape:showpageshadow="true"
+     inkscape:deskcolor="#201933">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1388"
+       originx="7"
+       originy="-85"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3051">
+    <style
+       type="text/css"
+       id="current-color-scheme">.ColorScheme-Text { color:#d1d5e9; }
+</style>
+    <linearGradient
+       id="oomox"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="16"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5000001,0,0,1.5000001,25.843999,4.0940002)">
+      <stop
+         offset="0%"
+         style="stop-color:#303b3d; stop-opacity:1"
+         id="stop18" />
+      <stop
+         offset="100%"
+         style="stop-color:#bc985d; stop-opacity:1"
+         id="stop20" />
+    </linearGradient>
+  </defs>
+  <g
+     id="cantata">
+    <path
+       id="path18"
+       d="M 0,0 V 32 H 32 V 0 Z"
+       style="fill:none" />
+    <path
+       id="Playlist"
+       class="st0"
+       d="M 19.25,16 H 3 v -5.142857 h 16.25 z m -8.125,1.714286 H 3 v 5.142857 h 8.125 z m 12.512501,2.057143 c 0.325,-0.6 0.487499,-1.328572 0.487499,-2.057143 h -4.468744 c -0.4875,0 -0.975012,0.08571 -1.462512,0.214285 -2.6,0.685715 -4.265616,3.085715 -3.696872,5.357143 0.568756,2.271429 3.168757,3.514286 5.809384,2.785715 2.640616,-0.728572 4.306245,-3.128572 3.696872,-5.357143 C 23.921832,20.371429 23.8,20.071429 23.637501,19.771429 Z"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.41726" />
+    <path
+       id="Playlist-s"
+       class="st1"
+       d="M 4.6250003,9.1428571 H 3 V 7.428571 C 3,5.542857 4.4624999,4 6.2499996,4 H 19.25 V 5.714286 H 6.2499996 c -0.8937498,0 -1.6249993,0.771428 -1.6249993,1.714285 z m 20.3124997,0 H 22.500001 V 22 c 0,2.357143 -1.828129,4.285714 -4.062501,4.285714 V 28 c 3.128128,0 5.6875,-2.7 5.6875,-6 V 10.857143 h 0.8125 c 1.340629,0 2.4375,1.157143 2.4375,2.571428 H 29 C 29,11.071429 27.171872,9.1428571 24.9375,9.1428571 Z"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.41726" />
+  </g>
+</svg>

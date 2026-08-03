@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 20 20"
+   id="svg6"
+   width="20"
+   height="20"
+   version="1.1"
+   sodipodi:docname="media-skip-backward.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="15.875"
+     inkscape:cx="10.456693"
+     inkscape:cy="14.551181"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="-26"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14902"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <style
+     type="text/css"
+     id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; }
+</style>
+  <g
+     id="media-skip-backward">
+    <rect
+       id="rect114"
+       y="0"
+       x="-20"
+       height="20"
+       width="20"
+       style="opacity:0.00100002;stroke-width:0.625"
+       transform="scale(-1,1)" />
+    <rect
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:1.60841"
+       class="ColorScheme-Text"
+       width="11"
+       height="1.5"
+       x="4.5"
+       y="-4.5999999"
+       id="rect64-5-7"
+       transform="rotate(90)" />
+    <path
+       id="Move-7-26-4-2"
+       class="st0"
+       d="m 16.998668,7.470154 v 0 0 0 0 l 0.0026,5.268611 v 0 l 0.0017,3.575732 -6.653623,-4.468608 C 7.3264926,9.815751 7.4340206,10.744774 10.39753,8.11395 l 6.599026,-4.899451 z"
+       sodipodi:nodetypes="ccccccccsccc"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.540137" />
+    <path
+       id="Move-s-5-1-8-26"
+       class="st1"
+       d="M 9.923417,8.74423 15.341721,5.234198 13.664401,4.699001 8.395992,8.130852 C 7.3903421,8.955395 7.0641646,9.037155 7,9.856175 c 0.064862,0.587792 0.5559125,0.919895 1.6329827,1.653607 l 4.1823913,2.624427 0.02712,-1.466742 -2.710459,-1.64203 C 7.8923384,9.51448 7.7703053,10.139038 9.923415,8.74423 Z m 3.740984,-4.045229 v 0 L 15.341721,5.234198 15.340798,3.6 Z"
+       sodipodi:nodetypes="sccccccccsccssc"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.487047" />
+  </g>
+</svg>

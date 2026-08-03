@@ -1,0 +1,14 @@
+/***************
+ *   Borders   *
+ ***************/
+
+/* Replicate Xfwm4 window decorations for CSD */
+window.csd, window.solid-csd, window.background.csd, window.background.solid-csd, window.background.dialog.csd, window.background.dialog.solid-csd {
+    padding: 3px;
+    background-color: @bg_color;
+    border: 1px solid @bg_color; 
+    border-right: 1px solid @borders;
+    border-bottom: 1px solid @borders;
+    box-shadow: 1px 1px @light_shadow inset, -1px -1px @dark_shadow inset;
+    border-radius: 0; }
+

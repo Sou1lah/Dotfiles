@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Magnetic-Pink-Dark-Dracula
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Magnetic-Pink-Dark-Dracula
+MetacityTheme=Magnetic-Pink-Dark-Dracula
+IconTheme=Tela-circle-Dark
+CursorTheme=Magnetic-cursors
+ButtonLayout=close,minimize,maximize:menu

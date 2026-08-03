@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg2046"
+   sodipodi:docname="lutris-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2048"
+     pagecolor="#02334b"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:showpageshadow="true"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#02334b"
+     showgrid="true"
+     inkscape:zoom="10.429825"
+     inkscape:cx="11.21783"
+     inkscape:cy="10.930193"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2046">
+    <inkscape:grid
+       type="xygrid"
+       id="grid224"
+       originx="10.138004"
+       originy="30.721615"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="l4k1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+   .ColorScheme-Background {color:#181818; } .ColorScheme-ButtonBackground { color:#343434; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-ViewBackground { color:#242424; } .ColorScheme-NegativeText { color:#f44336; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NeutralText { color:#ff9800; }
+  </style>
+  </defs>
+  <g
+     id="22-22-lutris"
+     transform="translate(-32,-10)">
+    <rect
+       style="opacity:0.00100002;fill:#d3dae3;fill-opacity:1"
+       width="22"
+       height="22"
+       x="32"
+       y="10"
+       id="rect2032" />
+    <path
+       id="Page_1_-6"
+       class="st0  ColorScheme-Highlight "
+       d="m 46.5,16 v 0 l -1,-1 v 0 h -7 V 28 H 47 c 1.375,0 2.5,-1.125 2.5,-2.5 V 19 Z m -6,1.5 z m 0,2.5 z m 0,5 z m 0,-2.5 z"
+       sodipodi:nodetypes="ccccccsscccccccccccccccccccccc"
+       style="color:#cdd8e5;fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.25" />
+    <path
+       id="Page-s-1"
+       class="st1  ColorScheme-Text "
+       d="M 47.366667,19 H 49.5 v 7 c 0,1.65 -1.349999,3 -3,3 h -7 v -1 h 7 c 1.1,0 2,-0.900001 2,-2 V 20 H 47.366667 Z M 36.5,15 c 0,-1.1 0.900001,-2 2,-2 h 5 v 1 h -5 c -0.549999,0 -1,0.45 -1,1 v 8.5 h -1 z"
+       style="color:#eff0f1;fill:currentColor;fill-opacity:1;stroke-width:0.25"
+       sodipodi:nodetypes="ccssccsscccssccssccs" />
+    <path
+       d="m 42.729545,26.916105 c -0.534439,-0.206366 -3.531413,-1.633649 -3.61079,-1.719608 -0.04978,-0.05392 -0.08359,-0.353535 -0.0975,-0.863926 L 39,23.55118 40.522725,22.676609 c 0.8375,-0.48102 1.52836,-0.867162 1.535245,-0.858092 0.0065,0.009 0.02941,0.1907 0.04996,0.403629 0.03724,0.384284 0.03615,0.387738 -0.144765,0.46502 -0.268483,0.11469 -0.651933,0.525379 -0.699615,0.749291 -0.130499,0.612779 0.444494,1.087729 1.428927,1.18031 1.079465,0.101515 2.085262,-0.431978 2.085262,-1.106052 0,-0.34137 -0.183584,-0.58369 -0.626683,-0.827159 -0.226203,-0.124281 -0.229284,-0.131089 -0.229284,-0.507285 0,-0.350648 0.0097,-0.378129 0.120428,-0.341892 0.200204,0.06552 2.89376,1.349734 2.941001,1.402169 0.04701,0.05225 -0.01429,1.563023 -0.06547,1.613427 -0.04504,0.04429 -3.117221,1.900074 -3.332168,2.012794 -0.315511,0.165454 -0.530835,0.178874 -0.855964,0.05335 z m -0.366834,-2.711977 c -0.384004,-0.09557 -0.76426,-0.384555 -0.76426,-0.580805 0,-0.181188 0.346799,-0.537798 0.645247,-0.663498 l 0.275234,-0.11592 -0.03375,-0.409866 c -0.05689,-0.69029 -0.275305,-4.596104 -0.275305,-4.92323 0,-0.413959 0.1403,-0.510809 0.73995,-0.510809 0.340095,0 0.475226,0.02772 0.598619,0.122872 l 0.159372,0.122872 -0.02221,0.970421 c -0.0122,0.533742 -0.05357,1.775899 -0.09171,2.76037 l -0.06938,1.789926 0.213992,0.100053 c 0.741373,0.346611 0.873631,0.758235 0.355387,1.106058 -0.362965,0.243607 -1.221315,0.358424 -1.731046,0.231556 z"
+       stroke-width="0.0620904"
+       id="path2165-3-7"
+       style="fill:#eff0f1;fill-opacity:1" />
+  </g>
+</svg>

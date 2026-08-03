@@ -1,0 +1,29 @@
+/**********
+ * OMG4@x *
+ **********/
+
+/**********
+ * Window *
+ **********/
+
+/*Hack to fix dotted outlines around literally everything when pointing to Redmond97's GTK3 theme*/
+window * {
+    outline-style: hidden;
+}
+
+/*Make filechooser backgrounds solid color and match text windows'*/
+window.background filechooser listview *,window.background filechooser gridview * {
+    background-color: @base_color;
+    color: @text_color;
+}
+
+
+/* Make notifications match theme*/
+.app-notification {
+    padding: 0px;
+    background-color: @bg_color;
+    border-radius: 0; 
+}
+
+
+

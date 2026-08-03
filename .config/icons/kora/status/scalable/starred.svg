@@ -1,0 +1,8 @@
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <clipPath id="a">
+  <path d="m22.406 6.257c.224-.691.868-1.158 1.594-1.158s1.37.467 1.594 1.158c1.523 4.688 3.589 11.045 3.589 11.045h11.613c.726 0 1.369.467 1.594 1.158.224.69-.022 1.447-.609 1.874-3.988 2.897-9.395 6.826-9.395 6.826s2.065 6.356 3.588 11.044c.225.691-.021 1.447-.609 1.874-.587.427-1.382.427-1.97 0-3.987-2.897-9.395-6.826-9.395-6.826s-5.408 3.929-9.395 6.826c-.588.427-1.383.427-1.97 0-.588-.427-.834-1.183-.609-1.874 1.523-4.688 3.588-11.044 3.588-11.044s-5.407-3.929-9.395-6.826c-.587-.427-.833-1.184-.609-1.874.225-.691.868-1.158 1.594-1.158h11.613s2.066-6.357 3.589-11.045z" clip-rule="evenodd"/>
+ </clipPath>
+ <g transform="matrix(.367693 0 0 .367693 -.824643 -.206833)" clip-path="url(#a)">
+  <image transform="matrix(2.71966 0 0 2.71966 5.5280993 5.0989079)" width="14" height="13" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAS0lEQVQokcWSwQ0AIAgDS8KA7h8XwYd1gjYRH/It4dqG4ByEnJBKgmUX1MHEXkbvEmWIQIKGaDPuspY80VjSxHarTxlvidEl8sfnHJ3OHhKLacotAAAAAElFTkSuQmCC"/>
+ </g>
+</svg>

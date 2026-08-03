@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 16 16"
+   id="svg1"
+   sodipodi:docname="folder-documents-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="30.75"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:window-width="1366"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     transform="translate(-372 -40)"
+     id="g1"
+     style="fill:#fcfcfc;fill-opacity:1">
+    <path
+       d="m376.99 56c-1.2582-0.01453-2.1789 0.03056-2.9316-0.38477-0.37637-0.20766-0.67323-0.55938-0.83789-0.99805-0.16467-0.43867-0.22461-0.95958-0.22461-1.6172v-10c0-0.65761 0.0599-1.1786 0.22461-1.6172 0.16468-0.43861 0.46153-0.78853 0.83789-0.99609 0.75272-0.41514 1.6735-0.37165 2.9316-0.38672h2e-3 5.0039 0.75l4.25 4.25v0.75 8c0 0.65761-0.0599 1.1786-0.22461 1.6172-0.16468 0.43861-0.46153 0.78853-0.83789 0.99609-0.75272 0.41513-1.6736 0.37165-2.9316 0.38672h-2e-3 -6.0059zm0.00586-1h6c1.2586-0.01523 2.0891-0.05988 2.4551-0.26172 0.18342-0.10116 0.28722-0.21286 0.38476-0.47266 0.09755-0.2598 0.16016-0.67323 0.16016-1.2656v-8h-2-2v-4h-4.9941-0.00586c-1.2586 0.01523-2.0891 0.05988-2.4551 0.26172-0.18342 0.10116-0.28722 0.21286-0.38476 0.47266-0.0976 0.2598-0.16016 0.67323-0.16016 1.2656v10c0 0.59239 0.0626 1.0057 0.16016 1.2656 0.0976 0.25991 0.20135 0.37146 0.38476 0.47266 0.36596 0.20191 1.1966 0.24702 2.4551 0.26172zm-1-4v-1h8v1zm0-2v-1h8v1zm0-2v-1h8v1zm0 6v-1h4v1z"
+       color="#000000"
+       fill="#808080"
+       id="path1"
+       style="fill:#fcfcfc;fill-opacity:1" />
+  </g>
+</svg>

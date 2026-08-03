@@ -1,0 +1,135 @@
+/***************
+ * Header Bars *
+ ***************/
+
+/*Headers*/
+headerbar {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  background-color: @wm_active_title;
+  color: @wm_active_title_text;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+headerbar:backdrop {
+  margin-top: -64px;
+  margin-bottom: -64px;
+  background-color: @wm_inactive_title;
+  color: @wm_inactive_title_text;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+headerbar > windowhandle > box > label {
+  color: @headerbar_fg_color;
+  background-color: @headerbar_bg_color;
+  box-shadow: none;
+}
+
+/*Fix headerbar title colors to match Xfwm4/Metacity Active/Inactive colors*/
+window.background.csd headerbar label.title,window.background.solid-csd headerbar label.title {
+  background-color: @wm_active_title;
+  color: @wm_active_title_text;
+margin-top: 4px;
+ font-size: 9pt;
+font-weight: bold;
+}
+
+window.background.csd headerbar label.subtitle,window.background.solid-csd headerbar label.subtitle {
+  background-color: @wm_active_title;
+  color: @wm_active_title_text;
+margin-bottom: 4px;
+ font-size: 6pt;
+font-weight: bold;
+}
+
+window.background.csd headerbar:backdrop label.title,window.background.solid-csd headerbar:backdrop label.title {
+  background-color: @wm_inactive_title;
+  color: @wm_inactive_title_text;
+margin-top: 4px;
+ font-size: 9pt;
+font-weight: bold;
+}
+
+window.background.csd headerbar:backdrop label.subtitle,window.background.solid-csd headerbar:backdrop label.subtitle {
+  background-color: @wm_inactive_title;
+  color: @wm_active_title_text;
+margin-bottom: 4px;
+ font-size: 6pt;
+font-weight: bold;
+}
+
+/***************
+ *   Borders   *
+ ***************/
+
+/*Fix borders for CSD: GTK3*/
+decoration {
+  padding: 3px;
+  background-color: @bg_color;
+  border: 1px solid @bg_color; 
+  border-right: 1px solid @borders;
+  border-bottom: 1px solid @borders;
+  box-shadow: 1px 1px @light_shadow inset, -1px -1px @dark_shadow inset;
+  border-radius: 0; }
+
+.csd menu {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: none; }
+
+.csd menuitem {
+  margin: 0px; }
+
+/* Buttons! */
+
+headerbar.titlebar button {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+
+window.csd .homepage > button, window.csd .homepage > box > button,
+window.solid-csd .homepage > button, window.solid-csd .homepage > box > button,
+window.background.csd .homepage > button, window.background.csd .homepage > box > button,
+window.background.solid-csd .homepage > button, window.background.solid-csd .homepage > box > button,
+window.background.dialog.csd .homepage > button, window.background.dialog.csd .homepage > box > button,
+window.background.dialog.solid-csd .homepage > button, window.background.dialog.solid-csd .homepage > box > button {
+   padding: 4px 6px 4px 6px;
+   border-radius: 0px;
+   color: @button_fg_color;
+   border-top: 1px solid @button_bg_color;
+   border-left: 1px solid @button_bg_color;
+   border-right: 1px solid @borders;
+   border-bottom: 1px solid @borders;
+   border-radius: 0px;
+   background-color: @button_bg_color;
+   box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow;
+   outline-offset: -4px;
+}
+
+window.csd .homepage > button:active, window.csd .homepage > box > button:active,
+window.solid-csd .homepage > button:active, window.solid-csd .homepage > box > button:active,
+window.background.csd .homepage > button:active, window.background.csd .homepage > box > button:active,
+window.background.solid-csd .homepage > button:active, window.background.solid-csd .homepage > box > button:active,
+window.background.dialog.csd .homepage > button:active, window.background.dialog.csd .homepage > box > button:active,
+window.background.dialog.solid-csd .homepage > button:active, window.background.dialog.solid-csd .homepage > box > button:active,
+window.csd .homepage > button:checked, window.csd .homepage > box > button:checked,
+window.solid-csd .homepage > button:checked, window.solid-csd .homepage > box > button:checked,
+window.background.csd .homepage > button:checked, window.background.csd .homepage > box > button:checked,
+window.background.solid-csd .homepage > button:checked, window.background.solid-csd .homepage > box > button:checked,
+window.background.dialog.csd .homepage > button:checked, window.background.dialog.csd .homepage > box > button:checked,
+window.background.dialog.solid-csd .homepage > button:checked, window.background.dialog.solid-csd .homepage > box > button:checked {
+   color: @theme_fg_color;
+   box-shadow: 1px 1px @dark_shadow inset;
+   border-color: @borders;
+   background-color: @button_bg_color;
+}

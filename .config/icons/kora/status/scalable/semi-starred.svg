@@ -1,0 +1,9 @@
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <clipPath id="a">
+  <path d="m24 33.252s-5.408 3.929-9.395 6.826c-.588.427-1.383.427-1.97 0-.588-.427-.834-1.183-.609-1.874 1.523-4.688 3.588-11.044 3.588-11.044s-5.407-3.929-9.395-6.826c-.587-.427-.833-1.184-.609-1.874.225-.691.868-1.158 1.594-1.158h11.613s2.066-6.357 3.589-11.045c.224-.691.868-1.158 1.594-1.158z" clip-rule="evenodd"/>
+ </clipPath>
+ <g transform="matrix(.367693 0 0 .367693 -.824643 -.206833)" clip-path="url(#a)">
+  <image transform="matrix(2.71966 0 0 2.71966 5.5280993 5.0989079)" width="7" height="13" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAANCAYAAABlyXS1AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANklEQVQYlWP8fyfgPwMOwMLw/ycDAwMjDsl/v3BpJKTzPz6d/34yMDDi04nDvZTaSZ5OckMIAL42HARluKu2AAAAAElFTkSuQmCC"/>
+ </g>
+ <path d="m8 12.02v-10.352c.267 0 .504.172.586.426.56 1.724 1.32 4.061 1.32 4.061h4.27c.267 0 .503.172.586.426.082.253-.008.532-.224.689-1.466 1.065-3.455 2.51-3.455 2.51s.76 2.337 1.32 4.061c.082.254-.008.532-.224.689s-.508.157-.725 0c-1.466-1.066-3.454-2.51-3.454-2.51z" fill="#909090" fill-opacity=".3"/>
+</svg>

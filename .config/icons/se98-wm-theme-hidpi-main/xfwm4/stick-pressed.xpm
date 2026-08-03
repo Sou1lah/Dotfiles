@@ -1,0 +1,6 @@
+/* XPM */
+static char * dummy_button_xpm[] = {
+"2 2 1 1",
+"       c None",
+"  ",
+"  "};

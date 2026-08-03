@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   viewBox="0 0 16 16"
+   id="svg5"
+   sodipodi:docname="xapp-prefs-display-symbolic.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="56.4375"
+     inkscape:cx="6.910299"
+     inkscape:cy="7.9468439"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g908" />
+  <style
+     type="text/css"
+     id="current-color-scheme">
+  .ColorScheme-Text {
+  color:#31363b;
+  }
+ </style>
+  <g
+     id="g908"
+     class="ColorScheme-Text">
+    <path
+       d="M 7.99202,2.3527287 C 4.2482218,2.3572816 0.97087154,4.703184 0.03966395,8.0436546 a 1.0347855,0.95325119 0 0 0 0,0.4752154 c 0.93914227,3.332923 4.21640325,5.671163 7.95434225,5.673447 a 1.0347855,0.95325119 0 0 0 0.00194,0 c 3.7437978,-0.0046 7.0211488,-2.350454 7.9523558,-5.6909254 a 1.0347855,0.95325119 0 0 0 0,-0.477152 C 15.009156,4.6913164 11.731896,2.3550625 7.9939565,2.3527784 a 1.0347855,0.95325119 0 0 0 -0.00194,0 z m 0.00194,0.9543039 c 3.271986,0.00203 6.129465,2.0402126 6.951532,4.9577245 C 14.130303,11.188823 11.271108,13.234001 7.9939565,13.237974 4.7219688,13.235987 1.8644912,11.197761 1.0424227,8.2802494 1.8576092,5.356183 4.7168048,3.311005 7.993957,3.3070326 Z"
+       fill="currentColor"
+       id="path9"
+       style="stroke-width:0.993085" />
+    <path
+       d="M 7.9941829,5.2932288 A 2.9792943,2.9792943 0 0 0 5.0148886,8.2725231 2.9792943,2.9792943 0 0 0 7.9941829,11.251817 2.9792943,2.9792943 0 0 0 10.973476,8.2725231 2.9792943,2.9792943 0 0 0 7.9941829,5.2932288 Z m 0,0.9930981 A 1.9861962,1.9861962 0 0 1 9.9803791,8.2725231 1.9861962,1.9861962 0 0 1 7.9941829,10.258719 1.9861962,1.9861962 0 0 1 6.0079867,8.2725231 1.9861962,1.9861962 0 0 1 7.9941829,6.2863269 Z"
+       fill="currentColor"
+       id="path13"
+       style="stroke-width:0.993098" />
+  </g>
+</svg>

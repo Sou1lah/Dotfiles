@@ -1,0 +1,17 @@
+Hey there, ru5tyshark here. Thanks for checking out this theme by Tumi, converted by me.
+Tumi is the original author of this windows cursor theme and mnay others, which I will be converting and publishing for all to use in the future.
+I've tried many times to contact him/her but to no avail, back when I was using windows (I switched to the light side after xp) his/her cursor sets were all I would ever use.
+No anit-aliasing or fancy tricks, just straight pixels!
+Cursors were originally 32x32 so I've kep inline with this.
+
+To all those using his/her work in your sets (or complete themes!), you should really give credit where it's due. Just saying...
+
+The previews aren't 100% accurate due to gifs being gifs but give a pretty good idea of what to expect.
+
+Install:
+Drop 'Tumi's-3D-Metallic' folder into your:
+/home/<your-username>/.icons
+folder which is usually hidden (depending on your personal settings), so show hidden files/folders in your file manager settings to access it.
+Otherwise you will have to sudo copy 'Tumi's-3D-Metallic' folder to /usr/share/icons.
+Then goto your cursor theme settings page and select & apply to use.
+Enjoy ('-' )

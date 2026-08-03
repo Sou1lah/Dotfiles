@@ -1,0 +1,187 @@
+### Base colors ###
+gtk_color_scheme = 
+"fg_color:#000000\
+bg_color:#D4D0C8\
+disabled_fg_color:#A9A6A0\
+base_color:#FFFFFF\
+text_color:#000000\
+selected_bg_color:#002468\
+selected_fg_color:#FFFFFF\
+tooltip_bg_color:#ffffe1\
+tooltip_fg_color:#000000000"
+### Begin ###
+
+include "paned.rc"
+include "scrollbar.rc" 
+include "scale.rc"
+include "notebook.rc"
+include "button.rc" 
+include "radio.rc" 
+include "c_box.rc"
+include "progressbar.rc"
+include "entry.rc"
+include "menubar.rc"
+include "spin.rc"
+include "toolbar.rc"
+include "scrolledwindow.rc"
+include "combobox.rc"
+include "custom_menubar.rc"
+include "panel.rc"
+
+# Fix icon sizes.
+gtk-icon-sizes="gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32"
+
+# Comment the next six lines to stop setting of default font size to accomodate 1080/2160 resolutions.
+style "font"
+{
+font_name = "Dummy Sans 18"
+}
+widget_class "*" style "font"
+gtk-font-name = "Dummy Sans 18"
+
+
+style "default"
+{
+
+# For 4K and up displays #
+        GtkCheckButton::indicator-size = 30 # Checkbox/Radiobox size.
+        GtkCheckButton::indicator-spacing = 8 # Spacing around Checkbox/Radiobox.
+        GtkCheckMenuItem::indicator-size = 30 # Checkbox/Radiobox size in menus.
+	GtkAssistant::content-padding = 2
+	GtkArrow ::arrow-scaling = 0.6
+	GtkButton::default_spacing = 16
+	GtkButtonBox::child-min-width = 160
+	GtkButtonBox::child-min-height = 40
+	GtkButtonBox::child-internal-pad-x = 4
+	GtkButton::image-spacing = 4
+	GtkCalendar::inner-border = 8
+	GtkCalendar::vertical-separation = 8
+	GtkCalendar::horizontal-separation = 8
+	GtkCheckButton::indicator-size = 30
+	GtkCheckButton::indicator-spacing = 4
+	GtkCheckMenuItem::indicator-size = 30
+	GtkComboBox::arrow-size = 30
+	GtkDialog::action-area-border = 10
+	GtkDialog::button-spacing = 12
+	GtkDialog::content-area-spacing = 12
+	GtkDialog::content-area-border = 4
+	GtkExpander::expander-size=20
+	GtkExpander::expander-spacing = 4
+	GtkInfoBar::button-spacing = 12
+	GtkInfoBar::action-area-border = 10
+	GtkMenuBar::internal-padding = 2
+	GtkMenu::vertical-padding = 2
+	GtkMenuItem::horizontal-padding = 6
+	GtkMenuItem::arrow-spacing = 20
+	GtkMenuItem::toggle-spacing = 10
+	GtkMenuItem::width-chars = 24
+	GtkMessageDialog::message-border = 24
+	GtkNotebook::tab-overlap = 4
+	GtkPaned::handle-size = 10
+        GtkPaned::margin = 2
+        GtkProgressBar::min-horizontal-bar-width = 300
+        GtkProgressBar::min-vertical-bar-height = 160    
+        GtkProgressBar::min-horizontal-bar-height = 40
+        GtkProgressBar::min-vertical-bar-width = 44
+	GtkScrollbar::min-slider-length = 300
+	GtkScrolledWindow::scrollbars-within-bevel = 1
+	GtkProgressBar::xspacing = 14
+	GtkProgressBar::yspacing = 14
+	GtkRange::trough-border = 2
+	GtkRange::stepper-size = 14
+	GtkScale::slider-length = 31
+	GtkScale::value-spacing = 2
+	GtkSpinner::num-steps = 24
+	GtkToolbar::space-size = 24
+        GtkToolbar::internal-padding = 2
+        GtkToolbar::shadow_type = GTK_SHADOW_IN
+	GtkToolButton::icon-spacing = 6
+	GtkToolItemGroup::expander-size = 32
+	GtkToolItemGroup::header-spacing = 4
+        GtkTreeView::odd_row_color = @base_color
+        GtkTreeView::even_row_color = @base_color
+	GtkTreeView::expander-size=24
+        GtkTreeView::vertical-separator = 8
+        GtkTreeView::horizontal-separator = 8
+# For 4K and up displays #    
+
+	fg[ACTIVE] = @fg_color
+  	fg[INSENSITIVE] = @disabled_fg_color
+  	fg[NORMAL] = @fg_color
+  	fg[PRELIGHT] = @fg_color
+  	fg[SELECTED] = @selected_fg_color
+
+	bg[ACTIVE] = @base_color
+	bg[INSENSITIVE] = @bg_color
+	bg[NORMAL] = @bg_color
+	bg[PRELIGHT] = @bg_color
+	bg[SELECTED] = @selected_bg_color
+
+	base[ACTIVE] = @selected_bg_color
+	base[INSENSITIVE] = @selected_fg_color
+	base[NORMAL] = @base_color
+	base[PRELIGHT] = @selected_bg_color
+	base[SELECTED] = @selected_bg_color
+
+	text[ACTIVE] = @selected_fg_color
+	text[INSENSITIVE] = @disabled_fg_color
+	text[NORMAL] = @text_color
+	text[PRELIGHT] = @selected_fg_color
+	text[SELECTED] = @selected_fg_color		
+} 
+class "GtkWidget" style "default"
+
+style "tooltips"
+{
+	bg[NORMAL] = @base_color
+	fg[NORMAL] = @text_color
+}
+
+
+widget "gtk-tooltip*" style "tooltips"
+
+style "color-fix"
+{
+        GtkFrame::shadow-type = GTK_SHADOW_NONE
+        GtkPaned ::handle-size = 1
+        GtkTreeView::expander-size = 0
+	GtkTreeView::vertical-separator = 0
+        GtkToolbar::internal-padding = 2
+
+        bg[NORMAL] = @base_color
+
+  	fg[PRELIGHT] = @selected_fg_color
+  	fg[SELECTED] = @selected_fg_color
+
+
+	text[INSENSITIVE] = @disabled_fg_color
+
+	text[SELECTED] = @selected_fg_color
+}
+
+class "GtkMenuItem*" style "color-fix"
+class "GtkImageMenuItem*" style "color-fix"
+class "GtkTearoffMenuItem*" style "color-fix"
+class "GtkMenuBar*" style "menubar2"
+class "GtkItem*" style "color-fix"
+widget_class "*MenuBar.*" 			        style "menubar2"
+widget_class "*<GtkMenu>*"              		style "color-fix"
+widget_class "*<GtkMenuItem>*"          		style "color-fix"
+widget_class "*<GtkSeparatorMenuItem>*" 		style "color-fix"
+
+
+style "progressbarfix" {
+
+	fg[ACTIVE] = @fg_color
+	fg[NORMAL] = @fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	text[ACTIVE] = @selected_fg_color
+	text[NORMAL] = @fg_color
+	text[PRELIGHT] = @selected_fg_color
+	text[SELECTED] = @selected_fg_color
+
+}
+
+class "GtkScrolledWindow*" style "scrolledwindow"
+class "GtkProgressBar*" style "progressbarfix"

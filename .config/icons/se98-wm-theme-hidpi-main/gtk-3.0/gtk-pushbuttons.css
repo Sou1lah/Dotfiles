@@ -1,0 +1,217 @@
+/* @!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@ */
+/* Shift on press effect for buttons */
+/* @!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@ */
+
+
+
+/* ------------ */
+/* Xfce Plugins */
+/* ------------ */
+
+/* Application Menu */
+#applicationmenu-button:checked box {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+/* Prevent Clock from being pushed! */
+#XfcePanelWindow #clock-button:checked box {
+	margin: 0px;
+	margin-bottom: 0px;
+}
+
+/* Same for Date/Time plugin... */
+#datetime-1 button box, #datetime-2 button box, #datetime-3 button box, #datetime-4 button box,
+#datetime-5 button box, #datetime-6 button box, #datetime-7 button box, #datetime-8 button box,
+#datetime-9 button box, #datetime-10 button box, #datetime-11 button box, #datetime-12 button box,
+#datetime-13 button box, #datetime-14 button box, #datetime-15 button box, 
+#datetime-16 button box, #datetime-17 button box, #datetime-18 button box, #datetime-19 button box,
+#datetime-20 button box, #datetime-21 button box, #datetime-22 button box, #datetime-23 button box, 
+#datetime-24 button box, #datetime-25 button box, #datetime-26 button box, #datetime-27 button box, 
+#datetime-28 button box, #datetime-29 button box, #datetime-30 button box, #datetime-31 button box, 
+#datetime-32 button box, #datetime-33 button box, #datetime-34 button box, #datetime-35 button box, 
+#datetime-36 button box, #datetime-37 button box, #datetime-38 button box, #datetime-39 button box, 
+#datetime-40 button box, #datetime-41 button box, #datetime-42 button box, #datetime-43 button box,
+#datetime-44 button box, #datetime-45 button box, #datetime-46 button box, #datetime-47 button box, 
+#datetime-48 button box, #datetime-49 button box, #datetime-50 button box, #datetime-51 button box, 
+#datetime-52 button box, #datetime-53 button box, #datetime-54 button box, #datetime-55 button box, 
+#datetime-56 button box, #datetime-57 button box, #datetime-58 button box, #datetime-59 button box, 
+#datetime-60 button box, #datetime-61 button box, #datetime-62 button box, #datetime-63 button box, 
+#datetime-64 button box, #datetime-65 button box, #datetime-66 button box, #datetime-67 button box,
+#datetime-68 button box, #datetime-69 button box, #datetime-70 button box, #datetime-71 button box, 
+#datetime-72 button box, #datetime-73 button box, #datetime-74 button box, #datetime-75 button box, 
+#datetime-76 button box, #datetime-77 button box, #datetime-78 button box, #datetime-79 button box, 
+#datetime-80 button box, #datetime-81 button box, #datetime-82 button box, #datetime-83 button box, 
+#datetime-84 button box, #datetime-85 button box, #datetime-86 button box, #datetime-87 button box, 
+#datetime-88 button box, #datetime-89 button box, #datetime-90 button box, #datetime-91 button box,
+#datetime-92 button box, #datetime-93 button box, #datetime-94 button box, #datetime-95 button box, 
+#datetime-96 button box, #datetime-97 button box, #datetime-98 button box, #datetime-99 button box {
+	margin: 0px;
+}
+
+
+
+/* PulseAudio Horizontal Button: Make inert! */
+#pulseaudio-button:checked image {
+    margin: 0px;
+    margin-top: 3px;
+}
+
+/* PulseAudio Vertical Button: Depress like a button! */
+#docklike-plugin.horizontal .active_group 
+#pulseaudio-button:active .vertical > image, #pulseaudio-button:checked .vertical > image {
+    margin-left: 1px;
+    margin-right: -1px;
+    margin-top: 1px;
+}
+
+/* Whisker Menu Button */
+#whiskermenu-button:checked .vertical,
+#whiskermenu-button:active .vertical {
+    margin-top: -4px;
+}
+
+#whiskermenu-button:checked box.horizontal,
+#whiskermenu-button:active box.horizontal {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+#whiskermenu-button:checked box.vertical > image,
+#whiskermenu-button:active box.vertical > image {
+    margin-top: 7px;
+    margin-left: 4px;
+    margin-bottom: 1px;
+}
+
+
+/* Window Buttons Plugin/Tasklist */
+#tasklist-1 button:active image, #tasklist-2 button:active image, #tasklist-3 button:active image, #tasklist-4 button:active image,
+#tasklist-5 button:active image, #tasklist-6 button:active image, #tasklist-7 button:active image, #tasklist-8 button:active image,
+#tasklist-9 button:active image, #tasklist-10 button:active image, #tasklist-11 button:active image, #tasklist-12 button:active image,
+#tasklist-13 button:active image, #tasklist-14 button:active image, #tasklist-15 button:active image, 
+#tasklist-16 button:active image, #tasklist-17 button:active image, #tasklist-18 button:active image, #tasklist-19 button:active image,
+#tasklist-20 button:active image, #tasklist-21 button:active image, #tasklist-22 button:active image, #tasklist-23 button:active image, 
+#tasklist-24 button:active image, #tasklist-25 button:active image, #tasklist-26 button:active image, #tasklist-27 button:active image, 
+#tasklist-28 button:active image, #tasklist-29 button:active image, #tasklist-30 button:active image, #tasklist-31 button:active image, 
+#tasklist-32 button:active image, #tasklist-33 button:active image, #tasklist-34 button:active image, #tasklist-35 button:active image, 
+#tasklist-36 button:active image, #tasklist-37 button:active image, #tasklist-38 button:active image, #tasklist-39 button:active image, 
+#tasklist-40 button:active image, #tasklist-41 button:active image, #tasklist-42 button:active image, #tasklist-43 button:active image,
+#tasklist-44 button:active image, #tasklist-45 button:active image, #tasklist-46 button:active image, #tasklist-47 button:active image, 
+#tasklist-48 button:active image, #tasklist-49 button:active image, #tasklist-50 button:active image, #tasklist-51 button:active image, 
+#tasklist-52 button:active image, #tasklist-53 button:active image, #tasklist-54 button:active image, #tasklist-55 button:active image, 
+#tasklist-56 button:active image, #tasklist-57 button:active image, #tasklist-58 button:active image, #tasklist-59 button:active image, 
+#tasklist-60 button:active image, #tasklist-61 button:active image, #tasklist-62 button:active image, #tasklist-63 button:active image, 
+#tasklist-64 button:active image, #tasklist-65 button:active image, #tasklist-66 button:active image, #tasklist-67 button:active image,
+#tasklist-68 button:active image, #tasklist-69 button:active image, #tasklist-70 button:active image, #tasklist-71 button:active image, 
+#tasklist-72 button:active image, #tasklist-73 button:active image, #tasklist-74 button:active image, #tasklist-75 button:active image, 
+#tasklist-76 button:active image, #tasklist-77 button:active image, #tasklist-78 button:active image, #tasklist-79 button:active image, 
+#tasklist-80 button:active image, #tasklist-81 button:active image, #tasklist-82 button:active image, #tasklist-83 button:active image, 
+#tasklist-84 button:active image, #tasklist-85 button:active image, #tasklist-86 button:active image, #tasklist-87 button:active image, 
+#tasklist-88 button:active image, #tasklist-89 button:active image, #tasklist-90 button:active image, #tasklist-91 button:active image,
+#tasklist-92 button:active image, #tasklist-93 button:active image, #tasklist-94 button:active image, #tasklist-95 button:active image, 
+#tasklist-96 button:active image, #tasklist-97 button:active image, #tasklist-98 button:active image, #tasklist-99 button:active image,
+#tasklist-1 button:checked image, #tasklist-2 button:checked image, #tasklist-3 button:checked image, #tasklist-4 button:checked image,
+#tasklist-5 button:checked image, #tasklist-6 button:checked image, #tasklist-7 button:checked image, #tasklist-8 button:checked image,
+#tasklist-9 button:checked image, #tasklist-10 button:checked image, #tasklist-11 button:checked image, #tasklist-12 button:checked image,
+#tasklist-13 button:checked image, #tasklist-14 button:checked image, #tasklist-15 button:checked image, 
+#tasklist-16 button:checked image, #tasklist-17 button:checked image, #tasklist-18 button:checked image, #tasklist-19 button:checked image,
+#tasklist-20 button:checked image, #tasklist-21 button:checked image, #tasklist-22 button:checked image, #tasklist-23 button:checked image, 
+#tasklist-24 button:checked image, #tasklist-25 button:checked image, #tasklist-26 button:checked image, #tasklist-27 button:checked image, 
+#tasklist-28 button:checked image, #tasklist-29 button:checked image, #tasklist-30 button:checked image, #tasklist-31 button:checked image, 
+#tasklist-32 button:checked image, #tasklist-33 button:checked image, #tasklist-34 button:checked image, #tasklist-35 button:checked image, 
+#tasklist-36 button:checked image, #tasklist-37 button:checked image, #tasklist-38 button:checked image, #tasklist-39 button:checked image, 
+#tasklist-40 button:checked image, #tasklist-41 button:checked image, #tasklist-42 button:checked image, #tasklist-43 button:checked image,
+#tasklist-44 button:checked image, #tasklist-45 button:checked image, #tasklist-46 button:checked image, #tasklist-47 button:checked image, 
+#tasklist-48 button:checked image, #tasklist-49 button:checked image, #tasklist-50 button:checked image, #tasklist-51 button:checked image, 
+#tasklist-52 button:checked image, #tasklist-53 button:checked image, #tasklist-54 button:checked image, #tasklist-55 button:checked image, 
+#tasklist-56 button:checked image, #tasklist-57 button:checked image, #tasklist-58 button:checked image, #tasklist-59 button:checked image, 
+#tasklist-60 button:checked image, #tasklist-61 button:checked image, #tasklist-62 button:checked image, #tasklist-63 button:checked image, 
+#tasklist-64 button:checked image, #tasklist-65 button:checked image, #tasklist-66 button:checked image, #tasklist-67 button:checked image,
+#tasklist-68 button:checked image, #tasklist-69 button:checked image, #tasklist-70 button:checked image, #tasklist-71 button:checked image, 
+#tasklist-72 button:checked image, #tasklist-73 button:checked image, #tasklist-74 button:checked image, #tasklist-75 button:checked image, 
+#tasklist-76 button:checked image, #tasklist-77 button:checked image, #tasklist-78 button:checked image, #tasklist-79 button:checked image, 
+#tasklist-80 button:checked image, #tasklist-81 button:checked image, #tasklist-82 button:checked image, #tasklist-83 button:checked image, 
+#tasklist-84 button:checked image, #tasklist-85 button:checked image, #tasklist-86 button:checked image, #tasklist-87 button:checked image, 
+#tasklist-88 button:checked image, #tasklist-89 button:checked image, #tasklist-90 button:checked image, #tasklist-91 button:checked image,
+#tasklist-92 button:checked image, #tasklist-93 button:checked image, #tasklist-94 button:checked image, #tasklist-95 button:checked image, 
+#tasklist-96 button:checked image, #tasklist-97 button:checked image, #tasklist-98 button:checked image, #tasklist-99 button:checked {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+#tasklist-1 button:active label, #tasklist-2 button:active label, #tasklist-3 button:active label, #tasklist-4 button:active label,
+#tasklist-5 button:active label, #tasklist-6 button:active label, #tasklist-7 button:active label, #tasklist-8 button:active label,
+#tasklist-9 button:active label, #tasklist-10 button:active label, #tasklist-11 button:active label, #tasklist-12 button:active label,
+#tasklist-13 button:active label, #tasklist-14 button:active label, #tasklist-15 button:active label, 
+#tasklist-16 button:active label, #tasklist-17 button:active label, #tasklist-18 button:active label, #tasklist-19 button:active label,
+#tasklist-20 button:active label, #tasklist-21 button:active label, #tasklist-22 button:active label, #tasklist-23 button:active label, 
+#tasklist-24 button:active label, #tasklist-25 button:active label, #tasklist-26 button:active label, #tasklist-27 button:active label, 
+#tasklist-28 button:active label, #tasklist-29 button:active label, #tasklist-30 button:active label, #tasklist-31 button:active label, 
+#tasklist-32 button:active label, #tasklist-33 button:active label, #tasklist-34 button:active label, #tasklist-35 button:active label, 
+#tasklist-36 button:active label, #tasklist-37 button:active label, #tasklist-38 button:active label, #tasklist-39 button:active label, 
+#tasklist-40 button:active label, #tasklist-41 button:active label, #tasklist-42 button:active label, #tasklist-43 button:active label,
+#tasklist-44 button:active label, #tasklist-45 button:active label, #tasklist-46 button:active label, #tasklist-47 button:active label, 
+#tasklist-48 button:active label, #tasklist-49 button:active label, #tasklist-50 button:active label, #tasklist-51 button:active label, 
+#tasklist-52 button:active label, #tasklist-53 button:active label, #tasklist-54 button:active label, #tasklist-55 button:active label, 
+#tasklist-56 button:active label, #tasklist-57 button:active label, #tasklist-58 button:active label, #tasklist-59 button:active label, 
+#tasklist-60 button:active label, #tasklist-61 button:active label, #tasklist-62 button:active label, #tasklist-63 button:active label, 
+#tasklist-64 button:active label, #tasklist-65 button:active label, #tasklist-66 button:active label, #tasklist-67 button:active label,
+#tasklist-68 button:active label, #tasklist-69 button:active label, #tasklist-70 button:active label, #tasklist-71 button:active label, 
+#tasklist-72 button:active label, #tasklist-73 button:active label, #tasklist-74 button:active label, #tasklist-75 button:active label, 
+#tasklist-76 button:active label, #tasklist-77 button:active label, #tasklist-78 button:active label, #tasklist-79 button:active label, 
+#tasklist-80 button:active label, #tasklist-81 button:active label, #tasklist-82 button:active label, #tasklist-83 button:active label, 
+#tasklist-84 button:active label, #tasklist-85 button:active label, #tasklist-86 button:active label, #tasklist-87 button:active label, 
+#tasklist-88 button:active label, #tasklist-89 button:active label, #tasklist-90 button:active label, #tasklist-91 button:active label,
+#tasklist-92 button:active label, #tasklist-93 button:active label, #tasklist-94 button:active label, #tasklist-95 button:active label, 
+#tasklist-96 button:active label, #tasklist-97 button:active label, #tasklist-98 button:active label, #tasklist-99 button:active label,
+#tasklist-1 button:checked label, #tasklist-2 button:checked label, #tasklist-3 button:checked label, #tasklist-4 button:checked label,
+#tasklist-5 button:checked label, #tasklist-6 button:checked label, #tasklist-7 button:checked label, #tasklist-8 button:checked label,
+#tasklist-9 button:checked label, #tasklist-10 button:checked label, #tasklist-11 button:checked label, #tasklist-12 button:checked label,
+#tasklist-13 button:checked label, #tasklist-14 button:checked label, #tasklist-15 button:checked label, 
+#tasklist-16 button:checked label, #tasklist-17 button:checked label, #tasklist-18 button:checked label, #tasklist-19 button:checked label,
+#tasklist-20 button:checked label, #tasklist-21 button:checked label, #tasklist-22 button:checked label, #tasklist-23 button:checked label, 
+#tasklist-24 button:checked label, #tasklist-25 button:checked label, #tasklist-26 button:checked label, #tasklist-27 button:checked label, 
+#tasklist-28 button:checked label, #tasklist-29 button:checked label, #tasklist-30 button:checked label, #tasklist-31 button:checked label, 
+#tasklist-32 button:checked label, #tasklist-33 button:checked label, #tasklist-34 button:checked label, #tasklist-35 button:checked label, 
+#tasklist-36 button:checked label, #tasklist-37 button:checked label, #tasklist-38 button:checked label, #tasklist-39 button:checked label, 
+#tasklist-40 button:checked label, #tasklist-41 button:checked label, #tasklist-42 button:checked label, #tasklist-43 button:checked label,
+#tasklist-44 button:checked label, #tasklist-45 button:checked label, #tasklist-46 button:checked label, #tasklist-47 button:checked label, 
+#tasklist-48 button:checked label, #tasklist-49 button:checked label, #tasklist-50 button:checked label, #tasklist-51 button:checked label, 
+#tasklist-52 button:checked label, #tasklist-53 button:checked label, #tasklist-54 button:checked label, #tasklist-55 button:checked label, 
+#tasklist-56 button:checked label, #tasklist-57 button:checked label, #tasklist-58 button:checked label, #tasklist-59 button:checked label, 
+#tasklist-60 button:checked label, #tasklist-61 button:checked label, #tasklist-62 button:checked label, #tasklist-63 button:checked label, 
+#tasklist-64 button:checked label, #tasklist-65 button:checked label, #tasklist-66 button:checked label, #tasklist-67 button:checked label,
+#tasklist-68 button:checked label, #tasklist-69 button:checked label, #tasklist-70 button:checked label, #tasklist-71 button:checked label, 
+#tasklist-72 button:checked label, #tasklist-73 button:checked label, #tasklist-74 button:checked label, #tasklist-75 button:checked label, 
+#tasklist-76 button:checked label, #tasklist-77 button:checked label, #tasklist-78 button:checked label, #tasklist-79 button:checked label, 
+#tasklist-80 button:checked label, #tasklist-81 button:checked label, #tasklist-82 button:checked label, #tasklist-83 button:checked label, 
+#tasklist-84 button:checked label, #tasklist-85 button:checked label, #tasklist-86 button:checked label, #tasklist-87 button:checked label, 
+#tasklist-88 button:checked label, #tasklist-89 button:checked label, #tasklist-90 button:checked label, #tasklist-91 button:checked label,
+#tasklist-92 button:checked label, #tasklist-93 button:checked label, #tasklist-94 button:checked label, #tasklist-95 button:checked label, 
+#tasklist-96 button:checked label, #tasklist-97 button:checked label, #tasklist-98 button:checked label, #tasklist-99 button:checked  {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: -5px;
+    margin-right: -1px;
+}
+
+
+#docklike-plugin.horizontal .active_group image, #docklike-plugin.vertical .active_group image
+{
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+
+/* ------------ */
+/* Xfce Plugins */
+/* ------------ */

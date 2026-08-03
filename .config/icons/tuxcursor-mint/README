@@ -1,0 +1,26 @@
+20150304
+********
+		1) Unpack the tarball into ~/.icons
+
+		2) Choose “tuxcursor-mint” as mouse pointer in your DE’s theme settings
+
+		3) Adjust the pointer size in your DE’s mouse settings
+
+		4) If some X pointers (e.g. in the terminal window) don’t obey those
+		   settings, add the following lines to the file ~/.Xresources:
+
+! Choose one of the following values for size:
+! 64, 48, 32, 24
+Xcursor.size: 48
+Xcursor.theme: tuxcursor-mint
+
+		5) If you want to use the pirate pointer for xkill:
+		   —— Copy it to /usr/local/share/icons
+		   —— Link it from there to /usr/share/icons/DMZ-White/cursors/pirate
+
+		6) If your DE doesn’t hide the mouse pointer in video or flash playback,
+		   use the following in your session startup commands:
+
+unclutter -idle 7
+
+********

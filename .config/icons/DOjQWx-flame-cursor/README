@@ -1,0 +1,7 @@
+Just copy these to ~/.icons
+
+flame-singlecursor -> only replaces the "pointer" cursor
+                      and leaves everything else
+
+flame-allcursor    -> replaces every cursor except for the
+                      resize arrows

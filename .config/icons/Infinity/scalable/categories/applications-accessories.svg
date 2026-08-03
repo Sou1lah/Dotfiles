@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="applications-accessories.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="5.4358834"
+     inkscape:cx="20.603827"
+     inkscape:cy="32.92933"
+     inkscape:window-width="1366"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <g
+     id="g6"
+     transform="translate(5.1532865,0.07594607)">
+    <path
+       d="m 1.8135163,25.363131 v 2.186974 c 0,4.846334 3.9015617,8.747895 8.7478957,8.747895 h 2.186973 v -6.560922 h 6.560922 c 1.211583,0 2.186974,0.975391 2.186974,2.186974 0,1.211584 -0.975391,2.186975 -2.186974,2.186975 H 17.122332 V 36.298 h 24.056712 c 3.028959,0 5.467435,-2.438476 5.467435,-5.467434 a 5.4564997,5.4564997 0 0 0 -3.553832,-5.126267 l 0.273372,-0.341168 z"
+       fill="#e6e6e6"
+       id="path1"
+       style="stroke-width:1.09349" />
+    <path
+       d="m 22.002565,25.324859 a 59.092032,59.092032 0 0 0 2.835411,2.264612 l 13.092319,8.648387 2.179319,0.08639 4.083081,-11.000479 z"
+       opacity="0.1"
+       id="path2"
+       style="stroke-width:1.09349" />
+    <path
+       d="m 8.8424502,0.21293214 c 0,11.32524386 4.5314088,18.12017186 13.5920418,24.91509886 l 0.425366,0.28212 c 0.170585,0.145434 0.349916,0.282119 0.540183,0.412244 l 13.796525,9.422577 a 6.4111137,6.4111137 0 0 0 8.929414,-1.68397 6.4078332,6.4078332 0 0 0 -1.04428,-8.428597 l 0.0044,-0.0044 -0.04046,-0.02734 A 6.5445191,6.5445191 0 0 0 44.443103,24.632682 L 32.188395,16.263133 Z"
+       fill="#f9f9f9"
+       id="path3"
+       style="stroke-width:1.09349" />
+    <image
+       x="8.079196"
+       y="20.882023"
+       width="38.272041"
+       height="15.308817"
+       image-rendering="optimizeQuality"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAOCAYAAACl66WxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAeBJREFUOI21lU9rU0EUxc+589Lk QaigCMmuBaFuBJfuRSSEgH6jfhA/Qd4uJdBdyNKNBYVYEPyzkES0Tar507507nFRAiKFpGl6YDZz 7p35Mdx7h1giSQTALMu4LHYV9Xo97e/v+3XeShdIsizLimmabgSoXC57t9vN/4da+fBmsxnK5fL9 GOPWbUCKxaLcXdPpNBYKhXGj0ZjeGOYfoJ0Y44PbAJGMIYT5bDY7L5VKw1qt9ouk1nr2Vqu16+5P kyRJbpobY0QIIbp7TnJsZiMAg3q9Pli7BprN5r00TV+QrN4kz91B0gHkZjaWdEryR5Ikn8K6MFmW Xezt7R1Xq1Uj+QhACUBx2ZJUDCFsAdiSVMBVqVzGGM830h3tdrsi6TWAh6vEuzvMLErKSZ5J6pvZ 143AAECn00kmk8lzSc+wvDEkSSTnAH6b2cDdv2wMZqFWq7UL4FUIYfs63/1qtJB0SXMAf0j2AXzc OAwAdDqd0ng8rkl6cp1vZgIQAVxIOiPZl/T2TmAWOjg4eAzgJYB0sUdSklzSJYCpmZ0C+Fyv19/Z XcI0Go3j4XD4huQHkmcARu4+MrMhyRMz+ynpW6VSeb/20FtHh4eH1fl8vkNyW5KSJBnmef796Oho sPij/gJnsuj0ue80HgAAAABJRU5ErkJggg=="
+       id="image3" />
+    <path
+       d="m 43.952127,20.598809 c -2.099494,0.0022 -4.181493,0.776376 -5.663169,2.26461 L 11.108155,50.044224 c -1.4871421,1.481675 -2.262424,3.563673 -2.2646112,5.663169 a 7.9212192,7.9212192 0 0 0 7.9277792,7.92778 c 2.099495,-0.0022 4.181495,-0.776376 5.663169,-2.264611 L 49.615296,34.189757 c 1.487142,-1.481675 2.262425,-3.563673 2.264612,-5.663169 a 7.9212192,7.9212192 0 0 0 -7.927781,-7.927779 z"
+       fill="#e74b52"
+       id="path4"
+       style="stroke-width:1.09349" />
+    <path
+       d="m 17.903083,47.779612 -1.132853,1.132853 1.699278,1.698185 -1.132852,1.132852 -1.698185,-1.699278 -1.132852,1.132853 1.699279,1.699278 -1.699279,1.698186 1.132852,1.132852 1.698185,-1.699279 1.132852,1.132852 -1.699278,1.699279 1.132853,1.131759 1.699278,-1.698185 1.698185,1.698185 1.132852,-1.131759 -1.699278,-1.699279 1.132853,-1.132852 1.699278,1.699279 1.131759,-1.132852 -1.698185,-1.698186 1.698185,-1.699278 -1.131759,-1.132853 -1.699278,1.699278 -1.132853,-1.132852 1.699278,-1.698185 -1.133945,-1.132853 -1.698185,1.699279 z m 1.699278,3.96389 1.131759,1.132853 -1.131759,1.131759 -1.132853,-1.131759 z"
+       fill="#f9f9f9"
+       id="path5"
+       style="stroke-width:1.09349" />
+    <path
+       d="M 15.638471,7.1489195 V 9.413531 l 13.590948,9.343846 v -2.265706 z"
+       fill="#878787"
+       id="path6"
+       style="stroke-width:1.09349" />
+    <image
+       x="8.1043472"
+       y="20.68082"
+       width="42.645992"
+       height="21.869738"
+       image-rendering="optimizeQuality"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAUCAYAAAAOTSQ2AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAvdJREFUSIm9lltPI0cQhU919+AL 0jJ2IllWSHZ4jITywstu8sJP8z+DH2IBDwgQNxkjM7euOnmwx7FZNmIXQ0kllU5XS9+c6Zoe4IOD ZJtkfzqd/nJ/f79DskMyGY1G7nmvfCCUA7BX13ValmUeQnhS1SLGWBZFUQ0GgxqAiog2e8JHgdV1 fWBmPe990Wq1HEknIl5EnIjISi8awHeHI+lijF9JDkIIdYzRkfTeew/Aee8bMDZJkiJi7wq3APvb zH5TVQIQEXEAnIhIjNGZmYQQOJvNrKoq6/V6dnx8TJL07wgmRVH8A+B3AEiSBCSlAXPOiXMOJOGc 4+JV6mQy0f39fQPwPnAkJc/zr977PxaSkAT+G0AhKWYGAHTOKQAlGXu9XhyPx9bv9/nN+G4KDMDn Z0sNmFukBxBCCAFAIiLeOecBuBCCYNGwUbDHx8cvADIRAcm1dG7uhaoiSRIzMyOpqlo75yqSVZIk dZqmEYBt1LmHh4cDkp9VlU1iZQpVFS/VTXY6HU4mk+WzbmRaScrt7e2Bqu4B0PlXYj1WNHrvGWNU 772SjCGEaGb69PRkaZpaA7sR566vr/8ys90YY02yjjGu5aoGoCZZtVqtkmQZQihJlq1WqzKzeHNz Y5jfFHzz9XVxcfEngGYqlw6FEDA/63OtqTF3xUhGkqWZ5SGEmarOut3uE4BcRErgjTfE1dXVnqr2 ADw2QE3EGAHMv29VVUkzDAAYQlAAkWTlnCvMLO92u8Xl5WU1HA6rpvGnnTs5ORl473/d2tr6bk+z JiKSJEmjrTpXt9vtEkAJoMDcNb4J7u7u7lOe559eWut0Osu6KAppt9vf6ADMzHR7eztOJpOY53k1 HA7XwH4K7vT0tA2gnabpq/qn06ns7OysaSRpZtbv9xVABFA9B/thuKOjo5Bl2avPaZZly/r8/FwA YHd3l2dnZ8iyjAAMQHwJDPiBgRiNRu7w8JAA6tfuWY3xeLyEW0BTROz/9rzKucXfxEbje26txr81 Qvmvu5WH3AAAAABJRU5ErkJggg=="
+       id="image6" />
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+Changelog
+------------------------------
+Mimosa Dark - Conky Theme
+[ Leonis Themes Pack ] 
+
+by Closebox73
+
+Social
+X		: https://twitter.com/closebox73
+Discord	: https://discord.com/users/1115644269802311750
+Github	: https://github.com/closebox73
+Pling	: https://pling.com/u/closebox73x
+------------------------------
+
+v3.0
+date : 15 Dec 2023
+-	Add line draw_blended in conky config due transparent image issue in Gnome & KDE
+-	Change Background png to match with Calendar version
+-	Change some font 
+-	Some minor change
+
+
+v2.6
+date : 14 Jul 2023
+-	New weather-icon-text.sh
+-	Add Argument to ${battery_percent} variable
+-	Add cut command to playerctl variable
+-	Only available in one preset color
+
+
+v2.3
+date : 22 Feb 2023
+-	New weather.sh
+-	Add License
+-	Add Changelog file
+-	A few changes to the script
+-	Add Playerctl version
+-	Add Fahrenheit version
+
+
+v1.7
+date : 27 Nov 2022
+-	Add 5 preset colors variants
+
+
+v1.5
+date : 02 Oct 2022
+-	Add override_utf8_locale line
+-	A few changes to the script
+-	Minimize archive size
+
+
+v1.1
+date : 14 Aug 2022
+-	Add Light Version
+
+
+v1.0
+date : 30 Jul 2022
+-	Initial release

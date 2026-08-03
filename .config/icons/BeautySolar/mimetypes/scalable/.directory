@@ -1,0 +1,6 @@
+[Dolphin]
+SortOrder=1
+SortRole=destination
+Timestamp=2023,9,1,2,21,33.312
+Version=4
+VisibleRoles=CustomizedDetails,Details_text,Details_size,Details_modificationtime,Details_width,Details_height

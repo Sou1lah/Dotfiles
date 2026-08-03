@@ -1,0 +1,49 @@
+﻿⚪ Skyrim by ru5tyshark ⚪
+*** Updated ***
+New and improved, don't wait because there's now EVEN more!
+Comes in a handy multisized package for those of you who requested it + extras!
+I did say if enough people asked for it I would look into it, so here they are.
+64, 48, 32 and 24 pixel sizes (I had to breakout my magnifier to see the 24 pixel size lol).
+Added alternate busy, hand and working cursors + more.
+I didn't find any howtos on making them multisized anywhere (probably didn't look hard enough hah) so I just made a guess + trial & error but it seems to work ok on my mint & manjaro distros, haven't tested on anything else so YMMV.
+Good luck and as always, caveat emptor! ('-' )
+
+left_ptr (normal) cursor captured at 1920x1080 ingame resolution and the rest made to suit from the gui artwork and some screenies.
+
+All images / src material copyright Bethesda software.
+Fairly complete cursor set minus the more obscure cursors we hardly see these days (RIP gumby?).
+Feel free to resize / change anything to suit your needs but if you publish it as your own give Bethesda props & me a little credit.
+To give me a heads up:
+ru5tyshark at hotmail dot com
+
+-------------------------------------------------------------------------------------------------------------
+Instructions for install if you've downloaded this from the webpage
+1.Open:
+Skyrim-by-ru5tyshark-cursors.tar.bz2
+
+and extract it to the folder:
+/home/<your-username>/.icons
+
+Usually it's hidden, so show hidden files/folders in your file manager to see it, if you haven't done this already (if not there you'll have to create it).
+
+2. Now goto your cursor theme settings and select & or apply to use it (however you go about applying new cursor themes).
+If the theme isn't showing up, maybe something went wrong or you may need to log off & on again.
+
+This method may or may not be what will work with your distro, but usually will as most distros share the same folder structure (and if it doesn't it should). ('-* )
+If it does'nt work, reverse process and ask your favourite search engine or your neareset pengiuinista.
+
+*** Lefties don't worry, I got you covered.
+
+1. In the uncompressed Skryim... folder you'll find the 'lefties.tar.bz2' archive.
+Open and extract to the folder:
+cursors
+
+inside 'Skyrim-by-rustyshark-cursors' folder, overwriting all.
+
+2. Select another theme, apply it, then reslect this one, apply it & you should be good to go.
+
+I've anmiated 'left_ptr_watch' and 'watch' with a swirling smoke background.
+
+Thanks for the nice comments people, hope all the bases are covered now, we'll see lol.
+
+Enjoy! ('-' )

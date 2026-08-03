@@ -1,0 +1,591 @@
+/* -------------------------------------- */ 
+/* --------------PLUGINS!!!-------------- */ 
+/* -------------------------------------- */ 
+
+
+/*--------------------------------------*/
+/* Actions Button - Give it some space !*/
+/*--------------------------------------*/
+
+#actions-button label {
+padding-left: 5px;
+padding-right: 5px;
+}
+
+
+
+/*------------------*/
+/* Application Menu */
+/*------------------*/
+
+#applicationmenu-button {
+   font-weight: bold;
+   padding: 4px;
+   margin-left: 2px;
+   margin-top: 2px;
+   margin-bottom: 2px;
+   color: @theme_fg_color;
+   border-top: 1px solid @button_bg_color;
+   border-left: 1px solid @button_bg_color;
+   border-right: 1px solid @borders;
+   border-bottom: 1px solid @borders; 
+   border-radius: 0px;
+   background-color: @button_bg_color;
+   box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow,
+   0 -1px @light_shadow, 0 -1px @bg_color; }
+
+#applicationmenu-button:checked {
+   border: none;
+   box-shadow: none;
+   border-top: 1px solid @borders;
+   border-left: 1px solid @borders;
+   border-bottom: 1px solid @light_shadow;
+   border-right: 1px solid @light_shadow;
+   box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset,
+   0 -1px @light_shadow, 0 -1px @bg_color;
+   background-image: url("assets/scrollbar_trough.png");
+   color: @toolbar_fg_color;
+   background-color: @button_bg_color; }
+
+#applicationmenu-button box {
+   padding: 3px; }
+
+
+#XfcePanelWindow.deskbar #applicationmenu-button {
+    padding: 1px;
+    margin: 1px;
+}
+
+#applicationmenu-button label {
+   margin-top: 2px;
+ }
+
+/*--------------*/
+/* Clock Plugin */
+/*--------------*/
+
+#XfcePanelWindow.deskbar #clock-button,
+#XfcePanelWindow.deskbar #clock-button:hover,
+#XfcePanelWindow.deskbar #clock-button:checked {
+    margin: 2px;
+    padding-right: 2px;
+    padding-left: 2px;
+    box-shadow: none;
+    border-top: 1px solid @dark_shadow;
+    border-right: 1px solid @light_shadow;
+    border-left: 1px solid @dark_shadow;
+    border-bottom: 1px solid @light_shadow;
+    background-image: none;
+    font-weight: normal;
+}
+
+#XfcePanelWindow.deskbar #clock-button label,
+#XfcePanelWindow.deskbar #clock-button:hover label,
+#XfcePanelWindow.deskbar #clock-button:active label,
+#XfcePanelWindow.deskbar #clock-button:checked label {
+  margin: -1px;
+}
+
+#XfcePanelWindow #clock-button,
+#XfcePanelWindow #clock-button:hover,
+#XfcePanelWindow #clock-button:checked {
+   margin-left: -2px;
+   padding-right: 3px;
+   margin-top: 3px;
+   margin-bottom: 2px;
+   box-shadow: none;
+   border-top: 1px solid @dark_shadow;
+   border-right: 1px solid @light_shadow;
+   background-image: none;
+   font-weight: normal;
+   border-bottom: 1px solid @light_shadow; }
+
+#XfcePanelWindow #clock-button label,
+#XfcePanelWindow #clock-button:hover label,
+#XfcePanelWindow #clock-button:checked label {
+    margin-left: 8px; 
+    margin-right: 8px; 
+}
+
+
+/*-----------------*/
+/* Docklike Plugin */
+/*-----------------*/
+
+/* Draw a little fake handle, but only on a horizontal panel! */
+#docklike-plugin.horizontal {
+    border-left: 11px solid;
+    border-image: url("assets/handle.png");
+    border-image-slice: 8 8 6 22;
+}
+
+/* --------------Unpressed Button Effect -------------- */ 
+#docklike-plugin.horizontal .group, #docklike-plugin.vertical .group {
+    margin-top: 1px;
+    border-radius: 0px;
+    border-top: 1px solid @button_bg_color;
+    border-left: 1px solid @button_bg_color;
+    border-right: 1px solid @borders;
+    border-bottom: 1px solid @borders;
+    border-radius: 0px;
+    background-color: @button_bg_color;
+    box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow;
+    outline-offset: -4px;
+}
+
+/* --------------Depressed Button Effect -------------- */ 
+#docklike-plugin.horizontal .active_group, #docklike-plugin.vertical .active_group {
+    border-radius: 0px;
+    border-top: 1px solid @borders;
+    border-left: 1px solid @borders;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+    background-image: url("assets/scrollbar_trough.png");
+    color: @toolbar_fg_color;
+    background-color: @button_bg_color;
+}
+
+#docklike-plugin.horizontal .group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#docklike-plugin.vertical .group {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+
+
+/*--------------------*/
+/* Pulse Audio Plugin */
+/*--------------------*/
+
+/* Blend between Clock/DateTime and System Tray: Horizontal panels, Windows style. */
+#pulseaudio-button {
+    box-shadow: 1px 3px @dark_shadow inset, 0 2px @bg_color inset, 0 -1px @light_shadow inset;
+    border-radius: 0px;
+    margin-top: 0px;
+    padding-top: 2px;
+    margin-left: -3px;
+    margin-right: -2px;
+    padding-left: 0px;
+    border-right: none;
+    padding-bottom: 0px;
+    margin-bottom: 1px;
+    background-color: @bg_color;
+}
+
+#pulseaudio-button .horizontal > image {
+    margin-top: 3px;
+}
+
+/* Make inert on hover... */
+#pulseaudio-button:hover  {
+    background-image: none;
+    background-color: transparent;
+}
+
+/* Make inert on check... */
+#pulseaudio-button:checked {
+    margin-bottom: 1px;
+    border-top: 1px solid @bg_color;
+    border-bottom: 1px solid @bg_color;
+    background-image: none;
+    background-color: transparent;
+}
+
+/* Overlay hacks for Deskbar to compensate for class restrictions. Not Perfect! */
+
+#pulseaudio-button .vertical > image {
+    margin-left: 1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    border-top: 1px solid @button_bg_color;
+    border-left: 1px solid @button_bg_color;
+    border-right: 1px solid @borders;
+    border-bottom: 1px solid @borders;
+    border-radius: 0px;
+    background-color: @button_bg_color;
+    box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow;
+    outline-offset: -4px;
+}
+
+#pulseaudio-button:active .vertical > image, #pulseaudio-button:checked .vertical > image {
+    border-radius: 0px;
+    border-top: 1px solid @borders;
+    border-left: 1px solid @borders;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+    background-image: url("assets/scrollbar_trough.png");
+    color: @toolbar_fg_color;
+    background-color: @button_bg_color;
+}
+
+
+
+/*---------------------*/
+/* Show Desktop Plugin */
+/*---------------------*/
+
+/* Flat hover effect */
+#showdesktop-button:hover {
+    margin: 1px;
+    border: 1px solid @button_bg_color;
+    color: @toolbar_fg_color;
+    border-color: @button_bg_color;
+    background-color: @button_bg_color;
+    box-shadow: inset -1px -1px @dark_shadow, inset 1px 1px @light_shadow;
+}
+
+/* Checked effect */
+#showdesktop-button:active, #showdesktop-button:checked {
+    margin: 1px;
+    border-radius: 0px;
+    border-top: 1px solid @borders;
+    border-left: 1px solid @borders;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+    background-image: url("assets/scrollbar_trough.png");
+    color: @toolbar_fg_color;
+    background-color: @button_bg_color;
+}
+
+/* Turn into a 1bpp arrow. */
+#showdesktop-button image {
+    -gtk-icon-transform: scale(0);
+    background-image:url('assets/arrow_down.png');
+    background-size:17px;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+
+
+/*-----------------*/
+/* DateTime Plugin */
+/*-----------------*/
+
+/* Make DateTime plugin look like Clock (i.e., right side of System Tray) */
+#datetime-1 button, #datetime-2 button, #datetime-3 button, #datetime-4 button,
+#datetime-5 button, #datetime-6 button, #datetime-7 button, #datetime-8 button,
+#datetime-9 button, #datetime-10 button, #datetime-11 button, #datetime-12 button,
+#datetime-13 button, #datetime-14 button, #datetime-15 button, 
+#datetime-16 button, #datetime-17 button, #datetime-18 button, #datetime-19 button,
+#datetime-20 button, #datetime-21 button, #datetime-22 button, #datetime-23 button, 
+#datetime-24 button, #datetime-25 button, #datetime-26 button, #datetime-27 button, 
+#datetime-28 button, #datetime-29 button, #datetime-30 button, #datetime-31 button, 
+#datetime-32 button, #datetime-33 button, #datetime-34 button, #datetime-35 button, 
+#datetime-36 button, #datetime-37 button, #datetime-38 button, #datetime-39 button, 
+#datetime-40 button, #datetime-41 button, #datetime-42 button, #datetime-43 button,
+#datetime-44 button, #datetime-45 button, #datetime-46 button, #datetime-47 button, 
+#datetime-48 button, #datetime-49 button, #datetime-50 button, #datetime-51 button, 
+#datetime-52 button, #datetime-53 button, #datetime-54 button, #datetime-55 button, 
+#datetime-56 button, #datetime-57 button, #datetime-58 button, #datetime-59 button, 
+#datetime-60 button, #datetime-61 button, #datetime-62 button, #datetime-63 button, 
+#datetime-64 button, #datetime-65 button, #datetime-66 button, #datetime-67 button,
+#datetime-68 button, #datetime-69 button, #datetime-70 button, #datetime-71 button, 
+#datetime-72 button, #datetime-73 button, #datetime-74 button, #datetime-75 button, 
+#datetime-76 button, #datetime-77 button, #datetime-78 button, #datetime-79 button, 
+#datetime-80 button, #datetime-81 button, #datetime-82 button, #datetime-83 button, 
+#datetime-84 button, #datetime-85 button, #datetime-86 button, #datetime-87 button, 
+#datetime-88 button, #datetime-89 button, #datetime-90 button, #datetime-91 button,
+#datetime-92 button, #datetime-93 button, #datetime-94 button, #datetime-95 button, 
+#datetime-96 button, #datetime-97 button, #datetime-98 button, #datetime-99 button {
+    margin-left: -2px;
+    padding-right: 3px;
+    margin-right: 2px;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    box-shadow: none;
+    border-top: 1px solid @dark_shadow;
+    border-right: 1px solid @light_shadow;
+    background-image: none;
+    font-weight: normal;
+    border-bottom: 1px solid @light_shadow;
+}
+
+#datetime-1 button label, #datetime-2 button label, #datetime-3 button label, #datetime-4 button label,
+#datetime-5 button label, #datetime-6 button label, #datetime-7 button label, #datetime-8 button label,
+#datetime-9 button label, #datetime-10 button label, #datetime-11 button label, #datetime-12 button label,
+#datetime-13 button label, #datetime-14 button label, #datetime-15 button label, 
+#datetime-16 button label, #datetime-17 button label, #datetime-18 button label, #datetime-19 button label,
+#datetime-20 button label, #datetime-21 button label, #datetime-22 button label, #datetime-23 button label, 
+#datetime-24 button label, #datetime-25 button label, #datetime-26 button label, #datetime-27 button label, 
+#datetime-28 button label, #datetime-29 button label, #datetime-30 button label, #datetime-31 button label, 
+#datetime-32 button label, #datetime-33 button label, #datetime-34 button label, #datetime-35 button label, 
+#datetime-36 button label, #datetime-37 button label, #datetime-38 button label, #datetime-39 button label, 
+#datetime-40 button label, #datetime-41 button label, #datetime-42 button label, #datetime-43 button label,
+#datetime-44 button label, #datetime-45 button label, #datetime-46 button label, #datetime-47 button label, 
+#datetime-48 button label, #datetime-49 button label, #datetime-50 button label, #datetime-51 button label, 
+#datetime-52 button label, #datetime-53 button label, #datetime-54 button label, #datetime-55 button label, 
+#datetime-56 button label, #datetime-57 button label, #datetime-58 button label, #datetime-59 button label, 
+#datetime-60 button label, #datetime-61 button label, #datetime-62 button label, #datetime-63 button label, 
+#datetime-64 button label, #datetime-65 button label, #datetime-66 button label, #datetime-67 button label,
+#datetime-68 button label, #datetime-69 button label, #datetime-70 button label, #datetime-71 button label, 
+#datetime-72 button label, #datetime-73 button label, #datetime-74 button label, #datetime-75 button label, 
+#datetime-76 button label, #datetime-77 button label, #datetime-78 button label, #datetime-79 button label, 
+#datetime-80 button label, #datetime-81 button label, #datetime-82 button label, #datetime-83 button label, 
+#datetime-84 button label, #datetime-85 button label, #datetime-86 button label, #datetime-87 button label, 
+#datetime-88 button label, #datetime-89 button label, #datetime-90 button label, #datetime-91 button label,
+#datetime-92 button label, #datetime-93 button label, #datetime-94 button label, #datetime-95 button label, 
+#datetime-96 button label, #datetime-97 button label, #datetime-98 button label, #datetime-99 button label {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    margin-right: 8px; 
+    margin-left: 8px; 
+}
+
+
+/*-----------------------------*/
+/* Generic Flatbutton Behavior */
+/*-----------------------------*/
+
+#xfce4-notification-plugin image, #xfce4-power-manager-plugin image, #actions-button image, #xfce-panel-button image,
+#directorymenu-button, #windowmenu-button {
+    padding: 3px;
+}
+
+
+/* --------------Depressed Button Effect -------------- */
+#xfce4-notification-plugin:checked, #xfce4-power-manager-plugin:checked, #actions-button:active, #actions-button:checked, #xfce-panel-button:active,
+#directorymenu-button:active, #directorymenu-button:checked, #windowmenu-button:active, #windowmenu-button:checked,
+#weather-1 button:active, #weather-2 button:active, #weather-3 button:active, #weather-4 button:active,
+#weather-5 button:active, #weather-6 button:active, #weather-7 button:active, #weather-8 button:active,
+#weather-9 button:active, #weather-10 button:active, #weather-11 button:active, #weather-12 button:active,
+#weather-13 button:active, #weather-14 button:active, #weather-15 button:active, 
+#weather-16 button:active, #weather-17 button:active, #weather-18 button:active, #weather-19 button:active,
+#weather-20 button:active, #weather-21 button:active, #weather-22 button:active, #weather-23 button:active, 
+#weather-24 button:active, #weather-25 button:active, #weather-26 button:active, #weather-27 button:active, 
+#weather-28 button:active, #weather-29 button:active, #weather-30 button:active, #weather-31 button:active, 
+#weather-32 button:active, #weather-33 button:active, #weather-34 button:active, #weather-35 button:active, 
+#weather-36 button:active, #weather-37 button:active, #weather-38 button:active, #weather-39 button:active, 
+#weather-40 button:active, #weather-41 button:active, #weather-42 button:active, #weather-43 button:active,
+#weather-44 button:active, #weather-45 button:active, #weather-46 button:active, #weather-47 button:active, 
+#weather-48 button:active, #weather-49 button:active, #weather-50 button:active, #weather-51 button:active, 
+#weather-52 button:active, #weather-53 button:active, #weather-54 button:active, #weather-55 button:active, 
+#weather-56 button:active, #weather-57 button:active, #weather-58 button:active, #weather-59 button:active, 
+#weather-60 button:active, #weather-61 button:active, #weather-62 button:active, #weather-63 button:active, 
+#weather-64 button:active, #weather-65 button:active, #weather-66 button:active, #weather-67 button:active,
+#weather-68 button:active, #weather-69 button:active, #weather-70 button:active, #weather-71 button:active, 
+#weather-72 button:active, #weather-73 button:active, #weather-74 button:active, #weather-75 button:active, 
+#weather-76 button:active, #weather-77 button:active, #weather-78 button:active, #weather-79 button:active, 
+#weather-80 button:active, #weather-81 button:active, #weather-82 button:active, #weather-83 button:active, 
+#weather-84 button:active, #weather-85 button:active, #weather-86 button:active, #weather-87 button:active, 
+#weather-88 button:active, #weather-89 button:active, #weather-90 button:active, #weather-91 button:active,
+#weather-92 button:active, #weather-93 button:active, #weather-94 button:active, #weather-95 button:active, 
+#weather-96 button:active, #weather-97 button:active, #weather-98 button:active, #weather-99 button:active,
+#weather-1 button:checked, #weather-2 button:checked, #weather-3 button:checked, #weather-4 button:checked,
+#weather-5 button:checked, #weather-6 button:checked, #weather-7 button:checked, #weather-8 button:checked,
+#weather-9 button:checked, #weather-10 button:checked, #weather-11 button:checked, #weather-12 button:checked,
+#weather-13 button:checked, #weather-14 button:checked, #weather-15 button:checked, 
+#weather-16 button:checked, #weather-17 button:checked, #weather-18 button:checked, #weather-19 button:checked,
+#weather-20 button:checked, #weather-21 button:checked, #weather-22 button:checked, #weather-23 button:checked, 
+#weather-24 button:checked, #weather-25 button:checked, #weather-26 button:checked, #weather-27 button:checked, 
+#weather-28 button:checked, #weather-29 button:checked, #weather-30 button:checked, #weather-31 button:checked, 
+#weather-32 button:checked, #weather-33 button:checked, #weather-34 button:checked, #weather-35 button:checked, 
+#weather-36 button:checked, #weather-37 button:checked, #weather-38 button:checked, #weather-39 button:checked, 
+#weather-40 button:checked, #weather-41 button:checked, #weather-42 button:checked, #weather-43 button:checked,
+#weather-44 button:checked, #weather-45 button:checked, #weather-46 button:checked, #weather-47 button:checked, 
+#weather-48 button:checked, #weather-49 button:checked, #weather-50 button:checked, #weather-51 button:checked, 
+#weather-52 button:checked, #weather-53 button:checked, #weather-54 button:checked, #weather-55 button:checked, 
+#weather-56 button:checked, #weather-57 button:checked, #weather-58 button:checked, #weather-59 button:checked, 
+#weather-60 button:checked, #weather-61 button:checked, #weather-62 button:checked, #weather-63 button:checked, 
+#weather-64 button:checked, #weather-65 button:checked, #weather-66 button:checked, #weather-67 button:checked,
+#weather-68 button:checked, #weather-69 button:checked, #weather-70 button:checked, #weather-71 button:checked, 
+#weather-72 button:checked, #weather-73 button:checked, #weather-74 button:checked, #weather-75 button:checked, 
+#weather-76 button:checked, #weather-77 button:checked, #weather-78 button:checked, #weather-79 button:checked, 
+#weather-80 button:checked, #weather-81 button:checked, #weather-82 button:checked, #weather-83 button:checked, 
+#weather-84 button:checked, #weather-85 button:checked, #weather-86 button:checked, #weather-87 button:checked, 
+#weather-88 button:checked, #weather-89 button:checked, #weather-90 button:checked, #weather-91 button:checked,
+#weather-92 button:checked, #weather-93 button:checked, #weather-94 button:checked, #weather-95 button:checked, 
+#weather-96 button:checked, #weather-97 button:checked, #weather-98 button:checked, #weather-99 button:checked,
+#xkb-1 button:active, #xkb-2 button:active, #xkb-3 button:active, #xkb-4 button:active,
+#xkb-5 button:active, #xkb-6 button:active, #xkb-7 button:active, #xkb-8 button:active,
+#xkb-9 button:active, #xkb-10 button:active, #xkb-11 button:active, #xkb-12 button:active,
+#xkb-13 button:active, #xkb-14 button:active, #xkb-15 button:active, 
+#xkb-16 button:active, #xkb-17 button:active, #xkb-18 button:active, #xkb-19 button:active,
+#xkb-20 button:active, #xkb-21 button:active, #xkb-22 button:active, #xkb-23 button:active, 
+#xkb-24 button:active, #xkb-25 button:active, #xkb-26 button:active, #xkb-27 button:active, 
+#xkb-28 button:active, #xkb-29 button:active, #xkb-30 button:active, #xkb-31 button:active, 
+#xkb-32 button:active, #xkb-33 button:active, #xkb-34 button:active, #xkb-35 button:active, 
+#xkb-36 button:active, #xkb-37 button:active, #xkb-38 button:active, #xkb-39 button:active, 
+#xkb-40 button:active, #xkb-41 button:active, #xkb-42 button:active, #xkb-43 button:active,
+#xkb-44 button:active, #xkb-45 button:active, #xkb-46 button:active, #xkb-47 button:active, 
+#xkb-48 button:active, #xkb-49 button:active, #xkb-50 button:active, #xkb-51 button:active, 
+#xkb-52 button:active, #xkb-53 button:active, #xkb-54 button:active, #xkb-55 button:active, 
+#xkb-56 button:active, #xkb-57 button:active, #xkb-58 button:active, #xkb-59 button:active, 
+#xkb-60 button:active, #xkb-61 button:active, #xkb-62 button:active, #xkb-63 button:active, 
+#xkb-64 button:active, #xkb-65 button:active, #xkb-66 button:active, #xkb-67 button:active,
+#xkb-68 button:active, #xkb-69 button:active, #xkb-70 button:active, #xkb-71 button:active, 
+#xkb-72 button:active, #xkb-73 button:active, #xkb-74 button:active, #xkb-75 button:active, 
+#xkb-76 button:active, #xkb-77 button:active, #xkb-78 button:active, #xkb-79 button:active, 
+#xkb-80 button:active, #xkb-81 button:active, #xkb-82 button:active, #xkb-83 button:active, 
+#xkb-84 button:active, #xkb-85 button:active, #xkb-86 button:active, #xkb-87 button:active, 
+#xkb-88 button:active, #xkb-89 button:active, #xkb-90 button:active, #xkb-91 button:active,
+#xkb-92 button:active, #xkb-93 button:active, #xkb-94 button:active, #xkb-95 button:active, 
+#xkb-96 button:active, #xkb-97 button:active, #xkb-98 button:active, #xkb-99 button:active {
+    border-radius: 0px;
+    border-top: 1px solid @borders;
+    border-left: 1px solid @borders;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+    background-image: url("assets/scrollbar_trough.png");
+    color: @toolbar_fg_color;
+    background-color: @button_bg_color;
+}
+
+
+/* Notes plugin. Can't figure out what the lowest level of yellow is, so clip margin to hide it and make it act like a slightly weird flat button. */
+#xfce4-notes-plugin-1 button, #xfce4-notes-plugin-2 button, #xfce4-notes-plugin-3 button, #xfce4-notes-plugin-4 button,
+#xfce4-notes-plugin-5 button, #xfce4-notes-plugin-6 button, #xfce4-notes-plugin-7 button, #xfce4-notes-plugin-8 button,
+#xfce4-notes-plugin-9 button, #xfce4-notes-plugin-10 button, #xfce4-notes-plugin-11 button, #xfce4-notes-plugin-12 button,
+#xfce4-notes-plugin-13 button, #xfce4-notes-plugin-14 button, #xfce4-notes-plugin-15 button, #xfce4-notes-plugin-16 button,
+#xfce4-notes-plugin-17 button, #xfce4-notes-plugin-18 button, #xfce4-notes-plugin-19 button, #xfce4-notes-plugin-20 button,
+#xfce4-notes-plugin-21 button, #xfce4-notes-plugin-22 button, #xfce4-notes-plugin-23 button, #xfce4-notes-plugin-24 button,
+#xfce4-notes-plugin-25 button, #xfce4-notes-plugin-26 button, #xfce4-notes-plugin-27 button, #xfce4-notes-plugin-28 button,
+#xfce4-notes-plugin-29 button, #xfce4-notes-plugin-30 button, #xfce4-notes-plugin-31 button, #xfce4-notes-plugin-32 button,
+#xfce4-notes-plugin-33 button, #xfce4-notes-plugin-34 button, #xfce4-notes-plugin-35 button, #xfce4-notes-plugin-36 button,
+#xfce4-notes-plugin-37 button, #xfce4-notes-plugin-38 button, #xfce4-notes-plugin-39 button, #xfce4-notes-plugin-40 button,
+#xfce4-notes-plugin-41 button, #xfce4-notes-plugin-42 button, #xfce4-notes-plugin-43 button, #xfce4-notes-plugin-44 button,
+#xfce4-notes-plugin-45 button, #xfce4-notes-plugin-46 button, #xfce4-notes-plugin-47 button, #xfce4-notes-plugin-48 button,
+#xfce4-notes-plugin-49 button, #xfce4-notes-plugin-50 button, #xfce4-notes-plugin-51 button, #xfce4-notes-plugin-52 button,
+#xfce4-notes-plugin-53 button, #xfce4-notes-plugin-54 button, #xfce4-notes-plugin-55 button, #xfce4-notes-plugin-56 button,
+#xfce4-notes-plugin-57 button, #xfce4-notes-plugin-58 button, #xfce4-notes-plugin-59 button, #xfce4-notes-plugin-60 button,
+#xfce4-notes-plugin-61 button, #xfce4-notes-plugin-62 button, #xfce4-notes-plugin-63 button, #xfce4-notes-plugin-64 button,
+#xfce4-notes-plugin-65 button, #xfce4-notes-plugin-66 button, #xfce4-notes-plugin-67 button, #xfce4-notes-plugin-68 button,
+#xfce4-notes-plugin-69 button, #xfce4-notes-plugin-70 button, #xfce4-notes-plugin-71 button, #xfce4-notes-plugin-72 button,
+#xfce4-notes-plugin-73 button, #xfce4-notes-plugin-74 button, #xfce4-notes-plugin-75 button, #xfce4-notes-plugin-76 button,
+#xfce4-notes-plugin-77 button, #xfce4-notes-plugin-78 button, #xfce4-notes-plugin-79 button, #xfce4-notes-plugin-80 button,
+#xfce4-notes-plugin-81 button, #xfce4-notes-plugin-82 button, #xfce4-notes-plugin-83 button, #xfce4-notes-plugin-84 button,
+#xfce4-notes-plugin-85 button, #xfce4-notes-plugin-86 button, #xfce4-notes-plugin-87 button, #xfce4-notes-plugin-88 button,
+#xfce4-notes-plugin-89 button, #xfce4-notes-plugin-90 button, #xfce4-notes-plugin-91 button, #xfce4-notes-plugin-92 button,
+#xfce4-notes-plugin-93 button, #xfce4-notes-plugin-94 button, #xfce4-notes-plugin-95 button, #xfce4-notes-plugin-96 button,
+#xfce4-notes-plugin-97 button, #xfce4-notes-plugin-98 button, #xfce4-notes-plugin-99 button {
+    margin: -1px;
+    background-color: @button_bg_color;
+}
+
+/* Smart Bookmarks plugin: Give it some space on each side of panel */
+#smartbookmark-1 box, #smartbookmark-2 box, #smartbookmark-3 box, #smartbookmark-4 box,
+#smartbookmark-5 box, #smartbookmark-6 box, #smartbookmark-7 box, #smartbookmark-8 box,
+#smartbookmark-9 box, #smartbookmark-10 box, #smartbookmark-11 box, #smartbookmark-12 box,
+#smartbookmark-13 box, #smartbookmark-14 box, #smartbookmark-15 box, #smartbookmark-16 box,
+#smartbookmark-17 box, #smartbookmark-18 box, #smartbookmark-19 box, #smartbookmark-20 box,
+#smartbookmark-21 box, #smartbookmark-22 box, #smartbookmark-23 box, #smartbookmark-24 box,
+#smartbookmark-25 box, #smartbookmark-26 box, #smartbookmark-27 box, #smartbookmark-28 box,
+#smartbookmark-29 box, #smartbookmark-30 box, #smartbookmark-31 box, #smartbookmark-32 box,
+#smartbookmark-33 box, #smartbookmark-34 box, #smartbookmark-35 box, #smartbookmark-36 box,
+#smartbookmark-37 box, #smartbookmark-38 box, #smartbookmark-39 box, #smartbookmark-40 box,
+#smartbookmark-41 box, #smartbookmark-42 box, #smartbookmark-43 box, #smartbookmark-44 box,
+#smartbookmark-45 box, #smartbookmark-46 box, #smartbookmark-47 box, #smartbookmark-48 box,
+#smartbookmark-49 box, #smartbookmark-50 box, #smartbookmark-51 box, #smartbookmark-52 box,
+#smartbookmark-53 box, #smartbookmark-54 box, #smartbookmark-55 box, #smartbookmark-56 box,
+#smartbookmark-57 box, #smartbookmark-58 box, #smartbookmark-59 box, #smartbookmark-60 box,
+#smartbookmark-61 box, #smartbookmark-62 box, #smartbookmark-63 box, #smartbookmark-64 box,
+#smartbookmark-65 box, #smartbookmark-66 box, #smartbookmark-67 box, #smartbookmark-68 box,
+#smartbookmark-69 box, #smartbookmark-70 box, #smartbookmark-71 box, #smartbookmark-72 box,
+#smartbookmark-73 box, #smartbookmark-74 box, #smartbookmark-75 box, #smartbookmark-76 box,
+#smartbookmark-77 box, #smartbookmark-78 box, #smartbookmark-79 box, #smartbookmark-80 box,
+#smartbookmark-81 box, #smartbookmark-82 box, #smartbookmark-83 box, #smartbookmark-84 box,
+#smartbookmark-85 box, #smartbookmark-86 box, #smartbookmark-87 box, #smartbookmark-88 box,
+#smartbookmark-89 box, #smartbookmark-90 box, #smartbookmark-91 box, #smartbookmark-92 box,
+#smartbookmark-93 box, #smartbookmark-94 box, #smartbookmark-95 box, #smartbookmark-96 box,
+#smartbookmark-97 box, #smartbookmark-98 box, #smartbookmark-99 box {
+padding-left: 2px;
+padding-right: 2px;
+}
+
+/* Window Buttons to emulate Windows Explorer bar behavior */
+#tasklist-1 button, #tasklist-2 button, #tasklist-3 button, #tasklist-4 button,
+#tasklist-5 button, #tasklist-6 button, #tasklist-7 button, #tasklist-8 button,
+#tasklist-9 button, #tasklist-10 button, #tasklist-11 button, #tasklist-12 button,
+#tasklist-13 button, #tasklist-14 button, #tasklist-15 button, 
+#tasklist-16 button, #tasklist-17 button, #tasklist-18 button, #tasklist-19 button,
+#tasklist-20 button, #tasklist-21 button, #tasklist-22 button, #tasklist-23 button, 
+#tasklist-24 button, #tasklist-25 button, #tasklist-26 button, #tasklist-27 button, 
+#tasklist-28 button, #tasklist-29 button, #tasklist-30 button, #tasklist-31 button, 
+#tasklist-32 button, #tasklist-33 button, #tasklist-34 button, #tasklist-35 button, 
+#tasklist-36 button, #tasklist-37 button, #tasklist-38 button, #tasklist-39 button, 
+#tasklist-40 button, #tasklist-41 button, #tasklist-42 button, #tasklist-43 button,
+#tasklist-44 button, #tasklist-45 button, #tasklist-46 button, #tasklist-47 button, 
+#tasklist-48 button, #tasklist-49 button, #tasklist-50 button, #tasklist-51 button, 
+#tasklist-52 button, #tasklist-53 button, #tasklist-54 button, #tasklist-55 button, 
+#tasklist-56 button, #tasklist-57 button, #tasklist-58 button, #tasklist-59 button, 
+#tasklist-60 button, #tasklist-61 button, #tasklist-62 button, #tasklist-63 button, 
+#tasklist-64 button, #tasklist-65 button, #tasklist-66 button, #tasklist-67 button,
+#tasklist-68 button, #tasklist-69 button, #tasklist-70 button, #tasklist-71 button, 
+#tasklist-72 button, #tasklist-73 button, #tasklist-74 button, #tasklist-75 button, 
+#tasklist-76 button, #tasklist-77 button, #tasklist-78 button, #tasklist-79 button, 
+#tasklist-80 button, #tasklist-81 button, #tasklist-82 button, #tasklist-83 button, 
+#tasklist-84 button, #tasklist-85 button, #tasklist-86 button, #tasklist-87 button, 
+#tasklist-88 button, #tasklist-89 button, #tasklist-90 button, #tasklist-91 button,
+#tasklist-92 button, #tasklist-93 button, #tasklist-94 button, #tasklist-95 button, 
+#tasklist-96 button, #tasklist-97 button, #tasklist-98 button, #tasklist-99 button {
+    margin-left: 1px; 
+    margin-right: 1px; 
+    margin-top: 2px; 
+    margin-bottom: 2px; }
+
+#tasklist-1 button image, #tasklist-2 button image, #tasklist-3 button image, #tasklist-4 button image,
+#tasklist-5 button image, #tasklist-6 button image, #tasklist-7 button image, #tasklist-8 button image,
+#tasklist-9 button image, #tasklist-10 button image, #tasklist-11 button image, #tasklist-12 button image,
+#tasklist-13 button image, #tasklist-14 button image, #tasklist-15 button image, 
+#tasklist-16 button image, #tasklist-17 button image, #tasklist-18 button image, #tasklist-19 button image,
+#tasklist-20 button image, #tasklist-21 button image, #tasklist-22 button image, #tasklist-23 button image, 
+#tasklist-24 button image, #tasklist-25 button image, #tasklist-26 button image, #tasklist-27 button image, 
+#tasklist-28 button image, #tasklist-29 button image, #tasklist-30 button image, #tasklist-31 button image, 
+#tasklist-32 button image, #tasklist-33 button image, #tasklist-34 button image, #tasklist-35 button image, 
+#tasklist-36 button image, #tasklist-37 button image, #tasklist-38 button image, #tasklist-39 button image, 
+#tasklist-40 button image, #tasklist-41 button image, #tasklist-42 button image, #tasklist-43 button image,
+#tasklist-44 button image, #tasklist-45 button image, #tasklist-46 button image, #tasklist-47 button image, 
+#tasklist-48 button image, #tasklist-49 button image, #tasklist-50 button image, #tasklist-51 button image, 
+#tasklist-52 button image, #tasklist-53 button image, #tasklist-54 button image, #tasklist-55 button image, 
+#tasklist-56 button image, #tasklist-57 button image, #tasklist-58 button image, #tasklist-59 button image, 
+#tasklist-60 button image, #tasklist-61 button image, #tasklist-62 button image, #tasklist-63 button image, 
+#tasklist-64 button image, #tasklist-65 button image, #tasklist-66 button image, #tasklist-67 button image,
+#tasklist-68 button image, #tasklist-69 button image, #tasklist-70 button image, #tasklist-71 button image, 
+#tasklist-72 button image, #tasklist-73 button image, #tasklist-74 button image, #tasklist-75 button image, 
+#tasklist-76 button image, #tasklist-77 button image, #tasklist-78 button image, #tasklist-79 button image, 
+#tasklist-80 button image, #tasklist-81 button image, #tasklist-82 button image, #tasklist-83 button image, 
+#tasklist-84 button image, #tasklist-85 button image, #tasklist-86 button image, #tasklist-87 button image, 
+#tasklist-88 button image, #tasklist-89 button image, #tasklist-90 button image, #tasklist-91 button image,
+#tasklist-92 button image, #tasklist-93 button image, #tasklist-94 button image, #tasklist-95 button image, 
+#tasklist-96 button image, #tasklist-97 button image, #tasklist-98 button image, #tasklist-99 button image {
+    margin-left: 0px; }
+
+#tasklist-1 button label, #tasklist-2 button label, #tasklist-3 button label, #tasklist-4 button label,
+#tasklist-5 button label, #tasklist-6 button label, #tasklist-7 button label, #tasklist-8 button label,
+#tasklist-9 button label, #tasklist-10 button label, #tasklist-11 button label, #tasklist-12 button label,
+#tasklist-13 button label, #tasklist-14 button label, #tasklist-15 button label, 
+#tasklist-16 button label, #tasklist-17 button label, #tasklist-18 button label, #tasklist-19 button label,
+#tasklist-20 button label, #tasklist-21 button label, #tasklist-22 button label, #tasklist-23 button label, 
+#tasklist-24 button label, #tasklist-25 button label, #tasklist-26 button label, #tasklist-27 button label, 
+#tasklist-28 button label, #tasklist-29 button label, #tasklist-30 button label, #tasklist-31 button label, 
+#tasklist-32 button label, #tasklist-33 button label, #tasklist-34 button label, #tasklist-35 button label, 
+#tasklist-36 button label, #tasklist-37 button label, #tasklist-38 button label, #tasklist-39 button label, 
+#tasklist-40 button label, #tasklist-41 button label, #tasklist-42 button label, #tasklist-43 button label,
+#tasklist-44 button label, #tasklist-45 button label, #tasklist-46 button label, #tasklist-47 button label, 
+#tasklist-48 button label, #tasklist-49 button label, #tasklist-50 button label, #tasklist-51 button label, 
+#tasklist-52 button label, #tasklist-53 button label, #tasklist-54 button label, #tasklist-55 button label, 
+#tasklist-56 button label, #tasklist-57 button label, #tasklist-58 button label, #tasklist-59 button label, 
+#tasklist-60 button label, #tasklist-61 button label, #tasklist-62 button label, #tasklist-63 button label, 
+#tasklist-64 button label, #tasklist-65 button label, #tasklist-66 button label, #tasklist-67 button label,
+#tasklist-68 button label, #tasklist-69 button label, #tasklist-70 button label, #tasklist-71 button label, 
+#tasklist-72 button label, #tasklist-73 button label, #tasklist-74 button label, #tasklist-75 button label, 
+#tasklist-76 button label, #tasklist-77 button label, #tasklist-78 button label, #tasklist-79 button label, 
+#tasklist-80 button label, #tasklist-81 button label, #tasklist-82 button label, #tasklist-83 button label, 
+#tasklist-84 button label, #tasklist-85 button label, #tasklist-86 button label, #tasklist-87 button label, 
+#tasklist-88 button label, #tasklist-89 button label, #tasklist-90 button label, #tasklist-91 button label,
+#tasklist-92 button label, #tasklist-93 button label, #tasklist-94 button label, #tasklist-95 button label, 
+#tasklist-96 button label, #tasklist-97 button label, #tasklist-98 button label, #tasklist-99 button label {
+    margin-top: 0px;
+    margin-left: -6px;
+    margin-right: 4px; }
+

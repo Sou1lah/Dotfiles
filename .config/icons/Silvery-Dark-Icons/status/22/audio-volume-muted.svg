@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 21.999996 22"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="audio-volume-muted.svg"
+   width="21.999996"
+   height="22"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1092"
+       id="linearGradient2683-2"
+       x1="-142.18536"
+       y1="54.619228"
+       x2="-118.37673"
+       y2="55.331902"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.65625002,0,0,0.66666667,96.52344,-21.666667)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1092">
+      <stop
+         style="stop-color:#eff0f1;stop-opacity:1"
+         offset="0"
+         id="stop1084" />
+      <stop
+         style="stop-color:#eff0f1;stop-opacity:1"
+         offset="0.44269806"
+         id="stop1086" />
+      <stop
+         style="stop-color:#bf616a;stop-opacity:1"
+         offset="0.64684331"
+         id="stop1088" />
+      <stop
+         style="stop-color:#bf616a;stop-opacity:1"
+         offset="1"
+         id="stop1090" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.2094951"
+     inkscape:cx="65.090942"
+     inkscape:cy="-8.7896528"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7" />
+  <style
+     id="current-color-scheme"
+     type="text/css">.ColorScheme-Text{color:#232629;}.ColorScheme-NegativeText { color: #da4453; } </style>
+  <g
+     id="22-22-audio-volume-muted">
+    <path
+       style="opacity:0.00100002"
+       d="M 0,0 H 21.999997 V 22 H 0 Z"
+       id="path26" />
+    <path
+       id="Silent-9"
+       class="st0"
+       d="M 12.125,19 H 11 L 6.5000002,14.428571 V 7.5714287 H 5.3749999 V 14.428571 H 2 v -4 C 2,8.8571427 3.2656248,7.5714287 4.8124999,7.5714287 l 0.5625,-1.1428574 H 5.9375001 L 6.5000002,5.914286 6.78125,7.285714 11,3 h 1.125 z"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.283474" />
+    <path
+       id="Silent-s-2"
+       class="st1"
+       d="M 16.11875,11.285714 13.784375,8.914286 14.571875,8.1428573 16.90625,10.485714 19.2125,8.1428573 20,8.914286 17.665625,11.285714 20,13.628571 l -0.7875,0.8 -2.334375,-2.371428 -2.334375,2.371428 -0.7875,-0.8 z m -12.9937498,2 V 9.857143 c 0,-1.257143 1.0125,-2.2857143 2.2499997,-2.2857143 V 6.4285713 C 3.5187501,6.4285713 2,7.9714287 2,9.857143 v 3.428571 z M 9.3687498,3 6.5000002,5.914286 V 7.5714287 L 10.184375,3.8285713 Z"
+       style="fill:url(#linearGradient2683-2);fill-opacity:1;stroke-width:0.283474" />
+  </g>
+</svg>

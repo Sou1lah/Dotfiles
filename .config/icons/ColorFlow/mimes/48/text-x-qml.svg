@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg3911"
+   sodipodi:docname="text-x-qml.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3913"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="14.109375"
+     inkscape:cx="18.994463"
+     inkscape:cy="32.035437"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3907" />
+  <defs
+     id="defs3901">
+    <linearGradient
+       id="a"
+       x1="49.571"
+       x2="51.714"
+       y1="52.714"
+       y2="54.857"
+       gradientTransform="matrix(2.3333,0,0,2.3333,-68.667,-72.001)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         id="stop3896" />
+      <stop
+         stop-opacity="0"
+         offset="1"
+         id="stop3898" />
+    </linearGradient>
+  </defs>
+  <style
+    id="current-color-scheme">      .ColorScheme-Text {
+    color:#31363b;
+    stop-color:#31363b;
+    }
+    .ColorScheme-ButtonHover {
+    color:#93cee9;
+    stop-color:#93cee9;
+    }
+    .ColorScheme-ButtonFocus{
+    color:#3daee9;
+    stop-color:#3daee9;
+    }
+    .ColorScheme-PositiveText {
+    color:#27ae60;
+    }
+    .ColorScheme-NeutralText {
+    color:#f67400;
+    }
+    .ColorScheme-NegativeText {
+    color:#ff2a2a;
+    }</style>
+  <g
+     transform="scale(1)"
+     id="g3907">
+    <rect
+       x="8"
+       y="4"
+       width="48"
+       height="56"
+       ry="5"
+       fill="currentColor"
+       style="paint-order:stroke fill markers"
+       id="rect3903"
+       class="ColorScheme-PositiveText" />
+    <path
+       d="m56 46-14 14h9c2.77 0 5-2.23 5-5z"
+       fill="url(#a)"
+       fill-rule="evenodd"
+       opacity=".15"
+       stroke-width="8.8191"
+       style="paint-order:stroke fill markers"
+       id="path3905" />
+  </g>
+  <path
+     d="m18 21c-0.554 0-1 0.446-1 1v20c0 0.554 0.446 1 1 1h28c0.554 0 1-0.446 1-1v-20c0-0.554-0.446-1-1-1zm20 1a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1zm3 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1zm3 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1zm-26 3h6v17h-6zm7 0h21v17h-21z"
+     fill="#fff"
+     fill-rule="evenodd"
+     style="paint-order:fill markers stroke"
+     id="path3909" />
+</svg>

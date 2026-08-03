@@ -1,0 +1,40 @@
+Minecraft Cursor Theme
+
+======================
+
+Extract the folder to ~/.icons/
+
+(for all users, extract the folder to /usr/share/icons/)
+
+If the theme doesn't show up in your selections, you might need to edit 
+the "Inherits" line in the index.theme file in: 
+
+/usr/share/icons/default/
+
+to:
+
+Inherits=minecraft
+
+Enjoy!
+
+CHANGELOG:
+
+2015-09-25 (1.1)
++linked more of the missing cursors
++added newly missing cursors
+=replaced (a ton of) cursors for resizing and moving/copying files
+
+2014-03-17 (1.0.1)
++added cursor for move
++added cursor for copy
++linked a few missing cursors
+
+TODO:
+-plus
+-remake pointer-move
+-sb_down_arrow
+-sb_left_arrow
+-sb_right_arrow
+-sb_up_arrow
+-zoom-in
+-zoom-out

@@ -1,0 +1,321 @@
+/* Xfce Notifications */
+#XfceNotifyWindow {
+  padding: 3px;
+  background-color: @bg_color;
+  border: 1px solid @bg_color; 
+  border-right: 1px solid @borders;
+  border-bottom: 1px solid @borders;
+  box-shadow: 1px 1px @light_shadow inset, -1px -1px @dark_shadow inset;
+  border-radius: 0; }
+
+#XfcePanelWindow {
+   padding-top: 2px;
+   background-color: @button_bg_color;
+   padding-bottom: 0px; }
+
+#XfcePanelWindowWrapper {
+   box-shadow: 0 1px @light_shadow;
+   margin-top: 3px; }
+
+#XfcePanelWindow .horizontal button:active, #XfcePanelWindow .horizontal button:checked {
+   margin-top: 2px;
+   margin-bottom: 2px;
+   margin-left: 1px;
+   border: none;
+   box-shadow: none;
+   border-top: 1px solid @borders;
+   border-left: 1px solid @borders;
+   border-bottom: 1px solid @light_shadow;
+   border-right: 1px solid @light_shadow;
+   box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+   background-image: url("assets/scrollbar_trough.png");
+   color: @toolbar_fg_color;
+   background-color: @button_bg_color; }
+
+#XfcePanelWindow.deskbar button:active, #XfcePanelWindow.deskbar button:checked, #XfcePanelWindow #launcher-arrow:active, #XfcePanelWindow #launcher-arrow:checked {
+   margin: 1px;
+   border: none;
+   box-shadow: none;
+   border-top: 1px solid @borders;
+   border-left: 1px solid @borders;
+   border-bottom: 1px solid @light_shadow;
+   border-right: 1px solid @light_shadow;
+   box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+   background-image: url("assets/scrollbar_trough.png");
+   color: @toolbar_fg_color;
+   background-color: @button_bg_color; }
+
+
+/* Flat button hover border! */
+#XfcePanelWindow #launcher-arrow, 
+#XfcePanelWindow #launcher-arrow:hover {
+   border-radius: 0;
+   margin: 1px;
+   padding: 3px; }
+
+#XfcePanelWindow {
+   box-shadow: 0 1px @light_shadow inset;
+   border-top: @light_shadow 1px solid; }
+
+/* Create border outline for Deskbar panels */
+#XfcePanelWindow.deskbar {
+   box-shadow: inset 0px 0 @dark_shadow, inset 0 0px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow,
+   0 0px @light_shadow, 0 0px @bg_color; }
+
+/* Fix phantom outlines on icon move for Desktop icons. */
+XfdesktopIconView {
+    border-radius: 0px;
+    outline-style: hidden;
+}
+
+XfdesktopIconView .view {
+   color: #fff; 
+   background-color: transparent;
+   text-shadow: 1px 1px #000; }
+
+XfdesktopIconView .view:active {
+   color: #fff; }
+
+XfdesktopIconView:active {
+   color: @selected_bg_color;
+   background-color: @selected_bg_color; }
+
+/* Hack to give the task bar a pseudo handle
+Remove code after this comment to disable the fake handle image.
+Since the task bar name changes based on individual panel layout, support
+up to 99 different positions (99 in case of hypothetical multi-monitor setups with tons of plugins/panels). */
+
+#tasklist-1 > box.horizontal, #tasklist-2 > box.horizontal, #tasklist-3 > box.horizontal, #tasklist-4 > box.horizontal,
+#tasklist-5 > box.horizontal, #tasklist-6 > box.horizontal, #tasklist-7 > box.horizontal, #tasklist-8 > box.horizontal,
+#tasklist-9 > box.horizontal, #tasklist-10 > box.horizontal, #tasklist-11 > box.horizontal, #tasklist-12 > box.horizontal,
+#tasklist-13 > box.horizontal, #tasklist-14 > box.horizontal, #tasklist-15 > box.horizontal, 
+#tasklist-16 > box.horizontal, #tasklist-17 > box.horizontal, #tasklist-18 > box.horizontal, #tasklist-19 > box.horizontal,
+#tasklist-20 > box.horizontal, #tasklist-21 > box.horizontal, #tasklist-22 > box.horizontal, #tasklist-23 > box.horizontal, 
+#tasklist-24 > box.horizontal, #tasklist-25 > box.horizontal, #tasklist-26 > box.horizontal, #tasklist-27 > box.horizontal, 
+#tasklist-28 > box.horizontal, #tasklist-29 > box.horizontal, #tasklist-30 > box.horizontal, #tasklist-31 > box.horizontal, 
+#tasklist-32 > box.horizontal, #tasklist-33 > box.horizontal, #tasklist-34 > box.horizontal, #tasklist-35 > box.horizontal, 
+#tasklist-36 > box.horizontal, #tasklist-37 > box.horizontal, #tasklist-38 > box.horizontal, #tasklist-39 > box.horizontal, 
+#tasklist-40 > box.horizontal, #tasklist-41 > box.horizontal, #tasklist-42 > box.horizontal, #tasklist-43 > box.horizontal,
+#tasklist-44 > box.horizontal, #tasklist-45 > box.horizontal, #tasklist-46 > box.horizontal, #tasklist-47 > box.horizontal, 
+#tasklist-48 > box.horizontal, #tasklist-49 > box.horizontal, #tasklist-50 > box.horizontal, #tasklist-51 > box.horizontal, 
+#tasklist-52 > box.horizontal, #tasklist-53 > box.horizontal, #tasklist-54 > box.horizontal, #tasklist-55 > box.horizontal, 
+#tasklist-56 > box.horizontal, #tasklist-57 > box.horizontal, #tasklist-58 > box.horizontal, #tasklist-59 > box.horizontal, 
+#tasklist-60 > box.horizontal, #tasklist-61 > box.horizontal, #tasklist-62 > box.horizontal, #tasklist-63 > box.horizontal, 
+#tasklist-64 > box.horizontal, #tasklist-65 > box.horizontal, #tasklist-66 > box.horizontal, #tasklist-67 > box.horizontal,
+#tasklist-68 > box.horizontal, #tasklist-69 > box.horizontal, #tasklist-70 > box.horizontal, #tasklist-71 > box.horizontal, 
+#tasklist-72 > box.horizontal, #tasklist-73 > box.horizontal, #tasklist-74 > box.horizontal, #tasklist-75 > box.horizontal, 
+#tasklist-76 > box.horizontal, #tasklist-77 > box.horizontal, #tasklist-78 > box.horizontal, #tasklist-79 > box.horizontal, 
+#tasklist-80 > box.horizontal, #tasklist-81 > box.horizontal, #tasklist-82 > box.horizontal, #tasklist-83 > box.horizontal, 
+#tasklist-84 > box.horizontal, #tasklist-85 > box.horizontal, #tasklist-86 > box.horizontal, #tasklist-87 > box.horizontal, 
+#tasklist-88 > box.horizontal, #tasklist-89 > box.horizontal, #tasklist-90 > box.horizontal, #tasklist-91 > box.horizontal,
+#tasklist-92 > box.horizontal, #tasklist-93 > box.horizontal, #tasklist-94 > box.horizontal, #tasklist-95 > box.horizontal, 
+#tasklist-96 > box.horizontal, #tasklist-97 > box.horizontal, #tasklist-98 > box.horizontal, #tasklist-99 > box.horizontal {
+   border-left: 11px solid;
+   border-image: url("assets/handle.png");
+   border-image-slice: 8 8 6 22;
+}
+
+/* Hack to give the first launcher icon a pseudo handle on horizontal panels */
+#XfcePanelWindow  widget.horizontal > widget:nth-child(2) box #launcher-arrow {
+   border-left: 11px solid;
+   border-image: url("assets/handle.png");
+   border-image-slice: 8 8 6 22;
+}
+
+#XfcePanelWindow  widget.horizontal > widget:nth-child(2) box #launcher-arrow image {
+   margin-left: 2px;
+   margin-right: 2px;
+}
+
+#XfcePanelWindow  widget.horizontal > widget:nth-child(2) box #launcher-arrow:active image {
+   margin-left: 2px;
+   margin-right: 3px;
+}
+
+/* Horizontal System Tray */
+#systray-1 > box.horizontal, #systray-2 > box.horizontal, #systray-3 > box.horizontal, #systray-4 > box.horizontal,
+#systray-5 > box.horizontal, #systray-6 > box.horizontal, #systray-7 > box.horizontal, #systray-8 > box.horizontal,
+#systray-9 > box.horizontal, #systray-10 > box.horizontal, #systray-11 > box.horizontal, #systray-12 > box.horizontal,
+#systray-13 > box.horizontal, #systray-14 > box.horizontal, #systray-15 > box.horizontal, 
+#systray-16 > box.horizontal, #systray-17 > box.horizontal, #systray-18 > box.horizontal, #systray-19 > box.horizontal,
+#systray-20 > box.horizontal, #systray-21 > box.horizontal, #systray-22 > box.horizontal, #systray-23 > box.horizontal, 
+#systray-24 > box.horizontal, #systray-25 > box.horizontal, #systray-26 > box.horizontal, #systray-27 > box.horizontal, 
+#systray-28 > box.horizontal, #systray-29 > box.horizontal, #systray-30 > box.horizontal, #systray-31 > box.horizontal, 
+#systray-32 > box.horizontal, #systray-33 > box.horizontal, #systray-34 > box.horizontal, #systray-35 > box.horizontal, 
+#systray-36 > box.horizontal, #systray-37 > box.horizontal, #systray-38 > box.horizontal, #systray-39 > box.horizontal, 
+#systray-40 > box.horizontal, #systray-41 > box.horizontal, #systray-42 > box.horizontal, #systray-43 > box.horizontal,
+#systray-44 > box.horizontal, #systray-45 > box.horizontal, #systray-46 > box.horizontal, #systray-47 > box.horizontal, 
+#systray-48 > box.horizontal, #systray-49 > box.horizontal, #systray-50 > box.horizontal, #systray-51 > box.horizontal, 
+#systray-52 > box.horizontal, #systray-53 > box.horizontal, #systray-54 > box.horizontal, #systray-55 > box.horizontal, 
+#systray-56 > box.horizontal, #systray-57 > box.horizontal, #systray-58 > box.horizontal, #systray-59 > box.horizontal, 
+#systray-60 > box.horizontal, #systray-61 > box.horizontal, #systray-62 > box.horizontal, #systray-63 > box.horizontal, 
+#systray-64 > box.horizontal, #systray-65 > box.horizontal, #systray-66 > box.horizontal, #systray-67 > box.horizontal,
+#systray-68 > box.horizontal, #systray-69 > box.horizontal, #systray-70 > box.horizontal, #systray-71 > box.horizontal, 
+#systray-72 > box.horizontal, #systray-73 > box.horizontal, #systray-74 > box.horizontal, #systray-75 > box.horizontal, 
+#systray-76 > box.horizontal, #systray-77 > box.horizontal, #systray-78 > box.horizontal, #systray-79 > box.horizontal, 
+#systray-80 > box.horizontal, #systray-81 > box.horizontal, #systray-82 > box.horizontal, #systray-83 > box.horizontal, 
+#systray-84 > box.horizontal, #systray-85 > box.horizontal, #systray-86 > box.horizontal, #systray-87 > box.horizontal, 
+#systray-88 > box.horizontal, #systray-89 > box.horizontal, #systray-90 > box.horizontal, #systray-91 > box.horizontal,
+#systray-92 > box.horizontal, #systray-93 > box.horizontal, #systray-94 > box.horizontal, #systray-95 > box.horizontal, 
+#systray-96 > box.horizontal, #systray-97 > box.horizontal, #systray-98 > box.horizontal, #systray-99 > box.horizontal {
+   box-shadow: 1px 3px @dark_shadow inset, 0 2px @bg_color inset, 0 -1px @light_shadow inset;
+   margin-top: 1px;
+   padding-top: 0;
+   padding-left: 5px;
+   border-right: none;
+   padding-bottom: 2px;
+   margin-bottom: 2px;
+
+}
+
+/* Vertical Tray */
+#systray-1 > box.vertical, #systray-2 > box.vertical, #systray-3 > box.vertical, #systray-4 > box.vertical,
+#systray-5 > box.vertical, #systray-6 > box.vertical, #systray-7 > box.vertical, #systray-8 > box.vertical,
+#systray-9 > box.vertical, #systray-10 > box.vertical, #systray-11 > box.vertical, #systray-12 > box.vertical,
+#systray-13 > box.vertical, #systray-14 > box.vertical, #systray-15 > box.vertical, 
+#systray-16 > box.vertical, #systray-17 > box.vertical, #systray-18 > box.vertical, #systray-19 > box.vertical,
+#systray-20 > box.vertical, #systray-21 > box.vertical, #systray-22 > box.vertical, #systray-23 > box.vertical, 
+#systray-24 > box.vertical, #systray-25 > box.vertical, #systray-26 > box.vertical, #systray-27 > box.vertical, 
+#systray-28 > box.vertical, #systray-29 > box.vertical, #systray-30 > box.vertical, #systray-31 > box.vertical, 
+#systray-32 > box.vertical, #systray-33 > box.vertical, #systray-34 > box.vertical, #systray-35 > box.vertical, 
+#systray-36 > box.vertical, #systray-37 > box.vertical, #systray-38 > box.vertical, #systray-39 > box.vertical, 
+#systray-40 > box.vertical, #systray-41 > box.vertical, #systray-42 > box.vertical, #systray-43 > box.vertical,
+#systray-44 > box.vertical, #systray-45 > box.vertical, #systray-46 > box.vertical, #systray-47 > box.vertical, 
+#systray-48 > box.vertical, #systray-49 > box.vertical, #systray-50 > box.vertical, #systray-51 > box.vertical, 
+#systray-52 > box.vertical, #systray-53 > box.vertical, #systray-54 > box.vertical, #systray-55 > box.vertical, 
+#systray-56 > box.vertical, #systray-57 > box.vertical, #systray-58 > box.vertical, #systray-59 > box.vertical, 
+#systray-60 > box.vertical, #systray-61 > box.vertical, #systray-62 > box.vertical, #systray-63 > box.vertical, 
+#systray-64 > box.vertical, #systray-65 > box.vertical, #systray-66 > box.vertical, #systray-67 > box.vertical,
+#systray-68 > box.vertical, #systray-69 > box.vertical, #systray-70 > box.vertical, #systray-71 > box.vertical, 
+#systray-72 > box.vertical, #systray-73 > box.vertical, #systray-74 > box.vertical, #systray-75 > box.vertical, 
+#systray-76 > box.vertical, #systray-77 > box.vertical, #systray-78 > box.vertical, #systray-79 > box.vertical, 
+#systray-80 > box.vertical, #systray-81 > box.vertical, #systray-82 > box.vertical, #systray-83 > box.vertical, 
+#systray-84 > box.vertical, #systray-85 > box.vertical, #systray-86 > box.vertical, #systray-87 > box.vertical, 
+#systray-88 > box.vertical, #systray-89 > box.vertical, #systray-90 > box.vertical, #systray-91 > box.vertical,
+#systray-92 > box.vertical, #systray-93 > box.vertical, #systray-94 > box.vertical, #systray-95 > box.vertical, 
+#systray-96 > box.vertical, #systray-97 > box.vertical, #systray-98 > box.vertical, #systray-99 > box.vertical {
+margin-top: 1px;
+    border-radius: 1px;
+    border-top: 1px solid @dark_shadow;
+    border-left: 1px solid @borders;
+    border-bottom: 1px solid @light_shadow;
+    border-right: 1px solid @light_shadow;
+    box-shadow: 1px 1px @dark_shadow inset, -1px -1px @button_bg_color inset;
+    background-image: url("assets/scrollbar_trough.png");
+    color: @toolbar_fg_color;
+    margin-left: 2px;
+    margin-right: 1px;
+    background-color: @button_bg_color;
+}
+
+/* Make all system tray button type icons behave inertly. */
+#systray-1 > box.horizontal button, #systray-2 > box.horizontal button, #systray-3 > box.horizontal button, #systray-4 > box.horizontal button,
+#systray-5 > box.horizontal button, #systray-6 > box.horizontal button, #systray-7 > box.horizontal button, #systray-8 > box.horizontal button,
+#systray-9 > box.horizontal button, #systray-10 > box.horizontal button, #systray-11 > box.horizontal button, #systray-12 > box.horizontal button,
+#systray-13 > box.horizontal button, #systray-14 > box.horizontal button, #systray-15 > box.horizontal button, 
+#systray-16 > box.horizontal button, #systray-17 > box.horizontal button, #systray-18 > box.horizontal button, #systray-19 > box.horizontal button,
+#systray-20 > box.horizontal button, #systray-21 > box.horizontal button, #systray-22 > box.horizontal button, #systray-23 > box.horizontal button, 
+#systray-24 > box.horizontal button, #systray-25 > box.horizontal button, #systray-26 > box.horizontal button, #systray-27 > box.horizontal button, 
+#systray-28 > box.horizontal button, #systray-29 > box.horizontal button, #systray-30 > box.horizontal button, #systray-31 > box.horizontal button, 
+#systray-32 > box.horizontal button, #systray-33 > box.horizontal button, #systray-34 > box.horizontal button, #systray-35 > box.horizontal button, 
+#systray-36 > box.horizontal button, #systray-37 > box.horizontal button, #systray-38 > box.horizontal button, #systray-39 > box.horizontal button, 
+#systray-40 > box.horizontal button, #systray-41 > box.horizontal button, #systray-42 > box.horizontal button, #systray-43 > box.horizontal button,
+#systray-44 > box.horizontal button, #systray-45 > box.horizontal button, #systray-46 > box.horizontal button, #systray-47 > box.horizontal button, 
+#systray-48 > box.horizontal button, #systray-49 > box.horizontal button, #systray-50 > box.horizontal button, #systray-51 > box.horizontal button, 
+#systray-52 > box.horizontal button, #systray-53 > box.horizontal button, #systray-54 > box.horizontal button, #systray-55 > box.horizontal button, 
+#systray-56 > box.horizontal button, #systray-57 > box.horizontal button, #systray-58 > box.horizontal button, #systray-59 > box.horizontal button, 
+#systray-60 > box.horizontal button, #systray-61 > box.horizontal button, #systray-62 > box.horizontal button, #systray-63 > box.horizontal button, 
+#systray-64 > box.horizontal button, #systray-65 > box.horizontal button, #systray-66 > box.horizontal button, #systray-67 > box.horizontal button,
+#systray-68 > box.horizontal button, #systray-69 > box.horizontal button, #systray-70 > box.horizontal button, #systray-71 > box.horizontal button, 
+#systray-72 > box.horizontal button, #systray-73 > box.horizontal button, #systray-74 > box.horizontal button, #systray-75 > box.horizontal button, 
+#systray-76 > box.horizontal button, #systray-77 > box.horizontal button, #systray-78 > box.horizontal button, #systray-79 > box.horizontal button, 
+#systray-80 > box.horizontal button, #systray-81 > box.horizontal button, #systray-82 > box.horizontal button, #systray-83 > box.horizontal button, 
+#systray-84 > box.horizontal button, #systray-85 > box.horizontal button, #systray-86 > box.horizontal button, #systray-87 > box.horizontal button, 
+#systray-88 > box.horizontal button, #systray-89 > box.horizontal button, #systray-90 > box.horizontal button, #systray-91 > box.horizontal button,
+#systray-92 > box.horizontal button, #systray-93 > box.horizontal button, #systray-94 > box.horizontal button, #systray-95 > box.horizontal button, 
+#systray-96 > box.horizontal button, #systray-97 > box.horizontal button, #systray-98 > box.horizontal button, #systray-99 > box.horizontal button,
+#systray-1 > box.horizontal image, #systray-2 > box.horizontal image, #systray-3 > box.horizontal image, #systray-4 > box.horizontal image,
+#systray-5 > box.horizontal image, #systray-6 > box.horizontal image, #systray-7 > box.horizontal image, #systray-8 > box.horizontal image,
+#systray-9 > box.horizontal image, #systray-10 > box.horizontal image, #systray-11 > box.horizontal image, #systray-12 > box.horizontal image,
+#systray-13 > box.horizontal image, #systray-14 > box.horizontal image, #systray-15 > box.horizontal image, 
+#systray-16 > box.horizontal image, #systray-17 > box.horizontal image, #systray-18 > box.horizontal image, #systray-19 > box.horizontal image,
+#systray-20 > box.horizontal image, #systray-21 > box.horizontal image, #systray-22 > box.horizontal image, #systray-23 > box.horizontal image, 
+#systray-24 > box.horizontal image, #systray-25 > box.horizontal image, #systray-26 > box.horizontal image, #systray-27 > box.horizontal image, 
+#systray-28 > box.horizontal image, #systray-29 > box.horizontal image, #systray-30 > box.horizontal image, #systray-31 > box.horizontal image, 
+#systray-32 > box.horizontal image, #systray-33 > box.horizontal image, #systray-34 > box.horizontal image, #systray-35 > box.horizontal image, 
+#systray-36 > box.horizontal image, #systray-37 > box.horizontal image, #systray-38 > box.horizontal image, #systray-39 > box.horizontal image, 
+#systray-40 > box.horizontal image, #systray-41 > box.horizontal image, #systray-42 > box.horizontal image, #systray-43 > box.horizontal image,
+#systray-44 > box.horizontal image, #systray-45 > box.horizontal image, #systray-46 > box.horizontal image, #systray-47 > box.horizontal image, 
+#systray-48 > box.horizontal image, #systray-49 > box.horizontal image, #systray-50 > box.horizontal image, #systray-51 > box.horizontal image, 
+#systray-52 > box.horizontal image, #systray-53 > box.horizontal image, #systray-54 > box.horizontal image, #systray-55 > box.horizontal image, 
+#systray-56 > box.horizontal image, #systray-57 > box.horizontal image, #systray-58 > box.horizontal image, #systray-59 > box.horizontal image, 
+#systray-60 > box.horizontal image, #systray-61 > box.horizontal image, #systray-62 > box.horizontal image, #systray-63 > box.horizontal image, 
+#systray-64 > box.horizontal image, #systray-65 > box.horizontal image, #systray-66 > box.horizontal image, #systray-67 > box.horizontal image,
+#systray-68 > box.horizontal image, #systray-69 > box.horizontal image, #systray-70 > box.horizontal image, #systray-71 > box.horizontal image, 
+#systray-72 > box.horizontal image, #systray-73 > box.horizontal image, #systray-74 > box.horizontal image, #systray-75 > box.horizontal image, 
+#systray-76 > box.horizontal image, #systray-77 > box.horizontal image, #systray-78 > box.horizontal image, #systray-79 > box.horizontal image, 
+#systray-80 > box.horizontal image, #systray-81 > box.horizontal image, #systray-82 > box.horizontal image, #systray-83 > box.horizontal image, 
+#systray-84 > box.horizontal image, #systray-85 > box.horizontal image, #systray-86 > box.horizontal image, #systray-87 > box.horizontal image, 
+#systray-88 > box.horizontal image, #systray-89 > box.horizontal image, #systray-90 > box.horizontal image, #systray-91 > box.horizontal image,
+#systray-92 > box.horizontal image, #systray-93 > box.horizontal image, #systray-94 > box.horizontal image, #systray-95 > box.horizontal image, 
+#systray-96 > box.horizontal image, #systray-97 > box.horizontal image, #systray-98 > box.horizontal image, #systray-99 > box.horizontal image,
+#systray-1 > box.vertical button, #systray-2 > box.vertical button, #systray-3 > box.vertical button, #systray-4 > box.vertical button,
+#systray-5 > box.vertical button, #systray-6 > box.vertical button, #systray-7 > box.vertical button, #systray-8 > box.vertical button,
+#systray-9 > box.vertical button, #systray-10 > box.vertical button, #systray-11 > box.vertical button, #systray-12 > box.vertical button,
+#systray-13 > box.vertical button, #systray-14 > box.vertical button, #systray-15 > box.vertical button, 
+#systray-16 > box.vertical button, #systray-17 > box.vertical button, #systray-18 > box.vertical button, #systray-19 > box.vertical button,
+#systray-20 > box.vertical button, #systray-21 > box.vertical button, #systray-22 > box.vertical button, #systray-23 > box.vertical button, 
+#systray-24 > box.vertical button, #systray-25 > box.vertical button, #systray-26 > box.vertical button, #systray-27 > box.vertical button, 
+#systray-28 > box.vertical button, #systray-29 > box.vertical button, #systray-30 > box.vertical button, #systray-31 > box.vertical button, 
+#systray-32 > box.vertical button, #systray-33 > box.vertical button, #systray-34 > box.vertical button, #systray-35 > box.vertical button, 
+#systray-36 > box.vertical button, #systray-37 > box.vertical button, #systray-38 > box.vertical button, #systray-39 > box.vertical button, 
+#systray-40 > box.vertical button, #systray-41 > box.vertical button, #systray-42 > box.vertical button, #systray-43 > box.vertical button,
+#systray-44 > box.vertical button, #systray-45 > box.vertical button, #systray-46 > box.vertical button, #systray-47 > box.vertical button, 
+#systray-48 > box.vertical button, #systray-49 > box.vertical button, #systray-50 > box.vertical button, #systray-51 > box.vertical button, 
+#systray-52 > box.vertical button, #systray-53 > box.vertical button, #systray-54 > box.vertical button, #systray-55 > box.vertical button, 
+#systray-56 > box.vertical button, #systray-57 > box.vertical button, #systray-58 > box.vertical button, #systray-59 > box.vertical button, 
+#systray-60 > box.vertical button, #systray-61 > box.vertical button, #systray-62 > box.vertical button, #systray-63 > box.vertical button, 
+#systray-64 > box.vertical button, #systray-65 > box.vertical button, #systray-66 > box.vertical button, #systray-67 > box.vertical button,
+#systray-68 > box.vertical button, #systray-69 > box.vertical button, #systray-70 > box.vertical button, #systray-71 > box.vertical button, 
+#systray-72 > box.vertical button, #systray-73 > box.vertical button, #systray-74 > box.vertical button, #systray-75 > box.vertical button, 
+#systray-76 > box.vertical button, #systray-77 > box.vertical button, #systray-78 > box.vertical button, #systray-79 > box.vertical button, 
+#systray-80 > box.vertical button, #systray-81 > box.vertical button, #systray-82 > box.vertical button, #systray-83 > box.vertical button, 
+#systray-84 > box.vertical button, #systray-85 > box.vertical button, #systray-86 > box.vertical button, #systray-87 > box.vertical button, 
+#systray-88 > box.vertical button, #systray-89 > box.vertical button, #systray-90 > box.vertical button, #systray-91 > box.vertical button,
+#systray-92 > box.vertical button, #systray-93 > box.vertical button, #systray-94 > box.vertical button, #systray-95 > box.vertical button, 
+#systray-96 > box.vertical button, #systray-97 > box.vertical button, #systray-98 > box.vertical button, #systray-99 > box.vertical button,
+#systray-1 > box.vertical image, #systray-2 > box.vertical image, #systray-3 > box.vertical image, #systray-4 > box.vertical image,
+#systray-5 > box.vertical image, #systray-6 > box.vertical image, #systray-7 > box.vertical image, #systray-8 > box.vertical image,
+#systray-9 > box.vertical image, #systray-10 > box.vertical image, #systray-11 > box.vertical image, #systray-12 > box.vertical image,
+#systray-13 > box.vertical image, #systray-14 > box.vertical image, #systray-15 > box.vertical image, 
+#systray-16 > box.vertical image, #systray-17 > box.vertical image, #systray-18 > box.vertical image, #systray-19 > box.vertical image,
+#systray-20 > box.vertical image, #systray-21 > box.vertical image, #systray-22 > box.vertical image, #systray-23 > box.vertical image, 
+#systray-24 > box.vertical image, #systray-25 > box.vertical image, #systray-26 > box.vertical image, #systray-27 > box.vertical image, 
+#systray-28 > box.vertical image, #systray-29 > box.vertical image, #systray-30 > box.vertical image, #systray-31 > box.vertical image, 
+#systray-32 > box.vertical image, #systray-33 > box.vertical image, #systray-34 > box.vertical image, #systray-35 > box.vertical image, 
+#systray-36 > box.vertical image, #systray-37 > box.vertical image, #systray-38 > box.vertical image, #systray-39 > box.vertical image, 
+#systray-40 > box.vertical image, #systray-41 > box.vertical image, #systray-42 > box.vertical image, #systray-43 > box.vertical image,
+#systray-44 > box.vertical image, #systray-45 > box.vertical image, #systray-46 > box.vertical image, #systray-47 > box.vertical image, 
+#systray-48 > box.vertical image, #systray-49 > box.vertical image, #systray-50 > box.vertical image, #systray-51 > box.vertical image, 
+#systray-52 > box.vertical image, #systray-53 > box.vertical image, #systray-54 > box.vertical image, #systray-55 > box.vertical image, 
+#systray-56 > box.vertical image, #systray-57 > box.vertical image, #systray-58 > box.vertical image, #systray-59 > box.vertical image, 
+#systray-60 > box.vertical image, #systray-61 > box.vertical image, #systray-62 > box.vertical image, #systray-63 > box.vertical image, 
+#systray-64 > box.vertical image, #systray-65 > box.vertical image, #systray-66 > box.vertical image, #systray-67 > box.vertical image,
+#systray-68 > box.vertical image, #systray-69 > box.vertical image, #systray-70 > box.vertical image, #systray-71 > box.vertical image, 
+#systray-72 > box.vertical image, #systray-73 > box.vertical image, #systray-74 > box.vertical image, #systray-75 > box.vertical image, 
+#systray-76 > box.vertical image, #systray-77 > box.vertical image, #systray-78 > box.vertical image, #systray-79 > box.vertical image, 
+#systray-80 > box.vertical image, #systray-81 > box.vertical image, #systray-82 > box.vertical image, #systray-83 > box.vertical image, 
+#systray-84 > box.vertical image, #systray-85 > box.vertical image, #systray-86 > box.vertical image, #systray-87 > box.vertical image, 
+#systray-88 > box.vertical image, #systray-89 > box.vertical image, #systray-90 > box.vertical image, #systray-91 > box.vertical image,
+#systray-92 > box.vertical image, #systray-93 > box.vertical image, #systray-94 > box.vertical image, #systray-95 > box.vertical image, 
+#systray-96 > box.vertical image, #systray-97 > box.vertical image, #systray-98 > box.vertical image, #systray-99 > box.vertical image {
+    box-shadow: 0px 0px 0px 0px @light_shadow inset;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    margin-left: -1px;
+    margin-right: 1px;
+    background-color: transparent;
+}
+
+
+

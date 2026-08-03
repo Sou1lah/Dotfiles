@@ -1,0 +1,27 @@
+Silver XCursors 3D 
+
+Modeled, animated and rendered with Blender - http://www.blender3d.org .
+
+
+Installation:
+
+Copy the two folders 'Silver' and 'default' to your ~/.icons directory and 
+restart your X-Server.
+
+If you want to have bigger cursors, you have to create or edit the file 
+.Xdefaults in your home directory and insert the following two lines:
+
+Xcursor.theme: Silver
+Xcursor.size: 48
+
+The default size is 32. 
+
+That's it!
+
+Note: If the animations are flickering on your nvidia card with the latest
+driver, add the following line to your XF86Config file, into the nvidia 
+device section, to fix it:
+
+Option "HWCursor" "off"
+
+Thanks to uga for his Xcursors howto.

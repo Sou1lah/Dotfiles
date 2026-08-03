@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=SE98 HiDPI
+Type=X-GNOME-Metatheme
+Comment=SE98 HiDPI theme for GTK, XFWM, Metacity, and Wine based on Redmond 97 HiDPI Theme
+
+[X-GNOME-Metatheme]
+GtkTheme=SE98 HiDPI
+MetacityTheme=SE98 HiDPI
+IconTheme=SE98
+GtkColorScheme=
+CursorTheme=
+CursorSize=72

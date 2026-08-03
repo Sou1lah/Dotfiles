@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Magnetic-Yellow-Dracula
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Magnetic-Yellow-Dracula
+MetacityTheme=Magnetic-Yellow-Dracula
+IconTheme=Tela-circle
+CursorTheme=Magnetic-cursors
+ButtonLayout=close,minimize,maximize:menu

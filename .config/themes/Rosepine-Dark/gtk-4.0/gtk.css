@@ -1,0 +1,74 @@
+/*
+ * GTK4 Colors - Generated with Matugen
+ * This file is overwritten when you change wallpaper
+ */
+
+@media (prefers-color-scheme: dark) {
+    @define-color accent_color #ffb597;
+    @define-color accent_fg_color #552107;
+    @define-color accent_bg_color #ffb597;
+
+    @define-color window_bg_color #1a110e;
+    @define-color window_fg_color #f1dfd9;
+
+    @define-color headerbar_bg_color #1a110e;
+    @define-color headerbar_fg_color #f1dfd9;
+
+    @define-color popover_bg_color #1a110e;
+    @define-color popover_fg_color #f1dfd9;
+
+    @define-color view_bg_color #1a110e;
+    @define-color view_fg_color #f1dfd9;
+
+    @define-color card_bg_color #1a110e;
+    @define-color card_fg_color #f1dfd9;
+
+    @define-color sidebar_bg_color @window_bg_color;
+    @define-color sidebar_fg_color @window_fg_color;
+    @define-color sidebar_border_color @window_bg_color;
+    @define-color sidebar_backdrop_color @window_bg_color;
+}
+
+/* Nautilus sidebar */
+.nautilus-window .sidebar,
+.nautilus-window sidebar,
+.nautilus-window placessidebar,
+.nautilus-window placessidebar list,
+placessidebar,
+placessidebar list {
+    background-color: #1a110e !important;
+    color: #f1dfd9 !important;
+}
+
+placessidebar row {
+    background-color: transparent !important;
+    color: #f1dfd9 !important;
+}
+
+placessidebar row:hover {
+    background-color: alpha(#ffb597, 0.1) !important;
+}
+
+placessidebar row:selected,
+placessidebar row:selected:hover {
+    background-color: #ffb597 !important;
+    color: #552107 !important;
+}
+
+.nautilus-window headerbar {
+    background-color: #1a110e !important;
+    color: #f1dfd9 !important;
+}
+
+.nautilus-window .view {
+    background-color: #1a110e !important;
+    color: #f1dfd9 !important;
+}
+
+placessidebar image {
+    color: #f1dfd9 !important;
+}
+
+placessidebar row:selected image {
+    color: #552107 !important;
+}

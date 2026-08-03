@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="media-playback-stop.svg"
+   width="20"
+   height="20"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="11.984375"
+     inkscape:cx="9.5958279"
+     inkscape:cy="3.2542373"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="style1">.ColorScheme-Text { color:#d8dee9; }
+</style>
+  </defs>
+  <g
+     id="media-playback-stop-7">
+    <rect
+       id="rect88"
+       style="opacity:0.00100002;stroke-width:0.625"
+       y="0"
+       x="0"
+       height="20"
+       width="20" />
+    <path
+       id="GraphBar-48-2"
+       class="st0"
+       d="m 15.999997,12.927581 c 0,1.321097 -1.121956,3.210969 -2.425,3.302411 l -1.425,0.1 V 3.8000036 h 3.85 z"
+       sodipodi:nodetypes="sscccs"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.238846;enable-background:new" />
+    <path
+       id="GraphBar-s-7-2"
+       class="st1"
+       d="M 15.041798,4.7608016 V 13.40798 c 0,1.056877 -0.864718,1.921595 -1.921595,1.921595 H 6.8075075 v 0.960797 h 6.3126735 c 1.585316,0 2.882392,-1.297076 2.882392,-2.882392 V 4.7608016 Z m -8.219031,11.5288454 -0.01861,0.002 0.01861,-0.002 -0.01509,7.09e-4 z m -0.01509,7.25e-4 -0.00768,-0.0065 z"
+       sodipodi:nodetypes="ccccccccccsscccsc"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.240199" />
+    <path
+       id="GraphBar-4-1-6"
+       class="st0"
+       d="m 4.00005,7.1721386 c -0.012825,-2.17212 2.3137702,-3.374554 2.7703671,-3.372135 h 5.3795799 l -1.47e-4,12.4891784 -8.1010173,0.0095 z"
+       sodipodi:nodetypes="cccccc"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.350045;enable-background:new" />
+    <path
+       id="GraphBar-s-8-7-1"
+       class="st1"
+       d="m 4.9824542,15.335708 -0.02176,-8.6463384 c -0.0027,-1.056775 0.859799,-1.923584 1.916573,-1.926243 l 6.2227298,-0.0024 v -0.9607 l -6.2251298,0.0024 c -1.585163,0.004 -2.87885,1.304204 -2.874861,2.889366 l 0.02176,8.6463354 z m 8.1198218,-11.5321607 -0.0029,0.00902 6.63e-4,-0.012559 1.7e-4,-3.105e-4 z m 0,0 v 0 l -0.0021,-0.00385 v 0 z"
+       sodipodi:nodetypes="ccccccccccsscccsccc"
+       style="fill:#eff0f1;fill-opacity:1;stroke-width:0.240176" />
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg7"
+   version="1.1"
+   viewBox="0 0 24 24"
+   width="24"
+   height="24"
+   sodipodi:docname="update-medium.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="7.9583333"
+     inkscape:cx="4.3979058"
+     inkscape:cy="34.052356"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7" />
+  <defs
+     id="defs3">
+    <style
+       type="text/css"
+       id="current-color-scheme">.ColorScheme-Text{color:#232629;}.ColorScheme-NeutralText { color: #f67400; } </style>
+  </defs>
+  <g
+     id="22-22-update-medium"
+     transform="matrix(4.1231211,0,0,4.1231211,-48,-1200.5668)"
+     style="stroke-width:0.916667">
+    <rect
+       style="opacity:0.003;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0989545;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1396-3-1"
+       width="5.8208332"
+       height="5.8208332"
+       x="11.641666"
+       y="291.17914"
+       ry="1.190593e-06"
+       rx="1.190593e-06" />
+    <polygon
+       id="Arrow-Down-6-6"
+       class="st0"
+       points="44,28 60,28 32,56 4,28 20,28 20,4 40,4 40,0 44,0 "
+       transform="matrix(-0.06604269,0,0,-0.06604269,16.662561,296.20623)"
+       style="fill:#d08770;fill-opacity:1;stroke-width:0.916667" />
+    <path
+       id="ArrowDown-s-75-2"
+       class="st1"
+       d="m 13.756683,294.35208 v 1.58503 h 0.264171 v -1.58503 z m 1.849195,-1.54539 -0.68024,-0.68024 c -0.204732,-0.20474 -0.54155,-0.20474 -0.746282,0 l -0.686844,0.68684 0.184919,0.18492 0.686844,-0.68024 c 0.105668,-0.10567 0.270775,-0.10567 0.376444,0 l 0.68024,0.68024 z"
+       style="clip-rule:evenodd;fill:#eff0f1;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0605392" />
+  </g>
+</svg>

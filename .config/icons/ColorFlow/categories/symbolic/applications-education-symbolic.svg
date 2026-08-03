@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="16"
+   width="16"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="applications-education-symbolic.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="56.4375"
+     inkscape:cx="4.7486157"
+     inkscape:cy="8.0177187"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <style
+     type="text/css"
+     id="current-color-scheme">
+        .ColorScheme-Text {
+        color:#31363b;
+        }
+        </style>
+  <path
+     d="M8.229 1.084l-4.006 3A.5.5 0 0 0 4.5 5H5v2H1.5c-.277 0-.5.223-.5.5v6c0 .277.223.5.5.5h5c.277 0 .5-.223.5-.5V11s0-1 1-1h1c1 0 1 1 1 1v2.5c0 .277.223.5.5.5h5c.277 0 .5-.223.5-.5v-6c0-.277-.223-.5-.5-.5H12V5h.5a.5.5 0 0 0 .277-.916l-3.994-3a.5.5 0 0 0-.555 0zM6.25 5h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 6.75v-1.5A.25.25 0 0 1 6.25 5zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 6.75v-1.5A.25.25 0 0 1 8.25 5zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm-8 3h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 9.75v-1.5A.25.25 0 0 1 2.25 8zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 9.75v-1.5A.25.25 0 0 1 4.25 8zm8 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm-12 3h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm8 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25zm2 0h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25z"
+     fill="currentColor"
+     id="path3"
+     class="ColorScheme-Text" />
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   viewBox="0 0 22 22"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="elisa-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.83798"
+     inkscape:cx="10.868287"
+     inkscape:cy="20.726952"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <style
+     type="text/css"
+     id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
+  <g
+     id="22-22-elisa-6">
+    <rect
+       style="opacity:0.00100002"
+       width="22"
+       height="22"
+       x="0"
+       y="0"
+       id="rect2" />
+    <path
+       id="Music-7"
+       class="st0"
+       d="M 8,7.25 C 8,6.1 8.775,5.1 9.9,4.825 L 18,2.8 v 11.5 c 0,1.375 -1.125,2.5 -2.5,2.5 -1.375,0 -2.5,-1.125 -2.5,-2.5 0,-1.375 1.125,-2.5 2.5,-2.5 H 17 V 7.05 L 8,9.3 Z M 9,13.8 H 6.5 c -1.375,0 -2.5,1.125 -2.5,2.5 0,1.375 1.125,2.5 2.5,2.5 1.375,0 2.5,-1.125 2.5,-2.5 z"
+       style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.25" />
+    <path
+       id="Music-s-1"
+       class="st1"
+       d="m 18,6.8 -1,0.25 v -3 L 18,3.8 Z M 9.75,5.9 10,5.825 V 4.8 L 9.525,4.925 C 8.625,5.15 8,5.95 8,6.875 V 13.8 H 9 V 6.85 C 9,6.4 9.3,6 9.75,5.9 Z M 17,11.8 v 3.5 c 0,0.825 -0.675,1.5 -1.5,1.5 v 1 c 1.375,0 2.5,-1.125 2.5,-2.5 v -3.5 z"
+       style="fill:#8aac6c;fill-opacity:1;stroke-width:0.25" />
+  </g>
+</svg>

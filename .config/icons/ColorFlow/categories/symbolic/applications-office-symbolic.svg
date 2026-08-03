@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="16"
+   width="16"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="applications-office-symbolic.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="56.4375"
+     inkscape:cx="4.7486157"
+     inkscape:cy="8.0177187"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <style
+     type="text/css"
+     id="current-color-scheme">
+        .ColorScheme-Text {
+        color:#31363b;
+        }
+        </style>
+  <path
+     d="M12.213 1a.83.83 0 0 0-.59.246l-.906.912 3.125 3.125.91-.906c.33-.33.33-.85 0-1.18l-1.95-1.95a.83.83 0 0 0-.59-.247zM9.658 3.22L.992 11.887v3.119h3.121l8.664-8.664zM2 12h1v1h1v1H2z"
+     fill="currentColor"
+     id="path3"
+     class="ColorScheme-Text" />
+</svg>

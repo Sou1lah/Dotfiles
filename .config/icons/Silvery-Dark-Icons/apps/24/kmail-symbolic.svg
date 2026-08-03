@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg4153"
+   version="1.1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   width="22"
+   height="22"
+   sodipodi:docname="kmail-symbolic.svg"
+   viewBox="0 0 22 22"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata4159">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4157">
+    <style
+       type="text/css"
+       id="current-color-scheme">
+.ColorScheme-Text { 
+    color:#e1e1e1;
+}
+.ColorScheme-Background { color:#eff0f1; }
+.ColorScheme-Highlight { color:#3daee9; }
+.ColorScheme-ViewText { color:#31363b; }
+.ColorScheme-ViewBackground { color:#fcfcfc; }
+.ColorScheme-ViewHover { color:#93cee9; }
+.ColorScheme-ViewFocus { color:#3daee9; }
+.ColorScheme-ButtonText { color:#31363b; }
+.ColorScheme-ButtonBackground { color:#eff0f1; }
+.ColorScheme-ButtonHover { color:#93cee9; }
+.ColorScheme-ButtonFocus { color:#3daee9; }
+</style>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#201933"
+     bordercolor="#000000"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10000"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     id="namedview4155"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:showpageshadow="true"
+     borderlayer="true"
+     inkscape:zoom="15.170654"
+     inkscape:cx="10.942178"
+     inkscape:cy="10.480761"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="kmail"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#201933"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4140"
+       originx="-1"
+       originy="-10"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+  </sodipodi:namedview>
+  <inkscape:clipboard
+     style="opacity:0.01000001;fill:#00000f;fill-opacity:0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stroke:none"
+     min="0,0"
+     max="22,22" />
+  <g
+     id="kmail"
+     transform="translate(-1,-10)">
+    <g
+       id="22-22-kmail"
+       transform="translate(1,10)">
+      <rect
+         style="opacity:0.00100002"
+         width="22"
+         height="22"
+         x="0"
+         y="0"
+         id="rect2" />
+      <path
+         id="Mailbox-3"
+         class="st0"
+         d="M 5.3749989,6.428571 C 3.51875,6.428571 2,7.971429 2,9.857143 v 5.714286 h 6.1874993 l 0.5624996,1.142857 H 9.8750005 L 10.4375,15.571429 h 7.875 C 19.240625,15.571429 20,14.8 20,13.857143 v -3.428572 c 0,-2.2 -1.771876,-4 -3.937501,-4 H 14.375 V 7.571429 H 13.25 V 6.428571 H 8.3562492 C 9.2281263,7.2 9.7906261,8.314286 9.8750005,9.571429 v 0 6 H 8.7499989 V 9.857143 c 0,-1.885714 -1.518749,-3.428572 -3.375,-3.428572 z"
+         style="fill:#cdd8e5;fill-opacity:0.403922;stroke-width:0.283473" />
+      <path
+         id="Mailbox-s-6"
+         class="st1"
+         d="M 13.25,9.857143 H 12.125 V 5.285714 C 12.125,4.028571 13.1375,3 14.375,3 H 15.5 v 1.142857 h -1.125 c -0.61875,0 -1.125,0.514286 -1.125,1.142857 z m 6.75,0 C 20,7.971429 18.48125,6.428571 16.625,6.428571 h -2.25 v 1.142858 h 2.25 c 1.237499,0 2.25,1.028571 2.25,2.285714 v 4.571428 c 0,0.628572 -0.50625,1.142858 -1.125001,1.142858 H 9.8750005 V 19 H 11 v -2.285714 h 6.749999 C 18.9875,16.714286 20,15.685714 20,14.428571 Z M 7.6249996,12.714286 H 3.1250003 v 1.142857 h 4.4999993 z m 1.1249993,2.857143 H 3.1250003 v 1.142857 h 5.6249986 z"
+         style="fill:#eff0f1;fill-opacity:1;stroke-width:0.283473" />
+    </g>
+  </g>
+</svg>
