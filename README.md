@@ -22,14 +22,40 @@
 This repo contains my **Fedora** + **Hyprland** dotfiles:  
 A clean, fast, and minimal Wayland rice with custom scripts, tweaked configs, and a sharp look.
 
+---
+
+### 🚀 One-Line Automated Installation
+
+To install and set up this entire configuration on a new system, simply run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Sou1lah/Dotfiles/main/install.sh | bash
+```
+
+<details>
+<summary>📦 Manual Installation</summary>
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Sou1lah/Dotfiles.git ~/hyprland-dotfiles
+
+# 2. Navigate to directory and execute setup
+cd ~/hyprland-dotfiles
+chmod +x install.sh
+./install.sh
+```
+
+</details>
+
+---
+
 ### 🙏 Special Thanks
 
 Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fedora Hyprland setup — it helped me get started and inspired many parts of this rice.
 
-
 ---
 
-###  Tools & Themes Used
+### 🛠️ Tools & Themes Used
 
 | Category       | Tools / Apps                        |
 |----------------|-------------------------------------|
@@ -37,16 +63,17 @@ Big thanks to [JaKooLit](https://github.com/JaKooLit/Fedora-Hyprland) for his Fe
 | Terminal       | Kitty                               |
 | Editor         | Neovim                              |
 | Compositor     | Hyprland                            |
-| Bar            | axe-shell + fabric                  |
+| Bar / Shell    | QuickShell / Noctalia / Waybar      |
 | Launcher       | Rofi, Rofi-Games                    |
 | Wallpaper      | Swww, Wallust, Matugen              |
 | Notifications  | Swaync                              |
 | Lock/Logout    | Wlogout, hyprlock                   |
-| File Manager   | thunar + yazi                       |
-| System Info    | fastfetch                           |
+| File Manager   | Thunar + Yazi                       |
+| System Info    | Fastfetch                           |
 | Multiplexer    | Tmux                                |
 
 ---
+
 ## 🧠 Neovim Setup
 
 <details>
